@@ -1,0 +1,71 @@
+---
+// A Toolset Views listing (toolset/views-view-editor): entries of one collection
+// shown as a table, one row per entry and one column per field, in content order.
+// Column headings and cell values are props — the page binds them to the
+// collection's fields and to the ui-strings dictionary. From md up it is a table;
+// below md each row becomes a card whose cells carry their column's heading, so
+// nothing scrolls sideways on a phone.
+import { tv } from 'tailwind-variants'
+import Section from '../kit/_shared/Section.astro'
+
+interface Column {
+  /** The field a cell of this column reads from a row. */
+  key: string
+  /** The column heading as shown. */
+  label: string
+}
+
+interface Props {
+  columns: readonly Column[]
+  /** One record per entry: field key → value as shown. */
+  rows: ReadonlyArray<Readonly<Record<string, string | undefined>>>
+  /** The table's accessible name (a visually hidden caption). */
+  caption?: string | undefined
+  tone?: 'default' | 'muted' | undefined
+  /** The page entry the section is built from (`data-kit-entry`). */
+  entry?: string | undefined
+}
+
+const { columns, rows, caption, tone = 'default', entry } = Astro.props
+
+const table = tv({
+  slots: {
+    frame: 'overflow-hidden rounded-[var(--radius-card)] border border-line bg-surface',
+    grid: 'block w-full border-collapse text-left text-ink [font-size:var(--text-body)] [line-height:var(--leading-body)] md:table',
+    head: 'sr-only md:not-sr-only md:table-header-group md:bg-surface-muted',
+    th: 'border-b border-line px-4 py-3 text-sm [font-weight:var(--font-weight-heading,700)] tracking-wide text-ink-muted uppercase',
+    body: 'block md:table-row-group',
+    row: 'block border-b border-line px-4 py-3 last:border-b-0 md:table-row',
+    cell: 'flex gap-3 py-1 md:table-cell md:px-4 md:py-3 md:align-top',
+    cellLabel: 'w-28 shrink-0 text-sm [font-weight:var(--font-weight-heading,700)] text-ink-muted md:hidden',
+  },
+})
+const s = table()
+const visible = rows.filter(row => columns.some(column => (row[column.key] ?? '').trim() !== ''))
+---
+{columns.length > 0 && visible.length > 0 && (
+  <Section tone={tone} spacing="sm" kit="toolset-view" entry={entry}>
+    <div class={s.frame()}>
+      <table class={s.grid()}>
+        {caption && <caption class="sr-only">{caption}</caption>}
+        <thead class={s.head()}>
+          <tr>
+            {columns.map(column => <th scope="col" class={s.th()}>{column.label}</th>)}
+          </tr>
+        </thead>
+        <tbody class={s.body()}>
+          {visible.map(row => (
+            <tr class={s.row()}>
+              {columns.map(column => (
+                <td class={s.cell()}>
+                  <span class={s.cellLabel()} aria-hidden="true">{column.label}</span>
+                  <span class="min-w-0 break-words">{row[column.key] ?? ''}</span>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </Section>
+)}

@@ -1,0 +1,129 @@
+---
+// A paginated list of posts: the blog index and the category, tag and author
+// archives (under their breadcrumb on a source that prints one on every page) — as cards (a grid, or one column), or each post in full (siteConfig.lists.display), as the
+// source's query loop showed them.
+import { formatDay, siteTimeZone } from '../lib/dates'
+import { getEntry } from 'astro:content'
+import Breadcrumb from '../components/kit/breadcrumb/Breadcrumb.astro'
+import KitImage from '../components/kit/_shared/KitImage.astro'
+import Pagination from '../components/kit/pagination/Pagination.astro'
+import Prose from '../components/kit/prose/Prose.astro'
+import PostCard from '../components/kit/post-card/PostCard.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { byId, getSite, getStrings, imageOf, postHref, termHref, type Page, type Post } from '../lib/content'
+import type { Card } from '../lib/custom'
+import { withBase } from '../lib/base'
+import { publicHtml } from '../lib/links'
+import { localeOf, localizedPath } from '../lib/locales'
+import type { Crumb } from '../lib/site-routes'
+import { collectionLd, describePage } from '../lib/seo'
+import { siteConfig } from '../site.config'
+import { safeHref } from '../components/kit/_shared/safe-url'
+
+interface Props {
+  /** The archive's heading; the blog index on the front page has none. */
+  title?: string | undefined
+  /** What kind of archive this is, shown above the title ("Category"). */
+  eyebrow?: string | undefined
+  description?: string | undefined
+  /** The posts page's own SEO (a static front page's blog index): its titles, preview and robots, as on the source. */
+  seo?: Page['data']['seo'] | undefined
+  posts: Post[]
+  /** A list of another content type (a custom post type): cards already built, in place of `posts`. */
+  cards?: Card[] | undefined
+  base: string
+  current: number
+  total: number
+  /** The archive's ancestors, root first (`chrome.breadcrumbs: 'always'`): the home page, a term's type archive. */
+  trail?: Crumb[] | undefined
+}
+
+const { title, eyebrow, description, seo, posts, cards: given, base, current, total, trail = [] } = Astro.props
+const pageLocale = localeOf(Astro.url.pathname)
+// The source's titles, preview and canonical are the first page's; a later page keeps its own ("Journal – Page 2").
+const first = current === 1 ? seo : undefined
+const [site, t, categories, authors] = await Promise.all([getSite(pageLocale), getStrings(pageLocale), byId('categories'), siteConfig.lists.byline ? byId('authors') : undefined])
+const full = siteConfig.lists.display === 'full'
+const column = full || siteConfig.lists.display === 'list'
+const showHeading = Boolean(title) || siteConfig.lists.heading
+// The source printed one heading, "Label: Name" (siteConfig.lists.prefixed), not the label above the name.
+const prefixed = Boolean(siteConfig.lists.prefixed && title && eyebrow)
+const cards: Card[] = given ?? await Promise.all(posts.map(async (post) => {
+  const cover = post.data.cover ? await getEntry(post.data.cover) : undefined
+  const category = post.data.categories[0] ? categories.get(post.data.categories[0].id) : undefined
+  return {
+    title: post.data.title,
+    href: postHref(post, categories),
+    excerpt: post.data.excerpt,
+    date: post.data.published_at,
+    author: post.data.author ? authors?.get(post.data.author.id)?.data.name : undefined,
+    image: cover ? imageOf(cover) : undefined,
+    category: category ? { label: category.data.name, href: termHref('category', category, categories) } : undefined,
+  }
+}))
+// A full list prints each card's content: a post's body, or the body a custom type's card carries.
+const bodies = full ? await Promise.all(cards.map((card, index) => card.body ? publicHtml(card.body, pageLocale) : posts[index] ? publicHtml(posts[index].data.body, pageLocale) : undefined)) : []
+// The card image's slot, from the columns the grid prints (the container is 1200px wide at most), so the browser does not pick a smaller copy.
+const columns = siteConfig.lists.columns
+const imageSizes = columns ? `(min-width: 1200px) ${Math.ceil(1200 / columns)}px, (min-width: 600px) ${Math.ceil(100 / columns)}vw, 100vw` : undefined
+const listImage = siteConfig.lists.image
+const pageSuffix = current > 1 ? ` – ${t('pagination.page')} ${current}` : ''
+const url = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href
+// The archive's own description (on a latest-posts home's first page, the home's SEO description from the source),
+// else one that says what the page is (a later page with its number).
+const metaDescription = describePage({
+  own: description ?? (Astro.url.pathname === localizedPath(withBase('/'), pageLocale) ? site.seo?.description : undefined),
+  label: title ? (eyebrow ? `${eyebrow}: ${title}` : title) : current > 1 ? t('blog.title') : undefined,
+  site: site.title,
+  tagline: site.tagline,
+  page: current > 1 ? `${t('pagination.page')} ${current}` : undefined,
+})
+---
+<BaseLayout
+  title={title ? `${title}${pageSuffix}` : current > 1 ? `${t('blog.title')}${pageSuffix}` : undefined}
+  fullTitle={first?.title}
+  ogTitle={first?.og_title}
+  ogDescription={first?.og_description}
+  description={metaDescription}
+  image={first?.image}
+  canonical={first?.canonical}
+  noindex={seo?.noindex}
+  nofollow={seo?.nofollow}
+  jsonLd={[collectionLd(url, title ?? t('blog.title'))]}
+>
+  {/* data-cr-described: the description is the site's own words for the page, not the source's — counted for the owner. */}
+  <div class="container-page py-12 md:py-16" data-cr-list data-cr-described={description?.trim() ? undefined : 'generated'}>
+    {trail.length > 0 && title && (
+      <div class:list={['mb-6', column && 'mx-auto max-w-(--container-prose)']}>
+        <Breadcrumb items={trail.map(crumb => ({ label: crumb.title, href: crumb.href }))} current={title} label={t('nav.breadcrumb')} />
+      </div>
+    )}
+    <header class:list={['mb-12 flex flex-col gap-3', column ? 'mx-auto max-w-(--container-prose)' : !siteConfig.lists.headingWidth && 'max-w-2xl', !showHeading && 'sr-only']} style={!column && siteConfig.lists.headingWidth ? `max-width:${siteConfig.lists.headingWidth}` : undefined}>
+      {eyebrow && !prefixed && <p class="text-sm font-medium tracking-wide text-accent-text uppercase">{eyebrow}</p>}
+      <h1 class="text-4xl [font-weight:var(--font-weight-heading,700)] tracking-tight text-balance">{prefixed ? `${eyebrow}: ${title}` : title ?? (siteConfig.lists.heading ? t('blog.title') : site.title)}</h1>
+      {description && <p class="text-lg text-ink-muted">{description}</p>}
+    </header>
+    {cards.length === 0 && <p class="text-ink-muted">{t('blog.empty')}</p>}
+    {cards.length > 0 && !full && (
+      <div data-cr-grid class:list={['grid gap-y-12', !siteConfig.lists.gap && 'gap-x-8', siteConfig.lists.tone === 'muted' && 'text-ink-muted', column ? 'mx-auto w-full max-w-(--container-prose)' : siteConfig.lists.columns ? 'min-[600px]:grid-cols-(--cr-list-columns)' : 'sm:grid-cols-2 lg:grid-cols-3']} style={[!column && siteConfig.lists.columns ? `--cr-list-columns: repeat(${siteConfig.lists.columns}, minmax(0, 1fr))` : '', siteConfig.lists.gap ? `column-gap:${siteConfig.lists.gap}` : ''].filter(Boolean).join(';') || undefined}>
+        {cards.map(card => <PostCard {...card} locale={site.language} timeZone={siteTimeZone()} linkTitle={siteConfig.chrome?.titleLinks} surface={siteConfig.lists.surface ? 'card' : 'plain'} byline={siteConfig.lists.byline ? 'below' : 'inline'} sizes={column ? undefined : imageSizes} imageHeight={listImage?.height} imageAspect={listImage?.aspect} moreLabel={siteConfig.lists.moreLabel} dateStyle={siteConfig.lists.dateStyle} />)}
+      </div>
+    )}
+    {cards.length > 0 && full && (
+      <div class="mx-auto flex max-w-(--container-prose) flex-col gap-24" style={siteConfig.lists.text ? `--text-body: ${siteConfig.lists.text}` : undefined}>
+        {cards.map((card, index) => (
+          <article class="flex flex-col gap-6">
+            {/* An entry with no page of its own (a list-only type's) prints its image and title unlinked. */}
+            {card.image && (card.href
+              ? <a href={safeHref(card.href)} tabindex="-1" aria-hidden="true"><KitImage image={{ ...card.image, alt: '' }} priority={index === 0} sizes="(min-width: 768px) 46rem, 100vw" class="h-auto w-full rounded-[var(--radius-image,0.75rem)] object-cover" /></a>
+              : <KitImage image={{ ...card.image, alt: '' }} priority={index === 0} sizes="(min-width: 768px) 46rem, 100vw" class="h-auto w-full rounded-[var(--radius-image,0.75rem)] object-cover" />)}
+            <h2 class="text-3xl leading-tight [font-weight:var(--font-weight-heading,700)] tracking-tight">{card.href ? <a href={safeHref(card.href)} class:list={[siteConfig.chrome?.titleLinks ? 'text-[color:var(--color-link,var(--color-accent))]' : 'text-ink', 'no-underline hover:underline']}>{card.title}</a> : card.title}</h2>
+            {bodies[index] && <Prose html={bodies[index]} searchable={false} />}
+            {card.date && <time datetime={card.date.toISOString()} class="text-sm text-ink-muted">{formatDay(card.date, site.language)}</time>}
+          </article>
+        ))}
+      </div>
+    )}
+    <Pagination base={base} current={current} total={total} label={t('pagination.label')} prevLabel={t('pagination.prev')} nextLabel={t('pagination.next')} pageLabel={t('pagination.page')} />
+  </div>
+</BaseLayout>

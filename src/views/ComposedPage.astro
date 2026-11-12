@@ -1,0 +1,68 @@
+---
+// The frame of a composed page: the same head, breadcrumbs and title as a
+// rich-text page, with the page's sections full width below. Sections bring
+// their own containers; text between them is set in the reading column.
+//
+// Nothing in the starter imports this frame; only a composed page view written into a project does. So the
+// starter's knip.json lists it in ignoreFiles, or the empty starter's own `knip` gate fails. In a composed
+// project the entry is stale and migrate's last pass drops it. The note sits here, not in knip.json: that file
+// is plain JSON, and migrate reads it with JSON.parse.
+import Breadcrumb from '../components/kit/breadcrumb/Breadcrumb.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { withBase } from '../lib/base'
+import { getSite, getStrings, type Page } from '../lib/content'
+import { localeOf, localizedPath } from '../lib/locales'
+import { breadcrumbLd, pageTrail, summarize } from '../lib/seo'
+import ToolsetViews from './ToolsetViews.astro'
+
+interface Props {
+  page: Page
+  trail: Array<{ title: string, href: string }>
+  isHome: boolean
+  /**
+   * Whether the frame prints the page title as the h1. Off by default on the home page and when the first
+   * section carries the page's heading (a hero); on for a home page whose source theme prints its title
+   * above the content (a block theme's front page).
+   */
+  showTitle?: boolean | undefined
+  /**
+   * The page's description when its sections hold the text: a page singleton leaves the body
+   * empty, so there is nothing to summarize. The page's own SEO description (Yoast, Rank Math)
+   * still comes first; this stands in for the excerpt and the body summary.
+   */
+  description?: string | undefined
+}
+
+const { page, trail, isHome, showTitle = !isHome, description } = Astro.props
+const pageLocale = localeOf(Astro.url.pathname)
+const { data } = page
+const [t, site] = await Promise.all([getStrings(pageLocale), getSite(pageLocale)])
+const origin = Astro.site ?? Astro.url
+const crumbs = [...trail, { title: data.title, href: Astro.url.pathname }]
+---
+<BaseLayout
+  title={isHome ? undefined : data.title}
+  fullTitle={data.seo?.title}
+  ogTitle={data.seo?.og_title}
+  ogDescription={data.seo?.og_description}
+  description={data.seo?.description ?? description ?? data.excerpt ?? summarize(data.body)}
+  image={data.seo?.image}
+  canonical={data.seo?.canonical}
+  noindex={data.seo?.noindex}
+  nofollow={data.seo?.nofollow}
+  modified={data.modified_at}
+  jsonLd={isHome ? [] : [breadcrumbLd(pageTrail({ name: site.title, url: new URL(localizedPath(withBase('/'), pageLocale), origin).href }, crumbs.map(crumb => ({ name: crumb.title, url: new URL(crumb.href, origin).href }))))]}
+>
+  {(trail.length > 0 || showTitle) && (
+    <header class="container-prose pt-12 md:pt-16">
+      {trail.length > 0 && (
+        <div class="mb-6">
+          <Breadcrumb items={trail.map(crumb => ({ label: crumb.title, href: crumb.href }))} current={data.title} label={t('nav.breadcrumb')} />
+        </div>
+      )}
+      {showTitle && <h1 class="[margin-bottom:var(--spacing-title,0px)] text-4xl leading-tight [font-weight:var(--font-weight-heading,700)] tracking-tight text-balance md:text-5xl">{data.title}</h1>}
+    </header>
+  )}
+  <slot />
+  <ToolsetViews pageId={data.wp_id} locale={pageLocale} />
+</BaseLayout>

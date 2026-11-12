@@ -1,0 +1,55 @@
+{
+  "split": {
+    "body": "The GOSH Ambassador Program supports community members in promoting Open Science Hardware within their local, professional, and disciplinary networks. Ambassadors receive small grants to organize activities such as workshops, presentations, meetups, and other outreach, while connecting new communities with GOSH and the wider open science hardware movement.\n\nAmbassadors also [share their experiences](https://forum.openhardware.science/c/ambassador-program/76) and learning with the GOSH Community, helping to strengthen connections and participation around the world.\n\nYou can learn more about the GOSH Ambassador Program by reviewing the Handbook, available in [English](https://zenodo.org/records/12684198), [French](https://zenodo.org/records/12727807), and [Spanish](https://zenodo.org/records/12706851).",
+    "image": {
+      "alt": "Pairs of people in conversation at a GOSH Gathering",
+      "src": "/media/2026/09/Screenshot-2026-09-05-at-14.07.37.png"
+    }
+  },
+  "team": {
+    "heading": "2026 – 2027 Ambassadors",
+    "intro": "The GOSH Ambassador Program Working Group is delighted to announce the 2026 – 2027 Ambassador cohort, which features five GOSHers from around the world who will be working through June 2027 to to introduce GOSH and open science hardware to new audiences and strengthen connections with communities around the world.",
+    "items": [
+      {
+        "bio": "Marcel is a biochemist with a Ph.D. in plant molecular biology and postgraduate training in robotics and artificial intelligence. He is currently a researcher and lecturer at the Faculty of Sciences, Universidad de la República (Uruguay), where he develops open-source hardwared and software for automated plant pheotypic, digital agriculture, and teaching instrumentation. His research combines molecular biology, electronics, and data science to design accessible scientific tools that promote reproducible and interdisciplinary experimentation.",
+        "image": "/media/2026/09/author_picture_Marcel_Bentancor-1-1024x768.jpeg",
+        "image_alt": "Dr. Marcel Bentancor",
+        "name": "Dr. Marcel Bentancor"
+      },
+      {
+        "bio": "Samuel is an Open Science and Open Hardware advocate from Ghana who has been actively promoting Open Science Hardware across Africa. He has contributed to building awareness and communities around open hardware, supporting workshops and hands-on learning, and connecting African researchers, makers, educators, and innovators with the global Open Science Hardware movement. He is passionate about making scientific tools more accessible, affordable, locally relevant, and collaborative, and is particularly interested in strengthening Africa’s participation in the global Open Hardware ecosystem.",
+        "image": "/media/2026/09/Sam-1024x962.png",
+        "image_alt": "Samuel Duah",
+        "name": "Samuel Duah"
+      },
+      {
+        "bio": "Ebuka is a physicist, educator, and digital skills trainer from Nigeria with interests in technology, education, science communication, and open science. He is the founder of TechSpot Digital, where he trains students in digital skills, and has worked with organizations including AfricArXiv and TCC Africa. A member of the GOSH community since 2022, Ebuka organized an Open Science Hardware workshop in Abuja in 2023. As a GOSH Ambassador, he hopes to introduce more young people in Kaduna State to Open Science Hardware and encourage them to learn, build, experiment, and share their ideas.",
+        "image": "/media/2026/09/Face-portrait-two-768x1024.png",
+        "image_alt": "Ebuka Ezeike",
+        "name": "Ebuka Ezeike"
+      },
+      {
+        "bio": "Alejandra is a Venezuelan researcher, professor, and academic leader based in Panama, where she serves as Director of Research at Universidad UNIDOS and Coordinator of the Research Commission of the Council of Rectors of Panama. Her work focuses on research collaboration, Open Science, and equitable access to scientific knowledge across Latin America. She has led national initiatives focused on Open Science, digital repositories, and research data management and is contributing to Panama’s National Open Science Strengthening Program. As a GOSH Ambassador, she hopes to advance Open Science Hardware and foster more inclusive, collaborative, and sustainable research ecosystems.",
+        "image": "/media/2026/09/Dra-Alejandra-Hidalgo-2026-1-1-683x1024.png",
+        "image_alt": "Dr. Alejandra Hidalgo de Camba",
+        "name": "Dr. Alejandra Hidalgo de Camba"
+      },
+      {
+        "bio": "Adrian Filips is also a 2026-2027 GOSH Ambassador. His bio and headshot will be shared as they become available.",
+        "href": "https://forum.openhardware.science/u/adrian/summary",
+        "image": "/media/2026/09/GOSH-Logo.png",
+        "image_alt": "Adrian Filips",
+        "links": [
+          "https://forum.openhardware.science/u/adrian/summary"
+        ],
+        "name": "Adrian Filips"
+      }
+    ]
+  },
+  "team_more": {
+    "markdown": "### Our 2026 – 2027 GOSH Ambassadors are:"
+  },
+  "text": {
+    "markdown": "Image Source: [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/30631154677/)"
+  }
+}

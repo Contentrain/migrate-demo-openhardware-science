@@ -1,0 +1,49 @@
+{
+  "5e27e5dd7d41": {
+    "items": [
+      "efdace843f2e",
+      "66fabdde0659",
+      "e97b8505f03c",
+      "eef6f8e21764",
+      "1f5cfca0dc62",
+      "c3702165bbe6",
+      "630870bdf7f2",
+      "09c0e8f3724b",
+      "0e1c63021cdb",
+      "e0d55d07ec14",
+      "34e0a3cab205",
+      "8cfcac123290",
+      "e49c0560f151",
+      "c953ae11eabc",
+      "b41f3e266dcd",
+      "184dbea109c3",
+      "5993277eca49",
+      "9590a41b66e6",
+      "fa041207248d",
+      "3e9141f7c6d6",
+      "c121629eb8f6",
+      "c12104af84bf",
+      "b6f5bc8bbc85",
+      "7200500876ab",
+      "36cdba5a1347",
+      "b751fbaa7e0b",
+      "d4747c8fa6dd",
+      "41d5a5fe7217"
+    ],
+    "locations": [
+      "header"
+    ],
+    "name": "Primary",
+    "slug": "primary"
+  },
+  "c832c23fa4de": {
+    "items": [
+      "619f37d22a7a"
+    ],
+    "locations": [
+      "footer"
+    ],
+    "name": "Footer links",
+    "slug": "footer-links"
+  }
+}

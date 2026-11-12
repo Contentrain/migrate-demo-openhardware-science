@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "heading": "STEM Workshops",
+    "image": {
+      "alt": "STEM Workshops",
+      "src": "/media/2022/02/31523771348_89aeac415e_c.jpg"
+    },
+    "lead": "The GOSH STEM Workshop Microgrants Programme offered up to 20 microgrants of USD 500 for organisations to run STEM workshops or short courses focused on open science hardware. The goal of the workshops or short courses was to teach, deploy, or experiment with open science hardware tools and their related software applications, at any level of difficulty to any audience, in a hands-on manner, to participants that will put that knowledge to practical and immediate use.\n\nImage Credit: Gathering for Open Science Hardware"
+  },
+  "hero_more": {
+    "markdown": "[Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/43754536270/in/album-72157674579730208/)"
+  }
+}

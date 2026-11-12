@@ -1,0 +1,53 @@
+{
+  "card_grid": {
+    "items": [
+      {
+        "href": "https://openhardware.science/stem-workshops/",
+        "image": "/media/2022/01/32916234003_1dcfd6e777_o-scaled.jpg",
+        "image_alt": "Image",
+        "text": "STEM workshops or short courses that teach, deploy, or experiment with open science hardware tools and their related software applications.",
+        "title": "STEM Workshops Microgrants"
+      },
+      {
+        "href": "https://openhardware.science/regional-events-programme/",
+        "image": "/media/2022/01/africaosh.jpeg",
+        "image_alt": "Image",
+        "text": "Supporting events, workshops, conferences, or get-togethers aimed at promoting open science hardware within a specific region or community.",
+        "title": "Regional Events Fund"
+      },
+      {
+        "href": "https://openhardware.science/collaborative-development-programme/",
+        "image": "/media/2021/09/RF-salons.jpeg",
+        "image_alt": "Image",
+        "text": "Supporting projects building open science hardware and associated policy or infrastructure in collaboration with experts outside the community.",
+        "title": "Collaborative Development Fund"
+      },
+      {
+        "href": "https://openhardware.science/policy-briefs/",
+        "image": "/media/2021/08/44718678765_15c4d39c95_c.jpeg",
+        "image_alt": "Image",
+        "text": "Supporting events, workshops, writing projects and exchanges on policy and other research related to open science hardware practice, impact and understanding.",
+        "title": "Research and Policy Events Fund"
+      },
+      {
+        "href": "https://openhardware.science/science-events/",
+        "image": "/media/2022/04/43814278390_3c542c9e61_c.jpg",
+        "image_alt": "Image",
+        "text": "Supporting events, workshops, conferences, or get-togethers aimed at supporting open science hardware within a specific discipline.",
+        "title": "Science Events Fund"
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Gathering for Open Science Hardware",
+    "heading": "Learn more about our programs",
+    "image": {
+      "alt": "Placeholder Image",
+      "src": "/media/2022/02/31523771348_89aeac415e_c.jpg"
+    },
+    "lead": "We support a number of programs to advance open science hardware and fulfil the recommendations in the GOSH Roadmap. We have funded over fifty events and projects to date. See below for information about open calls and past awardees."
+  },
+  "hero_more": {
+    "markdown": "[GOSH Roadmap](https://openhardware.science/global-open-science-hardware-roadmap/)"
+  }
+}

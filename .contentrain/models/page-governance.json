@@ -1,0 +1,244 @@
+{
+  "domain": "pages",
+  "fields": {
+    "community": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Community",
+      "type": "object"
+    },
+    "community_coordinator": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Community coordinator",
+      "type": "object"
+    },
+    "council_domains": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Council domains",
+      "type": "object"
+    },
+    "gallery": {
+      "description": "Images in a square grid or in masonry columns, with optional captions.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the images.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The images in order.",
+          "items": {
+            "fields": {
+              "caption": {
+                "description": "Caption under the enlarged image.",
+                "label": "Caption",
+                "type": "string"
+              },
+              "full": {
+                "description": "The original file the viewer shows large, where the source links to it; otherwise the image itself.",
+                "label": "Full-size image",
+                "type": "image"
+              },
+              "image": {
+                "description": "The image.",
+                "label": "Image",
+                "required": true,
+                "type": "image"
+              },
+              "image_alt": {
+                "description": "What the image shows, for readers who cannot see it.",
+                "label": "Image description",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Images",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Gallery",
+      "type": "object"
+    },
+    "gallery_more": {
+      "description": "Text of this part of the page that its section has no field for.",
+      "fields": {
+        "markdown": {
+          "description": "The text, in Markdown.",
+          "label": "Text",
+          "type": "markdown"
+        }
+      },
+      "label": "Gallery (more text)",
+      "type": "object"
+    },
+    "organisations_supporting_gosh": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Organisations supporting gosh",
+      "type": "object"
+    },
+    "team": {
+      "description": "The people behind the site: portrait, name, role and a short bio each, as cards or plain entries.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the team.",
+          "label": "Heading",
+          "required": true,
+          "type": "string"
+        },
+        "intro": {
+          "description": "A line or two under the heading.",
+          "label": "Intro",
+          "required": false,
+          "type": "text"
+        },
+        "items": {
+          "description": "The people, in display order.",
+          "items": {
+            "fields": {
+              "bio": {
+                "description": "A short biography.",
+                "label": "Bio",
+                "type": "text"
+              },
+              "href": {
+                "description": "Their profile page; makes the whole entry a link.",
+                "label": "Link",
+                "type": "url"
+              },
+              "image": {
+                "description": "Their portrait; shown square.",
+                "label": "Photo",
+                "type": "image"
+              },
+              "image_alt": {
+                "description": "Who the photo shows; defaults to their name.",
+                "label": "Photo description",
+                "type": "string"
+              },
+              "links": {
+                "description": "Addresses of the member's social profiles, in order; each is labelled by the network its host names.",
+                "items": {
+                  "type": "url"
+                },
+                "label": "Profile links",
+                "type": "array"
+              },
+              "name": {
+                "description": "The person's name.",
+                "label": "Name",
+                "required": true,
+                "type": "string"
+              },
+              "role": {
+                "description": "Their title or role.",
+                "label": "Role",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Members",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Team",
+      "required": true,
+      "type": "object"
+    },
+    "team_more": {
+      "description": "Text of this part of the page that its section has no field for.",
+      "fields": {
+        "markdown": {
+          "description": "The text, in Markdown.",
+          "label": "Text",
+          "type": "markdown"
+        }
+      },
+      "label": "Team (more text)",
+      "type": "object"
+    },
+    "text": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Text",
+      "type": "object"
+    }
+  },
+  "i18n": true,
+  "id": "page-governance",
+  "kind": "singleton",
+  "name": "Governance page",
+  "title_field": "team.heading"
+}

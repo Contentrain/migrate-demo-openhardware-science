@@ -1,0 +1,23 @@
+{
+  "domain": "pages",
+  "fields": {
+    "script_words": {
+      "description": "The short words the page sets in the script face.",
+      "items": "string",
+      "label": "Script words",
+      "required": false,
+      "type": "array"
+    },
+    "slug": {
+      "description": "The entry's name in Studio; the page does not show it.",
+      "label": "Name",
+      "required": false,
+      "type": "slug"
+    }
+  },
+  "i18n": true,
+  "id": "home-extras",
+  "kind": "singleton",
+  "name": "Home extras",
+  "title_field": "slug"
+}

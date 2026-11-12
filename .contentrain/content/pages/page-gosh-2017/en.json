@@ -1,0 +1,90 @@
+{
+  "card_grid": {
+    "items": [
+      {
+        "href": "/media/2017/01/GOSH2017.pdf",
+        "image": "/media/2017/01/rsz_1openqcm-purple.jpg",
+        "image_alt": "‘A DIY Ultrasonic Signal Generator for Sound Experiments’ and a request for open hardware for physics education",
+        "link_label": "Download Information",
+        "text": "We are looking for sponsorship partners to enable people to participate in GOSH who might not otherwise be able to travel.",
+        "title": "Support GOSH"
+      },
+      {
+        "href": "https://forum.openhardware.science/",
+        "image": "/media/2017/01/rsz_group-purple.jpg",
+        "image_alt": "Connect with us",
+        "link_label": "GOSH Forum",
+        "text": "Applications for GOSH 2017 are now closed but you can still connect with the community via our online forum!",
+        "title": "Connect with us"
+      },
+      {
+        "href": "https://openhardware.science/logistics/gosh-code-of-conduct/",
+        "image": "/media/2017/01/circle-purple.jpg",
+        "image_alt": "GOSH Code of Conduct",
+        "text": "The GOSH code of conduct applies to all GOSH spaces, both online and in person.",
+        "title": "GOSH Code of Conduct"
+      },
+      {
+        "image": "",
+        "image_alt": "Edificio Centro de Innovación UC Anacleto Angelini by Rodolfo Jara on Flickr, licensed under CC-BY-NC 2.0 https://www.flickr.com/photos/centrodeinnovacionuc/23993852619/",
+        "text": "GOSH 2017 will be held at the Pontificia Universidad Católica de Chile",
+        "title": "Centro de Innovación UC Anacleto Angelini"
+      },
+      {
+        "href": "https://openhardware.science/logistics/logistics/",
+        "image": "/media/2017/01/rsz_group-purple.jpg",
+        "image_alt": "Logistics",
+        "link_label": "View Information",
+        "text": "We've compiled information on travel, accommodation and logistics for your trip to Santiago.",
+        "title": "Logistics"
+      }
+    ]
+  },
+  "embed": {
+    "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.135331698734!2d-70.61748268479941!3d-33.497855980760356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d00ec943c1bf%3A0x1ca3b54d2446bb5d!2sCentro+de+Innovaci%C3%B3n+UC+Anacleto+Angelini!5e0!3m2!1sen!2suk!4v1484511583625"
+  },
+  "embed_note": {
+    "markdown": "[![Gosh 2017 community report](/media/2017/12/gosh-2017-community-report.png)](/media/2017/12/GOSH-2017-program-report-final-v1.0-1.pdf)"
+  },
+  "gosh_2017_final": {
+    "heading": "GOSH 2017 Final Report"
+  },
+  "gosh_2017_final_more": {
+    "markdown": "[GOSH 2017 Final Report](https://docs.google.com/document/d/1iO1zNNgAj4o2s3bUoCRdsRcdEVOgxrUTtfjjltpPojg/edit#heading=h.5vheb6ktfdn4)"
+  },
+  "hero": {
+    "actions": [
+      {
+        "href": "https://www.flickr.com/photos/goshcommunity/albums/72157681746417085",
+        "label": "GOSH 2017 Photos (opens in a new tab)"
+      },
+      {
+        "href": "https://openhardware.science/category/press-coverage/",
+        "label": "Blogs and Media (opens in a new tab)"
+      },
+      {
+        "href": "https://openhardware.science/gosh-2017/schedule/",
+        "label": "Full Schedule & Session Notes (opens in a new tab)"
+      },
+      {
+        "href": "https://f1000research.com/collections/gosh",
+        "label": "View Posters (opens in a new tab)"
+      },
+      {
+        "href": "#",
+        "label": "View Pivot Talks"
+      },
+      {
+        "href": "https://twitter.com/hashtag/gosh2017",
+        "label": "#GOSH 2017 on Twitter (opens in a new tab)"
+      }
+    ],
+    "media": {
+      "alt": "GOSH Banner",
+      "src": "/media/2017/01/GOSH_Banner.jpg"
+    }
+  },
+  "text": {
+    "markdown": "[GOSH 2017 Final Report](https://docs.google.com/document/d/1iO1zNNgAj4o2s3bUoCRdsRcdEVOgxrUTtfjjltpPojg/edit#heading=h.5vheb6ktfdn4)\n\nPrepared for the Alfred P Sloan Foundation\n\n- Why is GOSH 2017 needed?\n\nWhy is GOSH 2017 needed?\n\n- What happened at GOSH 2016?\n\nWhat happened at GOSH 2016?\n\n- Expected outcomes of GOSH 2017\n\nExpected outcomes of GOSH 2017\n\nWithout hardware, there is no science. Instruments, reagents, computers, and lab equipment are the platforms for producing systematic knowledge. Yet, current supply chains limit access and impede creativity and customization through high mark-ups and proprietary designs. This can be compounded by private hardware licenses and patents. Open Science Hardware (OSH) addresses part of this problem by sharing designs, instructions for building, and protocols. Expanding the reach of Open Science Hardware within academic research, NGO initiatives, citizen science, and education has potential to increase access to experimental tools and facilitate their customization and reuse while lowering costs. A growing number of people and organizations around the world are developing and using Open Science Hardware, but a coherent, self-organizing community has yet to emerge that could raise its profile and drive required social change within institutions, laws, and common practice that would make open science with open hardware the norm.\n\nGatherings like GOSH \\[are\\] essential to making changes to larger systems of doing science and institutional trajectories.\n\nGOSH 2016 Participant\n\nThe Gathering for Open Science Hardware will build a roadmap and bring together the people, skills and tools needed to make open science hardware ubiquitous by 2025.\n\nGOSH 2016 brought together community leaders for the first international and interdisciplinary conference focused on Open Science Hardware. The extended group that was created is dynamic and engaged. Other participants found the diversity of attendees and their passion for change the most important feature of the meeting. Our work was featured at Mozilla Festival, Science Hackday PDX, Borders Festival, Interactivos! 2016 and in publications including Nature News, Global Young Academy Connections, Lab Times, Makery and the Guardian. Ongoing activities of the GOSH community since March 2016 include setting up an Open Access journal for open science hardware at Ubiquity Press with over ten GOSH participants on the editorial board; authoring the GOSH Community Manifesto which has now been translated into six languages; co-organising The Brazilian Gathering for Free and Open Source Hardware (e-HAL) that took place in October 2016.\n\n![Gathering for Open Science Hardware 2016 reviewed in Journal of Open Hardware](/media/2016/02/image09.png)\n\nAdvancing open hardware in academia, I never thought it would be possible to make it a reality...Now I think it is possible, and I am invested in it.\n\nGOSH 2016 Participant\n\nThe goal is to bring the spirit of the GOSH Manifesto to life. This includes concrete outcomes for individual participants, like sharing experiences as users and developers of open science hardware, identifying best practices, collaborating to create opportunities and address failures, and building lasting friendships.\n\n###### The theme of GOSH 2017 is Building a movement\n\n![The theme of GOSH 2017 is Building a movement](/media/2016/02/image02.png)\n\n- Scaling up the community, we will welcome up to 100 people from more countries and broader backgrounds than was possible in 2016.\n\n![The theme of GOSH 2017 is Building a movement](/media/2016/02/image11.png)\n\n- Establishing working groups to tackle complex problems like design of sustainable business models, design strategies for calibration and reproducibility of measurements, interactions with open and citizen science.\n\n![The theme of GOSH 2017 is Building a movement](/media/2016/02/image13.png)\n\n- Engaging local communities, taking advantage of being located in Chile to form local connections and raise the profile of open technologies for science in the region.\n\n![The theme of GOSH 2017 is Building a movement](/media/2016/02/image14.png)\n\n- Launching our roadmap for open science hardware in print form to present to policy makers and decision makers."
+  }
+}

@@ -1,0 +1,492 @@
+{
+  "domain": "pages",
+  "fields": {
+    "faq": {
+      "description": "The styled fallback section: an optional heading, lead, image, a grid of items and buttons, in the section's measured frame and fill.",
+      "fields": {
+        "actions": {
+          "description": "Buttons, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the button goes: a page on this site or a full address.",
+                "label": "Link",
+                "required": true,
+                "type": "url"
+              },
+              "label": {
+                "description": "The button text.",
+                "label": "Label",
+                "required": true,
+                "type": "string"
+              },
+              "new_tab": {
+                "description": "Open the link in a new tab.",
+                "label": "Open in a new tab",
+                "type": "boolean"
+              },
+              "style": {
+                "description": "primary for the main action, secondary or ghost for the ones beside it.",
+                "label": "Style",
+                "options": [
+                  "primary",
+                  "secondary",
+                  "ghost"
+                ],
+                "type": "select"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Buttons",
+          "required": false,
+          "type": "array"
+        },
+        "eyebrow": {
+          "description": "Short line above the heading.",
+          "label": "Eyebrow",
+          "required": false,
+          "type": "string"
+        },
+        "heading": {
+          "description": "Section heading.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "Items in a grid, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the item goes; without a link text the whole item is the link.",
+                "label": "Link",
+                "type": "url"
+              },
+              "icon": {
+                "description": "A small image above the title.",
+                "label": "Icon",
+                "type": "image"
+              },
+              "link_label": {
+                "description": "The link's own text, shown under the item.",
+                "label": "Link text",
+                "type": "string"
+              },
+              "media": {
+                "description": "Image on top of the item.",
+                "label": "Image",
+                "type": "image"
+              },
+              "media_alt": {
+                "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+                "label": "Image description",
+                "type": "string"
+              },
+              "meta": {
+                "description": "A short line under the title.",
+                "label": "Detail",
+                "type": "string"
+              },
+              "points": {
+                "description": "A short list under the text.",
+                "items": "string",
+                "label": "Points",
+                "type": "array"
+              },
+              "text": {
+                "description": "A sentence or two under the title.",
+                "label": "Text",
+                "type": "text"
+              },
+              "title": {
+                "description": "The item heading.",
+                "label": "Title",
+                "type": "string"
+              },
+              "value": {
+                "description": "A figure drawn large above the title.",
+                "label": "Figure",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Items",
+          "required": false,
+          "type": "array"
+        },
+        "lead": {
+          "description": "Paragraph under the heading.",
+          "label": "Lead",
+          "required": false,
+          "type": "text"
+        },
+        "media": {
+          "description": "The section's image, under or beside the copy.",
+          "fields": {
+            "alt": {
+              "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+              "label": "Image description",
+              "type": "string"
+            },
+            "height": {
+              "description": "Height in pixels, as uploaded.",
+              "label": "Height",
+              "type": "integer"
+            },
+            "src": {
+              "description": "The image file.",
+              "label": "Image",
+              "required": true,
+              "type": "image"
+            },
+            "width": {
+              "description": "Width in pixels, as uploaded.",
+              "label": "Width",
+              "type": "integer"
+            }
+          },
+          "label": "Image",
+          "required": false,
+          "type": "object"
+        }
+      },
+      "label": "Faq",
+      "type": "object"
+    },
+    "hero": {
+      "description": "The styled fallback section: an optional heading, lead, image, a grid of items and buttons, in the section's measured frame and fill.",
+      "fields": {
+        "actions": {
+          "description": "Buttons, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the button goes: a page on this site or a full address.",
+                "label": "Link",
+                "required": true,
+                "type": "url"
+              },
+              "label": {
+                "description": "The button text.",
+                "label": "Label",
+                "required": true,
+                "type": "string"
+              },
+              "new_tab": {
+                "description": "Open the link in a new tab.",
+                "label": "Open in a new tab",
+                "type": "boolean"
+              },
+              "style": {
+                "description": "primary for the main action, secondary or ghost for the ones beside it.",
+                "label": "Style",
+                "options": [
+                  "primary",
+                  "secondary",
+                  "ghost"
+                ],
+                "type": "select"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Buttons",
+          "required": false,
+          "type": "array"
+        },
+        "eyebrow": {
+          "description": "Short line above the heading.",
+          "label": "Eyebrow",
+          "required": false,
+          "type": "string"
+        },
+        "heading": {
+          "description": "Section heading.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "Items in a grid, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the item goes; without a link text the whole item is the link.",
+                "label": "Link",
+                "type": "url"
+              },
+              "icon": {
+                "description": "A small image above the title.",
+                "label": "Icon",
+                "type": "image"
+              },
+              "link_label": {
+                "description": "The link's own text, shown under the item.",
+                "label": "Link text",
+                "type": "string"
+              },
+              "media": {
+                "description": "Image on top of the item.",
+                "label": "Image",
+                "type": "image"
+              },
+              "media_alt": {
+                "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+                "label": "Image description",
+                "type": "string"
+              },
+              "meta": {
+                "description": "A short line under the title.",
+                "label": "Detail",
+                "type": "string"
+              },
+              "points": {
+                "description": "A short list under the text.",
+                "items": "string",
+                "label": "Points",
+                "type": "array"
+              },
+              "text": {
+                "description": "A sentence or two under the title.",
+                "label": "Text",
+                "type": "text"
+              },
+              "title": {
+                "description": "The item heading.",
+                "label": "Title",
+                "type": "string"
+              },
+              "value": {
+                "description": "A figure drawn large above the title.",
+                "label": "Figure",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Items",
+          "required": false,
+          "type": "array"
+        },
+        "lead": {
+          "description": "Paragraph under the heading.",
+          "label": "Lead",
+          "required": false,
+          "type": "text"
+        },
+        "media": {
+          "description": "The section's image, under or beside the copy.",
+          "fields": {
+            "alt": {
+              "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+              "label": "Image description",
+              "type": "string"
+            },
+            "height": {
+              "description": "Height in pixels, as uploaded.",
+              "label": "Height",
+              "type": "integer"
+            },
+            "src": {
+              "description": "The image file.",
+              "label": "Image",
+              "required": true,
+              "type": "image"
+            },
+            "width": {
+              "description": "Width in pixels, as uploaded.",
+              "label": "Width",
+              "type": "integer"
+            }
+          },
+          "label": "Image",
+          "required": false,
+          "type": "object"
+        }
+      },
+      "label": "Hero",
+      "type": "object"
+    },
+    "section": {
+      "description": "The styled fallback section: an optional heading, lead, image, a grid of items and buttons, in the section's measured frame and fill.",
+      "fields": {
+        "actions": {
+          "description": "Buttons, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the button goes: a page on this site or a full address.",
+                "label": "Link",
+                "required": true,
+                "type": "url"
+              },
+              "label": {
+                "description": "The button text.",
+                "label": "Label",
+                "required": true,
+                "type": "string"
+              },
+              "new_tab": {
+                "description": "Open the link in a new tab.",
+                "label": "Open in a new tab",
+                "type": "boolean"
+              },
+              "style": {
+                "description": "primary for the main action, secondary or ghost for the ones beside it.",
+                "label": "Style",
+                "options": [
+                  "primary",
+                  "secondary",
+                  "ghost"
+                ],
+                "type": "select"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Buttons",
+          "required": false,
+          "type": "array"
+        },
+        "eyebrow": {
+          "description": "Short line above the heading.",
+          "label": "Eyebrow",
+          "required": false,
+          "type": "string"
+        },
+        "heading": {
+          "description": "Section heading.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "Items in a grid, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the item goes; without a link text the whole item is the link.",
+                "label": "Link",
+                "type": "url"
+              },
+              "icon": {
+                "description": "A small image above the title.",
+                "label": "Icon",
+                "type": "image"
+              },
+              "link_label": {
+                "description": "The link's own text, shown under the item.",
+                "label": "Link text",
+                "type": "string"
+              },
+              "media": {
+                "description": "Image on top of the item.",
+                "label": "Image",
+                "type": "image"
+              },
+              "media_alt": {
+                "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+                "label": "Image description",
+                "type": "string"
+              },
+              "meta": {
+                "description": "A short line under the title.",
+                "label": "Detail",
+                "type": "string"
+              },
+              "points": {
+                "description": "A short list under the text.",
+                "items": "string",
+                "label": "Points",
+                "type": "array"
+              },
+              "text": {
+                "description": "A sentence or two under the title.",
+                "label": "Text",
+                "type": "text"
+              },
+              "title": {
+                "description": "The item heading.",
+                "label": "Title",
+                "type": "string"
+              },
+              "value": {
+                "description": "A figure drawn large above the title.",
+                "label": "Figure",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Items",
+          "required": false,
+          "type": "array"
+        },
+        "lead": {
+          "description": "Paragraph under the heading.",
+          "label": "Lead",
+          "required": false,
+          "type": "text"
+        },
+        "media": {
+          "description": "The section's image, under or beside the copy.",
+          "fields": {
+            "alt": {
+              "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+              "label": "Image description",
+              "type": "string"
+            },
+            "height": {
+              "description": "Height in pixels, as uploaded.",
+              "label": "Height",
+              "type": "integer"
+            },
+            "src": {
+              "description": "The image file.",
+              "label": "Image",
+              "required": true,
+              "type": "image"
+            },
+            "width": {
+              "description": "Width in pixels, as uploaded.",
+              "label": "Width",
+              "type": "integer"
+            }
+          },
+          "label": "Image",
+          "required": false,
+          "type": "object"
+        }
+      },
+      "label": "Section",
+      "type": "object"
+    },
+    "text": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": true,
+          "type": "markdown"
+        }
+      },
+      "label": "Text",
+      "required": true,
+      "type": "object"
+    }
+  },
+  "i18n": true,
+  "id": "page-deutsch",
+  "kind": "singleton",
+  "name": "GOSH-Manifest page",
+  "title_field": "text.markdown"
+}

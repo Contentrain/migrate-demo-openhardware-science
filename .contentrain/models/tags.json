@@ -1,0 +1,46 @@
+{
+  "domain": "blog",
+  "fields": {
+    "description": {
+      "label": "Description",
+      "order": 30,
+      "type": "text"
+    },
+    "name": {
+      "label": "Name",
+      "order": 10,
+      "required": true,
+      "type": "string"
+    },
+    "parent": {
+      "label": "Parent",
+      "model": "tags",
+      "order": 40,
+      "type": "relation"
+    },
+    "path": {
+      "description": "This tag's address on the old site, kept where the permalink pattern would build another (a parent that did not move, a slug the store spells differently). Used only while its last part is this tag's slug: change the slug and the tag moves to the pattern's address, the old one redirecting there. Clearing it moves the tag too; add a redirect for the old address if it is still linked.",
+      "label": "Kept address",
+      "order": 45,
+      "required": false,
+      "type": "string"
+    },
+    "slug": {
+      "label": "Slug",
+      "order": 20,
+      "required": true,
+      "type": "slug",
+      "unique": true
+    },
+    "wp_id": {
+      "label": "WP term ID",
+      "order": 50,
+      "type": "integer"
+    }
+  },
+  "i18n": false,
+  "id": "tags",
+  "kind": "collection",
+  "name": "tags",
+  "title_field": "name"
+}

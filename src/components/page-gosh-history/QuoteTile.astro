@@ -1,0 +1,42 @@
+---
+// An interview quote knotted onto the thread: a solid GOSH-purple tile on the inset axis.
+import Testimonial from '../kit/testimonial/Testimonial.astro'
+
+type Item = {
+  quote: string
+  name: string
+  role?: string | undefined
+  avatar?: string | undefined
+  avatarAlt?: string | undefined
+  rating?: number | undefined
+  logo?: string | undefined
+  logoAlt?: string | undefined
+}
+
+interface Props {
+  heading?: string | undefined
+  items: Item[]
+  ratingLabel: string
+  label: string
+  entry: string
+}
+
+const { heading, items, ratingLabel, label, entry } = Astro.props
+---
+<div class="container-prose">
+  <div class="border-s-2 border-accent py-4">
+    <div class="[&_section]:[padding-block:clamp(2rem,4vw,3.5rem)] [&_blockquote]:text-start [&_figure]:text-start [&_figcaption]:text-start">
+      <Testimonial
+        heading={heading}
+        items={items}
+        ratingLabel={ratingLabel}
+        label={label}
+        layout="single"
+        tone="accent"
+        frame="plain"
+        quoteMark="none"
+        entry={entry}
+      />
+    </div>
+  </div>
+</div>

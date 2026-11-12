@@ -1,0 +1,70 @@
+---
+// /programs/stem-workshops/ — the community's own gathering photograph as a report plate:
+// the programme text on a solid GOSH-purple tile beside it, the plate's credit set under it as a caption.
+import { getEntry } from 'astro:content'
+import Hero from '../../components/kit/hero/Hero.astro'
+import Prose from '../../components/kit/prose/Prose.astro'
+import { type Page } from '../../lib/content'
+import { headingFit } from '../../lib/heading-fit'
+import { fitHeadings, headingLevels } from '../../lib/headings'
+import { publicLinks } from '../../lib/links'
+import ComposedPage from '../ComposedPage.astro'
+
+interface Props {
+  page: Page
+  trail: Array<{ title: string, href: string }>
+  isHome: boolean
+}
+
+const { page, trail } = Astro.props
+const isHome = false
+const publicHref = await publicLinks()
+const entry = await getEntry('pageStemWorkshops', 'en')
+if (!entry) throw new Error('page-stem-workshops is missing: the page\'s sections are its fields')
+const { hero, hero_more: heroMore } = entry.data
+const heroActions = (hero?.actions ?? []).flatMap(item => { const href = publicHref(item.href); return href === undefined ? [] : [{ href, label: item.label, newTab: item.new_tab, style: item.style }] })
+const words0 = headingLevels([hero?.heading?.trim() ? `## ${hero.heading.trim()}` : undefined, hero?.eyebrow, hero?.lead].filter(Boolean).join('\n\n'), 1)
+const h2Above = (hero && hero.heading !== undefined ? (!!hero?.heading?.trim() || (hero?.items?.length ?? 0) > 0) : words0.top !== undefined)
+const credit = headingLevels(heroMore?.markdown, h2Above ? 2 : 1)
+// The lead's first paragraph sits on the tile; the lines after it (the plate's credit) are its caption.
+const hasHero = !!hero && hero.heading !== undefined
+const leadParts = (hero?.lead ?? '').split(/\n\s*\n/).map(part => part.trim()).filter(part => part.length > 0)
+const leadFirst = leadParts[0]
+const leadRest = leadParts.slice(1).join('\n\n')
+const hasCaption = (hasHero && leadRest.length > 0) || !!heroMore?.markdown
+---
+<ComposedPage page={page} trail={trail} isHome={isHome}>
+  {hero && hero.heading !== undefined ? (
+    <div class="contents" data-cr-hero style={headingFit(hero.heading)} data-cr-split>
+      <Hero
+        actions={heroActions}
+        eyebrow={hero.eyebrow}
+        heading={hero.heading}
+        image={hero.image}
+        items={hero.items}
+        lead={leadFirst}
+        entry="hero"
+        level={2}
+        layout="split"
+        tone="accent"
+        stackOrder="media-first"
+      />
+    </div>
+  ) : words0.markdown && (
+    <div class="container-prose py-8" data-cr-shift={words0.shift}>
+      <Prose markdown={words0.markdown} />
+    </div>
+  )}
+  {hasCaption && (
+    <div class="container-page pt-4 pb-16 md:pb-24">
+      <div class="space-y-1 border-t-2 border-ink pt-3 text-sm text-ink-muted [&_p]:m-0">
+        {hasHero && leadRest.length > 0 && <Prose markdown={leadRest} />}
+        {heroMore?.markdown && (
+          <div data-cr-fit data-cr-shift={credit.shift}>
+            <Prose markdown={fitHeadings(credit.markdown)} />
+          </div>
+        )}
+      </div>
+    </div>
+  )}
+</ComposedPage>

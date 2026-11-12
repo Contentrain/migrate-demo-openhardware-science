@@ -1,0 +1,123 @@
+{
+  "faq": {
+    "items": [
+      {
+        "title": "GOSH é acessível"
+      },
+      {
+        "points": [
+          "Qualquer indivíduo pode criar, obter, estudar, modificar, distribuir, utilizar e compartilhar desenhos de projetos de hardware aberto para as ciências.",
+          "As ferramentas são abertas, livres, e licenciadas como tal.",
+          "Nossos documentos são compreensíveis e comunicativos.",
+          "Nós compartilhamos ao invés de agirmos de forma territorial.",
+          "Para torná-los acessíveis do ponto de vista socioeconômico, os materiais escolhidos são de fácil obtenção e de baixo custo sempre que possível.",
+          "Nós compartilhamos dos valores já estabelecidas pelos movimentos de software livre, hardware aberto e ciência aberta."
+        ]
+      },
+      {
+        "title": "GOSH torna a melhor ciência ainda melhor"
+      },
+      {
+        "points": [
+          "Experimentos científicos que utilizam hardware aberto são mais reprodutíveis, mais comparáveis e de maior probabilidade de serem replicados.",
+          "Comparar dados de diferentes domínios, padrões e países é mais provável quando hardware aberto é utilizado.",
+          "Reprodutibilidade é dos principais critérios da boa ciência, e o hardware para ciência aberta garante uma maior reprodutibilidade.",
+          "O hardware aberto para a ciência aberta intensifica a produção científica.",
+          "Mil cabeças são melhores do que uma."
+        ]
+      },
+      {
+        "title": "GOSH é ético"
+      },
+      {
+        "points": [
+          "As pessoas tem o direito ao conhecimento e, portanto, o direito às ferramentas para a obtenção do conhecimento.",
+          "As pessoas alinham as tecnologias aos seus valores ao se tornarem criadoras.",
+          "Os benefícios da ciência devem ser compartilhados com todos e todas de forma a não causar danos e riscos.",
+          "O hardware científico aberto está disponível à todos e todas sem discriminação de formação acadêmica, país de origem, raça, sexo ou religião e não tolera qualquer forma de discriminação.",
+          "GOSH é utilizado para fins pacíficos."
+        ]
+      },
+      {
+        "title": "GOSH muda a cultura das ciências"
+      },
+      {
+        "points": [
+          "Nós defendemos a ciência aberta, a qual exige hardware aberto.",
+          "Nós mobilizamos a ciência em direção à práticas coletivas, acessíveis e colaborativas, tomando distância de práticas territoriais, institucionais, proprietárias e individualistas.",
+          "Nós criamos um maior número de opções para as pessoas conduzirem pesquisas, tanto dentro de instituições existentes (universidades, ONGs, governos, empresas) como fora delas.",
+          "Nós criamos espaços para as ciências para além dos muros das instituições estabelecidas (como universidades e ONGs) para que existam novas alternativas de trajetória de pesquisa.",
+          "Nós ampliamos os métodos através dos quais praticamos as ciências, de forma que as formas de conhecimento e entendimento de outros grupos façam parte do processo de criação do conhecimento no presente e no futuro."
+        ]
+      },
+      {
+        "title": "GOSH democratiza as ciências"
+      }
+    ]
+  },
+  "faq_note": {
+    "markdown": "- Um maior e diverso número de pessoas pode participar e se beneficiar das ciências.\n- Nós rompemos barreiras de silos entre disciplinas e instituições, criando pontes entre diferentes domínios do conhecimento: você não precisa ser um “biólogo” para praticar biologia ou ter um diploma para fazer pesquisa.\n- O hardware aberto para a ciência aberta diminui a separação entre o Norte e o Sul global, entre profissionais e amadores, particularmente em países ditos pobres.\n- O hardware aberto para a ciência aberta coloca o conhecimento local em ação e contribui para a justiça cognitiva e redistributiva.\n- O hardware aberto para a ciência aberta permite a diversidade de valores e vozes para colocar questões de pesquisa e criar novas tecnologias."
+  },
+  "gosh_consiste_em": {
+    "markdown": "#### GOSH consiste em ferramentas de impacto\n\n- As tecnologias são adaptáveis e, por esta razão, podem responder diretamente às necessidades sociais e técnicas locais.\n- Existe uma ligação direta entre o que a comunidade de usuários necessita e o hardware científico, uma vez que a comunidade de usuários pode acessar, modificar, adaptar e utilizar as ferramentas.\n- O hardware científico aberto permite aos usuários a disseminação do conhecimento com a publicação frequente de resultados preliminares, o que permite que as ferramentas sejam mais ágeis e responsivas.\n- O hardware científico aberto é desenhado para ser escalável."
+  },
+  "gosh_empodera_as": {
+    "markdown": "#### GOSH empodera as pessoas\n\n- Para conduzirem pesquisas baseadas em seus interesses.\n- Para realizarem pesquisas com base nas necessidades de suas comunidades.\n- Para conduzirem pesquisas através de muitas formas de suporte (incluindo financeiro, pessoal e de recursos materiais e de tempo).\n- Para realizarem suas idéias com baixo custo.\n- Para compreenderem como suas ferramentas operam com base no empréstimo, na criação e na troca de tecnologia.\n- Para terem transparência tecnológica e acompanhamento público.\n- Para construirem um movimento."
+  },
+  "gosh_garante_multiplos": {
+    "markdown": "#### GOSH garante múltiplos futuros para as ciências e as tecnologias\n\n- A pesquisa pode acontecer dentro e fora da universidade, dentro e fora do laboratório, bem como dentro e fora de ambientes comerciais.\n- GOSH muda as normas do contexto institutional das ciências para que os pesquisadores compartilhem conhecimentos e tecnologias livremente.\n- Com hardware científico aberto e global, grupos indigenas e não-cientistas podem conduzir pesquisas em suas línguas nativas e adaptá-las aos contextos locais.\n- GOSH permite que a ciência aconteça em lugares onde ela geralmente não é realizada.\n- GOSH tem por objetivo promover uma mudança cultural de forma que suas oportunidades e benefícios tornem-se intergeracionais."
+  },
+  "gosh_garante_multiplos_note": {
+    "markdown": "Licença Este documento é de domínio público.\n\nOrigem Este documento foi criado por consenso entre as pessoas que participaram da primeira reunião GOSH em 2016 em Genebra, Suiça. Sua criação foi facilitada por Max Liboiron e Greg Austic, os quais continuam a cuidar do documento na versão original em Inglês. A tradução para o Português foi feita por Luis Felipe R. Murillo."
+  },
+  "gosh_nao_possui": {
+    "markdown": "#### GOSH não possui líderes ou pastores\n\n- Nós temos defensores da comunidade, mas não uma autoridade centralizada.\n- Nós somos uma comunidade comprometida com o compartilhamento dos nossos êxitos de forma ativa.\n- Nós baseamos o nosso trabalho uns nos outros ao invés de trabalhar isoladamente.\n- Quanto maior o número de pessoas envolvidas, melhor."
+  },
+  "gosh_nao_possui_text": {
+    "markdown": "#### GOSH não possui caixas pretas\n\n- Na linguagem da engenharia, “caixa preta” refere-se a qualquer objeto técnico cujo funcionamento interno é desconhecido do usuário. No caso do Hardware Científico Aberto e Global, as tecnologias desenvolvidas e aplicadas são livres e abertas.\n- Através do empréstimo, da construção e do compartilhamento mais amplo das tecnologias, nós adquirimos uma compreensão de como as nossas ferramentas funcionam.\n- Desenvolver Hardware Científico Aberto e Global é uma forma de aprender atráves da prática.\n- O Hardware Científico Aberto e Global aumenta a transparência e a auditoria pública."
+  },
+  "hero": {
+    "media": {
+      "src": "/media/2016/05/DSC06870-1.jpg"
+    }
+  },
+  "section": {
+    "actions": [
+      {
+        "href": "https://openhardware.science/gosh-manifesto/deutsch/",
+        "label": "Deutsch"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/",
+        "label": "English"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/spanish/",
+        "label": "Español"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/french/",
+        "label": "Français"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/portuguese/",
+        "label": "Português"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/chinese/",
+        "label": "中文"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/bangla/",
+        "label": "বাংলা"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/japan/",
+        "label": "日本語"
+      }
+    ]
+  },
+  "text": {
+    "markdown": "Muito obrigado para a Luis Felipe Murillo traduzir o Manifesto Gosh!\n\nO movimento do Hardware Científico Aberto e Global (cuja sigla GOSH em inglês significa “Global Open Science Hardware”) busca reduzir as barreiras entre criadores e usuários de instrumentos científicos para apoiar a busca e a expansão do conhecimento. Estes são os nossos princípios:"
+  }
+}

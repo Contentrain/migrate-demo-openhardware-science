@@ -1,0 +1,25 @@
+/*
+ * The design direction's details, scoped to the kit's section hooks and checked by code before they were written. In a
+ * cascade layer after the kit's and the theme's type scale and rhythm (@layer site), so a rule here wins over both;
+ * the site's own stylesheet (site.css) is outside any layer and still wins over it.
+ */
+@layer direction {
+  [data-kit-section="hero"] h1 { font-size: var(--text-display); letter-spacing: var(--tracking-display); line-height: 0.9; font-weight: 800; text-wrap: balance; }
+  [data-kit-section="hero"] p { font-size: var(--text-lead); line-height: 1.4; }
+  @media (width >= 48rem) { [data-kit-section="hero"] p { max-width: 34ch; } }
+  @media (width >= 48rem) { [data-kit-entry="hero"] h1 { border-bottom: 0.75rem solid var(--color-accent); padding-bottom: clamp(1rem, 2vw, 2rem); } }
+  [data-kit-section="band"] h2 { letter-spacing: -0.03em; font-weight: 800; text-wrap: balance; }
+  [data-kit-section="band"] p { font-size: 1.125rem; line-height: 1.5; }
+  @media (width >= 48rem) { [data-kit-section="band"] p { max-width: 38ch; } }
+  [data-kit-entry="global_open_science_section"] { background-color: var(--color-field-1); color: var(--color-field-1-ink); }
+  [data-kit-entry="global_open_science_section"] :is(h2, h3, p, a, li) { color: var(--color-field-1-ink); }
+  [data-kit-section="split"] h2 { letter-spacing: -0.03em; font-weight: 800; }
+  [data-kit-section="split"] img { border-radius: 0; object-fit: cover; }
+  [data-kit-section="gallery"] :is(ul, div) { gap: 0; }
+  [data-kit-section="gallery"] img { border-radius: 0; object-fit: cover; aspect-ratio: 1; }
+  [data-kit-section="card-grid"] article { border-radius: 0; border-top: 0.125rem solid var(--color-ink); }
+  [data-kit-section="testimonial"] p:first-child { font-size: var(--text-heading-2); line-height: 1.2; letter-spacing: -0.02em; }
+  [data-kit-section="cta"] h2 { font-size: var(--text-heading-1); letter-spacing: -0.04em; line-height: 1; }
+  [data-kit-section="faq"] li { border-top: 1px solid var(--color-line); }
+  [data-kit-section="steps"] li { border-top: 0.125rem solid var(--color-ink); padding-top: 1rem; }
+}

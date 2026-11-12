@@ -1,0 +1,41 @@
+{
+  "section": {
+    "heading": "2026 Schedule",
+    "items": [
+      {
+        "href": "https://us06web.zoom.us/meeting/register/DHfySuCLQCuH7w1KUGlwvA",
+        "link_label": "here",
+        "meta": "12th",
+        "text": "Register for the call here.",
+        "title": "November",
+        "value": "12:00 UTC"
+      },
+      {
+        "href": "https://us06web.zoom.us/meeting/register/K1nQXWGkS8q-eF8f7cR_Vg",
+        "link_label": "here",
+        "meta": "10th",
+        "text": "Register for the call here",
+        "title": "December",
+        "value": "23:00 UTC"
+      }
+    ]
+  },
+  "section_note": {
+    "markdown": "Month\n\nDate\n\nTime\n\nInformation for joining the call"
+  },
+  "split": {
+    "actions": [
+      {
+        "href": "https://www.youtube.com/playlist?list=PLmiNrnssuo_QxX23EWLJMnIeVhCwTQJpH",
+        "label": "here"
+      }
+    ],
+    "body": "Each welcome call consists of a 20-minute onboarding presentation to help orient new members to the GOSH Community, followed by time for discussion and questions. The calls will only be open to new members of the community and will be capped at five participants to make the experience more personal and engaging.\n\nHow to Join\n\nEach call is hosted via Zoom. The schedule below has more details on how to join each call.\n\nRecordings\n\nYou can find a recording of the onboarding presentation [here](https://www.youtube.com/playlist?list=PLmiNrnssuo_QxX23EWLJMnIeVhCwTQJpH).",
+    "image": {
+      "src": "/media/2022/07/30631154677_dd3706c898_w.jpg"
+    }
+  },
+  "text": {
+    "markdown": "Image Source: [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/30631154677/)"
+  }
+}

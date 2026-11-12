@@ -1,0 +1,65 @@
+---
+// A single page: breadcrumbs (nested pages, or every page on a source that prints them), title, body and an optional
+// Studio form under it. A parent page with no body lists its child pages.
+import { getEntry } from 'astro:content'
+import Breadcrumb from '../components/kit/breadcrumb/Breadcrumb.astro'
+import KitImage from '../components/kit/_shared/KitImage.astro'
+import Prose from '../components/kit/prose/Prose.astro'
+import StudioForm from '../components/studio/StudioForm.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { withBase } from '../lib/base'
+import { getSite, getStrings, imageOf, type Page } from '../lib/content'
+import { publicHtml } from '../lib/links'
+import { localeOf, localizedPath } from '../lib/locales'
+import type { ListPage } from '../lib/site-routes'
+import { breadcrumbLd, pageTrail, summarize } from '../lib/seo'
+import { safeHref } from '../components/kit/_shared/safe-url'
+
+interface Props {
+  page: Page
+  /** The page's ancestors, root first, each with its address. */
+  trail: Array<{ title: string, href: string }>
+  isHome: boolean
+  /** The page's child pages, in page order; listed when it has no body of its own. */
+  subpages?: Array<{ title: string, href: string }> | undefined
+  /** Page 1 of the post list a composed page carries (its list section reads it); a plain page gets none. */
+  list?: ListPage | undefined
+}
+
+const { page, trail, isHome, subpages = [] } = Astro.props
+const pageLocale = localeOf(Astro.url.pathname)
+const { data } = page
+const [cover, t, body, site] = await Promise.all([data.cover ? getEntry(data.cover) : undefined, getStrings(pageLocale), publicHtml(data.body, pageLocale), getSite(pageLocale)])
+const origin = Astro.site ?? Astro.url
+const crumbs = [...trail, { title: data.title, href: Astro.url.pathname }]
+---
+<BaseLayout
+  title={isHome ? undefined : data.title}
+  fullTitle={data.seo?.title}
+  ogTitle={data.seo?.og_title}
+  ogDescription={data.seo?.og_description}
+  description={data.seo?.description ?? data.excerpt ?? summarize(data.body)}
+  image={data.seo?.image ?? cover?.data.url}
+  canonical={data.seo?.canonical}
+  noindex={data.seo?.noindex}
+  nofollow={data.seo?.nofollow}
+  modified={data.modified_at}
+  jsonLd={isHome ? [] : [breadcrumbLd(pageTrail({ name: site.title, url: new URL(localizedPath(withBase('/'), pageLocale), origin).href }, crumbs.map(crumb => ({ name: crumb.title, url: new URL(crumb.href, origin).href }))))]}
+>
+  <article class="container-prose py-12 md:py-16">
+    {trail.length > 0 && (
+      <div class="mb-6">
+        <Breadcrumb items={trail.map(crumb => ({ label: crumb.title, href: crumb.href }))} current={data.title} label={t('nav.breadcrumb')} />
+      </div>
+    )}
+    {!isHome && <h1 class="[margin-bottom:var(--spacing-title,2.5rem)] text-4xl leading-tight [font-weight:var(--font-weight-heading,700)] tracking-tight text-balance md:text-5xl">{data.title}</h1>}
+    {cover && <KitImage image={imageOf(cover)} priority sizes="(min-width: 768px) 768px, 100vw" class="mb-10 w-full rounded-xl" />}
+    {body && <Prose html={body} />}
+    {!body && subpages.length > 0 && (
+      <ul class="flex flex-col gap-3 text-lg">
+        {subpages.map(subpage => <li><a href={safeHref(subpage.href)} class="text-[color:var(--color-link,var(--color-accent))] underline-offset-4 hover:underline">{subpage.title}</a></li>)}
+      </ul>
+    )}
+    {data.form && <StudioForm model={data.form} class="mt-12" />}
+  </article>
+</BaseLayout>

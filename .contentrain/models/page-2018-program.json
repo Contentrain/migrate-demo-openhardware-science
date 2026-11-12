@@ -1,0 +1,125 @@
+{
+  "domain": "pages",
+  "fields": {
+    "day_1_wednesday": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Day 1 wednesday",
+      "type": "object"
+    },
+    "day_2_thursday": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Day 2 thursday",
+      "type": "object"
+    },
+    "day_3_friday": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Day 3 friday",
+      "type": "object"
+    },
+    "day_4_saturday": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Day 4 saturday",
+      "type": "object"
+    },
+    "post_gosh": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Post gosh",
+      "type": "object"
+    },
+    "pre_gosh": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": true,
+          "type": "markdown"
+        }
+      },
+      "label": "Pre gosh",
+      "required": true,
+      "type": "object"
+    }
+  },
+  "i18n": true,
+  "id": "page-2018-program",
+  "kind": "singleton",
+  "name": "2018 Program page",
+  "title_field": "pre_gosh.markdown"
+}

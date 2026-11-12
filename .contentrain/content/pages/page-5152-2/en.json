@@ -1,0 +1,29 @@
+{
+  "thank_you_donation": {
+    "heading": "Thank you for your donation to Gathering for Open Science Hardware Inc.*",
+    "intro": "Explore what's happening in the GOSH Community by clicking on the links below!",
+    "slides": [
+      {
+        "text": "The GOSH community currently has several funding programs in place to support open science hardware across the globe! Read more about the Collaborative Development Program and Regional Events Funding Program."
+      },
+      {
+        "text": "Want to participate in a GOSH event? Join us during one of our monthly community calls or open hours! We also have a calendar of upcoming events."
+      },
+      {
+        "text": "Interested in learning more about the GOSH community? Read our Manifesto and Roadmap to making open science hardware ubiquitous by 2025. You can also read more about the history of GOSH here."
+      },
+      {
+        "text": "Several members of the GOSH community are also a part of various regional and domain-specific OScH communities and projects. Check them out here!"
+      },
+      {
+        "text": "GOSH has hosted several Global Gatherings, all across the world! You can read more about them here. Stay tuned for more information on future Global Gatherings!"
+      },
+      {
+        "text": "Want to be more involved in the GOSH community? Sign up to the GOSH Forum and the GOSH Newsletter."
+      }
+    ]
+  },
+  "thank_you_donation_more": {
+    "markdown": "- [Collaborative Development Program](https://openhardware.science/collaborative-development-program/) — [Regional Events Funding Program](https://openhardware.science/regional-events-funding/) — [Collaborative Development Program](https://openhardware.science/collaborative-development-program/) — [Regional Events Funding Program](https://openhardware.science/regional-events-funding/)\n- [community calls](https://openhardware.science/about/community-calls/) — [open hours](https://openhardware.science/open-hours/) — [calendar of upcoming events](https://openhardware.science/events/) — [community calls](https://openhardware.science/about/community-calls/) — [open hours](https://openhardware.science/open-hours/) — [calendar of upcoming events](https://openhardware.science/events/)\n- [Manifesto](https://openhardware.science/gosh-manifesto/) — [Roadmap](https://openhardware.science/global-open-science-hardware-roadmap/) — [here](https://openhardware.science/about/gosh-history/) — [Manifesto](https://openhardware.science/gosh-manifesto/) — [Roadmap](https://openhardware.science/global-open-science-hardware-roadmap/) — [here](https://openhardware.science/about/gosh-history/)\n- [here!](https://openhardware.science/communities-and-projects/) — [here!](https://openhardware.science/communities-and-projects/)\n- [here](https://openhardware.science/gatherings/) — [here](https://openhardware.science/gatherings/)\n- [GOSH Forum](https://forum.openhardware.science/) — [GOSH Newsletter](https://openhardware.science/gosh-monthly-newsletter/) — [GOSH Forum](https://forum.openhardware.science/) — [GOSH Newsletter](https://openhardware.science/gosh-monthly-newsletter/)\n\n\\*The Gathering for Open Science Hardware (GOSH) Inc. is a US-based 501(c)(3) nonprofit that is administering funding for the GOSH Global Gathering and a number of other GOSH Community programmes and activities. Read more about how GOSH Inc. supports the GOSH Community [here](https://openhardware.science/governance-structure/)."
+  }
+}

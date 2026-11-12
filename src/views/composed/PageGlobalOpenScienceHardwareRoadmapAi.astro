@@ -1,0 +1,189 @@
+---
+// The GOSH Roadmap page, set as a printed report: the cover beside the summary, the concrete actions as a numbered
+// list of actions, the community's three verbs, then the flipbook of the document itself.
+import { getEntry } from 'astro:content'
+import Band from '../../components/kit/band/Band.astro'
+import CardGrid from '../../components/kit/card-grid/CardGrid.astro'
+import Embed from '../../components/kit/embed/Embed.astro'
+import Hero from '../../components/kit/hero/Hero.astro'
+import PostList from '../../components/kit/post-list/PostList.astro'
+import Prose from '../../components/kit/prose/Prose.astro'
+import Split from '../../components/kit/split/Split.astro'
+import { safeHref } from '../../components/kit/_shared/safe-url'
+import ActionList from '../../components/page-global-open-science-hardware-roadmap/ActionList.astro'
+import { byId, getPosts, getSite, getStrings, imageOf, postHref, termHref, type Page } from '../../lib/content'
+import { headingFit } from '../../lib/heading-fit'
+import { fitHeadings, headingLevels } from '../../lib/headings'
+import { publicLinks } from '../../lib/links'
+import type { ListPage } from '../../lib/site-routes'
+import ComposedPage from '../ComposedPage.astro'
+
+interface Props {
+  page: Page
+  trail: Array<{ title: string, href: string }>
+  isHome: boolean
+  list?: ListPage | undefined
+}
+
+const { page, trail, list } = Astro.props
+const isHome = false
+const [site, t] = await Promise.all([getSite(), getStrings()])
+const publicHref = await publicLinks()
+const entry = await getEntry('pageGlobalOpenScienceHardwareRoadmap', 'en')
+if (!entry) throw new Error('page-global-open-science-hardware-roadmap is missing: the page\'s sections are its fields')
+const { hero, executive_summary: executiveSummary, timeline, card_grid: cardGrid, section, section_more: sectionMore, embed } = entry.data
+const actionsOf = (list: Array<{ href: string, label: string, new_tab?: boolean | undefined, style?: 'primary' | 'secondary' | 'ghost' | undefined }> | undefined) =>
+  (list ?? []).flatMap(item => { const href = publicHref(item.href); return href === undefined ? [] : [{ href, label: item.label, newTab: item.new_tab, style: item.style }] })
+const heroActions = actionsOf(hero?.actions)
+const words0 = headingLevels([hero?.heading?.trim() ? `## ${hero.heading.trim()}` : undefined, hero?.eyebrow, hero?.lead].filter(Boolean).join('\n\n'), 1)
+const executiveSummaryActions = actionsOf(executiveSummary?.actions)
+const executiveSummaryVideoUrl = publicHref(executiveSummary?.video_url)
+const timelineActions = actionsOf(timeline?.actions)
+const timelineItems = (timeline?.items ?? []).map(item => ({ href: publicHref(item.href), linkLabel: item.link_label, meta: item.meta, text: item.text, title: item.title, value: item.value }))
+const cardGridItems = (cardGrid?.items ?? []).map(item => ({ eyebrow: item.eyebrow, href: publicHref(item.href), icon: item.icon, image: item.image, imageAlt: item.image_alt, linkLabel: item.link_label, text: item.text, title: item.title }))
+const words1 = headingLevels([cardGrid?.title?.trim() ? `## ${cardGrid.title.trim()}` : undefined, cardGrid?.intro].filter(Boolean).join('\n\n'), 2)
+const sectionActions = actionsOf(section?.actions)
+const sectionItems = (section?.items ?? []).map(item => ({ href: publicHref(item.href), icon: item.icon, linkLabel: item.link_label, media: item.media, mediaAlt: item.media_alt, meta: item.meta, points: item.points, text: item.text, title: item.title, value: item.value }))
+const sectionIsCredit = section && sectionItems.length === 0 && !section.media && !section.heading?.trim() && !section.lead && !section.eyebrow
+const prose3 = headingLevels(sectionMore?.markdown, 2)
+const entries5 = (list?.posts ?? await getPosts()).slice(0, 3)
+const items8 = await Promise.all(entries5.map(async item => {
+  const media6 = (item.data.cover ? await getEntry(item.data.cover) : undefined)
+  const term7 = (item.data.categories[0] ? await getEntry(item.data.categories[0]) : undefined)
+  return {
+    title: item.data.title,
+    href: postHref(item, await byId('categories')),
+    excerpt: item.data.excerpt,
+    date: item.data.published_at,
+    image: (media6 ? imageOf(media6) : undefined),
+    author: (item.data.author ? await getEntry(item.data.author) : undefined)?.data.name,
+    category: (term7 ? { label: term7.data.name, href: termHref('category', term7, await byId('categories')) } : undefined),
+  }
+}))
+const section6 = items8?.length ? {
+  layout: 'list' as const,
+  locale: site.language,
+  posts: items8,
+} : undefined
+const embedUrl = publicHref(embed?.url)
+---
+<ComposedPage page={page} trail={trail} isHome={isHome}>
+  {hero && hero.heading !== undefined ? (
+    <div class="contents" data-cr-hero style={headingFit(hero.heading)}>
+      <Hero
+        actions={heroActions}
+        eyebrow={hero.eyebrow}
+        heading={hero.heading}
+        image={hero.image}
+        items={hero.items}
+        lead={hero.lead}
+        layout="centered"
+        inset="15"
+        tone="muted"
+        headingScale="theme"
+        entry="hero"
+        level={2}
+      />
+    </div>
+  ) : words0.markdown && (
+    <div class="container-prose py-8" data-cr-shift={words0.shift}>
+      <Prose markdown={words0.markdown} />
+    </div>
+  )}
+
+  {executiveSummary && (
+    <Split
+      actions={executiveSummaryActions}
+      body={executiveSummary.body}
+      eyebrow={executiveSummary.eyebrow}
+      features={executiveSummary.features}
+      heading={executiveSummary.heading}
+      image={executiveSummary.image}
+      videoUrl={executiveSummaryVideoUrl}
+      playLabel={t('embed.play')}
+      imageSide="end"
+      ratio="7:5"
+      imageShape="none"
+      sticky
+      entry="executive_summary"
+    />
+  )}
+
+  {timeline && (
+    <ActionList
+      id="roadmap-actions"
+      eyebrow={timeline.eyebrow}
+      heading={timeline.heading}
+      items={timelineItems}
+      actions={timelineActions}
+    />
+  )}
+  {timeline?.media && (
+    <div class="container-page pb-8">
+      <Band media={timeline.media} entry="timeline" />
+    </div>
+  )}
+
+  {timeline?.lead && (
+    <div class="container-page pt-8 md:pt-12">
+      <p class="max-w-[52ch] text-2xl leading-snug font-bold tracking-tight text-balance md:ms-[15%] md:text-3xl">{timeline.lead}</p>
+    </div>
+  )}
+
+  {cardGrid && (cardGridItems?.length ?? 0) > 0 ? (
+    <CardGrid
+      intro={cardGrid.intro}
+      items={cardGridItems}
+      title={cardGrid.title}
+      columns="3"
+      entry="card_grid"
+    />
+  ) : words1.markdown && (
+    <div class="container-prose py-8" data-cr-shift={words1.shift}>
+      <Prose markdown={words1.markdown} />
+    </div>
+  )}
+
+  {sectionMore && (
+    <div class="container-prose py-8" data-cr-fit data-cr-shift={prose3.shift}>
+      <Prose markdown={fitHeadings(prose3.markdown)} />
+    </div>
+  )}
+
+  {(embed || section) && (
+    <div class="bg-surface-muted py-12 md:py-16">
+      {embed && (
+        <Embed
+          address={embed.address}
+          caption={embed.caption}
+          playLabel={t('embed.play')}
+          poster={embed.poster}
+          showLabel={t('embed.show')}
+          title={embed.title}
+          uploaded={embed.uploaded}
+          url={embedUrl}
+          width="page"
+        />
+      )}
+      {sectionIsCredit ? (
+        <p class="container-page mt-4 flex flex-wrap justify-end gap-4">
+          {sectionActions.map(action => (
+            <a href={safeHref(action.href)} target={action.newTab ? '_blank' : undefined} rel={action.newTab ? 'noopener' : undefined} class="inline-flex min-h-11 items-center text-sm text-ink underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">{action.label}</a>
+          ))}
+        </p>
+      ) : section && (
+        <Band
+          actions={sectionActions}
+          eyebrow={section.eyebrow}
+          heading={section.heading}
+          items={sectionItems}
+          lead={section.lead}
+          media={section.media}
+          entry="section"
+        />
+      )}
+    </div>
+  )}
+
+  {section6 && <PostList {...section6} />}
+</ComposedPage>

@@ -1,0 +1,58 @@
+/* GOSH 2017 report: a printed report's purple cover tile, then the text held to the cover's inset axis. */
+.gr-report {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 2rem + 4vw, 6rem);
+  padding-block: 2rem clamp(4rem, 3rem + 4vw, 7rem);
+}
+
+.gr-cover > * {
+  border-radius: 0;
+}
+
+.gr-report .gr-cover h2 {
+  font-size: var(--text-heading-2);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.gr-report .gr-cover p {
+  font-size: var(--text-lead);
+  line-height: 1.4;
+  max-width: 48ch;
+  text-wrap: balance;
+}
+
+.gr-axis {
+  display: grid;
+}
+
+.gr-axis__body {
+  border-top: 0.125rem solid var(--color-ink);
+  padding-top: 1.5rem;
+  max-width: var(--container-prose);
+  min-width: 0;
+}
+
+@media (width >= 48rem) {
+  .gr-axis__body {
+    margin-inline-start: 27%;
+  }
+}
+
+.gr-axis__body :is(h2, h3):first-child {
+  margin-top: 0;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.gr-document .gr-axis__body {
+  border-top-color: var(--color-line);
+}
+
+.gr-document .gr-axis__body > * {
+  margin-inline: 0;
+  max-width: none;
+}

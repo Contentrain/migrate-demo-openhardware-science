@@ -1,0 +1,530 @@
+/*
+ * The site's one stylesheet. Design tokens live in @theme: a migration writes
+ * the source site's palette, type scale and widths here (from theme.json and
+ * measured styles), and every utility and component reads them — so a brand
+ * change is an edit to this block, not a search through components.
+ */
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@import './wp-blocks.css';
+@import './wp-presets.css';
+
+@theme {
+  /* Color roles. Components use roles, never raw palette values. */
+  --color-surface: #ffffff;
+  /* The page behind the content and a card on it: both the surface unless the source's theme tints one. */
+  --color-page: #ffffff;
+  --color-card: #e3cff0;
+  --color-surface-muted: #e3cff0;
+  --color-ink: #242323;
+  --color-ink-muted: rgb(53, 52, 52);
+  /* Quieter text on a dark band (the kit's inverse tone): the surface drawn toward the ink, so it reads as the light
+     text's quieter twin and keeps the band's contrast. A theme whose ink is not dark enough for it sets its own. */
+  --color-ink-muted-inverse: color-mix(in oklab, var(--color-surface) 80%, var(--color-ink));
+  --color-line: #e5e5e5;
+  --color-accent: #4c0d87;
+  --color-accent-ink: #ffffff;
+  /* Text in the accent (a category link, an eyebrow): the accent itself unless a site sets a readable one — an accent
+     made for fills can be too light for text on the page (lime on white). The inverse twin is the one on a dark band:
+     the accent drawn halfway to the surface, so it keeps its hue and reads on the ink (the default blue at 8.6:1, every
+     usual accent at 4.5:1 or more; a near-black one does not, and needs the site's own). A site whose own accent
+     reads there sets it back. */
+  --color-accent-text: var(--color-accent);
+  --color-accent-text-inverse: #a172ea;
+  --color-brand: #4c0d87;
+  --color-brand-ink: #ffffff;
+
+  /* Type. --font-inter is defined by Astro's font API (astro.config.mjs). */
+  --font-sans: var(--font-site-open-sans);
+  --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  /* Headings' own face and letter spacing, for a site or a design direction whose headings are set apart (a display
+     face, a looser or tighter track): --font-heading and --tracking-heading. Neither is set here: unset, a heading
+     keeps the face it inherits (an article's serif, a block's preset family) and the track its classes draw, exactly
+     as before. Set, every heading takes the face, and every heading the kit draws tight takes the track. */
+
+  /* Layout widths: the reading column and the page frame. */
+  --container-prose: 46rem;
+  --container-page: 76rem;
+  --container-wide: 64rem;
+
+  --radius-card: 4px;
+  --shadow-card: none;
+  --spacing-card: 1.5rem;
+
+  /* The source site's own scale (theme.json presets), beside the roles. */
+  --color-black: #000000;
+  --color-cyan-bluish-gray: #abb8c3;
+  --color-extra-1: rgb(22, 22, 22);
+  --color-extra-10: rgb(85, 85, 85);
+  --color-extra-11: rgb(46, 46, 46);
+  --color-extra-12: rgb(60, 60, 60);
+  --color-extra-2: rgb(36, 35, 35);
+  --color-extra-3: rgb(76, 13, 135);
+  --color-extra-4: rgb(39, 39, 39);
+  --color-extra-5: rgb(122, 122, 122);
+  --color-extra-6: rgb(255, 42, 19);
+  --color-extra-7: rgba(255, 255, 255, 0);
+  --color-extra-8: rgb(105, 27, 136);
+  --color-extra-9: rgb(26, 26, 26);
+  --color-light-green-cyan: #7bdcb5;
+  --color-luminous-vivid-amber: #fcb900;
+  --color-luminous-vivid-orange: #ff6900;
+  --color-pale-cyan-blue: #8ed1fc;
+  --color-pale-pink: #f78da7;
+  --color-vivid-cyan-blue: #0693e3;
+  --color-vivid-green-cyan: #00d084;
+  --color-vivid-purple: #9b51e0;
+  --color-vivid-red: #cf2e2e;
+  --color-white: #ffffff;
+  --text-huge: 42px;
+  --text-large: 36px;
+  --text-medium: 20px;
+  --text-normal: 16px;
+  --text-small: 13px;
+  --text-x-large: 42px;
+}
+
+/* The source theme's type and shape; without them the kit uses its own values. */
+:root {
+  --font-weight-body: 400;
+  --leading-body: 1.4;
+  --font-weight-heading: 700;
+  --leading-heading: 1.3;
+  --text-footer: 10px;
+  --radius-control: 6.468px;
+  --radius-image: 0;
+  --color-field-1: #691b88;
+  --color-field-1-ink: #ffffff;
+  --font-heading: var(--font-site-montserrat);
+  --text-heading-1: clamp(3rem, 1.5rem + 5vw, 5.5rem);
+  --text-heading-2: clamp(2rem, 1.25rem + 2.5vw, 3.25rem);
+  --spacing-section: clamp(8rem, 4rem + 21vw, 16rem);
+  --text-display: clamp(3rem, 8vw, 8.1rem);
+  --text-lead: clamp(1.25rem, 1.1571rem + 0.38vw, 1.5rem);
+  --tracking-display: -0.05em;
+}
+
+/* Presets whose names a utility already means (a colour "base" would colour `text-base`): variables only. */
+:root {
+  --spacing-20: 0.44rem;
+  --spacing-30: 0.67rem;
+  --spacing-40: 1rem;
+  --spacing-50: 1.5rem;
+  --spacing-60: 2.25rem;
+  --spacing-70: 3.38rem;
+  --spacing-80: 5.06rem;
+  --text-extra-1: 12px;
+  --text-extra-2: 15.4px;
+  --text-extra-3: 14px;
+  --text-extra-4: 21px;
+  --text-extra-5: 18px;
+  --text-extra-6: 60px;
+  --text-extra-7: 10px;
+  --text-extra-8: 23.1px;
+}
+
+/* The source theme's type scale and rhythm on the kit's markers. In a layer after the utilities, so they beat them, and before the direction's. */
+@layer site {
+  main h1 { font-size: var(--text-heading-1); }
+  main h2:not(li h2) { font-size: var(--text-heading-2); }
+  [data-kit-section][data-kit-spacing="md"] { padding-block: calc(var(--spacing-section) / 2); }
+  [data-kit-section="hero"] h1 { font-size: var(--text-display); }
+[data-cr-display] { --cr-hero-size: var(--text-display); }
+  [data-kit-section="hero"] h1 { letter-spacing: var(--tracking-display); }
+  [data-kit-footer] { font-size: max(var(--text-footer), 12px); }
+@media (max-width: 599.98px) { [data-kit-footer] { font-size: max(var(--text-footer), 14px); } }
+  [data-kit-meta], [data-kit-meta] a { font-weight: var(--font-weight-body); }
+  [data-kit-meta], main figcaption, [data-cr-part="related"] time, [data-cr-part="post-meta"] { font-size: max(var(--text-small), 12px); }
+@media (max-width: 599.98px) { [data-kit-meta], main figcaption, [data-cr-part="related"] time, [data-cr-part="post-meta"] { font-size: max(var(--text-small), 14px); } }
+}
+
+/* The source theme's type scale and rhythm on the kit's markers. Unlayered, so they beat the utilities. */
+[data-tone="accent"] :is(a, button).bg-accent:not(:hover, :focus-visible) { background-color: var(--color-surface); color: var(--color-accent-text); }
+[data-tone="brand"] :is(a, button).bg-accent:not(:hover, :focus-visible) { background-color: var(--color-surface); color: var(--color-accent-text); }
+
+/*
+ * The page frame and the reading column, with the gutter built in. A migrated
+ * site's gutter is its theme's root padding (--spacing-gutter, written by the
+ * migration); without one, 1rem on phones and 2rem from md up.
+ */
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: calc(var(--container-page) + 2 * var(--container-inset, 0px));
+  padding-inline: var(--spacing-gutter, 1rem);
+  @variant md {
+    padding-inline: var(--spacing-gutter, 2rem);
+  }
+}
+
+@utility container-prose {
+  margin-inline: auto;
+  width: 100%;
+  max-width: calc(var(--container-prose) + 2 * var(--spacing-gutter, 1rem));
+  padding-inline: var(--spacing-gutter, 1rem);
+  @variant md {
+    max-width: calc(var(--container-prose) + 2 * var(--spacing-gutter, 2rem));
+    padding-inline: var(--spacing-gutter, 2rem);
+  }
+}
+
+/*
+ * A section whose source block had no alignment runs at the reading column
+ * (the theme's contentSize); its background still spans the page.
+ */
+.section-content {
+  --container-page: calc(var(--container-prose) + 2 * var(--spacing-gutter, 2rem));
+  --container-inset: 0px;
+}
+
+/* Typography for rich-text bodies, bound to the tokens. */
+@utility prose-site {
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-lead: var(--color-ink-muted);
+  --tw-prose-links: var(--color-link, var(--color-accent-text));
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-counters: var(--color-ink-muted);
+  --tw-prose-bullets: var(--color-ink-muted);
+  --tw-prose-hr: var(--color-line);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-accent);
+  --tw-prose-captions: var(--color-ink-muted);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-pre-code: var(--color-surface-muted);
+  --tw-prose-pre-bg: var(--color-ink);
+  --tw-prose-th-borders: var(--color-line);
+  --tw-prose-td-borders: var(--color-line);
+}
+
+/*
+ * The source theme's body and heading type, when a migration wrote it
+ * (--text-body, --leading-body, --font-weight-body, --font-weight-heading,
+ * --leading-heading, --spacing-title: the space under the h1).
+ * Every fallback is Tailwind Typography's own value, so a site without them
+ * looks as it always did.
+ */
+@layer utilities {
+  .prose-site.prose-base {
+    font-size: var(--text-body, 1rem);
+    line-height: var(--leading-body, 1.75);
+  }
+  .prose-site.prose-lg {
+    font-size: var(--text-body, 1.125rem);
+    line-height: var(--leading-body, 1.7777778);
+  }
+  .prose-site.prose :where(h1):not(:where([class~='not-prose'], [class~='not-prose'] *)) { font-weight: var(--font-weight-heading, 800); }
+  .prose-site.prose :where(h2):not(:where([class~='not-prose'], [class~='not-prose'] *)) { font-weight: var(--font-weight-heading, 700); }
+  .prose-site.prose :where(h3, h4):not(:where([class~='not-prose'], [class~='not-prose'] *)) { font-weight: var(--font-weight-heading, 600); }
+  .prose-site.prose-base :where(h1):not(:where([class~='not-prose'], [class~='not-prose'] *)) { margin-bottom: var(--spacing-title, 0.8888889em); }
+  .prose-site.prose-lg :where(h1):not(:where([class~='not-prose'], [class~='not-prose'] *)) { margin-bottom: var(--spacing-title, 0.8333333em); }
+  .prose-site.prose-base :where(h1):not(:where([class~='not-prose'], [class~='not-prose'] *)) { line-height: var(--leading-heading, 1.1111111); }
+  .prose-site.prose-base :where(h2):not(:where([class~='not-prose'], [class~='not-prose'] *)) { line-height: var(--leading-heading, 1.3333333); }
+  .prose-site.prose-base :where(h3):not(:where([class~='not-prose'], [class~='not-prose'] *)) { line-height: var(--leading-heading, 1.6); }
+  .prose-site.prose-base :where(h4):not(:where([class~='not-prose'], [class~='not-prose'] *)) { line-height: var(--leading-heading, 1.5); }
+  .prose-site.prose-lg :where(h1):not(:where([class~='not-prose'], [class~='not-prose'] *)) { line-height: var(--leading-heading, 1); }
+  .prose-site.prose-lg :where(h2):not(:where([class~='not-prose'], [class~='not-prose'] *)) { line-height: var(--leading-heading, 1.3333333); }
+  .prose-site.prose-lg :where(h3):not(:where([class~='not-prose'], [class~='not-prose'] *)) { line-height: var(--leading-heading, 1.5); }
+  .prose-site.prose-lg :where(h4):not(:where([class~='not-prose'], [class~='not-prose'] *)) { line-height: var(--leading-heading, 1.5555556); }
+  /*
+   * The reading measure, in the text's own characters: a body's column is set in rem, so a narrow face or a small
+   * body size would run its lines past ~90 characters. `ch` follows each block's own face and size; 62ch keeps a line
+   * under 90 average characters even in a narrow face (the column itself, its pictures and wide blocks keep their width).
+   */
+  .prose-site :where(p, li, dd, blockquote):not(:where([class~='not-prose'], [class~='not-prose'] *)) { max-width: 62ch; }
+  .prose-site :where(.has-text-align-center, .aligncenter):not(:where([class~='not-prose'], [class~='not-prose'] *)) { margin-inline: auto; }
+  /* A kit heading drawn with the tight track takes the heading track instead (see --tracking-heading). */
+  :is(h1, h2, h3, h4, h5, h6).tracking-tight { letter-spacing: var(--tracking-heading, var(--tracking-tight)); }
+}
+
+@layer base {
+  /* Every heading, the kit's and the prose's, in the heading face when a theme sets one (see @theme). Unset, the
+     declaration is invalid where it is computed and the heading inherits its face, as it always did. */
+  :where(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-heading);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 1rem;
+  }
+
+  body {
+    font-size: var(--text-body, 1rem);
+    line-height: var(--leading-body, 1.5);
+    font-weight: var(--font-weight-body, 400);
+    /* A long word or address wraps instead of pushing the page sideways. */
+    overflow-wrap: break-word;
+  }
+
+  /* The reading measure for every paragraph on the page, whoever wrote its classes (a kit component, the site's own):
+     a line under 90 average characters in any face. It is a width, not a max-width, so a max-w-* utility on the same
+     paragraph still narrows it and never widens it past 62ch. A centred paragraph's box stays centred. A paragraph that
+     is a flex or grid item keeps the size its layout gives it (a width there would stretch a price or a caption), and
+     a WordPress wide or full paragraph still breaks out of its column. */
+  :where(main) :where(:not([class~='flex'], [class*=':flex'], [class~='inline-flex'], [class*=':inline-flex'], [class~='grid'], [class*=':grid'], [class~='inline-grid'], [class*=':inline-grid']) > p:not(.alignwide, .alignfull)) {
+    width: min(100%, 62ch);
+  }
+  :where(main) :where(.text-center) :where(:not([class~='flex'], [class*=':flex'], [class~='inline-flex'], [class*=':inline-flex'], [class~='grid'], [class*=':grid'], [class~='inline-grid'], [class*=':inline-grid']) > p), :where(main) :where(:not([class~='flex'], [class*=':flex'], [class~='inline-flex'], [class*=':inline-flex'], [class~='grid'], [class*=':grid'], [class~='inline-grid'], [class*=':inline-grid']) > p.text-center) {
+    margin-inline: auto;
+  }
+
+  /* Letter spacing is drawn for Latin. It pulls apart joined scripts (Arabic,
+     Syriac, Thaana), splits Indic and Southeast Asian clusters and crowds CJK,
+     and Hebrew is set without it, so in those languages the tracking tokens
+     fall to zero and every tracking-* utility with them. Inter covers Latin,
+     Cyrillic, Greek and Vietnamese (see astro.config.mjs for the rest). */
+  :where(:lang(ar), :lang(arc), :lang(ckb), :lang(dv), :lang(fa), :lang(he), :lang(ps), :lang(sd), :lang(syr), :lang(ug), :lang(ur), :lang(yi), :lang(bn), :lang(gu), :lang(hi), :lang(kn), :lang(ml), :lang(mr), :lang(ne), :lang(pa), :lang(si), :lang(ta), :lang(te), :lang(th), :lang(lo), :lang(km), :lang(my), :lang(ja), :lang(ko), :lang(zh)) {
+    --tracking-tighter: 0;
+    --tracking-tight: 0;
+    --tracking-normal: 0;
+    --tracking-wide: 0;
+    --tracking-wider: 0;
+    --tracking-widest: 0;
+    --tracking-heading: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Studio forms and comment threads render their own markup (lib/studio/embed.ts). */
+@layer components {
+  .cr-form, .cr-comment-form {
+    display: grid;
+    gap: 1rem;
+  }
+  .cr-form label, .cr-comment-form label {
+    display: grid;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  /* A comment field's label holds only its text (the control is its sibling): one line, not a grid. */
+  .cr-comment-form .cr-field {
+    display: grid;
+    gap: 0.375rem;
+  }
+  .cr-comment-form label {
+    display: block;
+  }
+  .cr-comment-form label small {
+    font-weight: 400;
+    color: var(--color-ink-muted);
+  }
+  .cr-form :is(input:not([type='checkbox'], [type='radio']), select, textarea),
+  .cr-comment-form :is(input, textarea) {
+    width: 100%;
+    border: 1px solid var(--color-line);
+    border-radius: 0.5rem;
+    background: var(--color-surface);
+    padding: 0.625rem 0.75rem;
+    font: inherit;
+  }
+  .cr-form button[type='submit'], .cr-comment-form button[type='submit'], .cr-load-more, .cr-form-link {
+    justify-self: start;
+    border-radius: 0.5rem;
+    background: var(--color-ink);
+    padding: 0.625rem 1.25rem;
+    font-weight: 500;
+    color: var(--color-surface);
+    cursor: pointer;
+  }
+  .cr-form-link {
+    display: inline-block;
+    text-decoration: none;
+  }
+  /* A form that is sent elsewhere (on the WordPress site): its fields shown, inert, the link first. */
+  .cr-fields {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .cr-fields:disabled :is(input, select, textarea) {
+    opacity: 0.75;
+  }
+  .cr-form-note {
+    font-size: 0.875rem;
+    color: var(--color-ink-muted);
+  }
+  .cr-form .cr-actions:has(.cr-form-link) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .cr-form button:disabled, .cr-comment-form button:disabled {
+    opacity: 0.6;
+  }
+  .cr-error, .cr-field-error {
+    color: #b91c1c;
+  }
+  .cr-success {
+    color: #15803d;
+  }
+  .cr-comments-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .cr-count {
+    font-weight: 400;
+    color: var(--color-ink-muted);
+  }
+  .cr-comment-list, .cr-replies {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .cr-replies {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    margin-inline-start: 1rem;
+    border-inline-start: 2px solid var(--color-line);
+    padding-inline-start: 1.25rem;
+  }
+
+  /*
+   * One comment: a monogram, then name · badge · date on one row, with the body,
+   * the reply control and the replies aligned under the name. Colors are role
+   * tokens only, so a thread follows the site's palette, light or dark.
+   */
+  .cr-comment {
+    --cr-avatar: 2.25rem;
+    --cr-avatar-gap: 0.75rem;
+  }
+  .cr-comment > :not(.cr-comment-meta) {
+    margin-inline-start: calc(var(--cr-avatar) + var(--cr-avatar-gap));
+  }
+  .cr-comment-meta {
+    display: grid;
+    grid-template-columns: var(--cr-avatar) auto 1fr;
+    align-items: center;
+    column-gap: var(--cr-avatar-gap);
+  }
+  .cr-avatar {
+    display: grid;
+    flex: none;
+    place-items: center;
+    grid-row: 1 / span 2;
+    width: var(--cr-avatar);
+    height: var(--cr-avatar);
+    border-radius: 9999px;
+    background: color-mix(in oklab, var(--color-accent) 14%, var(--color-surface));
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-accent-text);
+    user-select: none;
+  }
+  .cr-comment-author {
+    grid-column: 2;
+    line-height: 1.3;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+  .cr-comment-author a {
+    color: inherit;
+  }
+  .cr-comment-author a:hover {
+    color: var(--color-accent-text);
+  }
+  .cr-moderator {
+    grid-column: 3;
+    justify-self: start;
+    margin-inline-start: -0.25rem;
+    border-radius: 9999px;
+    background: var(--color-surface-muted);
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-ink-muted);
+  }
+  .cr-comment-meta time {
+    grid-column: 2 / -1;
+    font-size: 0.8125rem;
+    line-height: 1.3;
+    color: var(--color-ink-muted);
+  }
+  .cr-comment-body {
+    margin-top: 0.375rem;
+    overflow-wrap: anywhere;
+  }
+  .cr-comment-body p + p {
+    margin-top: 0.75rem;
+  }
+  .cr-comment-actions {
+    margin-top: 0.5rem;
+  }
+  .cr-reply {
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-accent-text);
+    cursor: pointer;
+  }
+  .cr-reply:hover {
+    text-decoration: underline;
+  }
+  .cr-comment > .cr-comment-form {
+    margin-top: 1rem;
+  }
+  .cr-replying {
+    font-size: 0.875rem;
+    color: var(--color-ink-muted);
+  }
+  .cr-cancel-reply {
+    color: var(--color-accent-text);
+    cursor: pointer;
+  }
+  .cr-empty, .cr-closed, .cr-loading {
+    margin-bottom: 2rem;
+    color: var(--color-ink-muted);
+  }
+}
+
+/* A section's markdown headings stepped up to keep the page outline, at the size the editor wrote. Unlayered. */
+main [data-cr-shift="1"] .prose-lg h2 { font-size: var(--text-heading-3, 1.3333333em); font-weight: var(--font-weight-heading, 600); line-height: var(--leading-heading, 1.5); }
+main [data-cr-shift="1"] .prose-base h2 { font-size: var(--text-heading-3, 1.25em); font-weight: var(--font-weight-heading, 600); line-height: var(--leading-heading, 1.6); }
+main [data-cr-shift="1"] .prose h3 { font-size: 1em; }
+/* A later heading moved to keep the outline whole, at the look of the level the editor wrote. */
+main .prose-lg :is(h2, h3)[data-cr-level="3"] { font-size: var(--text-heading-3, 1.3333333em); font-weight: var(--font-weight-heading, 600); line-height: var(--leading-heading, 1.5); }
+main .prose-base :is(h2, h3)[data-cr-level="3"] { font-size: var(--text-heading-3, 1.25em); font-weight: var(--font-weight-heading, 600); line-height: var(--leading-heading, 1.6); }
+main .prose :is(h2, h3, h4)[data-cr-level="4"] { font-size: 1em; font-weight: var(--font-weight-heading, 600); line-height: var(--leading-heading, 1.5); }
+main .prose :is(h2, h3, h4, h5)[data-cr-level="5"], main .prose :is(h2, h3, h4, h5, h6)[data-cr-level="6"] { font-size: inherit; font-weight: inherit; line-height: inherit; color: inherit; margin: 0; }
+main .prose-lg :is(h2, h3, h4, h5)[data-cr-level="5"] + :is(p, ul, ol), main .prose-lg :is(h2, h3, h4, h5, h6)[data-cr-level="6"] + :is(p, ul, ol) { margin-top: 1.3333333em; }
+main .prose-base :is(h2, h3, h4, h5)[data-cr-level="5"] + :is(p, ul, ol), main .prose-base :is(h2, h3, h4, h5, h6)[data-cr-level="6"] + :is(p, ul, ol) { margin-top: 1.25em; }
+
+/* A section's markdown headings keep their longest word on a line. Unlayered. */
+[data-cr-fit] > .prose { container-type: inline-size; }
+[data-cr-fit] .prose [data-cr-fit] { display: block; font-size: min(1em, calc(100cqi / (0.7 * var(--cr-word, 1)))); }
+
+/* A hero's heading sized to its column and its words. Unlayered. */
+[data-cr-hero] { --cr-lines: 3; }
+[data-cr-hero] [data-kit-section="hero"] h1 {
+  --cr-col: calc(min(100vw - 2 * var(--spacing-gutter, 1.5rem), var(--container-page, 80rem)) * var(--cr-share, 1));
+  font-size: min(var(--cr-hero-size, var(--text-heading-1, clamp(2.25rem, 1.5rem + 3vw, 3.75rem))), calc(var(--cr-col) * var(--cr-lines) / (0.55 * var(--cr-chars, 1))), calc(var(--cr-col) / (0.62 * var(--cr-word, 1))));
+  max-width: none;
+}
+[data-cr-display] [data-kit-section="hero"] h1 { line-height: var(--leading-display, 1.05); letter-spacing: var(--tracking-display, normal); }
+@media (width >= 48rem) { [data-cr-hero] { --cr-lines: 2; } [data-cr-hero][data-cr-split] { --cr-share: 0.5; --cr-lines: 3; } }
+
+/* A footer link inside a muted line prints at the line's opacity only: the 0.75 the contrast lift reads at. */
+footer .opacity-75 :is(a, button).opacity-75:not(:hover) { opacity: 1; }

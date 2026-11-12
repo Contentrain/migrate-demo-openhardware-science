@@ -1,0 +1,73 @@
+{
+  "card_grid": {
+    "items": [
+      {
+        "image": "/media/2017/12/learn.png",
+        "image_alt": "Learn",
+        "text": "about itself, the contexts in which it currently operates, and the ways in which OScH impacts society",
+        "title": "Learn"
+      },
+      {
+        "image": "/media/2017/12/support.png",
+        "image_alt": "Support",
+        "text": "individuals and forge partnerships to create the conditions under which OScH can flourish",
+        "title": "Support"
+      },
+      {
+        "image": "/media/2017/12/grow.png",
+        "image_alt": "Grow",
+        "text": "with respect to local differences, increasing the diversity, scale and impact of the OScH community",
+        "title": "Grow"
+      }
+    ]
+  },
+  "embed": {
+    "title": "flowpaper.com",
+    "url": "https://flowpaper.com/flipbook/?pdf=/media/2017/12/GOSH-roadmap-smll.pdf"
+  },
+  "executive_summary": {
+    "actions": [
+      {
+        "href": "/media/2017/12/GOSH-roadmap-smll.pdf",
+        "label": "Download PDF (opens in a new tab)"
+      }
+    ],
+    "body": "The ability to use, study, replicate, and improve scientific instrumentation is a central part of experimental science, and plays a crucial role in public life, research, and action. However, these activities are currently restricted by proprietary instrumentation, which is difficult and expensive to obtain and maintain, since they cannot be fully inspected, evaluated, or customized. This situation is fundamentally detrimental to the production of knowledge and its potential for creating equitable and sustainable solutions. The Open Science Hardware (OScH) community therefore seeks to bring together developers and users of scientific tools and research infrastructures to support the pursuit and growth of knowledge through global access to hardware for science.\n\nThis document describes what is required for Open Science Hardware to become ubiquitous by 2025, laying out challenges and opportunities and recommending concrete actions. These actions include:",
+    "heading": "Executive Summary",
+    "image": {
+      "alt": "Image",
+      "src": "/media/2017/12/GOSH-roadmap-min.png"
+    }
+  },
+  "hero": {
+    "heading": "The GOSH Roadmap: Concrete actions to make Open Science Hardware ubiquitous by 2025."
+  },
+  "section": {
+    "actions": [
+      {
+        "href": "https://flowpaper.com/flipbook-maker/",
+        "label": "This flipbook was created in FlowPaper ↗"
+      }
+    ]
+  },
+  "timeline": {
+    "items": [
+      {
+        "text": "Creating institutional and funding support structures"
+      },
+      {
+        "text": "Preparing guidelines for hardware designers, funders, users and newcomers on key aspects of OScH development, such as quality control and standards compliance, licensing, documentation standards, and social and ethical aspects of scientific work"
+      },
+      {
+        "text": "Involving the members of the OScH community in the task of elaborating an assessment framework for OScH projects"
+      },
+      {
+        "text": "Using the results of collaborative research to build a common pool of open educational resources"
+      },
+      {
+        "text": "Creating mentorship programs and support networks to increase diversity in the OScH community"
+      }
+    ],
+    "lead": "This document was contributed to, written or edited by over 100 people from different backgrounds and countries, working on or with OScH. It describes how the OScH community can:"
+  }
+}

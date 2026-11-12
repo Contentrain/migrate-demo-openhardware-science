@@ -1,0 +1,330 @@
+{
+  "defining_strategy": {
+    "markdown": "#### Defining strategy\n\nOnce the community values were made explicit in the manifesto, some of the organizers thought a natural next step would be to collaboratively develop a [roadmap](https://openhardware.science/global-open-science-hardware-roadmap/) of the movement, which could serve as a [compass](https://medium.com/@PazByC/roadmap-or-compass-10e968487ad) to guide action."
+  },
+  "defining_strategy_gallery": {
+    "items": [
+      {
+        "caption": "GOSH Roadmap process",
+        "image": "/media/2020/10/4_vote.jpeg",
+        "image_alt": "GOSH Roadmap process"
+      },
+      {
+        "caption": "GOSH Roadmap process",
+        "image": "/media/2020/10/4_session.jpeg",
+        "image_alt": "GOSH Roadmap process"
+      },
+      {
+        "caption": "GOSH Roadmap process",
+        "image": "/media/2020/10/4_ppl.jpeg",
+        "image_alt": "GOSH Roadmap process"
+      },
+      {
+        "caption": "GOSH Roadmap process",
+        "image": "/media/2020/10/4_cern.jpeg",
+        "image_alt": "Call for Reviewers: GOSH 2023 Events Funding Program (deadline 31 Jan 2023)"
+      }
+    ]
+  },
+  "defining_strategy_gallery_more": {
+    "markdown": "In november 2016 some ideas had emerged that were later polished by some GOSHers in a [writing workshop at CERN](https://twitter.com/GOSHCommunity/status/837253012578058240), in order to prepare a document to discuss with the hundred participants of GOSH 2017. The session in Chile was facilitated by Max Liboiron, and gathered input of all participants in terms of defining strategies, priorities, goals of the community.\n\nAll this information was curated during seven months of online meetings and writing sessions, plus one more meeting at CERN in 2017 to finalize the writing and publication of the official document, in January 2018."
+  },
+  "distributed_movement": {
+    "markdown": "#### Distributed movement\n\nDuring GOSH 2018 some organizers announced that there would not be a global event in 2019. The volume of volunteer work exceeded the capabilities of the small organizing team, and the growth of the community makes it difficult to gather everyone in one global event. After three years of global meetings and growing community, organizers decided to step back and propose some reflection on how to move forward more efficiently, so the strategy defined in the roadmap becomes real\n\n❝❞ We got to the point where we have to exclude people from coming to the meeting, half people couldn’t come to this GOSH \\[2018\\], which is not the position we’d like to be in.\n\nJenny Molloy, interview 2018\n\nOne of the proposals that emerged was to hold regional, decentralized meetings that keep the GOSH spirit alive and consolidate regional and local communities.\n\nGOSHers around the world (source: GOSH map)\n\nThe first case of decentralization was [AfricaOSH](http://africaosh.com/) after GOSH 2017. The idea of Africa OSH emerged from discussions between Thomas Mboa ([APSOHA](https://www.projetsoha.org/)) and Jorge Appiah ([Kumasi Hive](http://kumasihive.com/)) at the Gathering for Open Science Hardware in 2017 in Santiago, Chile. They were interested in exploring African specificities in the maker movement and decided to open the conversation to a larger audience. Connie Chow ([The Exploratory](https://the-exploratory.org/)) came on board during MIT Bio Summit 2017 in Boston, and Gameli Adzaho ([Global Lab Network](https://glabghana.wordpress.com/)) was later invited. The maker movement is growing in Africa, much like the rest of the world. Fablabs, co-creation spaces, and open innovation spaces are multiplying. However, it seems what happens on the continent is a duplication of what has been done in the West and elsewhere. Africa OSH therefore seeks to open a conversation by and for Africans on how to benefit from the maker movement, open science and open hardware, from our own social, cultural, political, and environmental realities, yet connecting with the bigger global picture. AfricaOSH has organized 3 regional gatherings; the first was in 2018 in Ghana, the second was in 2019 in Tanzania, the outbreak of the COVID 19 pandemic brought a halt to all regional activities. In 2022, the third regional gathering was organized in Cameroon. AfricaOSH is hoping to organize a fourth regional gathering late 2023.\n\nIn Latin America, some GOSHers were already working together around a students’ event of free/libre technologies for development, [TecnoX](https://tecnox.org/). After GOSH2018 they secured funds until 2022 to promote a [regional open science hardware network](http://www.cyted.org/es/regosh), which operates through a methodology of “GOSH residences” in different Latin American countries. In the residences participants spend three weeks replicating open science hardware designs with local materials. The [first edition in Porto Alegre](https://tecnologias.libres.cc/explore/projects) was a success, and will be replicated in Peru in 2020 under the theme of ‘health technologies’\n\nIn Toronto, Canada, the first [Great Lakes GOSH](https://forum.openhardware.science/c/communities/great-lakes-gosh) was held in 2019 with the aim of fostering collaboration and identifying ways to support participants and collaborate more effectively. The documentation of the three meeting days plus post hackathon can be found in the GOSH forum.\n\nIn Switzerland, GOSHers Europe met to organize a [crowdfunding campaign](https://wemakeit.com/projects/reseq-reuse-dna-sequencers?locale=en) to support work on the [ReSeq project](https://reseq.hackteria.org/), or reuse of an old DNA sequencer to turn it into an open science hardware instrument. The campaign was a success and the work is currently in development."
+  },
+  "distributed_movement_embed": {
+    "title": "cdn.knightlab.com",
+    "url": "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1MKgsy3chvYK_-PtrLOGz3BkXQIWCzMmHEkJyQ6h2pgs&font=Default&lang=en&initial_zoom=2&height=650"
+  },
+  "distributed_movement_embed_2": {
+    "title": "thessaly.pythonanywhere.com",
+    "url": "https://thessaly.pythonanywhere.com/"
+  },
+  "distributed_movement_gallery": {
+    "items": [
+      {
+        "caption": "GOSH LatAm",
+        "image": "/media/2020/10/GOSH-brazil.jpeg",
+        "image_alt": "GOSH LatAm"
+      },
+      {
+        "caption": "GOSH Great Lakes",
+        "image": "/media/2020/10/gosh-lakes.png",
+        "image_alt": "GOSH Great Lakes"
+      },
+      {
+        "caption": "Old GOSH logo",
+        "image": "/media/2020/10/gosh-logo-1.png",
+        "image_alt": "Old GOSH logo"
+      },
+      {
+        "caption": "GOSH logo",
+        "image": "/media/2020/10/gosh-icon.png",
+        "image_alt": "GOSH logo"
+      }
+    ]
+  },
+  "distributed_movement_gallery_reseq": {
+    "items": [
+      {
+        "caption": "ReSeq project",
+        "image": "/media/2020/10/6-reseq.jpeg",
+        "image_alt": "ReSeq project"
+      },
+      {
+        "caption": "Great Lakes GOSH",
+        "image": "/media/2020/10/6-glakes.jpeg",
+        "image_alt": "Great Lakes GOSH"
+      },
+      {
+        "caption": "Latin American GOSH residencies",
+        "image": "/media/2020/10/6-cta.jpeg",
+        "image_alt": "Latin American GOSH residencies"
+      },
+      {
+        "caption": "AfricaOSH",
+        "image": "/media/2020/10/6-africaosh.jpeg",
+        "image_alt": "AfricaOSH"
+      }
+    ]
+  },
+  "distributed_movement_gallery_reseq_more": {
+    "markdown": "What is the role of GOSHers in this scenario? Which governance structure is needed to gain momentum and push for change? Is there a need for one? Opinions are as diverse as GOSHers…"
+  },
+  "distributed_movement_note": {
+    "markdown": "More recently, 2020 has already brought news: some GOSHers participated in the creation of an [open hardware mentorship program](http://openhardware4.me), with the aim of providing support for open hardware projects in terms of best practices and connection to communities in similar fields. The first cohort is ongoing, featuring many open hardware projects [for science](https://openhardware4.me/ohlwebsite/05_Projects.html).\n\nAlso in February, the University of Bath Open Source Hardware Group organized a [3-day workshop](https://www.bath.ac.uk/events/open-hardware-from-academia/) where participants explored the challenges faced when making open hardware in academic contexts and explored collaborations to address them.\n\nAlso in February, the University of Bath Open Source Hardware Group organized a [3-day workshop](https://www.bath.ac.uk/events/open-hardware-from-academia/) where participants explored the challenges faced when making open hardware in academic contexts and explored collaborations to address them.\n\n#### Epilogue\n\nThere’s a lot going on around open science hardware. More and more people join and see its benefits for research, education and environmental justice. Some universities are starting to see its benefits, policy recommendations appear in [some publications](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3331182), and even the European Union commission is [discussing the topic](https://ec.europa.eu/info/news/webinar-how-foster-open-source-hardware-science-and-beyond-white-rabbit-project-2018-nov-12_en)."
+  },
+  "distributed_movement_section": {
+    "lead": "GOSHers dancing @GOSH2018 via Marc.",
+    "media": {
+      "alt": "6 dance",
+      "src": "https://thessaly.github.io/gosh-history/img/6-dance.gif"
+    }
+  },
+  "distributed_movement_section_more": {
+    "markdown": "[Marc](https://forum.openhardware.science/t/good-old-times/2215)"
+  },
+  "distributed_movement_testimonial": {
+    "items": [
+      {
+        "name": "Marc Dusseiller, interview 2018",
+        "quote": "❝❞ I would really like to see more projects, people working concretely on a project together, something that you haven’t done before."
+      }
+    ]
+  },
+  "distributed_movement_testimonial_2": {
+    "items": [
+      {
+        "text": "[mass difference and moving together] mean a lot of solidarity work: I can’t deal with your accent and I can’t understand what you’re saying but I will believe that we’re working towards the same goal, which doesn’t necessarily mean that we agree."
+      }
+    ]
+  },
+  "embed": {
+    "poster": {
+      "alt": "YouTube",
+      "src": "/media/cdn/i.ytimg.com/vi/b1uqvNh7-SQ/maxresdefault.jpg"
+    },
+    "url": "https://www.youtube.com/watch?v=b1uqvNh7-SQ"
+  },
+  "embed_gallery": {
+    "items": [
+      {
+        "caption": "Moments of GOSH 2016",
+        "image": "/media/2020/10/2_market.jpeg",
+        "image_alt": "Moments of GOSH 2016"
+      },
+      {
+        "caption": "Moments of GOSH 2016",
+        "image": "/media/2020/10/2_lunch.jpeg",
+        "image_alt": "Moments of GOSH 2016"
+      },
+      {
+        "caption": "Moments of GOSH 2016",
+        "image": "/media/2020/10/2_fondue.jpeg",
+        "image_alt": "Moments of GOSH 2016"
+      },
+      {
+        "caption": "Moments of GOSH 2016",
+        "image": "/media/2020/10/2_all.jpeg",
+        "image_alt": "Moments of GOSH 2016"
+      }
+    ]
+  },
+  "embed_note": {
+    "markdown": "A total of 54 people came together that March, mainly from Europe and the US: educators, scientists, entrepreneurs, community organizers. The four days of the program included keynotes by Sean Bonner ([SafeCast project](https://safecast.org/)), Denisa Kera ([philosopher and designer](https://usal.academia.edu/DenisaKera)), Kickstarter crowdfunding experts, unconference sessions, workshops and presentations by local artists convened by Marc Dusseiller plus artists from the program [Arts@CERN](https://arts.cern/)."
+  },
+  "embed_note_most": {
+    "markdown": "Most participants highlight how the spirit of the meeting was closer to a group retreat than to a typical conference: people cooking together, sharing spaces, building community. After three days of talks, workshops and discussion, the participants articulated the values of the community in the GOSH manifesto, which would lay the foundations for the work of the coming years. Max Liboiron and Greg Austic stewarded the first draft, which was later commented and signed by the participants, plus online collaborators worldwide through the website (such as Thomas Mboa, future co-founder of AfricaOSH).\n\nIt was January 2017 when Rafael inaugurated the GOSH forum, the virtual meeting point of the community, with a [welcome post](https://forum.openhardware.science/t/welcome-goshers/30) for everyone to introduce themselves, in particular those attending next year’s gathering.\n\nGOSH 2016 organizers\n\nAurora Thornhill (Kickstarter), Francois Grey (University of Geneva \\& CERN), Greg Austic (Michigan State University), Jenny Molloy (University of Cambridge), Marc Dusseiller (Hackteria), Shannon Dosemagen (Public Lab), Urs Gaudenz (Gaudi Labs)"
+  },
+  "embed_testimonial": {
+    "items": [
+      {
+        "name": "Andre Chagas, interview 2019",
+        "quote": "❝❞ In academic conferences you have people that come talk for hours and then the most interesting discussions happen in the hallways. GOSH takes this whole thing and puts it the other way round, the ones in the hallways are brought to the middle, and not top down."
+      }
+    ]
+  },
+  "gallery": {
+    "items": [
+      {
+        "caption": "Lego2Nano @MozFest 2014",
+        "image": "/media/2020/10/1_lego2nano.jpeg",
+        "image_alt": "Lego2Nano @MozFest 2014"
+      },
+      {
+        "caption": "PublicLab",
+        "image": "/media/2020/10/1_baloon.jpg",
+        "image_alt": "PublicLab"
+      },
+      {
+        "caption": "Gaudilabs – Hackteria",
+        "image": "/media/2020/10/1_Urs_tools.jpg",
+        "image_alt": "Gaudilabs – Hackteria"
+      }
+    ]
+  },
+  "going_global": {
+    "markdown": "#### Going global\n\nAfter the first meeting it was clear that there was a strong community interested in open hardware for science. It also brought up that often people felt isolated, in need of support to promote open science hardware at their workplaces and communities.\n\nThanks to the support of the [Alfred P. Sloan Foundation](https://sloan.org/) and contributions from [Mozilla Foundation](https://foundation.mozilla.org/) and [HardwareX](https://www.journals.elsevier.com/hardwarex), in March 2017 [GOSH moved to Chile](https://openhardware.science/gosh-2017/) to understand how open science hardware was happening in other latitudes. The focus was made on strategies to build community and advance the field globally."
+  },
+  "going_global_gallery": {
+    "items": [
+      {
+        "caption": "Moments of GOSH 2017",
+        "image": "/media/2020/10/3_public.jpeg",
+        "image_alt": "Moments of GOSH 2017"
+      },
+      {
+        "caption": "Moments of GOSH 2017",
+        "image": "/media/2020/10/3_play.jpeg",
+        "image_alt": "Moments of GOSH 2017"
+      },
+      {
+        "caption": "Moments of GOSH 2017",
+        "image": "/media/2020/10/3_juanma.jpeg",
+        "image_alt": "Moments of GOSH 2017"
+      },
+      {
+        "caption": "Moments of GOSH 2017",
+        "image": "/media/2020/10/3_facilitation.jpeg",
+        "image_alt": "Moments of GOSH 2017"
+      },
+      {
+        "caption": "Moments of GOSH 2017",
+        "image": "/media/2020/10/3_beauty.jpeg",
+        "image_alt": "Moments of GOSH 2017"
+      },
+      {
+        "caption": "Moments of GOSH 2017",
+        "image": "/media/2020/10/3_alexis.jpeg",
+        "image_alt": "Moments of GOSH 2017"
+      }
+    ]
+  },
+  "going_global_gallery_more": {
+    "markdown": "A hundred participants from 30 countries were selected under strict demographic criteria, based on the concept of equity for building the community. The code of conduct was put in place and people were designated to implement it during the event."
+  },
+  "going_global_note": {
+    "markdown": "The program included four days of activity that began with facilitation techniques training for all participants, followed by short presentations and debate (replacing keynotes), unconference sessions and workshops, and a science fair including posters and projects, open to all public. After the four official days, some GOSHers continued to work collaboratively two more days to advance specific projects. All documentation of the event, self-managed by a volunteer team, was [published online](https://forum.openhardware.science/c/gosh-2017) in the community forum.\n\nThe 2017 event also featured the launch of the [Journal of Open Hardware](https://openhardware.metajnl.com), an international journal for publication of open access, peer-reviewed academic articles, managed by the community.\n\nGOSH 2017 organizers\n\nFernán Federici Noe (Pontificia Universidad Católica de Chile), Francois Grey (University of Geneva and CERN), Greg Austic (PhotosynQ), Jenny Molloy (University of Cambridge), Max Liboiron (Memorial University of Newfoundland), Shannon Dosemagen (Public Lab)"
+  },
+  "going_global_testimonial": {
+    "items": [
+      {
+        "name": "Greg Austic, interview 2019",
+        "quote": "❝❞ We are going to bring the question “What is open science hardware to you?” to different cultural locations in the world, and let that question be answered in whatever way it is answered in that place."
+      }
+    ]
+  },
+  "gosh_2018_organizers": {
+    "markdown": "## GOSH 2018 organizers\n\nDavid Li (Shenzhen Open Innovation Lab), Fernán Federici Noe (Pontificia Universidad Católica de Chile), Francois Grey (University of Geneva and CERN), Greg Austic (Our Sci), Jenny Molloy (University of Cambridge), Ji Li (Open FIESTA, Tsinghua University), Julieta Arancio (CENIT-CONICET), Marc Dusseiller (Hackteria), Shannon Dosemagen (Public Lab), Vicky Xie (Shenzhen Open Innovation Lab)"
+  },
+  "scaling_hardware_growing": {
+    "markdown": "The final roadmap is structured in three main sections: LEARN, SUPPORT and GROW, with the goal of making open science hardware ubiquitous by 2025. It was presented at various meetings, conferences and workshops around the world.\n\n#### Scaling hardware, growing community"
+  },
+  "scaling_hardware_growing_gallery": {
+    "items": [
+      {
+        "caption": "Moments of GOSH 2018",
+        "image": "/media/2020/10/5-vj.jpeg",
+        "image_alt": "Moments of GOSH 2018"
+      },
+      {
+        "caption": "Moments of GOSH 2018",
+        "image": "/media/2020/10/5-speed.jpeg",
+        "image_alt": "Moments of GOSH 2018"
+      },
+      {
+        "caption": "Moments of GOSH 2018",
+        "image": "/media/2020/10/5-neon.jpeg",
+        "image_alt": "Moments of GOSH 2018"
+      },
+      {
+        "caption": "Moments of GOSH 2018",
+        "image": "/media/2020/10/5-bio.jpeg",
+        "image_alt": "Moments of GOSH 2018"
+      },
+      {
+        "caption": "Moments of GOSH 2018",
+        "image": "/media/2020/10/5-lego.jpeg",
+        "image_alt": "Moments of GOSH 2018"
+      },
+      {
+        "caption": "Moments of GOSH 2018",
+        "image": "/media/2020/10/5-all.jpeg",
+        "image_alt": "Moments of GOSH 2018"
+      }
+    ]
+  },
+  "scaling_hardware_growing_note": {
+    "markdown": "With the aim of growing the community, the next natural step was to hold the [global gathering 2018](https://openhardware.science/gatherings/gosh-2018-2/) in Asia. After evaluating different options considering community feedback, [OpenFiesta](http://www.fiesta.tsinghua.edu.cn/), an institute at [Tsinghua University](https://www.tsinghua.edu.cn/publish/thu2018en/index.html) in Shenzhen (China) was chosen for the event. Following the same principle since the beginning, the hundred attendees of the event did not have to pay for travelling or for participating."
+  },
+  "scaling_hardware_growing_note_first": {
+    "markdown": "The first three days of the meeting were each dedicated to a section of the roadmap, with unconference sessions, workshops and project showcasing. The last day was reserved to a group session where everyone picked up and self-assigned concrete actions derived from the roadmap strategy to push further, which were [documented in GitLab](https://gitlab.com/gosh-community/gosh-lists). A volunteer team was again responsible for documenting all sessions and activities online, plus managing audiovisual material.\n\n![GOSH 2 thumbnail](/media/2020/10/GOSH2-thumbnail.jpg)\n\nSummary of day 2, by [Ananda Gabo](https://twitter.com/trash_humanism)"
+  },
+  "scaling_hardware_growing_note_public": {
+    "markdown": "The public event was organized in [X-Factory](https://www.xfactory.io/) – a public-private space for prototyping and batch production – where community projects were presented and an art-science exhibition was held. Almost a tradition, pre and post gathering some GOSHers dedicated time to collaborative work and to visit emblematic local spaces such as the [Huaqiangbei hardware market](https://medium.com/chinafacture/huaqiangbei-the-biggest-electronics-market-in-the-world-shenzhen-china-3ec66e5d2df0)"
+  },
+  "scaling_hardware_growing_testimonial": {
+    "items": [
+      {
+        "name": "Paz Bernaldo, interview 2020",
+        "quote": "❝❞ The writing process involved so many people at different times that it felt very collaborative. Although it was exhausting to understand how to organize [the contributions], or who had the last word on each topic, it finally ended up being very representative"
+      }
+    ]
+  },
+  "scaling_hardware_growing_testimonial_ji": {
+    "items": [
+      {
+        "name": "Ji Li, interview 2019",
+        "quote": "❝❞ We find maker sprit everywhere and it’s quite easy to develop something and have a startup in China. But here [with GOSH] there is an opportunity, anyone can use these open source devices that contribute to science and to good."
+      }
+    ]
+  },
+  "section": {
+    "lead": "WaterHackathon at Hackuarium – Lausanne, 2014 (source: GaudiLabs)"
+  },
+  "section_more": {
+    "markdown": "[GaudiLabs](https://www.youtube.com/user/MrGaudiCH)"
+  },
+  "testimonial": {
+    "items": [
+      {
+        "name": "Urs Gaudenz, interview 2019",
+        "quote": "❝❞ I’m pretty sure in 20 to 50 years there’s not going to be any research or any new technology that is not based at least partially on open hardware. Science needs to change and is going to change."
+      }
+    ]
+  },
+  "testimonial_shannon": {
+    "items": [
+      {
+        "name": "Shannon Dosemagen, interview 2019",
+        "quote": "❝❞ Between 2010 and 2015 there was a lot of movement that started happening in Open Science and hardware, it kind of felt like you throw a firecracker and the sparklers go all over the place."
+      }
+    ]
+  },
+  "text": {
+    "markdown": "By [Julieta Arancio](https://julieta.aranc.io) – February 2020 Timeline last updated by [Bri Johns](https://briannaljohns.com/) in December 2022"
+  },
+  "welcome": {
+    "markdown": "### Welcome!\n\nWe are about to tell a story of people creating tools with other people. About knowledge(s), curiosity, questioning and sharing ideas, nurtured by the stories of those who are part of this collective. Its full name is Global Open Science Hardware movement, but since it is very long we affectionately call it GOSH.\n\nThose of us who identify with GOSH values are a diverse group of people using different kinds of tools to produce knowledge. Whether within universities or schools, working in civil associations, ateliers or in our communities, we think that different and necessary things happen when the designs of the tools that produce knowledge are freely shared. To learn more about this you can check our [manifesto](https://openhardware.science/gosh-manifesto/) and the article [Why gosh?](https://openhardware.science/about/why-gosh/).\n\nAfter four years of getting to know each other and a lot of work together, and after setting as our goal that open science hardware is ubiquitous by 2025, we understand it is a good moment to reflect on how we got here.\n\n#### Tracing threads\n\nPrior to 2016, before GOSH existed as a name or set of values ​​in a manifesto, different people around the world were creating their own scientific tools and sharing their designs.\n\nSome of them were teachers, building low-cost tools for their students to learn in more engaging ways. Others worked in laboratories and had started customizing and tweaking tools to make them useful for their new experiments, or to be able to do more with less resources. In some cases, people working with communities were putting together very low-cost hardware and software to run grassroots environmental monitoring efforts. Artists were already experimenting with these new platforms, in the interstitial space between art and science.\n\nIn most cases they combined 3D printing and open platforms such as Arduino or similar ones, and produced data, images, new ways of learning. Some names that were heard at the time referred to ‘open labware’ or ‘diy science equipment’.\n\nAt that time other communities, such as the [Open Hardware Association (OSHWA)](https://www.oshwa.org/), were already gathering people working on open hardware but not particularly in science. Even a first GOSH already existed, although it referred to the [Grounding Open Source Hardware (GOSH)](https://piksel.no/2009/07/06/gosh-grounding-open-source-hardware) initiative who met in 2009 to promote the certification and registration of projects, and was finally abandoned.\n\nPart of this story takes us to 2014 when Jenny Molloy ([University of Cambridge](https://www.synbio.cam.ac.uk/directory/jmolloy)), Greg Austic ([OurSci.net](https://www.our-sci.net/)), Adam Wolf (who would later step back from the project due to other commitments) and François Gray ([Citizen Cyberlab](http://www.citizencyberlab.org/), [Geneva-Tsinghua Initiative](http://gt-initiative.org/)) met at the [Mozilla Festival](https://www.mozillafestival.org/) in London, UK. It was on this occasion that the idea of ​​organizing a first event on open scientific hardware began to take shape, converging from different places.\n\nJenny and Greg had met almost by chance in the US, attending an open science event that had little to say about hardware. Jenny had been struck by the ideas she had heard in a previous event from Rafael Pezzi ([Centro de Tecnologia Academica – UFRGS](http://cta.if.ufrgs.br/capa/)), about how they used open scientific hardware within university. Greg had a history of community science involvement in the US and was actively developing [PhotosynQ](https://www.photosynq.org). François, who was involved in the [Lego2Nano](https://www.instituteofmaking.org.uk/research/lego2nano) initiative to build an OpenAFM with students, had also been discussing the need of gathering people working on open science hardware with Shannon Dosemagen ([PublicLab](https://publiclab.org/)), who joined the organizers’ group. Shannon was working since the beginning of the decade using open hardware with communities doing environmental monitoring in the US, and had witnessed the growth of the movement first-hand.\n\nSeveral emails and calls later, the group already had a better picture of what GOSH was going to be, and how it was going to happen.\n\n#### Emerging\n\nIn 2015 preparations were under way for [GOSH first gathering](https://openhardware.science/gatherings/gosh-2016/) in 2016 at [CERN Idea Square](https://ideasquare.cern/). Being in Switzerland, in October François contacted Marc Dusseiller ([Hackteria](https://thessaly.github.io/gosh-history/hackteria.org)) and Urs Gaudenz ([GaudiLabs](https://thessaly.github.io/gosh-history/gaudi.ch), Hackteria), who from different angles were already working with open science hardware since 2010. Besides co-founding Hackteria, Marc had been using open hardware in his science classes and the media-arts scene; Urs had developed an open set of tools for biology and was actively working on open hardware projects at his lab.\n\nAlthough some last-minute logistical problems almost threatened the gathering, it was a success, convening an active group interested in working together.\n\nSpecial mention: although he wasn’t sure about it, emails confirm François was the one to come up with the name “GOSH” in 2015 (among other suggestions such as ‘OH Science!’)."
+  }
+}

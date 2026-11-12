@@ -1,0 +1,106 @@
+{
+  "domain": "pages",
+  "fields": {
+    "how_do_i": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "How do i",
+      "type": "object"
+    },
+    "how_do_i_text": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "How do i text",
+      "type": "object"
+    },
+    "nominations": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Nominations",
+      "type": "object"
+    },
+    "text": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": true,
+          "type": "markdown"
+        }
+      },
+      "label": "Text",
+      "required": true,
+      "type": "object"
+    },
+    "text_note": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Text note",
+      "type": "object"
+    }
+  },
+  "i18n": true,
+  "id": "page-2022-gosh-community-council-election",
+  "kind": "singleton",
+  "name": "2022 GOSH Community Council Election page",
+  "title_field": "text.markdown"
+}

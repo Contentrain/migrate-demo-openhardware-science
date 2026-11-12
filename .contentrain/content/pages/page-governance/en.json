@@ -1,0 +1,78 @@
+{
+  "community": {
+    "markdown": "### Community\n\nGOSH is an international community of artists, makers, hackers, scientists, designers, organizers, educators, and entrepreneurs working to make open source science hardware (OScH) widespread across the globe. There are also several regional and self-organized OScH communities, such as [AfricaOSH](https://africaosh.com/), [Great Lakes GOSH](https://forum.openhardware.science/c/communities/great-lakes-gosh/35), and [reGOSH](https://regosh.libres.cc/en/home-en/) (which is based in Latin America). Read more about these communities [here](https://openhardware.science/communities-and-projects/)!"
+  },
+  "community_coordinator": {
+    "markdown": "### Community Coordinator\n\nThe GOSH Community Coordinator works with the GOSH Community Council and the wider community to support them in organising activities such as Global GOSH Gatherings, writing sprints, collaborative development projects, and regional events. They play a crucial role in supporting the GOSH community to reach new audiences and providing an enriching and dynamic environment for existing projects and community members. The Community Coordinator also serves as the Election Secretary during the annual GOSH Community Council elections. The Community Coordinator is contracted by the Open Science Hardware Foundation (OSHF), a US-based 501c3 nonprofit and is supported by a grant from the Alfred P Sloan Foundation."
+  },
+  "council_domains": {
+    "markdown": "### Council Domains\n\nIn 2020, the GOSH Community Governance Working Group established a list of domains overseen by the GOSH Council. In 2022, GOSH council members [met](https://forum.openhardware.science/t/community-council-in-person-meeting-summary-2022-10-29/4373) to refine these domains further and decide on council members to lead them. You can see each of these domains, and the council members responsible for leading them, below.\n\n- Management (programming): Design community input processes for funding; and managing grants/program management once funding has been secured for the community.\n- Management (listening): Creating consultation process(es) for managing big decisions.\n- Management (admin): Take care of official documents like the GOSH Manifesto, upcoming Constitution, etc.\n- Community Support led by a Council Member and the Community Coordinator: Community management, handling infrastructure issues and requests from the community; maintaining brand/logo/assets.\n- Communications led by a Council Member with support from the Community Coordinator: Website, email addresses, external communications, social media, newsletter, Element chat group(s), etc.\n- Gatherings/Events: Organise future global and local Gatherings.\n- Roadmap\n- Funding"
+  },
+  "gallery": {
+    "items": [
+      {
+        "caption": "Photo of attendees at GOSH 2017. Photo credits Gathering for Open Science Hardware",
+        "image": "/media/2023/01/34241232455_a6fe86dcd7_o-1-1024x682.jpg",
+        "image_alt": "Photo of attendees at GOSH 2017. Photo credits Gathering for Open Science Hardware"
+      },
+      {
+        "caption": "Photo of hardware at GOSH 2018. Photo credits Gathering for Open Science Hardware",
+        "image": "/media/2023/01/34744234662_7e6f610b22_o-min-1024x683.jpg",
+        "image_alt": "Photo of hardware at GOSH 2018. Photo credits Gathering for Open Science Hardware"
+      },
+      {
+        "caption": "Photo of attendees at GOSH 2022. Photo credit Gathering for Open Science Hardware",
+        "image": "/media/2023/01/52459599551_1910dbf112_o-1024x683.jpg",
+        "image_alt": "Photo of attendees at GOSH 2022. Photo credit Gathering for Open Science Hardware"
+      }
+    ]
+  },
+  "gallery_more": {
+    "markdown": "- [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/43814278390/in/album-72157674579730208/) — [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/43814278390/in/album-72157674579730208/)\n- [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/43814278390/in/album-72157674579730208/) — [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/43814278390/in/album-72157674579730208/)\n- [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/43814278390/in/album-72157674579730208/) — [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/43814278390/in/album-72157674579730208/)"
+  },
+  "organisations_supporting_gosh": {
+    "markdown": "The current Community Coordinator is Jamaica Jones. Click [here](mailto:info@openhardware.science) to contact her.\n\n## Organisations supporting GOSH\n\nGOSH community activities and events have been fiscally sponsored and hosted by a number of organisations over the years. There is currently one organisation (OSHF) with a specific focus on supporting the GOSH community built into its mission and more may emerge in the future.\n\n### Open Science Hardware Foundation (OSHF): US-based 501c3 Nonprofit\n\nIn 2020, OSHF (formerly known as GOSH Inc.) was established to open up new possibilities for the community, like administering funding, fiscally sponsoring open hardware and related community projects, hosting community initiatives that need a legal entity, and more. OSHF continues to act as a fiscal sponsor for the GOSH Community alongside other initiatives. See [opensciencehardware.org](https://opensciencehardware.org/) for more information.\n\nThe current Open Science Hardware Foundation board members are: Shannon Dosemagen Jenny Molloy Julieta Arancio Pen-Yuan Hsin Alison Parker Karl Kaddu \\[Community Council Board Seat\\]"
+  },
+  "team": {
+    "heading": "Community Council",
+    "intro": "2024-2025 GOSH Community Council Members",
+    "items": [
+      {
+        "bio": "Suleiman is a doctoral researcher at Virginia Tech whose leadership in GOSH began in 2022, when he spearheaded the drafting of its founding Constitution, translating collective values into an enduring global governance framework anchored in transparency, equitable representation, and consensus-based decision-making.\n\nHe serves on the Ambassador Program Working Group and has co-authored a paper with other GOSHers on the potentialities of open science hardware across Africa.\n\nAs a Council member, he will spearhead initiatives to expand global participation, enhance community-wide discourse across the Forum, and establish institutional partnerships connecting GOSH with leading research universities.",
+        "image": "/media/2026/09/SuleimanAbdulsalam_Headshot-682x1024.jpeg",
+        "image_alt": "Suleiman Abdulsalam",
+        "name": "Suleiman Abdulsalam"
+      },
+      {
+        "bio": "María (Marita) Castelló is a neuroscientist, counselor, and science diplomat based in Uruguay (IIBCE; PEDECIBA; Fibras.org), with extensive experience in neuroscience research, education, and open science advocacy. Her work emphasizes equity and the ethical co-creation of knowledge from the Global South.\n\nShe has led interdisciplinary initiatives such as ANT and ANT4Kids (ANT.net.uy), which promote low-cost, hands-on workshops in neuroscience and microscopy, and collaborated in establishing a makerspace for teacher training at the Consejo de Formación en Educación (ANEP).\n\nDuring the COVID-19 pandemic, she organized Latin American courses on DIY neuroscience and AI, and she is currently developing ANTHill, an open lab space at the Neural Development and Evolution Laboratory at the Integrative ans Computational Department at the Instituto de Investigaciones Biológicas Clemente Estable in Montevideo.",
+        "image": "/media/2025/10/1000371488-674x1024.jpg",
+        "image_alt": "María Castelló",
+        "name": "María Castelló"
+      },
+      {
+        "bio": "Salman is a maker and open hardware advocate based in Kerala, India, where he leads MakerGram and works in Community and Developer Relations at Screenly.\n\nA former OSHWA Board member, he is highly active across international maker and hardware networks, serving as a Seeed Studio Ranger, an Edge Impulse Expert, and an Arm Ambassador.\n\nHe joins the Council with a strong focus on community support, communications, capacity building, and helping new contributors navigate GOSH and open science hardware projects.",
+        "image": "/media/2026/09/SalmanFaris-633x1024.jpg",
+        "image_alt": "Salman Faris",
+        "name": "Salman Faris"
+      },
+      {
+        "bio": "Yan Kay is the Project Manager for the Open Bioeconomy Lab at the University of Cambridge (openbioeconomy.org) and Community Manager for the Reagent Collaboration Network (reclone.org), where she fosters global collaborations to advance equitable access to biotechnology. With a background in synthetic biology, Yan Kay focuses on supporting open science research by building connections across communities engaged in open wetware, software, hardware, and the arts.\n\nShe has been a part of the GOSH community since 2023, and is keen to learn from the community all the different ways open science research can best serve the interests of the environment and society that we live in.",
+        "image": "/media/2025/10/SPB_4494_YanKay_sq-crop-1024x1024.jpg",
+        "image_alt": "Yan Kay Ho",
+        "name": "Yan Kay Ho"
+      },
+      {
+        "bio": "Oluwadara Obademi currently works as an operations and Maintenance Engineer, with an Interest in open-source electronics design, 3D Printing and the Internet of things. He has been an active member of the Global Open Source Hardware Community since 2017. In 2022 he was one of the fellows who won the Open Hardware Summit Ada Lovelace fellowship.",
+        "image": "/media/2025/10/Dara-Obademi-819x1024.jpeg",
+        "image_alt": "Dara Obademi",
+        "name": "Dara Obademi"
+      }
+    ]
+  },
+  "team_more": {
+    "markdown": "The GOSH Community Council oversees or delegates all tasks, questions and issues related to governance of the GOSH community, and coordinates the allocation of community funds to activities like regional events and collaborative hardware development programs.\n\nGOSH Community Council elections are held annually. Those elected to the Community Council are referred to as Community Council Members. Generally, GOSH Community Council membership persists for 2-year terms, with the exception of several 1-year terms seated in the first election, enabling a staggering of terms year over year.\n\n- [leadership in GOSH](https://opensciencehardware.org/2026/03/gosh10-on-governance-belonging/)\n- [MakerGram](https://makergram.com/)\n- [Openbioeconomy](http://openbioeconomy.org/) — [Reclone](http://reclone.org/)"
+  },
+  "text": {
+    "markdown": "Contact the GOSH council [here](https://forum.openhardware.science/g/2021-council).\n\nYou can find out more about the Community Governance Working Group that set up the Community Council structure [here](https://docs.google.com/document/d/1yym3H9qLhIj0FInMXDuGS-_8n8LG7p0I6xtpRqrQ6Yw/edit)."
+  }
+}

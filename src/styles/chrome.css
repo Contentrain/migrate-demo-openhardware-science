@@ -1,0 +1,83 @@
+/* Site chrome: header and footer as the editorial report's masthead and colophon. Role variables only. */
+
+/* Header: a thin purple rule over a paper bar; the menu set in the display face. */
+body > header:first-of-type {
+  border-top: 0.25rem solid var(--color-accent);
+}
+
+body > header:first-of-type [data-kit-brand] img {
+  height: 2.75rem;
+}
+
+body > header:first-of-type nav[data-cr-part="nav-header"] > ul > li > a,
+body > header:first-of-type nav[data-cr-part="nav-header"] > ul > li > button[data-kit-sub]:first-child {
+  font-family: var(--font-heading, inherit);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+body > header:first-of-type nav[data-cr-part="nav-header"] > ul > li > a:hover {
+  color: var(--color-accent);
+}
+
+body > header:first-of-type button[popovertarget] {
+  min-height: 2.75rem;
+  font-family: var(--font-heading, inherit);
+  font-weight: 600;
+}
+
+body > header:first-of-type a:focus-visible,
+body > header:first-of-type button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Footer: a solid GOSH-purple tile; the brand leads as a heavy display line. */
+footer:has(> [data-kit-footer]) {
+  background-color: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+[data-kit-footer] {
+  padding-block: clamp(3rem, 2rem + 4vw, 5rem);
+  row-gap: 2.5rem;
+}
+
+[data-kit-footer] [data-kit-brand] {
+  font-family: var(--font-heading, inherit);
+  font-size: var(--text-heading-2);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+
+[data-kit-footer] [data-kit-tagline] {
+  font-size: 1rem;
+  max-width: 38ch;
+}
+
+[data-kit-footer] nav[data-cr-part="nav-footer"] a,
+[data-kit-footer] ul a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-family: var(--font-heading, inherit);
+  font-weight: 600;
+}
+
+[data-kit-footer] a:focus-visible,
+[data-kit-footer] button:focus-visible {
+  outline: 2px solid var(--color-accent-ink);
+  outline-offset: 2px;
+}
+
+@media (width >= 48rem) {
+  [data-kit-footer] {
+    align-items: end;
+  }
+}

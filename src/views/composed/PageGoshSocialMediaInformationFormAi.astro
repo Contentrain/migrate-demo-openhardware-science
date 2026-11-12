@@ -1,0 +1,54 @@
+---
+// The GOSH social media information form, set as a report sheet: the frame's title, then the
+// form on a lavender band beside its introduction, and the editor's preferences note under it.
+import { getEntry } from 'astro:content'
+import ContactForm from '../../components/kit/contact-form/ContactForm.astro'
+import Prose from '../../components/kit/prose/Prose.astro'
+import { type Page } from '../../lib/content'
+import { fitHeadings, headingLevels } from '../../lib/headings'
+import { publicHtml, publicLinks } from '../../lib/links'
+import ComposedPage from '../ComposedPage.astro'
+
+interface Props {
+  page: Page
+  trail: Array<{ title: string, href: string }>
+  isHome: boolean
+}
+
+const { page, trail } = Astro.props
+const isHome = false
+const publicHref = await publicLinks()
+const entry = await getEntry('pageGoshSocialMediaInformationForm', 'en')
+if (!entry) throw new Error('page-gosh-social-media-information-form is missing: the page\'s sections are its fields')
+const { contact_form: contactForm, text } = entry.data
+const contactFormDetails = (contactForm?.details ?? []).map(item => ({ href: publicHref(item.href), iconImage: item.icon_image, label: item.label, value: item.value }))
+const contactFormMap = contactForm?.map && { address: contactForm?.map.address, title: contactForm?.map.title, url: publicHref(contactForm?.map.url) }
+const contactFormSocials = (contactForm?.socials ?? []).flatMap(item => { const href = publicHref(item.href); return href === undefined ? [] : [{ href, label: item.label }] })
+const textHtml = await publicHtml(text?.html)
+const h2Above1 = !!contactForm?.heading?.trim()
+const prose0 = headingLevels(text?.markdown, h2Above1 ? 2 : 1)
+---
+<ComposedPage page={page} trail={trail} isHome={isHome}>
+  <div class="mt-8 border-s-8 border-accent md:mt-12">
+    <ContactForm
+      details={contactFormDetails}
+      formHeading={contactForm?.form_heading}
+      heading={contactForm?.heading}
+      hours={contactForm?.hours}
+      intro={contactForm?.intro}
+      map={contactFormMap}
+      socials={contactFormSocials}
+      tone="muted"
+      layout="split"
+      model="contact"
+      entry="contact_form"
+    />
+  </div>
+  {text && (
+    <div class="container-prose py-10 md:py-14" data-cr-fit data-cr-shift={prose0.shift}>
+      <div class="border-t-2 border-ink pt-4 text-ink-muted">
+        <Prose html={textHtml} markdown={fitHeadings(prose0.markdown)} />
+      </div>
+    </div>
+  )}
+</ComposedPage>

@@ -1,0 +1,41 @@
+{
+  "schedule_calls": {
+    "heading": "Schedule of Calls",
+    "items": [
+      {
+        "number": "5th",
+        "text": "Michael Weinberg (Engelberg Center on Innovation Law & Policy)",
+        "title": "Legal Studies of Open Licensing"
+      },
+      {
+        "number": "9th",
+        "text": "Julieta Arancio (Drexel University), Alison Parker (Wilson Center), Guillermina Actis (Centro de Investigaciones para la Transformación)",
+        "title": "Social, Economic and Policy Studies"
+      },
+      {
+        "number": "11th",
+        "text": "Jenny Molloy (University of Cambridge)",
+        "title": "Scientific Instrumentation and Standardization"
+      }
+    ]
+  },
+  "schedule_calls_more": {
+    "markdown": "- [this Zoom link](https://us06web.zoom.us/meeting/register/tZ0vceisrDwrEt2k869f9uuRrPYb8LEAiC5S)\n- [this Zoom link](https://us06web.zoom.us/meeting/register/tZYkdOuspz4iHNyO9L07XfcWQqKvtNDNcuij)\n- [this Zoom link](https://us06web.zoom.us/meeting/register/tZMkceyvqToiGdN_ijGdMynUFyQZ9JWyy5zS)"
+  },
+  "schedule_calls_note": {
+    "markdown": "Month\n\nDate\n\nTime (UTC)\n\nTopic\n\nPresenter(s)\n\nInformation for joining the call\n\nJanuary\n\n20:00 UTC\n\nYou can register via\n\nJanuary\n\n20:00 UTC\n\nYou can register via\n\nJanuary\n\n21:00 UTC\n\nYou can register via"
+  },
+  "section": {
+    "lead": "Image Credit: Gathering for Open Science Hardware",
+    "media": {
+      "alt": "OH lit review series",
+      "src": "/media/2022/12/OH-lit-review-series-1024x534.png"
+    }
+  },
+  "section_more": {
+    "markdown": "[Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity)"
+  },
+  "text": {
+    "markdown": "Throughout early 2023, the GOSH Community will be working collaboratively on an open hardware literature review as part of the [GOSH 2022 Research and Policy Writing Workshops](https://openhardware.science/gosh-2022-research-and-policy-writing-workshops/). As part of the literature process, we will be holding a series of public calls focused on a particular topic related to open hardware. Each call will consist of a 1-hour public talk on the topic with time for additional comments from the community.\n\nIf you are interested in participating in the literature review process, please join us for one of the following calls listed below.\n\nSubscribe to the [GOSH community calendar](https://calendar.google.com/calendar?cid=cWhsZDgzcjkzNWVubHExcGd1M2loZm82N3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) to be notified of these sessions and other GOSH-related events and activities."
+  }
+}

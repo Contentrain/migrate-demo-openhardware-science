@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "media": {
+      "alt": "Global OSH non Euro Centric hardware",
+      "src": "/media/2018/11/GlobalOSH_nonEuroCentric._hardware-1024x426.png"
+    }
+  },
+  "steps": {
+    "items": [
+      {
+        "text": "A GOSH lab event to work on the ReSeq project, reuse of old DNA sequencers and turn them into open source instruments for more general scientific research.",
+        "title": "GOSHLab ReSeq, January 8th-10th 2019, Lucerne, Switzerland"
+      },
+      {
+        "text": "Africa OSH is a grassroots effort that provides people interested in open science and hardware an alternative to traditional intellectual property (IP) and closed systems as a means to achieve locally adaptable technologies that will foster economic growth in Africa.",
+        "title": "Africa Open Science Hardware Summit 2019, 10th -13th April 2019, Dar es Salaam, Tanzania"
+      },
+      {
+        "text": "July 31-August 2, 2019 at the University of Toronto and Evergreen Brick Works, a community hub with a mission to promote “sustainable practices that enable flourishing cities of the future”.",
+        "title": "Great Lakes GOSH, July 31 – Aug 5, Toronto, Canada"
+      },
+      {
+        "text": "Latinoamerican Net for Free Technologies is holding a 3 weeks residency in Brazil. The event will grow and support the GOSH Community in Latin.",
+        "title": "GOSH Residency, Jul 22 – Aug 9, 2019 Porto Alegre, Brazil"
+      }
+    ]
+  },
+  "steps_more": {
+    "markdown": "- [Evergreen Brick Works](https://www.evergreen.ca/)"
+  }
+}

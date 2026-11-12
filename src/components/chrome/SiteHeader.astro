@@ -1,0 +1,9 @@
+---
+// This site's header: the data comes from BaseLayout as props (links, contact, legal lines, logo); the look is this file's.
+// Editorial report: a white paper bar under a thin GOSH-purple rule (chrome.css), the kit's split layout and drawer.
+import type { ComponentProps } from 'astro/types'
+import Header from '../kit/header/Header.astro'
+
+type Props = ComponentProps<typeof Header>
+---
+<Header {...Astro.props} layout="split" tone="default" />

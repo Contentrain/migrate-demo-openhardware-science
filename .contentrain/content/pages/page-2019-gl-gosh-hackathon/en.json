@@ -1,0 +1,36 @@
+{
+  "overview": {
+    "heading": "Overview",
+    "items": [
+      {
+        "media": "/media/2019/05/cottage.png",
+        "media_alt": "Image",
+        "text": "The cottage has 5 queen beds, 2 sets of bunk beds, and lots of space for people to pitch tents. There's a pool, hot tub, canoes, kayaks, etc.",
+        "title": "Facility"
+      },
+      {
+        "media": "/media/2019/05/activities.png",
+        "media_alt": "Image",
+        "points": [
+          "If nothing comes to mind, you can also volunteer your time/skills to someone else’s project.",
+          "Or if you’d rather just relax and hang out and get to know other GOSHers, that’s ok too! This event is all about getting to know each other and building a community.",
+          "Examples of the type of projects you might consider:",
+          "1. A workshop on building a DIY microscope to identify freshwater organisms from the lake.",
+          "2. Testing soil and/or produce from the garden using a open-source photospectrometer/reflectometer.",
+          "3. Prototyping automated microfluidics-based methods for water quality testing.",
+          "If you want to discuss anything else related to the hackathon/retreat, there's a thread on the forum."
+        ],
+        "text": "Specific activities will depend on participants and their interests. If you have a project that you want to work on, make a proposal on the discussion forum. It could be a workshop you want to lead, a collaboration you are searching for, or a call for volunteers.",
+        "title": "Activities"
+      }
+    ],
+    "lead": "This 3 day event (Aug 3-5, 2019) will take place at a lakeside cottage ~2 hrs West of Toronto (map). Think of it as a combination hackathon/summer retreat, offering unstructured time with other open science enthusiests to explore hardware applications in a relaxed, outdoor setting, with opportunities for hands-on practical workshops, informal campfire discussions, and time for prototyping new integrations between existing open hardware projects.",
+    "media": {
+      "alt": "Image",
+      "src": "/media/2019/05/GL_GOSH_hackathon_header.png"
+    }
+  },
+  "overview_more": {
+    "markdown": "[map](https://goo.gl/maps/t5duKpDj65ZxK1AS9)\n\n- [discussion forum](https://forum.openhardware.science/t/after-gosh-hackathon-retreat-discussion) — [DIY microscope](https://openflexure.org/) — [open-source photospectrometer/reflectometer](http://our-sci.net) — [Prototyping automated microfluidics-based methods for water quality testing](https://forum.openhardware.science/t/hackathon-project-developing-an-automated-workflow-for-colorimetric-testing-using-digital-microfluidics/1887) — [thread on the forum](https://forum.openhardware.science/t/after-gosh-hackathon-retreat-discussion)"
+  }
+}

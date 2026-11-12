@@ -1,0 +1,80 @@
+{
+  "gosh_code_conduct": {
+    "actions": [
+      {
+        "href": "https://openhardware.science/logistics/gosh-code-of-conduct/",
+        "label": "GOSH Code of Conduct"
+      }
+    ],
+    "heading": "GOSH Code of Conduct",
+    "lead": "The GOSH code of conduct applies to all GOSH spaces, both online and in person.",
+    "media": {
+      "alt": "GOSH Code of Conduct",
+      "src": "/media/2017/04/32867037334_471e128c18_z.jpg"
+    }
+  },
+  "hero": {
+    "actions": [
+      {
+        "href": "../gatherings/great-lakes-gosh-2019/2019-gl-gosh-program/",
+        "label": "Tentative Program"
+      },
+      {
+        "href": "../gatherings/great-lakes-gosh-2019/2019-gl-gosh-hackathon/",
+        "label": "Hackathon Details"
+      }
+    ],
+    "eyebrow": "July 31 - Aug 5, Toronto, Canada",
+    "heading": "Make All Science Open Science",
+    "image": {
+      "alt": "Great Lakes GOSH 2019",
+      "src": "/media/2019/04/great_lakesGOSH.png"
+    },
+    "lead": "Gathering for Open Science Hardware (GOSH) is a movement that aims to disrupt the way that scientific tools are designed, produced, and used, with the goals of accelerating scientific discovery and making science more accessible and inclusive."
+  },
+  "hero_more": {
+    "markdown": "Building on the work of previous GOSH events held in [Switzerland](../gosh-2016) (2016), [Chile](../gosh-2017) (2017), and [China](../gosh-2018) (2018), regionally focused events are lower cost and focus on accomplishing the [work laid out by the Global GOSH community](https://gitlab.com/gosh-community/gosh-roadmap/boards), [manifesto](../gatherings/gosh-manifesto) and [roadmap](../gatherings/global-open-science-hardware-roadmap). International applicants are encouraged to apply, but be aware there are very limited funds for travel and visa support available.\n\nThe event will take place from July 31-August 2, 2019 at the University of Toronto and [Evergreen Brick Works](https://www.evergreen.ca/), a community hub with a mission to promote “sustainable practices that enable flourishing cities of the future”.\n\nThe cost of the event ($300 full, $150 discounted) includes food and lodging for 3 nights, and accepted applicants who cannot pay will be provided support to cover the cost. So apply at whatever level works for you!\n\nA [post-even Hackathon](../gatherings/great-lakes-gosh-2019/2019-gl-gosh-hackathon/) will focus on collaborative and application oriented open hardware hacking. Connect to some existing project ideas, or bring your own and find collaborators."
+  },
+  "join_community": {
+    "markdown": "## Join the community\n\nNo need to wait, hop on the [GOSH forum](forum.openhardware.science) and connect with the existing GOSH community.\n\n## Why Regional Events\n\n## Event Details"
+  },
+  "logo_cloud": {
+    "heading": "Support the event!",
+    "items": [
+      {
+        "href": "our-sci.net",
+        "image": "/media/2019/04/our-sci-logo.png",
+        "image_alt": "Image"
+      },
+      {
+        "href": "https://publiclab.org/",
+        "image": "/media/2019/04/tmp_31547-Screenshot_20170107-165044_2988685729.png",
+        "image_alt": "Image"
+      },
+      {
+        "href": "http://sci-bots.com",
+        "image": "/media/2019/04/scibots.png",
+        "image_alt": "Image"
+      },
+      {
+        "href": "https://www.journals.elsevier.com/hardwarex",
+        "image": "/media/2019/05/hardwarex.png",
+        "image_alt": "Image"
+      },
+      {
+        "image": "/media/2019/04/evergreenlogo.jpg",
+        "image_alt": "Image"
+      },
+      {
+        "image": "/media/2019/05/uoft-logo.png",
+        "image_alt": "Image"
+      }
+    ]
+  },
+  "logo_cloud_more": {
+    "markdown": "We strive to keep events inexpensive and identify support for everyone who needs it.\n\nYour support helps keep our community diverse and grow the Open Science Hardware community. If you want to become a supporter of the event, [we want to hear from you](mailto:organizers@openhardware.science)!"
+  },
+  "supporters": {
+    "markdown": "#### Supporters\n\n#### Local Partners"
+  }
+}

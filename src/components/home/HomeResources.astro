@@ -1,0 +1,81 @@
+---
+// "New to GOSH?": the resources a newcomer starts with, side by side: the
+// Welcome Guide (its cover links to the download) and the Gathering video.
+import KitImage from '../kit/_shared/KitImage.astro'
+import { safeHref } from '../kit/_shared/safe-url'
+import type { ImageInput } from '../kit/_shared/types'
+import Embed from '../kit/embed/Embed.astro'
+import Prose from '../kit/prose/Prose.astro'
+
+interface Item {
+  href?: string | undefined
+  linkLabel?: string | undefined
+  media?: string | undefined
+  mediaAlt?: string | undefined
+  title?: string | undefined
+  meta?: string | undefined
+  text?: string | undefined
+  value?: string | undefined
+  points?: string[] | undefined
+}
+
+interface Video {
+  url?: string | undefined
+  address?: string | undefined
+  title?: string | undefined
+  caption?: string | undefined
+  poster?: ImageInput | undefined
+  uploaded?: string | undefined
+}
+
+interface Props {
+  heading?: string | undefined
+  eyebrow?: string | undefined
+  lead?: string | undefined
+  items: Item[]
+  /** Text of the band its fields do not hold (the Spanish guide's link), under the first resource. */
+  more?: string | undefined
+  /** The video, shown with the first resource that has no picture of its own. */
+  video?: Video | undefined
+  playLabel: string
+  showLabel: string
+}
+
+const { heading, eyebrow, lead, items, more, video, playLabel, showLabel } = Astro.props
+const videoAt = video ? items.findIndex(item => !item.media) : -1
+---
+<section class="home-band" aria-labelledby={heading ? 'home-resources-title' : undefined}>
+  <div class="container-page">
+    {eyebrow && <p class="home-small mb-2">{eyebrow}</p>}
+    {heading && <h2 id="home-resources-title" class="home-h2 max-w-3xl">{heading}</h2>}
+    {lead && <p class="mt-4 text-lg">{lead}</p>}
+    <ul class="home-resources" role="list">
+      {items.map((item, index) => (
+        <li class="home-resource">
+          {item.media && (
+            item.href
+              ? <a href={safeHref(item.href)} class="home-resource-media block" target="_blank" rel="noopener"><KitImage image={{ src: item.media, alt: item.mediaAlt ?? '' }} sizes="(min-width: 768px) 38rem, 100vw" class="block aspect-video h-auto w-full object-cover" /></a>
+              : <div class="home-resource-media"><KitImage image={{ src: item.media, alt: item.mediaAlt ?? '' }} sizes="(min-width: 768px) 38rem, 100vw" class="block aspect-video h-auto w-full object-cover" /></div>
+          )}
+          {index === videoAt && video && (
+            <div class="home-resource-media [&>figure]:my-0 [&>figure]:max-w-none">
+              <Embed url={video.url} address={video.address} title={video.title} caption={video.caption} poster={video.poster} uploaded={video.uploaded} playLabel={playLabel} showLabel={showLabel} aspect="video" width="page" />
+            </div>
+          )}
+          {item.value && <p class="home-h2">{item.value}</p>}
+          {item.title && <h3 class="text-xl font-bold">{item.title}</h3>}
+          {item.meta && <p class="home-small">{item.meta}</p>}
+          {item.text && <p>{item.text}</p>}
+          {index === 0 && more && <Prose markdown={more} size="base" class="home-more" />}
+          {item.points && item.points.length > 0 && <ul class="list-disc ps-5">{item.points.map(point => <li>{point}</li>)}</ul>}
+          {item.href && item.linkLabel && <a href={safeHref(item.href)} class="home-link" target="_blank" rel="noopener">{item.linkLabel}</a>}
+        </li>
+      ))}
+      {video && videoAt === -1 && (
+        <li class="home-resource [&>figure]:my-0 [&>figure]:max-w-none">
+          <Embed url={video.url} address={video.address} title={video.title} caption={video.caption} poster={video.poster} uploaded={video.uploaded} playLabel={playLabel} showLabel={showLabel} aspect="video" width="page" />
+        </li>
+      )}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,80 @@
+---
+// The page's cover: the event banner across the frame, then the event's outputs as a ruled index of links,
+// the way a printed report lists its annexes. Every word and picture arrives as a prop.
+import KitImage from '../kit/_shared/KitImage.astro'
+import type { ImageInput } from '../kit/_shared/types'
+
+interface Action {
+  href: string
+  label: string
+  newTab?: boolean | undefined
+}
+
+interface Item {
+  href?: string | undefined
+  linkLabel?: string | undefined
+  media?: string | undefined
+  mediaAlt?: string | undefined
+  meta?: string | undefined
+  points?: string[] | undefined
+  text?: string | undefined
+  title?: string | undefined
+  value?: string | undefined
+}
+
+interface Props {
+  eyebrow?: string | undefined
+  heading?: string | undefined
+  lead?: string | undefined
+  media?: ImageInput | undefined
+  items?: Item[] | undefined
+  actions?: Action[] | undefined
+}
+
+const { eyebrow, heading, lead, media, items = [], actions = [] } = Astro.props
+const titleId = heading?.trim() ? 'gosh-cover-title' : undefined
+---
+<section class="gosh-cover container-page pt-10 pb-16 md:pt-14 md:pb-20" aria-labelledby={titleId}>
+  {(eyebrow || heading || lead) && (
+    <div class="mb-8 max-w-3xl">
+      {eyebrow && <p class="text-sm font-semibold text-accent">{eyebrow}</p>}
+      {heading && <h2 id={titleId} class="gosh-heading">{heading}</h2>}
+      {lead && <p class="mt-4 text-lg text-ink-muted">{lead}</p>}
+    </div>
+  )}
+  {media && (
+    <KitImage image={media} sizes="(min-width: 80rem) 76rem, 100vw" priority class="block h-auto w-full" />
+  )}
+  {items.length > 0 && (
+    <ul class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" role="list">
+      {items.map(item => (
+        <li class="border-t-2 border-ink pt-4">
+          {item.media && <KitImage image={{ src: item.media, alt: item.mediaAlt ?? '' }} sizes="(min-width: 64rem) 25rem, (min-width: 40rem) 50vw, 100vw" class="mb-4 block h-auto w-full" />}
+          {item.value && <p class="gosh-figure">{item.value}</p>}
+          {item.title && <h3 class="text-lg font-bold">{item.href && !item.linkLabel ? <a class="gosh-link" href={item.href}>{item.title}</a> : item.title}</h3>}
+          {item.meta && <p class="text-sm text-ink-muted">{item.meta}</p>}
+          {item.text && <p class="mt-2">{item.text}</p>}
+          {item.points && item.points.length > 0 && <ul class="mt-2 list-disc ps-5">{item.points.map(point => <li>{point}</li>)}</ul>}
+          {item.href && item.linkLabel && <p class="mt-3"><a class="gosh-link font-semibold" href={item.href}>{item.linkLabel}</a></p>}
+        </li>
+      ))}
+    </ul>
+  )}
+  {actions.length > 0 && (
+    <ul class="gosh-index mt-8 grid border-t-2 border-accent sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3" role="list">
+      {actions.map(action => (
+        <li class="border-b border-line">
+          <a
+            href={action.href}
+            target={action.newTab ? '_blank' : undefined}
+            rel={action.newTab ? 'noopener' : undefined}
+            class="gosh-index-link flex min-h-14 items-center gap-3 py-4 pe-2 text-lg font-semibold text-ink"
+          >
+            <span class="gosh-index-mark" aria-hidden="true"></span>
+            <span>{action.label}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  )}
+</section>

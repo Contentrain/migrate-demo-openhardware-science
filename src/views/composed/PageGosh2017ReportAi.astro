@@ -1,0 +1,81 @@
+---
+// The GOSH 2017 report as a printed report: a purple cover tile (title, recipient, the PDF), the executive
+// summary set on the same inset axis as the cover's copy, and the full document below it on that axis.
+import { getEntry } from 'astro:content'
+import Embed from '../../components/kit/embed/Embed.astro'
+import Hero from '../../components/kit/hero/Hero.astro'
+import Prose from '../../components/kit/prose/Prose.astro'
+import { getStrings, type Page } from '../../lib/content'
+import { headingFit } from '../../lib/heading-fit'
+import { fitHeadings, headingLevels } from '../../lib/headings'
+import { publicLinks } from '../../lib/links'
+import ComposedPage from '../ComposedPage.astro'
+import '../../styles/page-gosh-2017-report.css'
+
+interface Props {
+  page: Page
+  trail: Array<{ title: string, href: string }>
+  isHome: boolean
+}
+
+const { page, trail } = Astro.props
+const isHome = false
+const t = await getStrings()
+const publicHref = await publicLinks()
+const pageGosh2017Report = await getEntry('pageGosh2017Report', 'en')
+if (!pageGosh2017Report) throw new Error('page-gosh-2017-report is missing: the page\'s sections are its fields')
+const { hero, hero_more: heroMore, embed } = pageGosh2017Report.data
+const heroActions = (hero?.actions ?? []).flatMap(item => { const href = publicHref(item.href); return href === undefined ? [] : [{ href, label: item.label, newTab: item.new_tab, style: item.style }] })
+const words0 = headingLevels([hero?.heading?.trim() ? `## ${hero.heading.trim()}` : undefined, hero?.eyebrow, hero?.lead].filter(Boolean).join('\n\n'), 1)
+const h2Above2 = (hero && hero.heading !== undefined ? (!!hero?.heading?.trim() || (hero?.items?.length ?? 0) > 0) : words0.top !== undefined)
+const prose1 = headingLevels(heroMore?.markdown, h2Above2 ? 2 : 1)
+const embedUrl = publicHref(embed?.url)
+---
+<ComposedPage page={page} trail={trail} isHome={isHome}>
+  <div class="gr-report">
+    {hero && hero.heading !== undefined ? (
+      <div class="gr-cover container-page" style={headingFit(hero.heading)}>
+        <Hero
+          actions={heroActions}
+          eyebrow={hero.eyebrow}
+          heading={hero.heading}
+          image={hero.image}
+          items={hero.items}
+          lead={hero.lead}
+          level={2}
+          layout="centered"
+          inset="27"
+          tone="accent"
+          entry="hero"
+        />
+      </div>
+    ) : words0.markdown && (
+      <div class="container-prose py-8" data-cr-shift={words0.shift}>
+        <Prose markdown={words0.markdown} />
+      </div>
+    )}
+    {heroMore && (
+      <div class="gr-axis container-page" data-cr-shift={prose1.shift}>
+        <div class="gr-axis__body">
+          <Prose markdown={fitHeadings(prose1.markdown)} />
+        </div>
+      </div>
+    )}
+    {embed && (
+      <div class="gr-axis gr-document container-page">
+        <div class="gr-axis__body">
+          <Embed
+            address={embed.address}
+            caption={embed.caption}
+            playLabel={t('embed.play')}
+            poster={embed.poster}
+            showLabel={t('embed.show')}
+            title={embed.title}
+            uploaded={embed.uploaded}
+            url={embedUrl}
+          />
+        </div>
+      </div>
+    )}
+  </div>
+</ComposedPage>

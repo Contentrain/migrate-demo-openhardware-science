@@ -1,0 +1,209 @@
+// Structured data (schema.org JSON-LD). Builders return plain objects; the SEO
+// component serializes them, so a page states what it is without writing JSON
+// by hand.
+
+type Thing = Record<string, unknown>
+
+export interface SiteIdentity {
+  name: string
+  url: string
+  description?: string | undefined
+  logo?: string | undefined
+  sameAs?: readonly string[] | undefined
+}
+
+export function websiteLd(site: SiteIdentity): Thing {
+  return {
+    '@type': 'WebSite',
+    '@id': `${site.url}#website`,
+    name: site.name,
+    url: site.url,
+    ...(site.description ? { description: site.description } : {}),
+    publisher: { '@id': `${site.url}#organization` },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${site.url}search/?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  }
+}
+
+export function organizationLd(site: SiteIdentity): Thing {
+  return {
+    '@type': 'Organization',
+    '@id': `${site.url}#organization`,
+    name: site.name,
+    url: site.url,
+    ...(site.logo ? { logo: site.logo } : {}),
+    ...(site.sameAs?.length ? { sameAs: site.sameAs } : {}),
+  }
+}
+
+export interface ArticleInput {
+  url: string
+  headline: string
+  description?: string | undefined
+  image?: string | undefined
+  published?: Date | undefined
+  modified?: Date | undefined
+  author?: { name: string, url: string } | undefined
+  section?: string | undefined
+  keywords?: readonly string[] | undefined
+}
+
+export function articleLd(site: SiteIdentity, article: ArticleInput): Thing {
+  return {
+    '@type': 'BlogPosting',
+    '@id': `${article.url}#article`,
+    mainEntityOfPage: article.url,
+    headline: article.headline,
+    ...(article.description ? { description: article.description } : {}),
+    ...(article.image ? { image: article.image } : {}),
+    ...(article.published ? { datePublished: article.published.toISOString() } : {}),
+    ...(article.modified ?? article.published ? { dateModified: (article.modified ?? article.published)!.toISOString() } : {}),
+    ...(article.author ? { author: { '@type': 'Person', name: article.author.name, url: article.author.url } } : {}),
+    ...(article.section ? { articleSection: article.section } : {}),
+    ...(article.keywords?.length ? { keywords: article.keywords.join(', ') } : {}),
+    publisher: { '@id': `${site.url}#organization` },
+    isPartOf: { '@id': `${site.url}#website` },
+  }
+}
+
+export function breadcrumbLd(trail: ReadonlyArray<{ name: string, url: string }>): Thing {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.name, item: item.url })),
+  }
+}
+
+/**
+ * A page's breadcrumb for search, from the home page down: the trail when it already starts there, else the home
+ * first (Home › Page, as Yoast and Rank Math print it on a top-level page). Every page but the home has one, whether
+ * or not the page shows a breadcrumb.
+ */
+export function pageTrail(home: { name: string, url: string }, crumbs: ReadonlyArray<{ name: string, url: string }>): Array<{ name: string, url: string }> {
+  return crumbs[0]?.url === home.url ? [...crumbs] : [home, ...crumbs]
+}
+
+export interface BusinessInput {
+  type?: string | undefined
+  street?: string | undefined
+  city?: string | undefined
+  region?: string | undefined
+  postal_code?: string | undefined
+  country?: string | undefined
+  telephone?: string | undefined
+  latitude?: number | undefined
+  longitude?: number | undefined
+  opening_hours?: readonly string[] | undefined
+  price_range?: string | undefined
+  serves_cuisine?: readonly string[] | undefined
+}
+
+/**
+ * The site's place of business (`site.business`), on the home beside the organization: only what the fields state,
+ * and nothing at all when they state no address, telephone, position or hours.
+ */
+export function localBusinessLd(site: SiteIdentity, business: BusinessInput | undefined): Thing | undefined {
+  if (!business) return undefined
+  const address = clean({ streetAddress: business.street, addressLocality: business.city, addressRegion: business.region, postalCode: business.postal_code, addressCountry: business.country })
+  const geo = business.latitude !== undefined && business.longitude !== undefined ? { '@type': 'GeoCoordinates', latitude: business.latitude, longitude: business.longitude } : undefined
+  const hours = business.opening_hours?.filter(Boolean) ?? []
+  if (!address && !business.telephone && !geo && hours.length === 0) return undefined
+  const cuisine = business.serves_cuisine?.filter(Boolean) ?? []
+  return {
+    '@type': business.type || 'LocalBusiness',
+    '@id': `${site.url}#business`,
+    name: site.name,
+    url: site.url,
+    ...(site.logo ? { image: site.logo } : {}),
+    ...(address ? { address: { '@type': 'PostalAddress', ...address } } : {}),
+    ...(business.telephone ? { telephone: business.telephone } : {}),
+    ...(geo ? { geo } : {}),
+    ...(hours.length ? { openingHours: hours } : {}),
+    ...(business.price_range ? { priceRange: business.price_range } : {}),
+    ...(cuisine.length ? { servesCuisine: cuisine } : {}),
+    parentOrganization: { '@id': `${site.url}#organization` },
+  }
+}
+
+/** The fields that hold a value, or undefined when none does. */
+function clean(fields: Record<string, string | undefined>): Record<string, string> | undefined {
+  const kept = Object.entries(fields).filter((entry): entry is [string, string] => !!entry[1]?.trim())
+  return kept.length ? Object.fromEntries(kept) : undefined
+}
+
+export function collectionLd(url: string, name: string): Thing {
+  return { '@type': 'CollectionPage', '@id': `${url}#collection`, url, name }
+}
+
+/** One `@graph` document; `<` is escaped so a value can never close the script element. */
+export function serializeLd(things: readonly Thing[]): string {
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': things }).replace(/</g, '\\u003c')
+}
+
+const ENTITIES: Record<string, string> = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', hellip: '…', mdash: '—', ndash: '–', rsquo: '’', lsquo: '‘', rdquo: '”', ldquo: '“' }
+
+/**
+ * A meta description from a rich-text body, for an entry that has neither an
+ * SEO description nor an excerpt: its text, cut at a word boundary. Search
+ * engines write their own snippet when a page has none; this keeps the
+ * choice with the site.
+ */
+export function summarize(html: string | undefined, max = 160): string | undefined {
+  if (!html) return undefined
+  const text = html
+    .replace(/<(script|style|figcaption)\b[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&(#x?[0-9a-f]+|[a-z]+);/gi, (entity, name: string) => {
+      if (name.startsWith('#')) {
+        const code = name[1]?.toLowerCase() === 'x' ? Number.parseInt(name.slice(2), 16) : Number(name.slice(1))
+        return Number.isFinite(code) ? String.fromCodePoint(code) : entity
+      }
+      return ENTITIES[name.toLowerCase()] ?? entity
+    })
+    .replace(/\s+/g, ' ')
+    .trim()
+  if (!text) return undefined
+  if (text.length <= max) return text
+  const cut = text.slice(0, max - 1)
+  return `${cut.slice(0, cut.lastIndexOf(' ') > max / 2 ? cut.lastIndexOf(' ') : cut.length).replace(/[\s,;:.–—-]+$/, '')}…`
+}
+
+/**
+ * A page's document title: an SEO title written for it, as it is; on the home, the site's own SEO title (a
+ * latest-posts home is no entry, so the source's home title lives on the site, `site.seo`); a page's title in the
+ * site's pattern (`titleTemplate`); else the home's default, "Site – Tagline", as WordPress prints it.
+ */
+export function documentTitle(input: { seoTitle?: string | undefined, title?: string | undefined, isHome: boolean, home?: { title?: string | undefined } | undefined, site: string, tagline?: string | undefined, template: string }): string {
+  if (input.seoTitle) return input.seoTitle
+  if (input.isHome && input.home?.title?.trim()) return input.home.title
+  if (input.title && !input.isHome) return input.template.replace('{title}', input.title).replace('{site}', input.site)
+  return input.tagline ? `${input.site} – ${input.tagline}` : input.site
+}
+
+/**
+ * A page's meta description: the source's own when it has one, else what the page is in the site's own words —
+ * "Author: Ada – Northwind. Fresh bread daily." — so no indexable page goes without one (an archive in WordPress often
+ * has none, and the site's CI asserts Lighthouse SEO at 1). The front page keeps the tagline, as WordPress does. A later
+ * page of a list names its number, so no two pages of a list share a description. The source's own text is kept as
+ * it was written, whatever its length — the migration moves it, it does not rewrite it; only a composed description is
+ * held to `max` characters.
+ */
+export function describePage(input: { own?: string | undefined, label?: string | undefined, site: string, tagline?: string | undefined, page?: string | undefined }, max = 160): string | undefined {
+  const page = input.page ? ` – ${input.page}` : ''
+  if (input.own?.trim()) return `${input.own}${page}`
+  const tagline = input.tagline?.trim()
+  const what = [input.label, input.site.trim()].filter(Boolean).join(' – ')
+  const base = input.label ? `${what}${tagline ? `. ${tagline}` : ''}` : tagline || what
+  if (!base) return undefined
+  return `${shorten(base, max - page.length)}${page}`
+}
+
+/** Text cut at a word boundary to at most `max` characters, with an ellipsis when cut. */
+function shorten(text: string, max: number): string {
+  const flat = text.replace(/\s+/g, ' ').trim()
+  if (flat.length <= max) return flat
+  const cut = flat.slice(0, max - 1)
+  return `${cut.slice(0, cut.lastIndexOf(' ') > max / 2 ? cut.lastIndexOf(' ') : cut.length).replace(/[\s,;:.–—-]+$/, '')}…`
+}

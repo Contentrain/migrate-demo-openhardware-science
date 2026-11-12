@@ -1,0 +1,93 @@
+{
+  "179533b71cb6c670f3846ad4": {
+    "name": "GYA",
+    "slug": "gya",
+    "wp_id": 18
+  },
+  "1a3dbbf269d2a0d9d1df75cc": {
+    "name": "FabLab",
+    "slug": "fablab",
+    "wp_id": 17
+  },
+  "23ea237bd2a169cf09e484da": {
+    "name": "Ivana Gadjanski",
+    "slug": "ivana-gadjanski",
+    "wp_id": 16
+  },
+  "345b68be70dbc2aff6d6c76a": {
+    "description": "Added by PressForward",
+    "name": "via bookmarklet",
+    "slug": "viabookmarklet",
+    "wp_id": 40
+  },
+  "395458d6f55e953934eff75f": {
+    "name": "community call",
+    "slug": "community-call",
+    "wp_id": 128
+  },
+  "71ed694afcd88a167ee991ae": {
+    "name": "DistDocs",
+    "slug": "distdocs",
+    "wp_id": 80
+  },
+  "8503eb623a76e3cf2153bf30": {
+    "name": "Uncategorized",
+    "slug": "uncategorized",
+    "wp_id": 39
+  },
+  "8543e8643f3e3090c5c2e4c5": {
+    "name": "open-science-hardware-news",
+    "slug": "open-science-hardware-news",
+    "wp_id": 82
+  },
+  "8798a3ca7d4436fb6ef0025f": {
+    "name": "Keynote",
+    "slug": "keynote",
+    "wp_id": 9
+  },
+  "aac3099ba30d1dc066349922": {
+    "name": "Mozsprint",
+    "slug": "mozsprint",
+    "wp_id": 36
+  },
+  "bba9f2b91d17aeb90c208333": {
+    "name": "open science",
+    "slug": "open-science",
+    "wp_id": 19
+  },
+  "bfb181be70c70de9bcc13c8f": {
+    "name": "DistDoc",
+    "slug": "distdoc",
+    "wp_id": 81
+  },
+  "c2cd33526e492bbf8ccf8c21": {
+    "name": "Open education",
+    "slug": "open-education",
+    "wp_id": 38
+  },
+  "cc05d623fcf0a544358b9722": {
+    "name": "Great Lakes GOSH",
+    "slug": "great-lakes-gosh",
+    "wp_id": 43
+  },
+  "cea224f4e4968dc44a50d03d": {
+    "name": "#DistDoc",
+    "slug": "distdoc-2",
+    "wp_id": 83
+  },
+  "d6c55611265191af5414a1f6": {
+    "name": "Andrew Pelling",
+    "slug": "andrew-pelling",
+    "wp_id": 15
+  },
+  "e8f1400b6c0a360168161e47": {
+    "name": "GOSH! 2016 Day 1",
+    "slug": "gosh-2016-day-1",
+    "wp_id": 8
+  },
+  "fc57dfebdbdc159b4c4fc124": {
+    "name": "Maker based learning",
+    "slug": "maker-based-learning",
+    "wp_id": 37
+  }
+}

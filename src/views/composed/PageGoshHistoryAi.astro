@@ -1,0 +1,153 @@
+---
+// GOSH – a history, set as a printed report: the purple thread down the inset axis carries every chapter,
+// the interview quotes are solid purple tiles knotted onto it, and the community's photographs open out wide.
+import { getEntry } from 'astro:content'
+import Band from '../../components/kit/band/Band.astro'
+import Embed from '../../components/kit/embed/Embed.astro'
+import Gallery from '../../components/kit/gallery/Gallery.astro'
+import Chapter from '../../components/page-gosh-history/Chapter.astro'
+import QuoteTile from '../../components/page-gosh-history/QuoteTile.astro'
+import { getStrings, type Page } from '../../lib/content'
+import { fitHeadings, headingLevels } from '../../lib/headings'
+import { publicHtml, publicLinks } from '../../lib/links'
+import ComposedPage from '../ComposedPage.astro'
+
+interface Props {
+  page: Page
+  trail: Array<{ title: string, href: string }>
+  isHome: boolean
+}
+
+const { page, trail } = Astro.props
+const isHome = false
+const t = await getStrings()
+const publicHref = await publicLinks()
+const entry = await getEntry('pageGoshHistory', 'en')
+if (!entry) throw new Error('page-gosh-history is missing: the page\'s sections are its fields')
+const d = entry.data
+
+type Rich = { html?: string | undefined, markdown?: string | undefined } | undefined
+type Quotes = NonNullable<typeof d.testimonial> | undefined
+type Pics = NonNullable<typeof d.gallery> | undefined
+type Sect = NonNullable<typeof d.section> | undefined
+type Media = NonNullable<typeof d.embed> | undefined
+
+const byline = headingLevels(d.text?.markdown, 1)
+const welcome = headingLevels(d.welcome?.markdown, byline.top !== undefined ? 2 : 1)
+
+async function rich(field: Rich) {
+  if (!field) return undefined
+  const lv = headingLevels(field.markdown, 2)
+  return { html: await publicHtml(field.html), markdown: fitHeadings(lv.markdown), shift: lv.shift }
+}
+function quotes(field: Quotes) {
+  if (!field) return undefined
+  const items = (field.items ?? []).map(item => ({ avatar: item.avatar, avatarAlt: item.avatar_alt, logo: item.logo, logoAlt: item.logo_alt, name: item.name, quote: item.quote, rating: item.rating, role: item.role }))
+  const words = headingLevels(field.heading?.trim() ? `## ${field.heading.trim()}` : undefined, 2)
+  return { heading: field.heading, items, words }
+}
+function pics(field: Pics) {
+  if (!field) return undefined
+  const items = (field.items ?? []).map(item => ({ caption: item.caption, full: item.full, image: item.image, imageAlt: item.image_alt }))
+  const words = headingLevels(field.heading?.trim() ? `## ${field.heading.trim()}` : undefined, 2)
+  return { heading: field.heading, items, words }
+}
+function band(field: Sect) {
+  if (!field) return undefined
+  return {
+    actions: (field.actions ?? []).flatMap((item) => { const href = publicHref(item.href); return href === undefined ? [] : [{ href, label: item.label, newTab: item.new_tab, style: item.style }] }),
+    items: (field.items ?? []).map(item => ({ href: publicHref(item.href), icon: item.icon, linkLabel: item.link_label, media: item.media, mediaAlt: item.media_alt, meta: item.meta, points: item.points, text: item.text, title: item.title, value: item.value })),
+    eyebrow: field.eyebrow,
+    heading: field.heading,
+    lead: field.lead,
+    media: field.media,
+  }
+}
+function media(field: Media) {
+  if (!field) return undefined
+  return { ...field, url: publicHref(field.url) }
+}
+
+const g = { closeLabel: t('gallery.close'), prevLabel: t('slider.prev'), nextLabel: t('slider.next'), ofLabel: t('slider.of'), enlargeLabel: t('gallery.enlarge'), regionLabel: t('gallery.images') }
+const q = { ratingLabel: t('testimonial.rating'), label: t('testimonial.label') }
+
+type Part =
+  | { kind: 'rich', v: Awaited<ReturnType<typeof rich>> }
+  | { kind: 'quote', v: ReturnType<typeof quotes>, entry: string }
+  | { kind: 'pics', v: ReturnType<typeof pics>, entry: string, columns: '3' | '4' }
+  | { kind: 'band', v: ReturnType<typeof band>, entry: string, columns?: '1' | undefined }
+  | { kind: 'embed', v: ReturnType<typeof media> }
+
+const parts: Part[] = [
+  { kind: 'quote', v: quotes(d.testimonial), entry: 'testimonial' },
+  { kind: 'quote', v: quotes(d.testimonial_shannon), entry: 'testimonial_shannon' },
+  { kind: 'pics', v: pics(d.gallery), entry: 'gallery', columns: '3' },
+  { kind: 'band', v: band(d.section), entry: 'section' },
+  { kind: 'rich', v: await rich(d.section_more) },
+  { kind: 'embed', v: media(d.embed) },
+  { kind: 'rich', v: await rich(d.embed_note) },
+  { kind: 'pics', v: pics(d.embed_gallery), entry: 'embed_gallery', columns: '4' },
+  { kind: 'rich', v: await rich(d.embed_note_most) },
+  { kind: 'quote', v: quotes(d.embed_testimonial), entry: 'embed_testimonial' },
+  { kind: 'rich', v: await rich(d.going_global) },
+  { kind: 'quote', v: quotes(d.going_global_testimonial), entry: 'going_global_testimonial' },
+  { kind: 'pics', v: pics(d.going_global_gallery), entry: 'going_global_gallery', columns: '4' },
+  { kind: 'rich', v: await rich(d.going_global_gallery_more) },
+  { kind: 'rich', v: await rich(d.going_global_note) },
+  { kind: 'rich', v: await rich(d.defining_strategy) },
+  { kind: 'pics', v: pics(d.defining_strategy_gallery), entry: 'defining_strategy_gallery', columns: '4' },
+  { kind: 'rich', v: await rich(d.defining_strategy_gallery_more) },
+  { kind: 'rich', v: await rich(d.scaling_hardware_growing) },
+  { kind: 'quote', v: quotes(d.scaling_hardware_growing_testimonial), entry: 'scaling_hardware_growing_testimonial' },
+  { kind: 'rich', v: await rich(d.scaling_hardware_growing_note) },
+  { kind: 'pics', v: pics(d.scaling_hardware_growing_gallery), entry: 'scaling_hardware_growing_gallery', columns: '4' },
+  { kind: 'rich', v: await rich(d.scaling_hardware_growing_note_first) },
+  { kind: 'rich', v: await rich(d.scaling_hardware_growing_note_public) },
+  { kind: 'quote', v: quotes(d.scaling_hardware_growing_testimonial_ji), entry: 'scaling_hardware_growing_testimonial_ji' },
+  { kind: 'rich', v: await rich(d.gosh_2018_organizers) },
+  { kind: 'rich', v: await rich(d.distributed_movement) },
+  { kind: 'quote', v: quotes(d.distributed_movement_testimonial), entry: 'distributed_movement_testimonial' },
+  { kind: 'pics', v: pics(d.distributed_movement_gallery), entry: 'distributed_movement_gallery', columns: '4' },
+  { kind: 'rich', v: await rich(d.distributed_movement_note) },
+  { kind: 'pics', v: pics(d.distributed_movement_gallery_reseq), entry: 'distributed_movement_gallery_reseq', columns: '4' },
+  { kind: 'rich', v: await rich(d.distributed_movement_gallery_reseq_more) },
+  { kind: 'band', v: band(d.distributed_movement_testimonial_2), entry: 'distributed_movement_testimonial_2', columns: '1' },
+  { kind: 'band', v: band(d.distributed_movement_section), entry: 'distributed_movement_section' },
+  { kind: 'rich', v: await rich(d.distributed_movement_section_more) },
+  { kind: 'embed', v: media(d.distributed_movement_embed) },
+  { kind: 'embed', v: media(d.distributed_movement_embed_2) },
+]
+const welcomeHtml = await publicHtml(d.welcome?.html)
+const bylineHtml = await publicHtml(d.text?.html)
+---
+<ComposedPage page={page} trail={trail} isHome={isHome}>
+  {d.text && <Chapter byline html={bylineHtml} markdown={fitHeadings(byline.markdown)} shift={byline.shift} />}
+  {d.welcome && <Chapter html={welcomeHtml} markdown={fitHeadings(welcome.markdown)} shift={welcome.shift} />}
+  {parts.map((part) => {
+    if (part.kind === 'rich') return part.v && <Chapter html={part.v.html} markdown={part.v.markdown} shift={part.v.shift} />
+    if (part.kind === 'quote') {
+      const v = part.v
+      if (!v) return null
+      return v.items.length > 0
+        ? <QuoteTile heading={v.heading} items={v.items} entry={part.entry} {...q} />
+        : v.words.markdown && <Chapter fit={false} markdown={v.words.markdown} shift={v.words.shift} />
+    }
+    if (part.kind === 'pics') {
+      const v = part.v
+      if (!v) return null
+      return v.items.length > 0
+        ? <div class="py-4"><Gallery heading={v.heading} items={v.items} columns={part.columns} entry={part.entry} {...g} /></div>
+        : v.words.markdown && <Chapter fit={false} markdown={v.words.markdown} shift={v.words.shift} />
+    }
+    if (part.kind === 'band') {
+      const v = part.v
+      return v && <Band actions={v.actions} eyebrow={v.eyebrow} heading={v.heading} items={v.items} lead={v.lead} media={v.media} columns={part.columns} entry={part.entry} />
+    }
+    const v = part.v
+    return v && (
+      <div class="container-prose py-6">
+        <Embed address={v.address} caption={v.caption} playLabel={t('embed.play')} poster={v.poster} showLabel={t('embed.show')} title={v.title} uploaded={v.uploaded} url={v.url} />
+      </div>
+    )
+  })}
+</ComposedPage>

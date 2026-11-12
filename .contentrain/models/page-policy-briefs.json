@@ -1,0 +1,265 @@
+{
+  "domain": "pages",
+  "fields": {
+    "behavior": {
+      "description": "A behavior island: a source widget no kit component carries, kept as the site's own markup and wired by the kit's one small vanilla module.",
+      "fields": {
+        "html": {
+          "description": "The widget's markup as the source rendered it, after the writer's island pass.",
+          "label": "Content",
+          "required": false,
+          "type": "richtext"
+        },
+        "island": {
+          "description": "How the section works on the page, read from the old site. Change it only with the markup above.",
+          "fields": {
+            "fact": {
+              "description": "The old site's widget this section stands for.",
+              "label": "Source widget",
+              "type": "string"
+            },
+            "items": {
+              "description": "Which parts of the markup are the items (slides, cards).",
+              "label": "Items",
+              "type": "string"
+            },
+            "kind": {
+              "description": "What the section does: tabs, a carousel, open-and-close parts.",
+              "label": "Kind",
+              "options": [
+                "disclosure",
+                "tablist",
+                "carousel",
+                "countup",
+                "filter",
+                "lightbox",
+                "toggle"
+              ],
+              "type": "select"
+            },
+            "panel": {
+              "description": "Which parts are the panels, in tab order.",
+              "label": "Tab panels",
+              "type": "string"
+            },
+            "title": {
+              "description": "Which parts are the tabs, where the markup does not say.",
+              "label": "Tab titles",
+              "type": "string"
+            }
+          },
+          "label": "Behavior (wiring)",
+          "type": "object"
+        }
+      },
+      "label": "Behavior",
+      "type": "object"
+    },
+    "behavior_2": {
+      "description": "A behavior island: a source widget no kit component carries, kept as the site's own markup and wired by the kit's one small vanilla module.",
+      "fields": {
+        "html": {
+          "description": "The widget's markup as the source rendered it, after the writer's island pass.",
+          "label": "Content",
+          "required": false,
+          "type": "richtext"
+        },
+        "island": {
+          "description": "How the section works on the page, read from the old site. Change it only with the markup above.",
+          "fields": {
+            "fact": {
+              "description": "The old site's widget this section stands for.",
+              "label": "Source widget",
+              "type": "string"
+            },
+            "items": {
+              "description": "Which parts of the markup are the items (slides, cards).",
+              "label": "Items",
+              "type": "string"
+            },
+            "kind": {
+              "description": "What the section does: tabs, a carousel, open-and-close parts.",
+              "label": "Kind",
+              "options": [
+                "disclosure",
+                "tablist",
+                "carousel",
+                "countup",
+                "filter",
+                "lightbox",
+                "toggle"
+              ],
+              "type": "select"
+            },
+            "panel": {
+              "description": "Which parts are the panels, in tab order.",
+              "label": "Tab panels",
+              "type": "string"
+            },
+            "title": {
+              "description": "Which parts are the tabs, where the markup does not say.",
+              "label": "Tab titles",
+              "type": "string"
+            }
+          },
+          "label": "Behavior (wiring)",
+          "type": "object"
+        }
+      },
+      "label": "Behavior 2",
+      "type": "object"
+    },
+    "behavior_3": {
+      "description": "A behavior island: a source widget no kit component carries, kept as the site's own markup and wired by the kit's one small vanilla module.",
+      "fields": {
+        "html": {
+          "description": "The widget's markup as the source rendered it, after the writer's island pass.",
+          "label": "Content",
+          "required": false,
+          "type": "richtext"
+        },
+        "island": {
+          "description": "How the section works on the page, read from the old site. Change it only with the markup above.",
+          "fields": {
+            "fact": {
+              "description": "The old site's widget this section stands for.",
+              "label": "Source widget",
+              "type": "string"
+            },
+            "items": {
+              "description": "Which parts of the markup are the items (slides, cards).",
+              "label": "Items",
+              "type": "string"
+            },
+            "kind": {
+              "description": "What the section does: tabs, a carousel, open-and-close parts.",
+              "label": "Kind",
+              "options": [
+                "disclosure",
+                "tablist",
+                "carousel",
+                "countup",
+                "filter",
+                "lightbox",
+                "toggle"
+              ],
+              "type": "select"
+            },
+            "panel": {
+              "description": "Which parts are the panels, in tab order.",
+              "label": "Tab panels",
+              "type": "string"
+            },
+            "title": {
+              "description": "Which parts are the tabs, where the markup does not say.",
+              "label": "Tab titles",
+              "type": "string"
+            }
+          },
+          "label": "Behavior (wiring)",
+          "type": "object"
+        }
+      },
+      "label": "Behavior 3",
+      "type": "object"
+    },
+    "faq": {
+      "description": "Questions and answers as native <details> disclosures, in lines or cards; optionally one open at a time, and optionally with FAQPage structured data for search engines and AI answers.",
+      "fields": {
+        "heading": {
+          "description": "Section heading.",
+          "label": "Heading",
+          "required": true,
+          "type": "string"
+        },
+        "intro": {
+          "description": "A sentence under the heading.",
+          "label": "Introduction",
+          "required": false,
+          "type": "text"
+        },
+        "items": {
+          "description": "The questions in order.",
+          "items": {
+            "fields": {
+              "answer": {
+                "description": "The answer; links and lists allowed.",
+                "label": "Answer",
+                "required": true,
+                "type": "richtext"
+              },
+              "question": {
+                "description": "The question, as the visitor would ask it.",
+                "label": "Question",
+                "required": true,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Questions",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Faq",
+      "required": true,
+      "type": "object"
+    },
+    "faq_more": {
+      "description": "Text of this part of the page that its section has no field for.",
+      "fields": {
+        "markdown": {
+          "description": "The text, in Markdown.",
+          "label": "Text",
+          "type": "markdown"
+        }
+      },
+      "label": "Faq (more text)",
+      "type": "object"
+    },
+    "text": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Text",
+      "type": "object"
+    },
+    "text_note": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Text note",
+      "type": "object"
+    }
+  },
+  "i18n": true,
+  "id": "page-policy-briefs",
+  "kind": "singleton",
+  "name": "Policy Briefs page",
+  "title_field": "faq.heading"
+}

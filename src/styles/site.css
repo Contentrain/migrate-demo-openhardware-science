@@ -1,0 +1,5 @@
+/*
+ * Site-specific styles, after the global stylesheet: a rule here wins over the theme's at the same specificity.
+ * The migration's agent writes here when the kit's markers and tokens cannot say it (src/styles/global.css holds the
+ * tokens); use the role variables (var(--color-ink), var(--text-body)), never a raw colour copied from WordPress.
+ */

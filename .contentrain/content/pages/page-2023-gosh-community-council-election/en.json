@@ -1,0 +1,55 @@
+{
+  "gosh_community_council": {
+    "markdown": "#### The 2023 GOSH Community Council Election has ended. View the results of the election [here](https://forum.openhardware.science/t/announcement-of-2023-gosh-community-council-election-results/5316)!\n\n[![The 2023 GOSH Community Council Election has ended. View the results of the election \\[here\\](https://forum.openhardware.science/t/announcement-of-2023-gosh-community-council-election-results/5316)!](/media/2023/07/52459586301_383d8155db_c.jpg)](https://www.flickr.com/photos/goshcommunity/52459586301/in/album-72177720303226220/)\n\nPhoto of the GOSH Council table at the 2022 Gathering in Panamá. Source: Gathering for Open Science Hardware"
+  },
+  "how_do_i": {
+    "markdown": "#### How do I register to vote?\n\nVoter registration will open on July 28. Voter registration closes on 28 August.\n\nRegister to vote [here](https://ec.europa.eu/eusurvey/runner/GOSH2023electionregistration)!\n\n#### How do I vote?\n\nVoting will take place on the STAR Voting platform, which uses a combination of score voting, to pick two highest scoring candidates, and a “runoff” in which the finalist who is preferred on more ballots wins. You can read more about the STAR Voting platform and it’s methodology [here](https://www.starvoting.us/).\n\nVoting starts on September 1 and closes on September 12.\n\n#### What is the Community Council?\n\nThe Community Council oversees or delegates all subsequent tasks, questions and issues related to governance of the GOSH community.\n\nThose elected to the Community Council will be referred to as Community Council Members. It is proposed that Community Council membership will persist for 2-year terms, with several 1-year terms seated in the first election to enable staggering of terms year over year.\n\nFor the first election, and only for the first election, candidates will run for a mix of 2-year and 1-year to start in order to establish staggered terms. This will enable balanced annual turnover moving forward, with e.g. 3 or 4 new members being elected each year. After the first election, all open seats will be for 2-year terms in subsequent elections.\n\n#### Vacancies\n\n4 seats are subject to this election.\n\n#### How do I learn more about candidates?\n\nFind out more about the candidates [here.](https://forum.openhardware.science/t/announcement-of-candidates-upcoming-community-meetings-2023-gosh-community-council-election/5240)\n\n#### Nominations\n\nIndividuals can nominate others or self-nominate for inclusion in the candidate pool. Nominations opened on August 1st and closed on August 15th.\n\nCandidates\n\nThere are 12 candidates up for election. You can see a full list of the candidates below:\n\n- Hamid Khayar Oumar Defallah\n- Karl Kaddu\n- Lara Jatar\n- Saad Chinoy\n- Yorgo El Moubayed\n- Ana De Lucia\n- lee wilkins\n- Sakti Subramanian\n- Dauda Mustapha\n- Ebuka Ezeike\n- ATSE KAMBO Martial\n- JAFSIA Elisee\n\n#### Non-candidacy items to be voted on (e.g. resolutions)\n\nThere are no non-candidacy items to be voted on in this election.\n\n#### Administration\n\nIndependent Observer: Freda Yamorti Gbande, Knowledge Manager for the Fab City Foundation\n\nElection Secretary: Bri Johns, GOSH Community Coordinator."
+  },
+  "timeline": {
+    "heading": "2023 Election Schedule",
+    "items": [
+      {
+        "title": "19 July – Finalize election process, technology, managing and communicating results [i.e. final proposal published]"
+      },
+      {
+        "title": "19 July – Share document (2023 governance plan) on GOSH forum"
+      },
+      {
+        "title": "19 July – Open independent observer nominations"
+      },
+      {
+        "title": "26 July – Close independent observer nominations"
+      },
+      {
+        "title": "28 July – Complete set-up of election infrastructure (platform, etc)"
+      },
+      {
+        "title": "28 July – Appoint an independent observer"
+      },
+      {
+        "title": "28 July – Open voter registration"
+      },
+      {
+        "title": "1 August – Open nominations"
+      },
+      {
+        "title": "15 August – Close nominations, open consideration of candidates"
+      },
+      {
+        "title": "21-25 August – Community meetings for candidates"
+      },
+      {
+        "title": "28 August – Voter registration closes"
+      },
+      {
+        "title": "1 September – Voting starts for Community Council"
+      },
+      {
+        "title": "12 September 23:59 AoE – Voting closes"
+      },
+      {
+        "title": "18 September – 2023-2024 Community Council result announced"
+      }
+    ]
+  }
+}

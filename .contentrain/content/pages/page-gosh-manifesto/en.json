@@ -1,0 +1,118 @@
+{
+  "contact_form": {
+    "heading": "Sign the GOSH Manifesto"
+  },
+  "contact_form_note": {
+    "markdown": "First Name\n\nLast Name\n\nCountry\n\nAffiliation\n\nFirst Name\n\nLast Name\n\nCountry\n\nAffiliation\n\nMichael\n\nOLeary\n\nUnited States of America\n\nIndedendent\n\nArun\n\nKumar\n\nIndia\n\nIndependent"
+  },
+  "contact_form_section": {
+    "lead": "Previous signatories of the form:"
+  },
+  "faq": {
+    "items": [
+      {
+        "title": "GOSH is accessible"
+      },
+      {
+        "text": "Anyone can create, obtain, study, modify, distribute, use, and share designs of open science hardware projects.\n\nTools are open, free (libre), and licensed as such.\n\nOur documents are understandable and communicative.\n\nWe share rather than act territorially.\n\nFor socioeconomic accessibility, materials are lowest cost and easy to obtain whenever possible.\n\nOpen Science Hardware is maintainable and repairable.\n\nWe follow the beliefs already established by open source software, free software, open science, and open hardware movements."
+      },
+      {
+        "title": "GOSH makes science better"
+      },
+      {
+        "text": "Scientific experiments using open hardware are more reproducible, more comparable, and more likely to be replicated.\n\nComparing data across sectors, standards, and countries is more likely when using open hardware.\n\nReproducibility is a hallmark of good science, and open science hardware allows for greater reproducibility.\n\nOpen science hardware makes more science.\n\n1,000 heads are better than 1."
+      },
+      {
+        "title": "GOSH is ethical"
+      },
+      {
+        "text": "People have a right to knowledge, and thus a right to the tools to gain that knowledge.\n\nUsers align their technologies with their values by becoming creators.\n\nThe benefits of science should be shared with everyone, and cause no harm.\n\nOpen science hardware is open to everybody, without considerations of scholarly background, country, race, sex, or religion and does not tolerate discrimination on these grounds.\n\nGOSH is used for peaceful purposes."
+      },
+      {
+        "title": "GOSH changes the culture of science"
+      },
+      {
+        "text": "We advocate for open science, which requires open science hardware.\n\nWe move science toward communal, accessible, and collaborative practices, and away from territorial, proprietary, institutional, and individualistic practices.\n\nWe create more options for people to pursue research, both inside existing institutions (academia, NGOs, government, non-profit, start-up, business) and outside institutions altogether.\n\nWe make spaces for science beyond established institutions (e.g. academia and NGOs) so there are more options for research trajectories.\n\nWe broaden the methods of pursuing way we do science, so the ways of knowing from a wide range of people are part of knowledge creation, now and in the future."
+      },
+      {
+        "title": "GOSH democratizes science"
+      },
+      {
+        "text": "More people and more types of people can take part in and benefit from science.\n\nWe break silos, both between disciplines and between types of institutions, bridging different domains of knowledge—you don’t have to be a “biologist” to do biology, or have a degree to do research.\n\nOpen science hardware decreases the divide between the global north and south, professionals and amateurs, particularly in low incomes countries.\n\nOpen science hardware puts local knowledge in action and contributes to cognitive justice.\n\nOpen science hardware allows a diversity of values and voices to ask research questions and to make technology."
+      },
+      {
+        "title": "GOSH has no high priests"
+      },
+      {
+        "text": "We have community champions, not a central authority.\n\nWe are an active community invested in shared accomplishments.\n\nWe build on each other’s work rather than work in isolation.\n\nThe more, the merrier."
+      },
+      {
+        "title": "GOSH empowers people"
+      },
+      {
+        "text": "To pursue research based on their interests.\n\nTo pursue research based on the needs of their communities.\n\nTo conduct research through many forms of support (including financial, personnel, time, material supports)\n\nTo achieve their ideas at low cost.\n\nTo understand how their tools work through borrowing, building, and sharing technology.\n\nTo have technological transparency and public oversight.\n\nTo build a movement."
+      },
+      {
+        "title": "GOSH has no black boxes"
+      },
+      {
+        "text": "(”Black boxes” refer to any complex piece of equipment with contents that are mysterious to the user. Technologies are open source.)\n\nThrough borrowing, building, and sharing technology, we understand how our tools work.\n\nBuilding GOSH is a form of learning by doing.\n\nOpen Science Hardware increases technological transparency and public oversight."
+      },
+      {
+        "title": "GOSH is impactful tools"
+      },
+      {
+        "text": "Technologies are adaptable and therefore can directly address local social and technical needs.\n\nThere is a direct link between what a community of users needs and science hardware because the community of users can access, change, adapt, and use the tools.\n\nOpen science hardware allows users to post knowledge and results early and often, allowing tools to be agile and responsive.\n\nOpen science hardware is designed to scale."
+      },
+      {
+        "title": "GOSH allows multiple futures for science"
+      },
+      {
+        "text": "Research can happen in or out of the academy, in or out of the lab, in or out of commercial spaces.\n\nGOSH changes the norms within established, institutional science where researchers openly share knowledge and technology.\n\nWith GOSH Indigenous/Non-scientist peoples can make research in their native language and adapted to their local context.\n\nGOSH allows science to happen in places it would not usually happen.\n\nGOSH aims to make cultural change so these opportunities are intergenerational."
+      }
+    ],
+    "lead": "The Global Open Science Hardware (GOSH) movement seeks to reduce barriers between diverse creators and users of scientific tools to support the pursuit and growth of knowledge. These are our principles:"
+  },
+  "faq_more": {
+    "markdown": "- [open source software](https://opensource.com/resources/what-open-source) — [free software](http://www.gnu.org/philosophy/free-sw.en.html) — [open science](https://www.fosteropenscience.eu/foster-taxonomy/open-science-definition) — [open hardware](http://www.oshwa.org)"
+  },
+  "section": {
+    "actions": [
+      {
+        "href": "https://openhardware.science/gosh-manifesto/deutsch/",
+        "label": "Deutsch"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/",
+        "label": "English"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/spanish/",
+        "label": "Español"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/french/",
+        "label": "Français"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/portuguese/",
+        "label": "Português"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/chinese/",
+        "label": "中文"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/bangla/",
+        "label": "বাংলা"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/japan/",
+        "label": "日本語"
+      }
+    ]
+  },
+  "text": {
+    "markdown": "Copyright\n\nThis document has been placed in the public domain.\n\nOrigin\n\nThis document was created by consensus with people from the first GOSH meeting in 2016 in Geneva, Switzerland. Its creation was facilitated by Max Liboiron and Greg Austic, who remain the caretakers of the document."
+  }
+}

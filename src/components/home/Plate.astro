@@ -1,0 +1,36 @@
+---
+// A photograph of the community set as a captioned plate: the picture, then a
+// purple rule with its caption and its credit line (the Flickr source).
+import KitImage from '../kit/_shared/KitImage.astro'
+import type { ImageInput } from '../kit/_shared/types'
+import Prose from '../kit/prose/Prose.astro'
+
+interface Props {
+  image?: ImageInput | undefined
+  /** A plain caption line (the photo's description). */
+  caption?: string | undefined
+  /** The credit, as markdown (a link to the photo's source). */
+  credit?: string | undefined
+  sizes?: string | undefined
+  priority?: boolean | undefined
+  /** From md up: wide, a letterbox crop; landscape, 16:9; natural, the picture's own proportions. */
+  crop?: 'wide' | 'landscape' | 'natural' | undefined
+}
+
+const { image, caption, credit, sizes = '100vw', priority = false, crop = 'natural' } = Astro.props
+---
+{(image || caption || credit) && (
+  <figure class="home-plate">
+    {image && (
+      <div class:list={['home-plate-frame', crop === 'wide' && 'home-plate-wide', crop === 'landscape' && 'home-plate-landscape']}>
+        <KitImage image={image} sizes={sizes} priority={priority} class="block h-full w-full object-cover" />
+      </div>
+    )}
+    {(caption || credit) && (
+      <figcaption class="home-plate-caption">
+        {caption && <p>{caption}</p>}
+        {credit && <Prose markdown={credit} size="base" searchable={false} class="home-credit" />}
+      </figcaption>
+    )}
+  </figure>
+)}

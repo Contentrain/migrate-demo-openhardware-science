@@ -1,0 +1,39 @@
+---
+// A rich-text body as the editor wrote it. A migrated post keeps the markup
+// WordPress rendered — `wp-block-*` classes, alignments, preset colors — and
+// is styled by Tailwind Typography bound to the site's tokens (`prose-site`)
+// plus the Gutenberg block styles in the starter's styles/wp-blocks.css. The
+// body is the site's own content from its own repository, so it is rendered
+// as HTML. Only post and page bodies carry `data-pagefind-body`, so search
+// indexes content, not chrome.
+import { tv } from 'tailwind-variants'
+import { renderMarkdown } from '../../../lib/markdown'
+
+const prose = tv({
+  base: 'prose prose-site max-w-none',
+  variants: {
+    size: { base: 'prose-base', lg: 'prose-lg' },
+    // From md, the body's start edge sits at this share of its container's width (the axis an editorial layout sets
+    // its text on); it runs to the container's end. Below md it is the full column, as without it.
+    inset: { none: '', '15': 'md:ms-[15%]', '27': 'md:ms-[27%]', '34': 'md:ms-[34%]', '42': 'md:ms-[42%]' },
+  },
+  defaultVariants: { size: 'lg', inset: 'none' },
+})
+
+interface Props {
+  /** Rendered HTML of a richtext field. */
+  html?: string | undefined
+  /** A markdown field (a page section's text), rendered at build time. Used when `html` is absent. */
+  markdown?: string | undefined
+  /** Index this body for site search. */
+  searchable?: boolean | undefined
+  class?: string | undefined
+  size?: 'base' | 'lg' | undefined
+  /** From md, the body starts at this share of its container's width (`15` … `42` %). `none` (absent): as before. */
+  inset?: 'none' | '15' | '27' | '34' | '42' | undefined
+}
+
+const { html, markdown, searchable = true, class: className, size, inset } = Astro.props
+const body = html ?? await renderMarkdown(markdown)
+---
+{body && <div class={prose({ size, inset, class: className })} data-pagefind-body={searchable ? '' : undefined} set:html={body} />}

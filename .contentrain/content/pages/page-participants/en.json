@@ -1,0 +1,434 @@
+{
+  "section": {
+    "items": [
+      {
+        "meta": "Karkhana",
+        "text": "Nepal",
+        "title": "Aakriti Thapa"
+      },
+      {
+        "meta": "Pixelache and Temporary (Helsinki)",
+        "text": "Finland",
+        "title": "Agnieszka Pokrywka"
+      },
+      {
+        "meta": "IIT Bombay",
+        "text": "India",
+        "title": "Akshai M"
+      },
+      {
+        "meta": "CONICET",
+        "text": "Argentina",
+        "title": "Alejandro Nadra"
+      },
+      {
+        "meta": "Independent",
+        "text": "Venezuela (based in Germany)",
+        "title": "Alexis C Johnson"
+      },
+      {
+        "meta": "HackScience (London)",
+        "text": "UK",
+        "title": "Ali Afshar"
+      },
+      {
+        "meta": "Pontificia Universidad Católica de Chile",
+        "text": "Chile",
+        "title": "Alvaro Meneses"
+      },
+      {
+        "meta": "University of Tuebingen/ Trend in Africa",
+        "text": "Germany",
+        "title": "Andre Maia Chagas"
+      },
+      {
+        "meta": "Blackbeard Biologic: Science and Environmental Advisors",
+        "text": "USA",
+        "title": "Andrew Thaler"
+      },
+      {
+        "meta": "Independent",
+        "text": "Sweden (also partly based in Germany)",
+        "title": "Bengt Sjölén"
+      },
+      {
+        "meta": "Laberinto Biohackspace Uchile / Biohack-Vilú",
+        "text": "Chile",
+        "title": "Benjamin Zamora"
+      },
+      {
+        "meta": "www.bento.bio / and sometimes UCL",
+        "text": "UK",
+        "title": "Bethan Wolfenden"
+      },
+      {
+        "meta": "Universidad Central del Ecuador",
+        "text": "Ecuador",
+        "title": "Byron Tarabata"
+      },
+      {
+        "meta": "Harvey Mudd College",
+        "text": "USA",
+        "title": "Coco Coyle"
+      },
+      {
+        "meta": "Universidad Austral de Chile",
+        "text": "Chile",
+        "title": "Daniel Vicente Lühr Sierra"
+      },
+      {
+        "meta": "Fablab U. de Chile",
+        "text": "Chile",
+        "title": "Danisa Peric"
+      },
+      {
+        "meta": "Chicago Academy of Sciences/Peggy Notebaert Nature Museum",
+        "text": "USA",
+        "title": "David Bild"
+      },
+      {
+        "meta": "GreenStart",
+        "text": "USA",
+        "title": "Dorn Cox"
+      },
+      {
+        "meta": "Federal University of Sao Paulo (UNIFESP)/University of Sao Paulo (USP)/Biohack Academy",
+        "text": "Brazil",
+        "title": "Eduardo Padilha Antonio"
+      },
+      {
+        "meta": "Rensselaer Polytechnic Institute",
+        "text": "United States",
+        "title": "Ellen Foster"
+      },
+      {
+        "meta": "Pontificia Universidad Católica de Chile (UC)",
+        "text": "Chile",
+        "title": "Fernan Fedirici"
+      },
+      {
+        "meta": "Digital fabrication Lab (LabFD) National Technological University (Mendoza) and Nodo39 Fablab",
+        "text": "Argentina",
+        "title": "Fernando Castro"
+      },
+      {
+        "meta": "Open Knowledge International",
+        "text": "UK",
+        "title": "Freyja van den Boom"
+      },
+      {
+        "meta": "Feminist Approach to Technology (FAT)",
+        "text": "India",
+        "title": "Gayatri Buragohain"
+      },
+      {
+        "meta": "Rede InfoAmazonia and WCS",
+        "text": "Brazil",
+        "title": "Gina Leite"
+      },
+      {
+        "meta": "Independent",
+        "text": "Canada",
+        "title": "Goldjian"
+      },
+      {
+        "meta": "Our-Sci.net",
+        "text": "USA",
+        "title": "Greg Austic"
+      },
+      {
+        "meta": "Instituto Nacional de Tecnología Agropecuaria (INTA) and Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)",
+        "text": "Argentina",
+        "title": "Gustavo Pereyra Irujo"
+      },
+      {
+        "meta": "Politics and Government Department, Ben Gurion University, Israel",
+        "text": "Israel",
+        "title": "Hagit Keysar"
+      },
+      {
+        "meta": "exploratorio: taller public workshop of experimentation",
+        "text": "Colombia",
+        "title": "Hamilton Mestizo"
+      },
+      {
+        "meta": "Public Lab, Boston",
+        "text": "US",
+        "title": "Jeffrey Warren"
+      },
+      {
+        "meta": "University of Cambridge",
+        "text": "UK",
+        "title": "Jenny Molloy"
+      },
+      {
+        "meta": "OpenBCI, INC www.openbci.com, and Pulse Sensor www.pulsesensor.com",
+        "text": "USA",
+        "title": "Joel Murphy"
+      },
+      {
+        "meta": "Kumasi Hive",
+        "text": "Ghana",
+        "title": "Jorge Appiah"
+      },
+      {
+        "meta": "Pontificia Universidad Católica de Chile",
+        "text": "Chile",
+        "title": "Juan Keymer"
+      },
+      {
+        "meta": "Open Science School",
+        "text": "Spain/Peru/France",
+        "title": "Juan Manuel Garcia"
+      },
+      {
+        "meta": "University of Texas at Austin",
+        "text": "USA",
+        "title": "Juan P Maestre"
+      },
+      {
+        "meta": "Nodo 39 FabLab",
+        "text": "Argentina",
+        "title": "Julián Castro Bosisio"
+      },
+      {
+        "meta": "CENIT",
+        "text": "Argentina",
+        "title": "Julieta Arancio"
+      },
+      {
+        "meta": "Kitnic",
+        "text": "United Kingdrom",
+        "title": "Kaspar"
+      },
+      {
+        "meta": "University of Alaska, Fairbanks",
+        "text": "USA",
+        "title": "Kina Smith"
+      },
+      {
+        "meta": "Public Lab",
+        "text": "USA",
+        "title": "Klie Klibert"
+      },
+      {
+        "meta": "Kathmandu Living Labs, Open Knowledge Nepal",
+        "text": "Nepal",
+        "title": "Kshitiz Khanal"
+      },
+      {
+        "meta": "Independent, InfoAmazonia",
+        "text": "Argentina",
+        "title": "Laura Olalde"
+      },
+      {
+        "meta": "Jomo Kenyatta University of Agriculture and Technology",
+        "text": "Kenya",
+        "title": "Lawrence Nderu"
+      },
+      {
+        "meta": "Open Science School, Paris",
+        "text": "Japan/France",
+        "title": "Lena Asai"
+      },
+      {
+        "meta": "Centro de Tecnologia Acadêmica (CTA) IF/UFRGS",
+        "text": "Brasil",
+        "title": "Leonardo Sehn"
+      },
+      {
+        "meta": "interspecifics.cc",
+        "text": "Mexico",
+        "title": "Leslie Garcia"
+      },
+      {
+        "meta": "Hackteria",
+        "text": "Switzerland",
+        "title": "Marc Dusseiller"
+      },
+      {
+        "meta": "Sensorica",
+        "text": "USA",
+        "title": "Maria Frangos"
+      },
+      {
+        "meta": "Centro de Tecnologia Acadêmica, Instituto de Física, Universidade Federal do Rio Grande do Sul",
+        "text": "Brazil",
+        "title": "Marina de Freitas"
+      },
+      {
+        "meta": "FOSSASIA",
+        "text": "Vietnam",
+        "title": "Mario Behling"
+      },
+      {
+        "meta": "Memorial University of Newfoundland",
+        "text": "Canada",
+        "title": "Max Liboiron"
+      },
+      {
+        "meta": "Lifepatch.org, Tokyo University of Agriculture and Technology",
+        "text": "Japan",
+        "title": "Nur Akbar Arofatullah"
+      },
+      {
+        "meta": "Interspecifics",
+        "text": "Mexico",
+        "title": "Paloma López"
+      },
+      {
+        "meta": "Independent Researcher",
+        "text": "Chile",
+        "title": "Paz Bernaldo"
+      },
+      {
+        "meta": "Stanford University",
+        "text": "USA",
+        "title": "Philip Ross"
+      },
+      {
+        "meta": "Universidad Peruana Cayetano Heredia (UPCH) and Biomakers Lab",
+        "text": "Peru",
+        "title": "Pierre Padilla"
+      },
+      {
+        "meta": "Independent",
+        "text": "USA",
+        "title": "Puneet Kishor"
+      },
+      {
+        "meta": "Universidade Federal do Rio Grande do Sul",
+        "text": "Brazil",
+        "title": "Rafael Pezzi"
+      },
+      {
+        "meta": "Independent, Composer",
+        "text": "Chile",
+        "title": "Renzo Filinich"
+      },
+      {
+        "meta": "University of Bath",
+        "text": "UK",
+        "title": "Richard Bowman"
+      },
+      {
+        "meta": "Institute of Medicine/Open Access Nepal",
+        "text": "Nepal",
+        "title": "Roshan Kumar Karn"
+      },
+      {
+        "meta": "Univeristy of Toronto/Sci-Bots Inc.",
+        "text": "Canada",
+        "title": "Ryan Fobel"
+      },
+      {
+        "meta": "The Baltimore Underground Science Space, and Open Works Baltimore",
+        "text": "USA",
+        "title": "Ryan Hammond"
+      },
+      {
+        "meta": "Center for Biotechnology and Bioengineering – Universidad de Chile",
+        "text": "France (currently in Chile)",
+        "title": "Séverine Cazaux"
+      },
+      {
+        "meta": "The Tech Academy",
+        "text": "Bangladesh",
+        "title": "Shams Jaber"
+      },
+      {
+        "meta": "Greenovation Hub",
+        "text": "China",
+        "title": "Shan He"
+      },
+      {
+        "meta": "Public Lab",
+        "text": "USA",
+        "title": "Shannon Dosemagen"
+      },
+      {
+        "meta": "Stroud Water Research Center",
+        "text": "USA",
+        "title": "Shannon Hicks"
+      },
+      {
+        "meta": "Independent",
+        "text": "Japan",
+        "title": "Shingo Hisakawa"
+      },
+      {
+        "meta": "University College London",
+        "text": "India",
+        "title": "Shneel Malik"
+      },
+      {
+        "meta": "EPFL",
+        "text": "Switzerland",
+        "title": "SP Mohanty"
+      },
+      {
+        "meta": "Arizona State University",
+        "text": "USA",
+        "title": "Stacey Kuznetsov"
+      },
+      {
+        "meta": "KitHub",
+        "text": "Canada/USA",
+        "title": "Tara Tiger Brown"
+      },
+      {
+        "meta": "Center for Effective Global Action (CEGA)",
+        "text": "India",
+        "title": "Tarunima Prabhakar"
+      },
+      {
+        "meta": "Stanford University",
+        "text": "USA",
+        "title": "Teon Brooks"
+      },
+      {
+        "meta": "Projet SOHA/Univesité Laval (Québec, Canada)",
+        "text": "Cameroon",
+        "title": "Thomas Hervé Mboa Nkoudou"
+      },
+      {
+        "meta": "University of Geneva",
+        "text": "Switzerland",
+        "title": "Thomas Maillart"
+      },
+      {
+        "meta": "Universidad Católica de Chile",
+        "text": "Chile",
+        "title": "Tim Rudge"
+      },
+      {
+        "meta": "Backyard Brains",
+        "text": "Chile",
+        "title": "Timothy Marzullo"
+      },
+      {
+        "meta": "University of Cambridge",
+        "text": "Germany",
+        "title": "Tobias Wenzel"
+      },
+      {
+        "meta": "Waag Society, Amsterdam",
+        "text": "The Netherlands",
+        "title": "Xiamyra Daal"
+      },
+      {
+        "meta": "Michigan Tech",
+        "text": "USA",
+        "title": "Yuenyong Nilsiam (Ake)"
+      },
+      {
+        "meta": "Platohedro",
+        "text": "Colombia",
+        "title": "Yuliana Rodriguez"
+      }
+    ]
+  },
+  "text": {
+    "markdown": "Name\n\nOrganisation\n\nCountry"
+  }
+}

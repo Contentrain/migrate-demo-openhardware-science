@@ -1,0 +1,37 @@
+---
+// The source's Toolset Views listings (toolset/views-view-editor), each bound to
+// the collection it lists, on the page that printed it (keyed by WordPress id).
+// The composed page frame renders this under the page's sections.
+import { getCollection } from 'astro:content'
+import ToolsetViewsViewEditor from '../components/site/ToolsetViewsViewEditor.astro'
+import { getStrings } from '../lib/content'
+
+interface Props {
+  /** The page's WordPress id. */
+  pageId?: number | undefined
+  locale?: string | undefined
+}
+
+/** Sign Manifesto Entries: the manifesto's signatures (the gosh-manifesto form's entries). */
+const SIGNATURES_PAGE = 8112
+
+const { pageId, locale } = Astro.props
+const listed = pageId === SIGNATURES_PAGE
+const t = listed ? await getStrings(locale) : undefined
+const signatures = listed ? await getCollection('contactGoshManifesto') : []
+const columns = t
+  ? [
+      { key: 'first_name', label: t('manifesto.first_name') },
+      { key: 'last_name', label: t('manifesto.last_name') },
+      { key: 'country', label: t('manifesto.country') },
+      { key: 'affiliation', label: t('manifesto.affiliation') },
+    ]
+  : []
+const rows = signatures.map(entry => ({
+  first_name: entry.data.first_name,
+  last_name: entry.data.last_name,
+  country: entry.data.country,
+  affiliation: entry.data.affiliation,
+}))
+---
+{t && <ToolsetViewsViewEditor columns={columns} rows={rows} caption={t('manifesto.signatures')} entry="signatures" />}

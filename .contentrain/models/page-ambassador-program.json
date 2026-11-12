@@ -1,0 +1,236 @@
+{
+  "domain": "pages",
+  "fields": {
+    "split": {
+      "description": "An image beside a block of text — eyebrow, heading, a markdown body and buttons — on either side, stacked on phones.",
+      "fields": {
+        "actions": {
+          "description": "Buttons under the text, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the button goes: a page on this site or a full address.",
+                "label": "Link",
+                "required": true,
+                "type": "url"
+              },
+              "label": {
+                "description": "The button text.",
+                "label": "Label",
+                "required": true,
+                "type": "string"
+              },
+              "new_tab": {
+                "description": "Open the link in a new tab.",
+                "label": "Open in a new tab",
+                "type": "boolean"
+              },
+              "style": {
+                "description": "primary for the main action, secondary or ghost for the ones beside it.",
+                "label": "Style",
+                "options": [
+                  "primary",
+                  "secondary",
+                  "ghost"
+                ],
+                "type": "select"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Buttons",
+          "required": false,
+          "type": "array"
+        },
+        "body": {
+          "description": "The text beside the image, as markdown: paragraphs, emphasis, links, lists.",
+          "label": "Text",
+          "required": false,
+          "type": "markdown"
+        },
+        "eyebrow": {
+          "description": "Short line above the heading.",
+          "label": "Eyebrow",
+          "required": false,
+          "type": "string"
+        },
+        "features": {
+          "description": "Short points under the text, each with a title and a line.",
+          "items": {
+            "fields": {
+              "icon": {
+                "description": "A kit icon name.",
+                "label": "Icon",
+                "type": "string"
+              },
+              "text": {
+                "description": "A line about it.",
+                "label": "Text",
+                "type": "string"
+              },
+              "title": {
+                "description": "The point, in a few words.",
+                "label": "Title",
+                "required": true,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Points",
+          "required": false,
+          "type": "array"
+        },
+        "heading": {
+          "description": "The section heading.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "image": {
+          "description": "The image beside the text.",
+          "fields": {
+            "alt": {
+              "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+              "label": "Image description",
+              "type": "string"
+            },
+            "height": {
+              "description": "Height in pixels, as uploaded.",
+              "label": "Height",
+              "type": "integer"
+            },
+            "src": {
+              "description": "The image file.",
+              "label": "Image",
+              "required": true,
+              "type": "image"
+            },
+            "width": {
+              "description": "Width in pixels, as uploaded.",
+              "label": "Width",
+              "type": "integer"
+            }
+          },
+          "label": "Image",
+          "required": false,
+          "type": "object"
+        },
+        "video_url": {
+          "description": "A video page; the image is its poster and nothing loads from the provider until it is played.",
+          "label": "Video",
+          "required": false,
+          "type": "url"
+        }
+      },
+      "label": "Split",
+      "type": "object"
+    },
+    "team": {
+      "description": "The people behind the site: portrait, name, role and a short bio each, as cards or plain entries.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the team.",
+          "label": "Heading",
+          "required": true,
+          "type": "string"
+        },
+        "intro": {
+          "description": "A line or two under the heading.",
+          "label": "Intro",
+          "required": false,
+          "type": "text"
+        },
+        "items": {
+          "description": "The people, in display order.",
+          "items": {
+            "fields": {
+              "bio": {
+                "description": "A short biography.",
+                "label": "Bio",
+                "type": "text"
+              },
+              "href": {
+                "description": "Their profile page; makes the whole entry a link.",
+                "label": "Link",
+                "type": "url"
+              },
+              "image": {
+                "description": "Their portrait; shown square.",
+                "label": "Photo",
+                "type": "image"
+              },
+              "image_alt": {
+                "description": "Who the photo shows; defaults to their name.",
+                "label": "Photo description",
+                "type": "string"
+              },
+              "links": {
+                "description": "Addresses of the member's social profiles, in order; each is labelled by the network its host names.",
+                "items": {
+                  "type": "url"
+                },
+                "label": "Profile links",
+                "type": "array"
+              },
+              "name": {
+                "description": "The person's name.",
+                "label": "Name",
+                "required": true,
+                "type": "string"
+              },
+              "role": {
+                "description": "Their title or role.",
+                "label": "Role",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Members",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Team",
+      "required": true,
+      "type": "object"
+    },
+    "team_more": {
+      "description": "Text of this part of the page that its section has no field for.",
+      "fields": {
+        "markdown": {
+          "description": "The text, in Markdown.",
+          "label": "Text",
+          "type": "markdown"
+        }
+      },
+      "label": "Team (more text)",
+      "type": "object"
+    },
+    "text": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Text",
+      "type": "object"
+    }
+  },
+  "i18n": true,
+  "id": "page-ambassador-program",
+  "kind": "singleton",
+  "name": "Ambassador Program page",
+  "title_field": "team.heading"
+}

@@ -1,0 +1,53 @@
+{
+  "card_grid": {
+    "intro": "Several members of the GOSH community are also a part of various regional and domain-specific OScH communities and projects. Below are some examples of these communities.",
+    "items": [
+      {
+        "eyebrow": "Photo of attendees at the first Africa OSH Summit Source: Africa OSH 2018",
+        "image": "/media/2022/01/africaosh.jpeg",
+        "image_alt": "Image",
+        "text": "Africa Open Science and Hardware (AfricaOSH) aims to create a conversation and set of actions on OSH among African actors. Their first Summit in 2018 was held in Ghana, moving to East Africa with the 2019 edition in Tanzania.\n\nAfricaOSH hosts organized monthly community calls where community members are invited to share open source / open science hardware projects and initiatives that they are working on to foster collaborations There is an organized webinar series where experts are invited to discuss and share knowledge and ideas in the various topics and trends of open science. The annual AfricaOSH summit is also the regional gathering where researchers, technologists, hacker hobbyists, educators, government officials, and start-up innovators from Africa & around the world are brought together to discuss the various opportunities that open science offers to the African continent. The Africa OSH gathering aims to achieve an ecosystem for research and innovation that is locally adaptable, culturally relevant, technologically feasible, economically viable, and environmentally sustainable.\n\nOne of the key goals of the AfricaOSH gathering is to adopt the GOSH Roadmap in an African context, to learn, support, and grow.",
+        "title": "AfricaOSH"
+      },
+      {
+        "eyebrow": "Logo for reGOSH. Source: reGOSH",
+        "image": "/media/2022/01/regosh-logo.jpg",
+        "image_alt": "Image",
+        "text": "After the GOSH global event in 2018, GOSHers from Latin America founded reGOSH, a regional GOSH community. The network started running “GOSH residences” where people gather for four weeks to build hardware collaboratively. After the first residency in Brazil in 2019, it is now also expanding to other formats.",
+        "title": "REGOSH"
+      },
+      {
+        "eyebrow": "Group Photo from Great Lakes GOSH 2019 Source: Great Lakes GOSH",
+        "image": "/media/2022/01/great-lakes-gosh.jpg",
+        "image_alt": "Image",
+        "text": "In Toronto, Canada, the first Great Lakes GOSH was held in 2019 with the aim of fostering collaboration and identifying ways to support participants and collaborate more effectively.",
+        "title": "GREAT LAKES GOSH"
+      },
+      {
+        "eyebrow": "Logo Bath Open INstrumentation Group (BOING) Source: BOING",
+        "image": "/media/2022/01/boing-logo.jpg",
+        "image_alt": "Image",
+        "text": "In February 2020, just before the COVID-19 pandemic arrived in the UK, the Bath Open Instrumentation Group (BOING) organised a 3-day workshop where participants explored different aspects of open hardware in academia.",
+        "title": "BATH OPEN INSTRUMENTATION GROUP (BOING)"
+      },
+      {
+        "eyebrow": "Photo of the ReSeq-Kickstarter Group Source: ReSeq Project",
+        "image": "/media/2022/01/reseq-project.jpg",
+        "image_alt": "Image",
+        "text": "In Switzerland, GOSHers from Europe met to organise a crowdfunding campaign to support work on the ReSeq project, or reuse of an old DNA sequencer to turn it into an open science hardware instrument.",
+        "title": "RESEQ PROJECT"
+      },
+      {
+        "text": "The Digital Biology Group works on projects to bridge information and bio-technologies. Projects like Digital Microfluidics, Digital Polymerase Chain Reaction (Digital-PCR), DNA Synthesizers, or Desktop Digital Biolabs will bring flexible and affordable labs to everyone.",
+        "title": "DIGITAL BIOLOGY GROUP"
+      },
+      {
+        "text": "The Open Hardware Alliance/Open Hardware Allianz is a network of open hardware experts, institutional representatives, and policy makers working to promote open hardware. The focus is on developing strategies and recommendations for action that show how the potential of open hardware can be fully unleashed.In doing so, we combine economic, scientific and civil society interests to promote the best possible and sustainable anchoring of open hardware.",
+        "title": "OPEN HARDWARE ALLIANZ"
+      }
+    ]
+  },
+  "card_grid_more": {
+    "markdown": "- [AfricaOSH)](http://africaosh.com/)\n- [reGOSH](http://regosh.libres.cc/)\n- [Great Lakes GOSH](https://forum.openhardware.science/c/communities/great-lakes-gosh/35)\n- [3-day workshop](https://www.bath.ac.uk/events/open-hardware-from-academia/)\n- [crowdfunding campaign](https://wemakeit.com/projects/reseq-reuse-dna-sequencers?locale=en) — [ReSeq](https://reseq.hackteria.org/)\n- [Digital Biology Group](https://forum.openhardware.science/c/communities/digital-biology/25) — [Microfluidics](https://digi.bio/) — [Digital-PCR](https://en.wikipedia.org/wiki/Digital_polymerase_chain_reaction) — [DNA Synthesizers](http://www.kilobaser.com/) — [Desktop Digital Biolabs](http://www.gaudi.ch/OpenDrop/)\n- [Open Hardware Alliance/Open Hardware Allianz](https://open-hardware-allianz.de/)\n\nContent on this page was sourced from the [GOSH Framework for Running Community Events](https://openhardware.science/gosh-community-events-framework/) the [GOSH Forum](http://forum.openhardware.science) and regional community coordinators."
+  }
+}

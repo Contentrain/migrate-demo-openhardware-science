@@ -1,0 +1,173 @@
+/*
+ * The home page's own design, on the theme's role variables. Unlayered, so it wins over the site layer's type scale.
+ * One frame (container-page), one rhythm (--home-band), one heading scale (--home-h2).
+ */
+.home {
+  --home-band: clamp(3.5rem, 2rem + 4vw, 6rem);
+  --home-h2: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+}
+
+/* The source's menu words are set in Lato, its script face. */
+body > header:first-of-type nav,
+.home-words {
+  font-family: var(--font-site-lato), var(--font-sans);
+}
+
+/* The GOSH logo in the header at the size the source shows it (418 × 120): legible, never a small badge. */
+body > header:first-of-type [data-kit-brand] { flex-shrink: 0; }
+body > header:first-of-type [data-kit-brand] img { height: 3rem; width: auto; max-width: none; }
+@media (width >= 48rem) {
+  body > header:first-of-type [data-kit-brand] img { height: 4.5rem; }
+}
+
+.home-band { padding-block: var(--home-band); }
+.home [data-kit-section] { padding-block: var(--home-band); }
+.home .home-opening { padding-bottom: 1rem; }
+
+/* One heading scale for every section heading on the page. */
+.home h2:not(li h2, .prose h2) {
+  font-family: var(--font-heading);
+  font-size: var(--home-h2);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+.home-small { font-size: 0.875rem; }
+
+/* The opening. */
+.home .home-title {
+  max-width: 22ch;
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 1.2rem + 4.2vw, 4.75rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+.home-lead { margin-top: 1.25rem; font-size: var(--text-lead); }
+.home-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.75rem;
+  margin-top: 1.75rem;
+  padding-top: 0.5rem;
+  border-top: 0.25rem solid var(--color-accent);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.home-words :is(a, span) {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.home-words a:hover { color: var(--color-accent-text); text-decoration: underline; text-decoration-thickness: 2px; }
+
+/* The plate: a photograph, a purple rule, its caption and its credit. */
+.home-plate { margin: 0; }
+.home-plate-frame { overflow: hidden; background: var(--color-surface-muted); }
+@media (width >= 48rem) {
+  .home-plate-wide { aspect-ratio: 21 / 8; }
+  .home-plate-landscape { aspect-ratio: 16 / 9; }
+}
+.home-plate-caption,
+.home-credit-row .home-credit {
+  margin-top: 0.75rem;
+  padding-inline-start: 0.875rem;
+  border-inline-start: 0.25rem solid var(--color-accent);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+}
+.home-plate-caption p { margin: 0; }
+.home .home-credit { font-size: 0.875rem; line-height: 1.5; }
+.home .home-credit :where(p) { margin: 0; }
+.home .home-credit a { color: var(--color-accent-text); font-weight: 600; }
+@media (width >= 48rem) {
+  .home-credit-end { display: flex; justify-content: flex-end; }
+  .home-credit-end .home-credit { width: auto; }
+}
+
+/* New to GOSH: two resources, side by side from md. */
+.home-resources {
+  display: grid;
+  gap: 2.5rem 2rem;
+  margin-top: 2rem;
+}
+@media (width >= 48rem) {
+  .home-resources { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.home-resource { display: flex; flex-direction: column; gap: 1rem; }
+.home-resource-media { display: block; overflow: hidden; border: 0.25rem solid var(--color-accent); }
+.home-resource-media:focus-visible { outline-offset: 4px; }
+.home .home-more :where(ul) { margin: 0; padding-inline-start: 1.25rem; }
+.home .home-more :where(li) { margin: 0; }
+.home-link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-accent-text);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* The four values, their icons drawn large as the source draws them. */
+.home .home-values [data-kit-section] { border-top: 1px solid var(--color-line); }
+.home .home-values [data-kit-section] li > img {
+  width: 8rem;
+  height: 8rem;
+  margin-bottom: -0.25rem;
+}
+@media (width >= 48rem) {
+  .home .home-values [data-kit-section] li > img { width: 9rem; height: 9rem; }
+}
+.home .home-values [data-kit-section] li h2 { font-size: 1.25rem; font-weight: 800; }
+
+/* What is Open Science Hardware: on the brand's purple field. */
+.home-purple { background: var(--color-field-1); color: var(--color-field-1-ink); }
+.home-definition { display: grid; gap: 2.5rem; align-items: center; }
+@media (width >= 64rem) {
+  .home-definition { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 4rem; }
+}
+.home-purple .prose {
+  --tw-prose-body: var(--color-field-1-ink);
+  --tw-prose-headings: var(--color-field-1-ink);
+  --tw-prose-links: var(--color-field-1-ink);
+  --tw-prose-bold: var(--color-field-1-ink);
+  --tw-prose-quotes: var(--color-field-1-ink);
+  color: var(--color-field-1-ink);
+}
+.home-purple .prose :is(h2, h3, h4, h5, h6) { color: var(--color-field-1-ink); }
+.home-purple .prose > :is(h2, h3, h4, h5, h6):first-child {
+  margin-top: 0;
+  font-size: var(--home-h2);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.home-purple .prose > :is(h2, h3, h4, h5, h6):not(:first-child) {
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.home-purple .prose > p:last-child {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* A split followed by its photograph's credit: the credit sits close under it. */
+.home .home-with-credit > [data-kit-section] { padding-bottom: 1.5rem; }
+.home-with-credit > .home-credit-row { padding-bottom: var(--home-band); }
+.home-brand { background: var(--color-brand); color: var(--color-brand-ink); }
+.home-brand .home-credit-row .home-credit { color: var(--color-brand-ink); border-color: var(--color-brand-ink); }
+.home-brand .home-credit a { color: var(--color-brand-ink); }

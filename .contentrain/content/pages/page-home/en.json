@@ -1,0 +1,131 @@
+{
+  "card_grid": {
+    "items": [
+      {
+        "icon": "/media/2020/10/noun_Conversation_3261413.png",
+        "text": "We are a global community of scientists, researchers, artists, hackers, hardware developers, and more.",
+        "title": "Interconnected"
+      },
+      {
+        "icon": "/media/2020/10/noun_fists_1500704.png",
+        "text": "Science, and the tools we use to do it, should be open to everyone, regardless of their background.",
+        "title": "Ethical"
+      },
+      {
+        "icon": "/media/2020/10/noun_roadmap_325083.png",
+        "text": "A dedicated movement to make open science hardware mainstream and widespread.",
+        "title": "Ambitous"
+      },
+      {
+        "icon": "/media/2020/10/noun_loud-speaker_1473403.png",
+        "text": "Open hardware changes the culture of science, making it more accessible to more people.",
+        "title": "Impactful"
+      }
+    ]
+  },
+  "cta": {
+    "actions": [
+      {
+        "href": "https://forum.openhardware.science/",
+        "label": "Join the Forum (opens in a new tab)"
+      },
+      {
+        "href": "https://openhardware.science/newsletter/",
+        "label": "Sign Up to the GOSH Newsletter (opens in a new tab)"
+      }
+    ],
+    "body": "Want to be more involved in the GOSH community? Sign up to the GOSH Forum and the GOSH Newsletter to find out about upcoming events, regional and topical groups, or to learn more about the GOSH movement.",
+    "heading": "Get Connected!"
+  },
+  "embed": {
+    "poster": {
+      "alt": "YouTube",
+      "src": "/media/cdn/i.ytimg.com/vi/6JUp5uhVcJs/hqdefault.jpg"
+    },
+    "url": "https://www.youtube.com/watch?v=6JUp5uhVcJs"
+  },
+  "global_open_science": {
+    "actions": [
+      {
+        "href": "https://openhardware.science/global-open-science-hardware-roadmap/",
+        "label": "Read the Roadmap (opens in a new tab)"
+      }
+    ],
+    "body": "Written by over 100 community members, the Global Open Science Hardware Roadmap highlights concrete actions we can take to make open science hardware widespread.",
+    "heading": "Global Open Science Hardware Roadmap: How to Make Open Science Hardware Ubiquitous by 2025",
+    "image": {
+      "alt": "Image",
+      "src": "/media/2021/08/44718678765_15c4d39c95_c.jpeg"
+    }
+  },
+  "global_open_science_note": {
+    "markdown": "Source: [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity)"
+  },
+  "global_open_science_note_gathering": {
+    "markdown": "Source: [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/44919247044/in/album-72157674579730208/)"
+  },
+  "global_open_science_section": {
+    "media": {
+      "alt": "Image",
+      "src": "/media/2021/08/44919247044_44332b94c4_o.jpg"
+    }
+  },
+  "gosh_manifesto_values": {
+    "actions": [
+      {
+        "href": "https://openhardware.science/gosh-manifesto/",
+        "label": "Read the GOSH Manifesto (opens in a new tab)"
+      }
+    ],
+    "body": "The tools we use to do science belong in the hands of everyone. Ensuring that open science hardware projects are ethical, empowering, and accessible- these are just some of our guiding principles as a community and as a movement.",
+    "heading": "GOSH Manifesto: Our Values and Principles",
+    "image": {
+      "alt": "Image",
+      "src": "/media/2021/08/43814262120_c30bfb1bc0_o-scaled.jpg"
+    }
+  },
+  "hero": {
+    "heading": "We are a community that wants to make open science hardware ubiquitous"
+  },
+  "new_gosh_get": {
+    "heading": "New to GOSH? Get started by checking out some of our resources below:",
+    "items": [
+      {
+        "href": "https://zenodo.org/record/6536547#.Yn6IUZPMJfU",
+        "link_label": "(opens in a new tab)",
+        "media": "/media/2023/05/GOSH-Welcome-Guide.png",
+        "media_alt": "Image",
+        "text": "The GOSH Welcome Guide is full of information on how to get involved with the community. Click the image above to download the guide. ¡Lee esta guía en español aquí!"
+      },
+      {
+        "text": "A short video documenting our most recent Gathering in Panamá, featuring interviews with several community members. Closed captioning available in both Spanish and English."
+      }
+    ]
+  },
+  "new_gosh_get_more": {
+    "markdown": "- [aquí](https://zenodo.org/records/12726484)"
+  },
+  "section": {
+    "lead": "Photo of Attendees at the 2022 GOSH Gathering in Panama City, Panama. Image: Gathering for Open Science Hardware",
+    "media": {
+      "alt": "Photo of Attendees at 2018 GOSH Gathering in Shenzhen",
+      "src": "/media/2023/01/52463352862_23ab2d9759_o-scaled-e1672846250410.jpg"
+    }
+  },
+  "section_more": {
+    "markdown": "[Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/52463352862/in/album-72177720303226220/)"
+  },
+  "text": {
+    "markdown": "Source: [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/44667003254/in/album-72157674579730208/)"
+  },
+  "what_open_science": {
+    "markdown": "##### What is Open Science Hardware?\n\nScience hardware encompasses the tools and machinery we use for scientific endeavours (for example, a microscope or environmental sensor). Open Science Hardware refers to science hardware that is open source - or free to use, change, study or distribute. By making science hardware open, more people can have access to the tools we use to do science.\n\n###### From the [Open Source Hardware Definition](https://www.oshwa.org/definition/):\n\n\"...Open source hardware gives people the freedom to control their technology while sharing knowledge and encouraging commerce through the open exchange of designs.\""
+  },
+  "what_open_science_embed": {
+    "poster": {
+      "alt": "YouTube",
+      "src": "/media/cdn/i.ytimg.com/vi/fqoGvTxASw4/maxresdefault.jpg"
+    },
+    "url": "https://www.youtube.com/watch?v=fqoGvTxASw4"
+  }
+}

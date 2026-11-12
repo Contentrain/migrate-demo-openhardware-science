@@ -1,0 +1,544 @@
+{
+  "section": {
+    "items": [
+      {
+        "meta": "Finland",
+        "text": "Pixelache",
+        "title": "Agnieszka Pokrywka"
+      },
+      {
+        "meta": "India",
+        "text": "ICFOSS / MicroHOPE Foundation",
+        "title": "Akshai M"
+      },
+      {
+        "meta": "Germany",
+        "text": "Technical University of Munich/Independent",
+        "title": "Alexander Kutschera"
+      },
+      {
+        "meta": "Liberia",
+        "text": "Leading The Future - LEAF",
+        "title": "Alexander Mennu Flomo"
+      },
+      {
+        "meta": "UAE",
+        "text": "Independent",
+        "title": "Amir Mir"
+      },
+      {
+        "meta": "Argentina",
+        "text": "Weiba Foundation and University of Buenos Aires",
+        "title": "Analia Aspis"
+      },
+      {
+        "meta": "United Kingdom",
+        "text": "Univ. of Sussex, Trend in Africa, Prometheus Science, Open Neuroscience",
+        "title": "Andre Maia Chagas"
+      },
+      {
+        "meta": "Singapore",
+        "text": "National University of Singapore",
+        "title": "Andrew Quitmeyer"
+      },
+      {
+        "meta": "Ukraine",
+        "text": "Ternopil Volodymyr Hnatiuk National Pedagogical University / NGO «Galician еcological аssociation»",
+        "title": "Andriy Herts"
+      },
+      {
+        "meta": "Brazil",
+        "text": "InfoAmazonia",
+        "title": "Angelo Moscozo Silveira, aka VJ pixel"
+      },
+      {
+        "meta": "India",
+        "text": "Mozilla, Guru Gobind Singh Indraprastha University",
+        "title": "Anirudh Goel"
+      },
+      {
+        "meta": "UK",
+        "text": "MakerNet",
+        "title": "Anna Sera Lowe"
+      },
+      {
+        "meta": "France",
+        "text": "CRI",
+        "title": "Anne-Pia Marty"
+      },
+      {
+        "meta": "Tanzania",
+        "text": "Ardhi University",
+        "title": "Beatrice Christopher Tarimo"
+      },
+      {
+        "meta": "Sweden",
+        "text": "Independent",
+        "title": "Bengt Sjölén"
+      },
+      {
+        "meta": "Peru",
+        "text": "Fab Lab",
+        "title": "Benito Juarez Velez"
+      },
+      {
+        "meta": "Germany",
+        "text": "Freie Universität Berlin",
+        "title": "Benjamin Hans Paffhausen"
+      },
+      {
+        "meta": "UK/China",
+        "text": "SZOIL",
+        "title": "Besar Zasella"
+      },
+      {
+        "meta": "China",
+        "text": "Independent",
+        "title": "Bin Liu"
+      },
+      {
+        "meta": "Hong Kong",
+        "text": "Young Makers & ChangeMakers",
+        "title": "Brian Tang"
+      },
+      {
+        "meta": "Ecuador",
+        "text": "Utopia Journal, Quinto Pilar, Tecnox",
+        "title": "Byron Dario Tarabata Tupiza"
+      },
+      {
+        "meta": "Argentina",
+        "text": "Independant. Being part of MIT Media Lab fellowship during this year",
+        "title": "Carlos Fernando Daguanno"
+      },
+      {
+        "meta": "US",
+        "text": "Conservation X Labs",
+        "title": "Cassie Ann Hoffman"
+      },
+      {
+        "meta": "Tanzania",
+        "text": "Twende Innovation Centre",
+        "title": "Christonsia Mushi"
+      },
+      {
+        "meta": "US",
+        "text": "Kickstarter",
+        "title": "Clarissa Redwine"
+      },
+      {
+        "meta": "US",
+        "text": "MIT Media Lab",
+        "title": "David Kong"
+      },
+      {
+        "meta": "China",
+        "text": "Shenzhen Open Innovation Lab",
+        "title": "David Li"
+      },
+      {
+        "meta": "Argentina",
+        "text": "Cientopolis, LIFIA, Facultad de Informática, Universidad Nacional de La Plata",
+        "title": "Diego Torres"
+      },
+      {
+        "meta": "Kenya",
+        "text": "LakeHub",
+        "title": "Dorcas Adhiambo Owinoh"
+      },
+      {
+        "meta": "PERU",
+        "text": "Universidad Peruana Cayetano Heredia (UPCH)",
+        "title": "Dulce Esperanza Alarcón Yaquetto"
+      },
+      {
+        "meta": "Brazil",
+        "text": "University of São Paulo (USP)/Synthetic Biology Club Brazil (Synbio Brasil)",
+        "title": "Eduardo Padilha Antonio"
+      },
+      {
+        "meta": "Switzerland",
+        "text": "University of Geneva, Geneva-Tsinghua Initiative",
+        "title": "Emmanuel Kellner"
+      },
+      {
+        "meta": "Brazil",
+        "text": "Ciência Aberta Ubatuba; UbaLab; inc.ubalab; OptDyn",
+        "title": "Felipe Fonseca"
+      },
+      {
+        "meta": "Switzerland",
+        "text": "Université de Genève",
+        "title": "Francois Grey"
+      },
+      {
+        "meta": "Chile",
+        "text": "Pontificia Universidad Católica de Chile",
+        "title": "Fernan Federici"
+      },
+      {
+        "meta": "Ghana",
+        "text": "Independent",
+        "title": "Freda Yamorti Gbande"
+      },
+      {
+        "meta": "Ghana",
+        "text": "Global Lab Network, Africa OSH",
+        "title": "Gameli Adzaho"
+      },
+      {
+        "meta": "US",
+        "text": "Our Sci",
+        "title": "Greg Austic"
+      },
+      {
+        "meta": "Singapore",
+        "text": "National University of Singapore",
+        "title": "Harold Tay"
+      },
+      {
+        "meta": "Ghana",
+        "text": "Kumasi Hive",
+        "title": "Harry Sefoga Akligoh"
+      },
+      {
+        "meta": "UK",
+        "text": "Cell-Free Tech",
+        "title": "Helene Steiner"
+      },
+      {
+        "meta": "China",
+        "text": "Troublemaker",
+        "title": "Henk Werner"
+      },
+      {
+        "meta": "Russia",
+        "text": "Science art group \"18 apples\"",
+        "title": "Ippolit Markelov"
+      },
+      {
+        "meta": "Chile",
+        "text": "Pontificia Universidad Católica de Chile",
+        "title": "Isaac Núñez"
+      },
+      {
+        "meta": "UK",
+        "text": "Independent Filmmaker",
+        "title": "Jan Stöckel"
+      },
+      {
+        "meta": "Peru",
+        "text": "Universidad Peruana Cayetano Heredia (UPCH)",
+        "title": "Jean Pierre Tincopa Flores"
+      },
+      {
+        "meta": "US",
+        "text": "Public Lab",
+        "title": "Jeff Warren"
+      },
+      {
+        "meta": "UK",
+        "text": "University of Cambridge",
+        "title": "Jenny Molloy"
+      },
+      {
+        "meta": "US",
+        "text": "Independent",
+        "title": "Jessica Leete"
+      },
+      {
+        "meta": "China",
+        "text": "Open FIESTA, Tsinghua University",
+        "title": "Ji Li"
+      },
+      {
+        "meta": "US",
+        "text": "www.openbci.com www.pulsesensor.com www.tympan.org www.openhak.com",
+        "title": "Joel Murphy"
+      },
+      {
+        "meta": "Ghana",
+        "text": "Kumasi Hive",
+        "title": "Jorge Appiah"
+      },
+      {
+        "meta": "France",
+        "text": "NGO: Open science school",
+        "title": "Juan Manuel Garcia"
+      },
+      {
+        "meta": "Spain",
+        "text": "University of Texas at Austin",
+        "title": "Juan P Maestre"
+      },
+      {
+        "meta": "United Kingdom",
+        "text": "University of Bath",
+        "title": "Julian Stirling"
+      },
+      {
+        "meta": "Argentina",
+        "text": "CENIT-CONICET",
+        "title": "Julieta Cecilia Arancio"
+      },
+      {
+        "meta": "Bénin",
+        "text": "Association for the Promotion of Open Science in Haiti and Francophone Africa (APSOHA)",
+        "title": "Justin Sègbédji Ahinon"
+      },
+      {
+        "meta": "United Kingdom",
+        "text": "Kitspace",
+        "title": "Kaspar"
+      },
+      {
+        "meta": "Canada",
+        "text": "Independent",
+        "title": "Katherine Ananda Gabo Mark"
+      },
+      {
+        "meta": "China",
+        "text": "Shenzhen Maker Faire",
+        "title": "Kevin Lau"
+      },
+      {
+        "meta": "France",
+        "text": "CRI - Center for Research and Interdisciplinarity",
+        "title": "Kevin Lhoste"
+      },
+      {
+        "meta": "Senegal",
+        "text": "*SeeSD / Ubbil/ IloveSenegal / affiliation to Oregon State University (Faculty in the Environmental Sciences Graduate Program)",
+        "title": "Khadidiatou Sall"
+      },
+      {
+        "meta": "Togo",
+        "text": "WoeLab",
+        "title": "Koffi Sename Agbodjinou"
+      },
+      {
+        "meta": "Argentina",
+        "text": "Independent",
+        "title": "Laura Olalde"
+      },
+      {
+        "meta": "Brazil",
+        "text": "CTA and EITCHA",
+        "title": "Leonardo Sehn"
+      },
+      {
+        "meta": "US",
+        "text": "Volunteer Community Organizer-Public Lab, Freelance Designer- Adafruit",
+        "title": "Leslie Birch"
+      },
+      {
+        "meta": "China",
+        "text": "Independent",
+        "title": "Li Yu"
+      },
+      {
+        "meta": "China",
+        "text": "Litchee Lab",
+        "title": "Lit Liao"
+      },
+      {
+        "meta": "UK/South Africa",
+        "text": "University of Oxford and University of the Witwatersrand",
+        "title": "Louise Bezuidenhout"
+      },
+      {
+        "meta": "Switzerland",
+        "text": "Hackteria",
+        "title": "Marc Dusseiller"
+      },
+      {
+        "meta": "USA/Denmark",
+        "text": "disaster.radio",
+        "title": "Marc Juul"
+      },
+      {
+        "meta": "Argentina",
+        "text": "Independent",
+        "title": "Marcela Basch"
+      },
+      {
+        "meta": "Canada",
+        "text": "Breathing Games",
+        "title": "Maria Frangos"
+      },
+      {
+        "meta": "Brazil",
+        "text": "CTA - UFRGS",
+        "title": "Marina de Freitas"
+      },
+      {
+        "meta": "US/Austria",
+        "text": "Hackteria",
+        "title": "Mary Tsang"
+      },
+      {
+        "meta": "Japan",
+        "text": "Independent",
+        "title": "Masato Takemura"
+      },
+      {
+        "meta": "United Kingdom",
+        "text": "Department of Physics, University of Oxford",
+        "title": "Moritz Riede"
+      },
+      {
+        "meta": "Germany",
+        "text": "LabLab UG",
+        "title": "Moritz v. Buttlar"
+      },
+      {
+        "meta": "Thailand",
+        "text": "King Mongkut University of Technology Thonburi, Thailand",
+        "title": "Muhammad Omer Khan"
+      },
+      {
+        "meta": "India",
+        "text": "NGO",
+        "title": "Nakka Sai Bhaskar Reddy"
+      },
+      {
+        "meta": "Switzerland",
+        "text": "CERN / UniGe / Hackuarium",
+        "title": "Oliver Keller"
+      },
+      {
+        "meta": "Spain",
+        "text": "Pechblenda lab / Hackteria network",
+        "title": "Paula Pin Lage"
+      },
+      {
+        "meta": "Peru",
+        "text": "Universidad Peruana Cayetano Heredia",
+        "title": "Pierre Padilla"
+      },
+      {
+        "meta": "Nepal",
+        "text": "Karkhana Pvt. Ltd. Nepal",
+        "title": "Prayush Bijukchhe"
+      },
+      {
+        "meta": "Switzerland",
+        "text": "Hackuarium",
+        "title": "Rachel Aronoff"
+      },
+      {
+        "meta": "China",
+        "text": "3D Druckzentrum Ruhr",
+        "title": "Rachel Hu"
+      },
+      {
+        "meta": "China",
+        "text": "Mushroom Cloud MakerSpace",
+        "title": "Rockets Xia"
+      },
+      {
+        "meta": "Canada",
+        "text": "Sci-Bots (an open-hardware startup)",
+        "title": "Ryan Fobel"
+      },
+      {
+        "meta": "Singapore",
+        "text": "Engineering Good, Sustainable Living Lab, Singapore Makers Association, Global Innovation Gathering, also Independent.",
+        "title": "Saad Chinoy"
+      },
+      {
+        "meta": "US",
+        "text": "ConservationX",
+        "title": "Sam Kelly"
+      },
+      {
+        "meta": "Ghana",
+        "text": "Hacklab",
+        "title": "Samuel Raymond Davies"
+      },
+      {
+        "meta": "US",
+        "text": "Conservify",
+        "title": "Shah Selbe"
+      },
+      {
+        "meta": "China",
+        "text": "KnowFlow",
+        "title": "Shan He"
+      },
+      {
+        "meta": "US",
+        "text": "Public Lab",
+        "title": "Shannon Dosemagen"
+      },
+      {
+        "meta": "India",
+        "text": "Mentor @ Innovation Garage, NIT Warangal",
+        "title": "Shubhi Saxena"
+      },
+      {
+        "meta": "Chile",
+        "text": "TecnoX / Pontificia Universidad Católica de Chile",
+        "title": "Tamara Matute Torres"
+      },
+      {
+        "meta": "Germany and Chile",
+        "text": "Journal of Open Hardware; EMBL Heidelberg",
+        "title": "Tobias Wenzel"
+      },
+      {
+        "meta": "China",
+        "text": "Independent",
+        "title": "Tony Yet"
+      },
+      {
+        "meta": "Switzerland",
+        "text": "Gaudi Labs",
+        "title": "Urs Gaudenz"
+      },
+      {
+        "meta": "Colombia",
+        "text": "Biohacking Colombia",
+        "title": "Valentina Yepes Ardila"
+      },
+      {
+        "meta": "Tanzania",
+        "text": "STICLab",
+        "title": "Valerian Linus Sanga"
+      },
+      {
+        "meta": "China",
+        "text": "Shenzhen Open Innovation Lab",
+        "title": "Vicky Xie"
+      },
+      {
+        "meta": "China",
+        "text": "Tsinghua University",
+        "title": "Wei Li（李威）"
+      },
+      {
+        "meta": "China",
+        "text": "FOSSASIA",
+        "title": "Xing Haijiao (Elizabeth)"
+      },
+      {
+        "meta": "Mexico",
+        "text": "Scintia",
+        "title": "Yamile Minerva Castellanos Morales"
+      },
+      {
+        "meta": "France",
+        "text": "Université Sorbonne Nouvelle - Paris 3, also Founder of Kabakoo - The House Of Wondering",
+        "title": "Yanick Kemayou"
+      },
+      {
+        "meta": "China",
+        "text": "education company - 北京乐舟博雅教育科技有限公司",
+        "title": "Yao Cheng"
+      }
+    ]
+  },
+  "text": {
+    "markdown": "Name\n\nAffiliation\n\nCountry"
+  }
+}

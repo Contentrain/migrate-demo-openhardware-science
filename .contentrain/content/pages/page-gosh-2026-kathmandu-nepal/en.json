@@ -1,0 +1,50 @@
+{
+  "card_grid": {
+    "items": [
+      {
+        "href": "https://maps.app.goo.gl/jbgCFPHkzUQCWi7e8",
+        "link_label": "Heritage Garden",
+        "text": "The 2026 GOSH Gathering will be hosted by Karkhana Samuha and will be held at Heritage Garden in Lalitpur, Nepal October 4 through 6.",
+        "title": "Event Details"
+      },
+      {
+        "href": "https://openhardware.science/2026/08/17/gosh-2026-nepal-tentative-program/",
+        "link_label": "View the program here",
+        "text": "This year’s program will feature a mix of workshops, paper presentations, and unconference-style sessions prioritizing knowledge sharing, hands-on collaborative work, and community development.",
+        "title": "Program"
+      },
+      {
+        "href": "https://opensciencehardware.org/",
+        "link_label": "Open Science Hardware Foundation",
+        "text": "The 2026 Gathering was made possible by our sponsors, the Open Science Hardware Foundation and Seeed Studio. Their generous support provided funded event operations and also helped GOSHers from around the world travel to participate.",
+        "title": "Sponsors"
+      }
+    ]
+  },
+  "card_grid_more": {
+    "markdown": "- [Seeed Studio](https://www.seeedstudio.com/)"
+  },
+  "hero": {
+    "heading": "We are delighted to share that GOSH 2026 will be hosted by our partners at Karkhana Samuha, a long-time GOSH collaborator celebrating its 10th year of reimagining learning through making and experimentation.",
+    "image": {
+      "alt": "GOSH 2026 Nepal – Final program and post-gathering summaries",
+      "src": "/media/2026/03/image-5-953x1024.png"
+    },
+    "lead": "Join October 4 – 6, 2026 in Kathmandu for the next GOSH gathering"
+  },
+  "hero_more": {
+    "markdown": "[Karkhana Samuha](https://www.karkhanasamuha.org.np/)"
+  },
+  "text": {
+    "markdown": "![](/media/2026/03/image.png)\n\n![Kathmandu Durbar Square 06 Mahavishnu Kuh Vishnu Pratapamalla Jagannath 2007 gje](/media/2026/03/Kathmandu-Durbar_Square-06-Mahavishnu-Kuh-Vishnu-Pratapamalla-Jagannath-2007-gje-1024x634.jpg)"
+  },
+  "travel_information": {
+    "markdown": "![Travel Information](/media/2026/03/image-2.png)\n\n## Travel Information\n\nAirport [Tribhuvan International Airport](https://www.tiairport.com.np/) (KTM)\n\nGround transportation Multiple sources cite taxis as the best way to get around Kathmandu, particularly to and from the airport. Taxis in Kathmandu generally do not run a meter, so it is necessary to negotiate cost at the start of the ride, and helpful to have small bills on hand. Ride share services are also available, including [Yango](https://yango.com/en_np/?srsltid=AfmBOorPk5bKUDBfmNGfyMudKudenpqwhMUSuAjA2pOqy7HhHO5wQAw7), [Pathao](https://pathao.com/np/) and [inDrive](https://indrive.com/en-np).\n\nAccommodations\n\nHotel accommodations may be secured indivdually. To assist you in selecting an option that suits your preferences and budget, our partners at Karkhana Samuha have developed a [guide to local lodging](https://drive.google.com/file/d/1yFneQ0stDZWJ6cbYsqNI6PFqMg5IBCZ4/view?usp=sharing) offering multiple nearby options.\n\nVisa Applications\n\nMost international visitors to Nepal can obtain a tourist visa on arrival at Tribhuvan International Airport. You’ll need a valid passport (valid for at least six months after your date of arrival), and you can fill out the [visa application online](https://nepaliport.immigration.gov.np/entry-visa-processing) before you travel to speed up processing once you land. A small number of nationalities must secure a visa in advance from a Nepalese consulate or embassy – check the [Nepal Department of Immigration website](https://nepaliport.immigration.gov.np/) for further details."
+  },
+  "travel_information_note": {
+    "markdown": "M8M2+4QX, Milap Rd, Lalitpur 44600, Nepal\n\n![OSHF logo color long light](/media/2026/09/OSHF_logo-color-long-light-png-1024x262.png)\n\n![Seeed Horizontal logo](/media/2026/09/Seeed_Horizontal-logo.svg)"
+  },
+  "travel_information_note_2": {
+    "markdown": "![](/media/2026/03/image-1.png)"
+  }
+}

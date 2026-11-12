@@ -1,0 +1,140 @@
+{
+  "domain": "pages",
+  "fields": {
+    "contact_form": {
+      "description": "The contact section: heading, introduction, contact details and a Contentrain Studio form — fields, spam protection and notifications set in Studio, submissions reviewed there.",
+      "fields": {
+        "details": {
+          "description": "Ways to reach you, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "A tel:, mailto: or map link for it.",
+                "label": "Link",
+                "type": "url"
+              },
+              "icon_image": {
+                "description": "The detail's own icon as an image file, drawn before it.",
+                "label": "Icon image",
+                "type": "image"
+              },
+              "label": {
+                "description": "What the detail is.",
+                "label": "Label",
+                "type": "string"
+              },
+              "value": {
+                "description": "The detail as shown.",
+                "label": "Value",
+                "required": true,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Contact details",
+          "required": false,
+          "type": "array"
+        },
+        "form_heading": {
+          "description": "The form's own heading, shown above the form.",
+          "label": "Form heading",
+          "required": false,
+          "type": "string"
+        },
+        "heading": {
+          "description": "Section heading.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "hours": {
+          "description": "Opening hours as written; line breaks are kept.",
+          "label": "Opening hours",
+          "required": false,
+          "type": "text"
+        },
+        "intro": {
+          "description": "A line or two above the details.",
+          "label": "Introduction",
+          "required": true,
+          "type": "text"
+        },
+        "map": {
+          "description": "A map of the address, loaded only when the reader asks; the address is printed under it.",
+          "fields": {
+            "address": {
+              "description": "The place shown on the map.",
+              "label": "Address",
+              "type": "string"
+            },
+            "title": {
+              "description": "What the map is: its accessible name.",
+              "label": "Map title",
+              "required": true,
+              "type": "string"
+            },
+            "url": {
+              "description": "A Google Maps embed address, when the source has one.",
+              "label": "Map address",
+              "type": "url"
+            }
+          },
+          "label": "Map",
+          "required": false,
+          "type": "object"
+        },
+        "socials": {
+          "description": "Social or profile links, shown as a row under the details.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "The profile address.",
+                "label": "Link",
+                "required": true,
+                "type": "url"
+              },
+              "label": {
+                "description": "Visible text of the link.",
+                "label": "Label",
+                "required": true,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Profile links",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Contact form",
+      "required": true,
+      "type": "object"
+    },
+    "text": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Text",
+      "type": "object"
+    }
+  },
+  "i18n": true,
+  "id": "page-gosh-social-media-information-form",
+  "kind": "singleton",
+  "name": "GOSH Social Media Information Form page",
+  "title_field": "contact_form.intro"
+}

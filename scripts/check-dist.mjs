@@ -1,0 +1,192 @@
+// Checks the built site (dist/) for the things a type checker cannot see:
+//
+//  - one stylesheet: every page links at most one site stylesheet
+//  - no WordPress runtime: no script or stylesheet from wp-includes /
+//    wp-content / jQuery, no site path into them, no inline script naming
+//    wp-json; a link or image on another site is content, not runtime
+//  - JavaScript only where a feature needs it (search, Studio forms/comments)
+//  - the search index (dist/pagefind/) wherever the search page loads it
+//  - the files crawlers and readers expect: sitemap, robots.txt, RSS, 404
+//  - llms.txt when the site has an address (robots.txt names the sitemap): the
+//    llmstxt.org shape, every link on the site's own origin and built here
+//  - wp-query-map.json: WordPress's query addresses (?p=, ?page_id=, …) and
+//    where they lead now — the baseline every host serves, even when empty
+//  - a noindex page (404, search) has no canonical or og:url
+//  - every indexable page has a title, a meta description, a canonical URL, a
+//    language and well-formed JSON-LD — Lighthouse's SEO audits, which the
+//    site's CI asserts at 1
+//  - a site served from a directory (astro.config `base`, named by the
+//    sitemap's address): every address a page or _redirects points at on the
+//    site is inside that directory
+//
+// Usage: node scripts/check-dist.mjs [dist]   — exits 1 on any failure.
+
+import { readdir, readFile, stat } from 'node:fs/promises'
+import { join, relative } from 'node:path'
+
+const dist = process.argv[2] ?? 'dist'
+const failures = []
+const fail = (file, message) => failures.push(`${file}: ${message}`)
+
+async function htmlFiles(dir) {
+  const out = []
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const path = join(dir, entry.name)
+    if (entry.isDirectory()) {
+      if (entry.name !== 'pagefind' && entry.name !== '_astro') out.push(...await htmlFiles(path))
+    } else if (entry.name.endsWith('.html')) {
+      out.push(path)
+    }
+  }
+  return out
+}
+
+async function exists(path) {
+  try {
+    await stat(path)
+    return true
+  } catch {
+    return false
+  }
+}
+
+for (const required of ['index.html', 'sitemap-index.xml', 'robots.txt', 'rss.xml', '404.html']) {
+  if (!await exists(join(dist, required))) fail(required, 'missing')
+}
+
+// Search: the page loads the pagefind UI from /pagefind/; a build that stopped at `astro build` (no `pagefind --site dist`
+// after it) leaves those files out and the page logs a 404 per asset (Lighthouse best-practices fails on it).
+const searchPage = await readFile(join(dist, 'search', 'index.html'), 'utf8').catch(() => null)
+if (searchPage?.includes('/pagefind/') && !await exists(join(dist, 'pagefind', 'pagefind.js'))) {
+  fail('search/index.html', 'loads /pagefind/ but dist/pagefind/pagefind.js is missing (run `pagefind --site dist` after `astro build`)')
+}
+
+// llms.txt: a migrated site is promised one. With an address (robots.txt names the sitemap absolutely) it must
+// exist, open with the site's name, and every link must be on the site's origin and lead to a page this build wrote.
+const robots = await readFile(join(dist, 'robots.txt'), 'utf8').catch(() => '')
+const sitemapUrl = robots.match(/^Sitemap: (\S+)$/m)?.[1]
+// The directory the site is served from (`/blog` for astro.config `base: '/blog/'`), as the sitemap's address names it.
+const base = sitemapUrl ? new URL(sitemapUrl).pathname.replace(/\/sitemap-index\.xml$/, '') : ''
+if (sitemapUrl) {
+  const llms = await readFile(join(dist, 'llms.txt'), 'utf8').catch(() => null)
+  if (llms === null) fail('llms.txt', 'missing (the site has an address)')
+  else {
+    if (!/^# \S/.test(llms)) fail('llms.txt', 'does not open with "# <site name>"')
+    const origin = new URL(sitemapUrl).origin
+    for (const [, href] of llms.matchAll(/^- \[(?:[^\]\\]|\\.)*\]\(([^)\s]+)\)/gm)) {
+      let url
+      try { url = new URL(href) } catch { fail('llms.txt', `not an absolute link: ${href}`); continue }
+      if (url.origin !== origin) { fail('llms.txt', `link off the site's origin: ${href}`); continue }
+      const path = decodeURIComponent(base && url.pathname.startsWith(`${base}/`) ? url.pathname.slice(base.length) : url.pathname)
+      const built = path.endsWith('/') ? join(dist, path, 'index.html') : join(dist, path)
+      if (!await exists(built) && !await exists(join(dist, path, 'index.html'))) fail('llms.txt', `broken link: ${href}`)
+    }
+  }
+}
+
+const siteOrigin = sitemapUrl ? new URL(sitemapUrl).origin : undefined
+/** A root address (`/a/`) or one on the site's origin that is outside the site's directory: the host does not serve it. */
+const outside = (address) => {
+  if (!base) return false
+  let path
+  if (address.startsWith('/') && !address.startsWith('//')) path = address
+  else {
+    try { const url = new URL(address); if (url.origin !== siteOrigin) return false; path = url.pathname } catch { return false }
+  }
+  path = path.split(/[?#]/)[0]
+  return path !== base && !path.startsWith(`${base}/`)
+}
+
+if (base) {
+  const rules = await readFile(join(dist, '_redirects'), 'utf8').catch(() => '')
+  for (const line of rules.split('\n')) {
+    if (!line || line.startsWith('#')) continue
+    const parts = line.split(/\s+/)
+    for (const address of [parts[0], parts.at(-2)]) if (address && outside(address)) fail('_redirects', `outside ${base}/: ${line}`)
+  }
+}
+
+if (await exists(join(dist, 'wp-query-map.json'))) {
+  try {
+    const map = JSON.parse(await readFile(join(dist, 'wp-query-map.json'), 'utf8'))
+    const valid = map && typeof map === 'object' && !Array.isArray(map)
+      && Object.values(map).every(targets => targets && typeof targets === 'object' && Object.values(targets).every(to => typeof to === 'string' && (to.startsWith('/') || /^https?:\/\//.test(to))))
+    if (!valid) fail('wp-query-map.json', 'not a map of parameter → value → site path or address')
+  } catch {
+    fail('wp-query-map.json', 'does not parse')
+  }
+} else {
+  fail('wp-query-map.json', 'missing')
+}
+
+const WP_RUNTIME = /\/wp-(?:includes|content|json)\/|jquery(?:\.min)?\.js/i
+const ABSOLUTE = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i
+const sitePath = value => WP_RUNTIME.test(value) && !ABSOLUTE.test(value)
+/** Every url(…) address in CSS text, from a style attribute (entity-quoted) or a <style> element. */
+const cssUrls = css => [...css.replaceAll('&quot;', '"').replaceAll('&#39;', "'").matchAll(/url\(\s*['"]?([^'")]+)/gi)].map(match => match[1].trim())
+/** A script or stylesheet from WordPress, a site path into it (CSS url() included), or inline script that names it. */
+function wordpressRuntime(html) {
+  for (const [, tag, attributes] of html.matchAll(/<([a-z][a-z0-9-]*)\b([^>]*)>/gi)) {
+    const code = /^(?:script|link)$/i.test(tag)
+    for (const [, value] of attributes.matchAll(/\s(?:href|src|srcset|action|poster|data|content)="([^"]*)"/gi)) {
+      if (WP_RUNTIME.test(value) && (code || !ABSOLUTE.test(value))) return true
+    }
+    const style = /\sstyle="([^"]*)"/i.exec(attributes)
+    if (style && cssUrls(style[1]).some(sitePath)) return true
+  }
+  if ([...html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)].some(match => cssUrls(match[1]).some(sitePath))) return true
+  // JSON-LD names addresses, it loads none: an image on another site's wp-content there is content, as in og:image.
+  return [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
+    .some(match => !/type="application\/ld\+json"/.test(match[1]) && WP_RUNTIME.test(match[2]))
+}
+const pages = await htmlFiles(dist)
+if (pages.length === 0) fail(dist, 'no HTML pages built')
+
+const scripted = []
+for (const path of pages) {
+  const file = relative(dist, path)
+  const html = await readFile(path, 'utf8')
+  // A redirect page is a meta refresh with nothing else to check.
+  if (/<meta http-equiv="refresh"/i.test(html)) continue
+
+  const stylesheets = [...html.matchAll(/<link[^>]+rel="stylesheet"[^>]*>/gi)]
+    .map(match => match[0])
+    .filter(tag => !tag.includes('/pagefind/'))
+  if (stylesheets.length > 1) fail(file, `${stylesheets.length} stylesheets — the site ships one`)
+
+  const scripts = [...html.matchAll(/<script\b([^>]*)>/gi)].filter(match => !/type="application\/ld\+json"/.test(match[1]))
+  if (scripts.length > 0) scripted.push(file)
+  if (wordpressRuntime(html)) fail(file, 'references the WordPress runtime')
+  if (base) {
+    const addresses = [...html.matchAll(/\s(?:href|src|action|content|bundle-path|base-url)="([^"]*)"/g)].map(match => match[1].replaceAll('&amp;', '&'))
+    for (const srcset of html.matchAll(/\ssrcset="([^"]*)"/g)) addresses.push(...srcset[1].split(',').map(candidate => candidate.trim().split(/\s+/)[0]))
+    const off = [...new Set(addresses.filter(outside))]
+    if (off.length) fail(file, `outside ${base}/: ${off.slice(0, 5).join(', ')}${off.length > 5 ? ` (+${off.length - 5})` : ''}`)
+  }
+
+  if (!/<html[^>]+lang="[^"]+"/.test(html)) fail(file, 'no <html lang>')
+  if (!/<title>[^<]+<\/title>/.test(html)) fail(file, 'no <title>')
+  const noindex = /<meta name="robots" content="noindex/.test(html)
+  if (!noindex && !/<link rel="canonical" href="https?:\/\/[^"]+"/.test(html)) fail(file, 'no absolute canonical URL')
+  // A page kept out of search names no preferred address: the 404 page's own (`/404/`) is not served, and a crawler
+  // checking for dead links or a migration's old-site scan would follow it.
+  if (noindex && /<link rel="canonical"|<meta property="og:url"/.test(html)) fail(file, 'noindex page with a canonical or og:url')
+  const description = /<meta name="description" content="([^"]*)"/.exec(html)?.[1]?.trim()
+  if (!noindex && !description) fail(file, 'no meta description')
+
+  for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    try {
+      const data = JSON.parse(match[1])
+      if (data['@context'] !== 'https://schema.org') fail(file, 'JSON-LD without the schema.org context')
+    } catch {
+      fail(file, 'JSON-LD does not parse')
+    }
+  }
+}
+
+console.log(`check-dist: ${pages.length} pages; JavaScript on ${scripted.length}${scripted.length ? ` (${scripted.join(', ')})` : ''}`)
+if (failures.length) {
+  console.error(failures.map(line => `  ✗ ${line}`).join('\n'))
+  process.exit(1)
+}
+console.log('check-dist: ok')

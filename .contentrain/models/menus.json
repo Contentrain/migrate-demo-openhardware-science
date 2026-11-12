@@ -1,0 +1,52 @@
+{
+  "domain": "site",
+  "fields": {
+    "items": {
+      "label": "Items",
+      "model": "menu-items",
+      "order": 30,
+      "type": "relations"
+    },
+    "locations": {
+      "items": "string",
+      "label": "Locations",
+      "order": 50,
+      "type": "array"
+    },
+    "name": {
+      "label": "Name",
+      "order": 10,
+      "required": true,
+      "type": "string"
+    },
+    "slug": {
+      "label": "Slug",
+      "order": 20,
+      "required": true,
+      "type": "slug",
+      "unique": true
+    },
+    "title": {
+      "description": "The heading printed above this menu where the site shows it (a footer column's heading). Empty: none is printed. The name is only the menu's label in Studio.",
+      "label": "Heading",
+      "order": 15,
+      "type": "string"
+    },
+    "title_href": {
+      "description": "Where the heading links, when the site prints it as a link. Empty: the heading is plain text.",
+      "label": "Heading link",
+      "order": 16,
+      "type": "url"
+    },
+    "wp_id": {
+      "label": "WP term ID",
+      "order": 40,
+      "type": "integer"
+    }
+  },
+  "i18n": false,
+  "id": "menus",
+  "kind": "collection",
+  "name": "Menus",
+  "title_field": "name"
+}

@@ -1,0 +1,30 @@
+{
+  "domain": "pages",
+  "fields": {
+    "build_workshops": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": true,
+          "type": "markdown"
+        }
+      },
+      "label": "Build workshops",
+      "required": true,
+      "type": "object"
+    }
+  },
+  "i18n": true,
+  "id": "page-gosh-2016-day-3-sharing-what-we-know",
+  "kind": "singleton",
+  "name": "GOSH! 2016 Day 3: Sharing What We Know page",
+  "title_field": "build_workshops.markdown"
+}

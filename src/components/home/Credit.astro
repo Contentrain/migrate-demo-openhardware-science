@@ -1,0 +1,18 @@
+---
+// A photograph's credit line, set under the band whose picture it names, on the picture's side.
+import Prose from '../kit/prose/Prose.astro'
+
+interface Props {
+  html?: string | undefined
+  markdown?: string | undefined
+  /** The side the picture takes on wide screens. */
+  side?: 'start' | 'end' | undefined
+}
+
+const { html, markdown, side = 'start' } = Astro.props
+---
+{(html || markdown) && (
+  <div class:list={['container-page home-credit-row', side === 'end' && 'home-credit-end']}>
+    <Prose html={html} markdown={markdown} size="base" searchable={false} class="home-credit" />
+  </div>
+)}

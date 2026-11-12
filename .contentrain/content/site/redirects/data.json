@@ -1,0 +1,207 @@
+{
+  "04c90dd7b0e1": {
+    "from": "/category/presentations/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "117e3451308b": {
+    "from": "/category/open-science-hardware-news/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "1669e7c6193e": {
+    "from": "/tag/ivana-gadjanski/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "1f57803dd212": {
+    "from": "/category/gosh-manifesto/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "2d1a48059ca5": {
+    "from": "/tag/gosh-2016-day-1/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "320e471079a3": {
+    "from": "/category/open-science-hardware/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "3cde7af71217": {
+    "from": "/tag/maker-based-learning/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "447cce48d661": {
+    "from": "/category/publications/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "4ef89e2bec91": {
+    "from": "/wp-sitemap.xml",
+    "status": 301,
+    "to": "/sitemap-index.xml"
+  },
+  "5389caf69aa3": {
+    "from": "/tag/community-call/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "5d25dc6ba7a7": {
+    "from": "/category/gosh-profiles/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "5e43c3625113": {
+    "from": "/tag/great-lakes-gosh/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "667c9993507c": {
+    "from": "/tag/viabookmarklet/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "6761ea978b00": {
+    "from": "/category/gosh-roadmap/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "67c798b967ae": {
+    "from": "/category/press-coverage/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "6882d929ab11": {
+    "from": "/?feed=rss2",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "6eb5b70f5c28": {
+    "from": "/post-sitemap.xml",
+    "status": 301,
+    "to": "/sitemap-index.xml"
+  },
+  "7efd2a819481": {
+    "from": "/sitemap.xml",
+    "status": 301,
+    "to": "/sitemap-index.xml"
+  },
+  "822f038ac005": {
+    "from": "/category/sdgs/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "869c0cfd0981": {
+    "from": "/tag/open-science/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "86f5af4fa6dc": {
+    "from": "/tag/distdoc/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "894336ed5050": {
+    "from": "/tag/open-education/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "8fd50aedbcd9": {
+    "from": "/feed/rss2/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "9cbba8e5ecbd": {
+    "from": "/category/gosh-2016-sessions/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "a40b7d8b7536": {
+    "from": "/tag/mozsprint/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "b2651a88bb5f": {
+    "from": "/tag/gya/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "b500817da428": {
+    "from": "/category/uncategorized/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "b82370ba2acc": {
+    "from": "/page-sitemap.xml",
+    "status": 301,
+    "to": "/sitemap-index.xml"
+  },
+  "bc6edd9c5170": {
+    "from": "/category/events/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "bf00063bdace": {
+    "from": "/category/open-science-hardware/microscopes-open-science-hardware/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "c0ffef61eb0a": {
+    "from": "/category/distdoc/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "c4e815b3b884": {
+    "from": "/tag/andrew-pelling/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "c9da181e7615": {
+    "from": "/tag/keynote/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "d2cf1b29574e": {
+    "from": "/category/opportunities/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "d3e3f1380080": {
+    "from": "/category/microscopes/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "d89cd65136b6": {
+    "from": "/category/gosh-2016-sessions/day-1/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "da1e4dc1ae8c": {
+    "from": "/tag/fablab/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "f0f511ff2c62": {
+    "from": "/feed/atom/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "f2d7d885af1a": {
+    "from": "/category/gosh-news/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "fc39fd6bcca9": {
+    "from": "/feed/",
+    "status": 301,
+    "to": "/rss.xml"
+  },
+  "fe065763e1a8": {
+    "from": "/sitemap_index.xml",
+    "status": 301,
+    "to": "/sitemap-index.xml"
+  }
+}

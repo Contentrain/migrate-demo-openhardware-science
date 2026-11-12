@@ -1,0 +1,9 @@
+---
+// This site's footer: the data comes from BaseLayout as props (links, contact, legal lines, logo); the look is this file's.
+// Editorial report: the brand leads on a solid GOSH-purple tile (chrome.css), menus and social links on the end side.
+import type { ComponentProps } from 'astro/types'
+import Footer from '../kit/footer/Footer.astro'
+
+type Props = ComponentProps<typeof Footer>
+---
+<Footer {...Astro.props} tone="inverse" border={false} />

@@ -1,0 +1,19 @@
+{
+  "embed": {
+    "title": "docs.google.com",
+    "url": "https://docs.google.com/document/d/e/2PACX-1vRrPbTqu3iIbmYdtYTKnv3V5Zps3_quxfAzrKz9R_b3z4r02yuQA9tNLkzjPzYMI8qVSz1_KFaPiABs/pub?embedded=true"
+  },
+  "hero": {
+    "actions": [
+      {
+        "href": "/media/2018/01/Report-on-GOSH-2017-for-Sloan-Foundation.pdf",
+        "label": "Download Report as PDF"
+      }
+    ],
+    "heading": "Report on Gathering for Open Science Hardware 2017",
+    "lead": "Prepared for the Alfred P Sloan Foundation"
+  },
+  "hero_more": {
+    "markdown": "### Executive Summary\n\nHardware forms a vital part of the scientific experimental process and the current supply chain limits access and impedes creativity and customization through high mark-ups and proprietary designs. Open source hardware addresses part of this problem through sharing open designs, which often take advantage of modern digital fabrication techniques. Expanding the reach of this approach within academic research, citizen science and education has potential to increase access to experimental tools and ease their customization and reuse while lowering costs. A growing number of people around the world are developing and using open source hardware in the context of the wider movement for Open Science, a trend we refer to in this proposal as Open Science Hardware (OScH). However, a coherent, self-organizing community is only just starting to emerge that could raise its profile and drive the social change within institutions that will increase uptake.\n\nThe Gathering for Open Science Hardware (GOSH) 2017 in Santiago de Chile was designed to nurture and grow the OScH nascent community, building on the success of GOSH 2016 which brought together 50 of the most active developers and users of Open Science Hardware and resulted in the articulation of a set of community values through the GOSH Manifesto. GOSH 2017 enabled a wide selection of people from the OScH community, including those in the global South and particularly Latin America, to articulate their strategy for change in the form of an actionable roadmap to bring together the people, skills and tools needed to make open science hardware ubiquitous by 2025.\n\nThe GOSH Community has been incredibly active so far and shows signs of gathering pace for 2018, indicating that the targeted intervention of convening an international meeting that enabled a large portion of a nascent community to meet in person and articulate a clear set of goals has been effective at catalysing activity in OScH."
+  }
+}

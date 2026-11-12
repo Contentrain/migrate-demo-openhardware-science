@@ -1,0 +1,38 @@
+---
+// The opening: the page's one title, the site's own wayfinding words in the
+// brand's Lato, and the Gathering's group photograph as the lead plate.
+import Button from '../kit/_shared/Button.astro'
+import type { ActionInput, ImageInput } from '../kit/_shared/types'
+import { safeHref } from '../kit/_shared/safe-url'
+import Plate from './Plate.astro'
+
+interface Props {
+  heading: string
+  lead?: string | undefined
+  actions?: ActionInput[] | undefined
+  /** The short words the source sets in its script face, each linked to its menu entry when there is one. */
+  words?: Array<{ label: string, href?: string | undefined }> | undefined
+  image?: ImageInput | undefined
+  caption?: string | undefined
+  credit?: string | undefined
+}
+
+const { heading, lead, actions = [], words = [], image, caption, credit } = Astro.props
+---
+<section class="home-band home-opening" aria-labelledby="home-title">
+  <div class="container-page">
+    <h1 id="home-title" class="home-title">{heading}</h1>
+    {lead && <p class="home-lead">{lead}</p>}
+    {actions.length > 0 && <div class="mt-6 flex flex-wrap gap-3">{actions.map(action => <Button action={action} size="lg" />)}</div>}
+    {words.length > 0 && (
+      <ul class="home-words" role="list">
+        {words.map(word => (
+          <li>{word.href ? <a href={safeHref(word.href)}>{word.label}</a> : <span>{word.label}</span>}</li>
+        ))}
+      </ul>
+    )}
+    <div class="mt-8 md:mt-10">
+      <Plate image={image} caption={caption} credit={credit} sizes="(min-width: 1280px) 76rem, 100vw" priority crop="wide" />
+    </div>
+  </div>
+</section>

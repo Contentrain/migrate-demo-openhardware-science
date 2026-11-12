@@ -1,0 +1,24 @@
+{
+  "contact_form": {
+    "lead": "The GOSH Community now has a monthly newsletter! Subscribe to the newsletter to receive the latest global open science hardware news and updates, information on upcoming GOSH events, career and job opportunities, and curated papers and projects selected by community members.\n\nSign up to the GOSH newsletter by filling out this form:"
+  },
+  "section": {
+    "actions": [
+      {
+        "href": "https://www.flickr.com/photos/goshcommunity",
+        "label": "Gathering for Open Science Hardware"
+      }
+    ],
+    "lead": "Image Credits: Gathering for Open Science Hardware",
+    "media": {
+      "alt": "Newsletter socials dec",
+      "src": "/media/2022/12/newsletter-socials-dec-2022-1024x1024.png"
+    }
+  },
+  "text": {
+    "markdown": "Powered by [EmailOctopus](https://emailoctopus.com/?utm_source=powered_by_form&utm_medium=user_referral)"
+  },
+  "text_note": {
+    "markdown": "You can view an archive of past newsletters [here](https://gitlab.com/gosh-community/gosh-newsletter)!"
+  }
+}

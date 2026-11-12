@@ -1,0 +1,274 @@
+// Site configuration that is not content: addresses, routing and service
+// bindings. Editors change content in Contentrain Studio; this file changes
+// with the code. A migration writes it once from the source site's settings
+// (permalink structure, posts per page, front page) so every address the old
+// site had is built at the same place.
+
+/**
+ * A field of a custom post type as its single page prints it: the label an editor sees (never a key), the
+ * Contentrain field type, and for containers the fields of one row (`fields`) or the type of a scalar list (`of`).
+ * A relation names the collection it points at.
+ */
+export interface CustomField {
+  name: string
+  label: string
+  type: string
+  collection?: string
+  fields?: readonly CustomField[]
+  of?: string
+  /** How an array prints, as the source page did: an ordered list, or one disclosure per row (first value the summary). Absent: a plain list. */
+  markup?: 'ol' | 'details'
+  /** The source page printed the value without this field's name (a link row, a bare role): the starter prints the value alone. Absent: the label shows. */
+  hideLabel?: boolean
+}
+
+/**
+ * One piece of a post-meta row: the source's own words (in the site's language) or a part of the entry. A theme's
+ * paragraph words always print; a part's own `prefix` / `suffix` (a post-terms block's "Tags: ") only with the part.
+ */
+type PostMetaToken = { text: string } | { part: 'date' | 'author' | 'terms' | 'tags', prefix?: string, suffix?: string }
+/**
+ * The block the source's single template prints after the content (Twenty Twenty-Five's post meta: "Published
+ * <date> in <categories>", "by <author>", "Tags: …" in the theme's own words), as columns of rows of tokens.
+ */
+export type PostMeta = ReadonlyArray<ReadonlyArray<ReadonlyArray<PostMetaToken>>>
+
+/**
+ * A custom post type (WordPress: a registered post type with its own archive and taxonomies) as the route table builds it.
+ * Everything is a field or collection name the migration found in the project's models; the page reads it through
+ * Contentrain queries. `fields` is the typed list the single page prints in schema order, already without what has
+ * no label to show.
+ */
+export interface CustomType {
+  /** The content collection (`projectType`, not the model id `project-type`). */
+  collection: string
+  /**
+   * The model id (`project-type`): the key the entry's comment thread is kept under in Studio, as `posts` is for a
+   * post. A collection name cannot be turned back into it (`a_b` and `a-b` are both `aB`), so it is said here.
+   * Absent: the type's pages show no thread.
+   */
+  model?: string
+  /**
+   * Address of one entry: `/projects/:slug/`. Absent: a list-only type, whose entries have no page of their own (WordPress
+   * gives them only a query address): they print by title, unlinked, in the archive and term lists, and nothing links to them.
+   */
+  single?: string
+  /** `label`: the word the source's archive title prints before the name ("Archives: Projects"), where `lists.prefixed`. */
+  archive?: { pattern: string, title: string, label?: string }
+  /** Term lists: the entries whose `field` (a `relations` field) holds the term, at `pattern` (`/project-type/:slug/`). */
+  taxonomies?: ReadonlyArray<{ collection: string, pattern: string, field: string, title: string }>
+  /** What a card in a list shows; only `title` is required. */
+  card: { title: string, excerpt?: string, image?: string, date?: string }
+  /** The rich-text field holding the entry's body. */
+  body?: string
+  /** Previous / next links under the entry, newest first as WordPress orders them; only when the source's own page had them. */
+  adjacent?: boolean
+  /** The size the previous/next links print at (a CSS size), as the source's did; absent, the starter's own. */
+  adjacentText?: string
+  /** A list of this many other entries (newest first) under the entry, as the source's own page had; absent or 0: none. */
+  more?: number
+  /** The list also shows the entry being read, as the source's query did; absent, the entry is left out. */
+  moreIncludesCurrent?: boolean
+  /** The list holds the newest blog posts, as the source's single template showed, not other entries of this type. */
+  moreOf?: 'posts'
+  /** The size the list prints its titles at (a CSS size), as the source's did; absent, the starter's own. */
+  moreText?: string
+  /** The block the source's page prints after the content (`terms`: this type's first taxonomy); absent, none. */
+  meta?: PostMeta
+  /** The source page printed the fields above its body text (a role and links before a bio); absent, the body comes first. */
+  fieldsFirst?: boolean
+  fields: readonly CustomField[]
+}
+
+export interface SiteConfig {
+  /**
+   * Address patterns, WordPress-style. Tokens: `:slug`, `:path` (a page with
+   * its parents, `about/team`), `:year`, `:month`, `:day`, `:id`. Every pattern
+   * starts and ends with a slash — the site is built with trailing slashes.
+   */
+  permalinks: {
+    post: string
+    page: string
+    category: string
+    tag: string
+    author: string
+    /** The posts index when the front page is a static page; otherwise the posts are listed at `/`. */
+    blog: string
+  }
+  /**
+   * The slug a post with no category puts in `:category` (WordPress: the default category, Settings → Writing).
+   * Absent: `uncategorized`.
+   */
+  defaultCategory?: string
+  /**
+   * The front page: the posts index, or one page by `slug`, or (`view`, no slug) the composed view a migration drew for
+   * a front with no page entry (a posts-front site whose theme draws a front): its title and SEO are the site's. The posts
+   * are then at `permalinks.blog`, or at `/` under it when that is `/` (the list's first page in the view, `/page/2/` on).
+   */
+  home: { kind: 'posts' } | { kind: 'page', slug?: string, view?: number }
+  /**
+   * The document title of a page with a title of its own: `{title}` and `{site}` are filled in.
+   * A migration copies the source's pattern (Yoast's separator, WordPress's en dash); an entry's
+   * SEO title replaces it whole.
+   */
+  titleTemplate: string
+  /** Posts per index or archive page (WordPress: Settings → Reading). */
+  postsPerPage: number
+  /**
+   * Menu slugs for the site's navigation areas; a missing menu renders nothing. The footer takes
+   * its menus in order, one column each (the source theme's footer navigations).
+   */
+  menus: { primary: string, footer: readonly string[] }
+  /**
+   * A single post as the source's single template lays it out: the order of the header parts,
+   * links to the previous and next post, and a list of other posts under it (0 for none).
+   */
+  post: {
+    header: ReadonlyArray<'terms' | 'title' | 'byline' | 'cover'>
+    adjacent: boolean
+    /** The size the previous/next links print at (a CSS size), as the source's did; absent, the starter's own. */
+    adjacentText?: string
+    more: number
+    /** The list also shows the post being read, as the source's query did; absent, the post is left out. */
+    moreIncludesCurrent?: boolean
+    /** The size the list prints its titles at (a CSS size), as the source's did; absent, the starter's own. */
+    moreText?: string
+    /** The block the source prints after the content; absent, the tags row. */
+    meta?: PostMeta
+  }
+  /**
+   * Post lists (the blog index and archives): cards in a grid, cards in one column (`list`, as themes
+   * whose archive is a single stack of posts show it), or every post in full as a WordPress query
+   * loop that shows the post content does; `heading` shows the index's title on the front page too.
+   * `text`: the size of each post's content in a full list, when the source's loop sets its own.
+   * `tone`: `muted` when the source's loop sets the muted text colour on the list itself; titles keep their own colour.
+   * `surface`: a card is a surface of its own (`--color-card`, `--shadow-card`, `--spacing-card`) on a page that may be
+   * tinted (`--color-page`). `byline`: the category above the title, `author / date` under it. `columns`: the cards'
+   * column count from 600px up, as the source's grid prints it; absent, two then three.
+   * `image`: the card image block as the source sets it: its `height` (a CSS length or `clamp()`, the picture cropped to
+   * fit) or, where the source uses one, its `aspect` (`16 / 9`); absent, 16 / 9. `gap`: the grid's column gap (a CSS
+   * length); absent, 2rem. `headingWidth`: the width of the archive title's box (a CSS length); absent, 42rem.
+   * `tieOrder`: how posts of the same moment are ordered, as the source's database returned them (`asc` the lower ID first);
+   * absent, `desc`. `moreLabel`: the source's own read-more words under each card ("READ ARTICLE"); absent, none.
+   * `dateStyle`: how the cards write their date, as the source does; absent, long.
+   */
+  lists: { display: 'cards' | 'list' | 'full', heading: boolean, text?: string, tone?: 'muted', surface?: boolean, byline?: boolean, prefixed?: boolean, columns?: number, image?: { height?: string, aspect?: string }, gap?: string, headingWidth?: string, tieOrder?: 'asc' | 'desc', moreLabel?: string, dateStyle?: 'full' | 'long' | 'medium' | 'short' }
+  /**
+   * The footer as the source prints it (a migration reads each off the rendered footer); a key absent keeps the
+   * starter's own. `feed`: the "RSS feed" link in the last column (`/rss.xml` itself is always served). `border`: a
+   * border on the footer's top side. `copyright`: the line, or `false` for none; the "Powered by WordPress" credit is
+   * platform chrome and is never printed.
+   */
+  footer?: { feed?: boolean, border?: boolean, copyright?: string | false }
+  /**
+   * The header and footer as the source's theme prints them; absent, the starter's own. `brand`:
+   * the site title's size in the header. `tagline`: the header shows the tagline under the title.
+   * `copyright`: the footer's line ("All rights reserved"; `{year}` is the current year), instead
+   * of "© year Site".
+   * `titleLinks`: post titles in lists take the link colour (`--color-link`), as the source's do;
+   * `navLinks`: so does the header navigation. `brandColor`: the header site title's colour, `link` or a colour. `footerAlign`: `center` when the source's footer is
+   * one centred column; absent, brand and links to the sides. `footerColumns`: the link columns packed at the end edge, `gap` px apart, links `size` px (`narrowSize` px below 768), side by side below 768 at `narrowGap` px (absent: stacked); absent, they share the footer's width.
+   * `header`: what the source's header does differently (no line under the bar, the site name's weight and letter-spacing, the space above and inside the bar, its button, the lines next to its menu); a key absent: the starter's own.
+   * `breadcrumbs: 'always'`: the source prints a breadcrumb on top-level pages too, from the home page: they show
+   * home › page with its BreadcrumbList, and a nested page's trail starts from home. A custom type's entry shows home ›
+   * its type's archive (when it has one) › entry, an archive or term list home › (the type's archive ›) list; the
+   * front page none. Absent, only nested pages show one.
+   * `menu: 'mega'`: the header menu's submenus open as a wide panel of columns (the second level heads each column, the
+   * third is listed under it) instead of a list under the item. Absent, the flyout.
+   */
+  chrome?: { brand?: string, tagline?: boolean, copyright?: string, titleLinks?: boolean, navLinks?: boolean, brandColor?: string, footerAlign?: 'start' | 'center', footerColumns?: { gap: number, size?: number, narrowGap?: number, narrowSize?: number }, header?: { border?: false, brandWeight?: string, brandTracking?: string, offsetTop?: string, padTop?: string, padBottom?: string, /** The source header stays at the top while scrolling (a sticky or fixed header). */ sticky?: true, /** The source header holds a search form: the bar's field sends to `/search/`. */ search?: true, /** The source header's button, on every screen width. */ action?: { label: string, href: string }, /** The lines next to the source header's menu (phone, mail, address, hours), above the bar; in the drawer on a phone. */ strip?: { items: Array<{ label: string, href?: string }> } }, breadcrumbs?: 'always', menu?: 'mega' }
+  /**
+   * The site singleton's fields that hold the contact details, by field name (a migration finds them
+   * in the source's settings: an ACF options page). The footer prints what is set: `address`,
+   * `phone` and `email` as text, `socials` as a list of rows each with a link and a label.
+   * Absent, or a field empty, the footer prints nothing for it. `labels`: the fields that hold the
+   * words the source prints before a detail ("Telefon:", "Email:"), so an editor changes them in
+   * Studio. `order`: the details' order as the source prints them; absent, address, phone, email.
+   */
+  contact?: { address?: string, phone?: string, email?: string, socials?: string, labels?: { address?: string, phone?: string, email?: string }, order?: ReadonlyArray<'address' | 'phone' | 'email'> }
+  /**
+   * The source site's time zone: an IANA name (`America/Los_Angeles`, WordPress `timezone_string`) or a fixed offset
+   * (`-07:00`, WordPress `gmt_offset`). A post's address (`:year`, `:month`, `:day`) and its printed date are read on
+   * this calendar, as WordPress fills them from the post's local date. Absent, UTC.
+   */
+  timeZone?: string
+  /** Custom post types: each gets its single pages, archive and term lists. */
+  types?: readonly CustomType[]
+  /**
+   * Custom taxonomies over posts (a theme's "featured category"): a post list per term at `pattern`, of the posts whose
+   * `field` (a `relations` field) holds the term, paginated as a category's. Same shape as a custom type's `taxonomies`.
+   */
+  postTaxonomies?: ReadonlyArray<{ collection: string, pattern: string, field: string, title: string }>
+  /**
+   * The source site's hosts (`site.com`): a link to one of them in migrated content is internal
+   * whatever its scheme, `www.` or letter case, and resolves through the published set. Fixed at
+   * build time, so moving the site to a new domain in Studio does not turn the old links external.
+   */
+  sourceHosts: readonly string[]
+  /**
+   * A site in several languages (WordPress: Polylang or WPML, a language per directory): for each locale of
+   * `.contentrain/config.json` `locales.supported`, by its content code (`de`, `pt-BR`), the address segment its pages
+   * live under (`prefixes`: `de`, `pt-br`, or `''` for the one at the root) and the language tag its pages print
+   * (`tags`: `pt-BR`). Every locale builds its own pages, lists, archives, feed and sitemap under its prefix; a page
+   * translated into another locale (the same entry id in that locale's content file) links to it. A default locale with
+   * a prefix makes the root redirect to its home. Absent: a site in one language, the project's default, at the root.
+   */
+  locales?: { prefixes: Readonly<Record<string, string>>, tags: Readonly<Record<string, string>> }
+  /**
+   * Only on a migration's sample build: the source site's origin (`https://site.com`). The sample
+   * holds a few pages, so a link to one of the source's other pages has no route here; with this
+   * set it points at that page on the live source site instead of being dropped. Unset, such a
+   * link is not public and is dropped, as on every full migration.
+   */
+  sampleOrigin?: string
+  /**
+   * Contentrain Studio's public forms and comments API, from studio.json at the
+   * project root (see astro.config.mjs). Without it, forms and comment threads
+   * render nothing — a form that cannot be sent is worse than no form.
+   */
+  studio?: { baseUrl: string, projectId: string }
+  /**
+   * Where forms and comment threads live when they are not Studio's — the owner's choice at
+   * migration. Absent, both wait for Studio as above. `wordpress`: the WordPress site that stays up
+   * for what was kept on it (`https://…`, no path); a part kept there links to the same page on it.
+   * A form posts to a form service (`endpoint`: its https action), or the page shows an address to
+   * write to (`mailto`), or a link to the form on WordPress. Comments stay on WordPress or go to Studio.
+   * Until Studio is bound, a Studio form links to the form on `wordpress` when it is set, else shows `email` (the
+   * address the source site published) to write to — never an empty place on the page.
+   * `chromeForms`: forms the source showed outside the page content (a footer or theme band's newsletter signup, a
+   * theme builder's contact form) that have no place on this site. With forms kept on `wordpress`, each links to the
+   * WordPress page (`path`) that carries it: at the end of the content of the pages in `on` (the form on /contact/),
+   * else once from the footer (a site-wide signup). `role` picks the footer link's words (subscribe, or the form).
+   */
+  features?: {
+    wordpress?: string
+    email?: string
+    forms?: { home: 'studio' } | { home: 'endpoint', action: string } | { home: 'mailto', address: string } | { home: 'wordpress' }
+    comments?: { home: 'studio' } | { home: 'wordpress' }
+    chromeForms?: ReadonlyArray<{ role: 'newsletter' | 'contact' | 'other', path: string, on?: readonly string[] }>
+  }
+}
+
+/** The Studio binding astro.config.mjs read from studio.json, or null. */
+declare const __CONTENTRAIN_STUDIO__: { baseUrl: string, projectId: string } | null
+
+export const siteConfig: SiteConfig = {
+  permalinks: {
+    post: '/:year/:month/:day/:slug/',
+    page: '/:path/',
+    category: '/category/:path/',
+    tag: '/tag/:slug/',
+    author: '/author/:slug/',
+    blog: '/blog/',
+  },
+  home: { kind: 'page', slug: 'home' },
+  titleTemplate: '{title} - {site}',
+  postsPerPage: 10,
+  menus: { primary: 'primary', footer: ['footer-links'] },
+  post: { header: ['title'], adjacent: false, more: 0 },
+  lists: { display: 'full', heading: false, moreLabel: 'Leave a Comment' },
+  footer: { feed: false, border: false },
+  sourceHosts: ['openhardware.science'],
+  ...(typeof __CONTENTRAIN_STUDIO__ !== 'undefined' && __CONTENTRAIN_STUDIO__ ? { studio: __CONTENTRAIN_STUDIO__ } : {}),
+  features: { forms: { home: 'studio' }, comments: { home: 'studio' } },
+}

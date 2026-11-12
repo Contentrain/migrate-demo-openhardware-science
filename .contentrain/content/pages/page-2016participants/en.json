@@ -1,0 +1,45 @@
+{
+  "section": {
+    "items": [
+      {
+        "text": "www.vios.ch",
+        "title": "Amber Dubinsky"
+      },
+      {
+        "text": "University of Tübingen/TReND in Africa",
+        "title": "André Maia Chagas"
+      },
+      {
+        "text": "Pelling Lab, University of Ottawa",
+        "title": "Andrew Pelling"
+      },
+      {
+        "text": "Freelance",
+        "title": "Aurora Thornhill"
+      },
+      {
+        "text": "Independent",
+        "title": "Bengt Sjölén"
+      },
+      {
+        "text": "Lifepatch.org, Yogyakarta, Indonesia",
+        "title": "Budi Prakosa"
+      },
+      {
+        "text": "University College London/Public Lab/Citizens without Borders",
+        "title": "Cindy Regalado"
+      },
+      {
+        "href": "https://experiment.com/",
+        "text": "Experiment.com",
+        "title": "Cindy Wu"
+      }
+    ]
+  },
+  "section_note": {
+    "markdown": "Claudia Martinez Mansell\n\nGreening Bourj Al Shamali\n\nDana Mahr\n\nUniversity of Geneva\n\nDavid Li\n\nShenzhen Open Innovation Lab\n\nDavid Ott\n\nInternational Red Cross\n\nDenisa Kera\n\nNational University of Singapore\n\nFelix Stähli\n\n‎Impact Hub Geneva\n\nFrancois Grey\n\nCitizen CyberLab, University of Geneva\n\nGabriela Sanchez\n\nUniversity of Geneva\n\nGreg Austic\n\nMichigan State University\n\nGreg Gage\n\nBackyard Brains\n\nGretchen Gehrke\n\nPublic Lab\n\nIvana Gadjanski\n\nCenter for Bioengineering – BioIRC and Fab Initiative\n\nJavier Serrano\n\nCERN\n\nJenny Molloy\n\nUniversity of Cambridge\n\nJoe Bailey\n\nLondon Centre for Nanotechnology\n\nJuan Manuel García Arcos\n\nCenter for Research and Interdisciplinarity, Paris/Open Science School\n\nJuergen Neumann\n\nOHANDA/freifunk.net\n\nKe Fang\n\nCRI Paris and Open Science School\n\nKshitiz Khanal\n\nKathmandu University, Open Knowledge Nepal, GRID Nepal\n\nLeïla Haegel\n\nCosmicPi\n\nLena Asai\n\nGoldsmiths University of London/London Biohackspace\n\nLily Bui\n\nMassachusetts Institute of Technology\n\nLuc Henry\n\nHackuarium\n\nLuis Felipe Rosado Murillo\n\nBerkman Center for Internet and Society, Harvard University\n\nLuka Mustafa\n\nInstitute IRNAS Rače, Slovenia \\& PhD at UCL, London, UK\n\nMarc Dusseiller\n\n[Hackteria](http://www.hackteria.org)\n\nMarcellinus Pfeiffer\n\nR2prototyping gmbh (Open Factory)\n\nMarco Mauro\n\nopenQCM – Novaetech S.r.l\n\nMax Liboiron\n\nMemorial Univeristy of Newfoundland\n\nMun Ching Lee\n\nAutuno\n\nPuneet Kishor\n\nIndependent Consultant, Open Science/Data Advocate, Washington DC, Paris, Mumbai\n\nRafael Peretti Pezzi\n\nUniversidade Federal do Rio Grande do Sul\n\nRichard Bowman\n\nUniversity of Cambridge\n\nRosy Mondardini\n\nCitizen Cyberlab, University of Geneva\n\nRüdiger Trojok\n\nKarlsruhe Institute of Technology (KIT)\n\nRyan Fobel\n\nUniversity of Toronto\n\nSean Bonner\n\nSafecast\n\nShannon Dosemagen\n\n[Public Lab](https://publiclab.org/)\n\nSharada Mohanty\n\nIIT Hyderabad and EPFL\n\nSuresh Ghimire\n\nKarkhana\n\nTara Brown\n\nKitHub\n\nTobias Wenzel\n\nDocuBricks / University of Cambridge\n\nTom Baden\n\nUniversity of Tübingen/TReND in Africa\n\nTom Igoe\n\nNYC-ITP\n\nTony Chiotti\n\nPublic Lab\n\nUrs Gaudenz\n\n[GaudiLabs](http://www.gaudi.ch)\n\nWard Hills\n\nOpenIO Labs"
+  },
+  "text": {
+    "markdown": "Name\n\nOrganisation"
+  }
+}

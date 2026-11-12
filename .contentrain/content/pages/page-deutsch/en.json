@@ -1,0 +1,136 @@
+{
+  "faq": {
+    "items": [
+      {
+        "title": "GOSH ist barrierefrei"
+      },
+      {
+        "points": [
+          "Jeder kann Entwürfe von Open-Science-Hardware-Projekten erstellen, speichern, studieren, verändern, verbreiten, nutzen und weitergeben.",
+          "Unsere Werkzeuge sind offen, frei (libre) und als solche lizenziert.",
+          "Unsere Dokumente sind verständlich und mitteilsam.",
+          "Wir teilen, anstatt uns abzugrenzen.",
+          "Um die sozioökonomische Zugänglichkeit zu gewährleisten, sind die Materialien so kostengünstig und leicht zu beschaffen wie möglich.",
+          "Open-Science-Hardware ist wartungs- und reparaturfähig.",
+          "Wir folgen Überzeugungen, die bereits von den Bewegungen für Open-Source-Software, freie Software, Open Science und Open Hardware aufgestellt wurden."
+        ]
+      },
+      {
+        "title": "GOSH macht bessere Wissenschaft"
+      },
+      {
+        "points": [
+          "Wissenschaftliche Experimente, die mit Open Hardware durchgeführt werden, sind reproduzierbarer, vergleichbarer und werden eher nachgeahmt.",
+          "Der Vergleich von Daten über Disziplinen, Standards und Länder hinweg ist eher möglich, wenn Open Hardware verwendet wird.",
+          "Reproduzierbarkeit ist ein Markenzeichen guter wissenschaftlicher Praxis, und Open-Science-Hardware ermöglicht eine bessere Reproduzierbarkeit.",
+          "Open-Science-Hardware ermöglicht mehr Wissenschaft.",
+          "1000 kluge Köpfe sind besser als einer."
+        ]
+      },
+      {
+        "title": "GOSH ist ethisch"
+      },
+      {
+        "points": [
+          "Menschen haben ein Recht auf Wissen und damit auch ein Recht auf die Werkzeuge, mit denen sie dieses Wissen erlangen können.",
+          "Die Nutzerïnnen bringen ihre Technologien mit ihren Werten in Einklang, indem sie selbst zu ihren Schöpfern werden. Die Erkenntnisse der Wissenschaft sollen mit allen geteilt werden und keinen Schaden anrichten.",
+          "Open-Science-Hardware steht jedem offen, ohne Rücksicht auf wissenschaftliche Vorbildung, Herkunft, ethnische Zuschreibung, Geschlecht oder Religion, und duldet keine Diskriminierung aus diesen Gründen.",
+          "GOSH wird für friedliche Zwecke genutzt."
+        ]
+      },
+      {
+        "title": "GOSH verändert die Kultur der Wissenschaft"
+      },
+      {
+        "points": [
+          "Wir setzen uns für offene Wissenschaften (Open Science) ein, die eine offene Wissenschaftshardware erfordern.",
+          "Wir bewegen die Wissenschaft hin zu gemeinschaftlichen, zugänglichen und kollaborativen Praktiken und weg von abgrenzenden, proprietären, institutionellen und individualistischen Praktiken.",
+          "Wir schaffen mehr Möglichkeiten für Menschen, Forschung zu betreiben, sowohl innerhalb bestehender Institutionen (Hochschulen, Universitäten, Institute, Nichtregierungsorganisationen, öffentlicher Hand, gemeinnützigen Organisationen, Start-ups, Unternehmen) als auch außerhalb von ihnen.",
+          "Wir schaffen Räume für die Wissenschaft jenseits etablierter Institutionen (z. B. Hochschulen und außeruniversitärer Forschungseinrichtungen), sodass es vielfältigere Transferpfade gibt.",
+          "Wir erweitern die Methoden, mit denen wir Wissenschaft betreiben, sodass die Erkenntnisse von Menschen unterschiedlicherer Hintergründe Teil der Wissensbildung sind – heute und zukünftig."
+        ]
+      },
+      {
+        "title": "GOSH demokratisiert die Wissenschaft"
+      },
+      {
+        "text": "Mehr und unterschiedlichere Menschen können sich an Wissenschaft beteiligen und von ihr profitieren.\n\nWir brechen Silos auf – sowohl zwischen Disziplinen als auch zwischen verschiedensten Institutionen – und schlagen eine Brücke zwischen den Wissensbereichen: Man muss kein “Biologe” sein, um Biologie zu betreiben, oder einen Abschluss haben, um forschen zu können.\n\nOpen-Science-Hardware verringert die Kluft zwischen Industrienationen und dem Globalen Süden, zwischen Fachleuten und Amateuren, insbesondere in Ländern mit niedrigem Einkommen.\n\nOpen-Science-Hardware bringt lokales Wissen zur Anwendung und trägt damit zu kognitiver Gerechtigkeit (cognitive justice) bei.\n\nOpen-Science-Hardware ermöglicht es ausgehend von unterschiedlichsten Überzeugungen und gesellschaftlichen Stimmen, Forschungsfragen zu stellen und Technologien zu entwickeln."
+      },
+      {
+        "title": "GOSH verlässt den Elfenbeinturm"
+      },
+      {
+        "text": "Wir haben “Community Champions”, keine zentrale Autorität.\n\nWir sind eine aktive Gemeinschaft, die zu gemeinsamen Errungenschaften beiträgt.\n\nWir bauen auf der gegenseitigen Arbeit auf, anstatt isoliert zu arbeiten.\n\nJe mehr, desto besser."
+      },
+      {
+        "title": "GOSH befähigt die Menschen…"
+      },
+      {
+        "text": "…Forschung auf der Grundlage ihrer Interessen zu betreiben.\n\n…Forschung auf der Grundlage der Bedürfnisse ihres Umfelds und ihrer Gemeinschaften zu betreiben.\n\n…Forschung durch vielfältige Unterstützung zu betreiben (einschließlich finanzieller, personeller, zeitlicher und materieller Unterstützung)\n\n…ihre Ideen mit geringen Kosten zu verwirklichen.\n\n…zu verstehen, wie ihre Werkzeuge funktionieren, indem sie sich Technologien ausleihen, selbst entwickeln und sie gemeinsam nutzen.\n\n…technologische Transparenz und öffentliche Kontrolle zu erlangen.\n\n…eine Bewegung aufzubauen."
+      },
+      {
+        "title": "GOSH hat keine Black Boxes"
+      },
+      {
+        "text": "(“Black Boxes” beschreibt komplexe Geräte, deren Inhalte und Funktionsweise für die Benutzenden unklar ist. Technologien sind quelloffen.)\n\nDurch das Ausleihen, Bauen und Teilen von Technologien verstehen wir, wie unsere Werkzeuge funktionieren.\n\nDer Aufbau von GOSH ist eine Form des Learning-by-Doing, ein ständiger Lernprozess durch Anwendung und Adaption.\n\nOpen-Science-Hardware erhöht die technologische Transparenz und die öffentliche Kontrolle."
+      },
+      {
+        "title": "GOSH schafft wirkungsvolle Werkzeuge"
+      },
+      {
+        "text": "Technologien sind anpassungsfähig und können daher direkt auf lokale soziale und technische Bedürfnisse eingehen.\n\nEs besteht eine direkte Beziehung zwischen den Bedürfnissen der nutzenden Gruppen und ihren wissenschaftlichen Geräten, da die Nutzenden Zugang zu den Werkzeugen haben und diese verändern, anpassen und nutzen kann.\n\nOpen-Science-Hardware ermöglicht es den Nutzenden, Wissen und Ergebnisse frühzeitig und regelmäßig zu veröffentlichen, was die Hardware agil und responsiv macht.\n\nOpen-Science-Hardware ist skalierbar."
+      },
+      {
+        "title": "GOSH ermöglicht diverse Zukünfte für die Wissenschaft"
+      },
+      {
+        "text": "Forschung kann innerhalb oder außerhalb der Hochschulen, innerhalb oder außerhalb des Labors, innerhalb oder außerhalb von kommerziellen Räumen stattfinden.\n\nGOSH verändert dort die Normen innerhalb der etablierten, institutionellen Wissenschaft, wo Forscher Wissen und Technologie offen teilen.\n\nMit GOSH können Indigene, Minderheiten und Nicht-Wissenschaftlerïnnen in ihrer Muttersprache und angepasst an ihren lokalen Kontext forschen.\n\nGOSH ermöglicht Wissenschaft an Orten, an denen sie normalerweise nicht stattfinden würde.\n\nGOSH strebt einen kulturellen Wandel an, damit diese Möglichkeiten generationenübergreifend werden."
+      }
+    ]
+  },
+  "hero": {
+    "media": {
+      "alt": "GOSH-Manifest",
+      "src": "/media/2022/04/DSC06870-1-scaled.jpeg"
+    }
+  },
+  "section": {
+    "actions": [
+      {
+        "href": "https://openhardware.science/gosh-manifesto/deutsch/",
+        "label": "Deutsch"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/",
+        "label": "English"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/spanish/",
+        "label": "Español"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/french/",
+        "label": "Français"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/portuguese/",
+        "label": "Português"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/chinese/",
+        "label": "中文"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/bangla/",
+        "label": "বাংলা"
+      },
+      {
+        "href": "https://openhardware.science/gosh-manifesto/japan/",
+        "label": "日本語"
+      }
+    ]
+  },
+  "text": {
+    "markdown": "Vielen Dank an Sven Klinkow und Paul Jerchel für die Übersetzung des GOSH-Manifests\n\nDas Gathering for Open Science Hardware (GOSH) möchte Barrieren zwischen Entwicklerïnnen und Nutzerïnnen wissenschaftlicher Geräte abbauen, um den Zugang zu und das Wachstum von Wissen zu unterstützen. Das sind unsere Grundsätze:"
+  }
+}

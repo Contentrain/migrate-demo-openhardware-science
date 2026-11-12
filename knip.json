@@ -1,0 +1,27 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": [
+    "lighthouserc.cjs"
+  ],
+  "ignoreIssues": {
+    "src/lib/studio/embed.ts": [
+      "exports",
+      "types"
+    ],
+    "src/components/kit/**": [
+      "types"
+    ],
+    "src/components/kit/_shared/measured.ts": [
+      "exports"
+    ],
+    "src/components/kit/_shared/embed-target.ts": [
+      "exports"
+    ],
+    "src/components/kit/_shared/muted.ts": [
+      "exports"
+    ],
+    "src/components/kit/_shared/social.ts": [
+      "exports"
+    ]
+  }
+}

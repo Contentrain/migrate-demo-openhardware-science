@@ -1,0 +1,137 @@
+---
+// Site header: brand (logo and/or name), navigation, an optional call to
+// action and an optional utility row above the bar (phone, mail, address, hours).
+import { tv } from 'tailwind-variants'
+import Button from '../_shared/Button.astro'
+import KitImage from '../_shared/KitImage.astro'
+import type { ActionInput, ImageInput, NavItem } from '../_shared/types'
+import Nav from '../nav/Nav.astro'
+import SearchBox from '../search-box/SearchBox.astro'
+import { instanceId } from '../_shared/instance-id'
+import { safeHref } from '../_shared/safe-url'
+import { brandColorValue } from './header'
+import { muted, mutedInverse } from '../_shared/muted'
+
+const header = tv({
+  slots: {
+    root: 'z-40 w-full',
+    inner: 'container-page flex items-center gap-6 py-4',
+    brand: 'flex min-w-0 items-center gap-3 text-lg font-semibold tracking-tight text-current no-underline',
+  },
+  variants: {
+    layout: {
+      split: { inner: 'justify-between' },
+      centered: { inner: 'flex-col gap-3 md:gap-4' },
+      'brand-left': { inner: 'justify-start [&>nav]:ms-10' },
+    },
+    tone: {
+      default: { root: 'bg-surface text-ink' },
+      inverse: { root: `bg-ink text-surface ${mutedInverse}` },
+      transparent: { root: `absolute inset-x-0 top-0 bg-transparent text-surface ${mutedInverse}` },
+    },
+    position: { static: {}, sticky: { root: 'sticky top-0' } },
+    bordered: { true: {}, false: {} },
+  },
+  compoundVariants: [{ tone: 'default', bordered: true, class: { root: 'border-b border-line' } }],
+  defaultVariants: { layout: 'split', tone: 'default', position: 'static', bordered: true },
+})
+
+interface Props {
+  siteName: string
+  /** A line under the site name, as themes that print the site's tagline in the header do. */
+  tagline?: string | undefined
+  /** The site name's size, where the source theme sets its own (a CSS length). */
+  brandSize?: string | undefined
+  /** The line under the bar on the default tone; `false` where the source's header draws none. */
+  bordered?: boolean | undefined
+  /** The site name's weight and letter-spacing, where the source theme sets its own (CSS values). */
+  brandWeight?: string | undefined
+  brandTracking?: string | undefined
+  /** Space above the bar, and inside it above and below the content, where the source's header has its own (CSS lengths). */
+  offsetTop?: string | undefined
+  padTop?: string | undefined
+  padBottom?: string | undefined
+  /** The navigation in the site's link colour, as themes that colour every link do (Hello Elementor). */
+  linkNav?: boolean | undefined
+  /**
+   * The site name's colour where the source theme's is not the header's text colour: `link` for the site's link colour
+   * (a title that is a link styled like every other), or a colour (`#hex`, `rgb()`, `hsl()`; anything else is ignored).
+   */
+  brandColor?: string | undefined
+  logo?: ImageInput | undefined
+  /** Show the site name next to the logo. */
+  showName?: boolean | undefined
+  homeHref?: string | undefined
+  items: NavItem[]
+  /** The header's button, on every screen width. */
+  action?: ActionInput | undefined
+  /**
+   * A row above the bar for what the source's header prints next to its menu: a phone number, a mail address, the
+   * address, the opening hours. A line with an `href` is a link (`tel:`, `mailto:`, a page). On a phone the row folds
+   * into the menu drawer, after the menu; with no menu it stays above the bar.
+   */
+  strip?: Array<{ label: string, href?: string | undefined }> | undefined
+  /** A search field in the bar (a GET form to the site's search page); below the bar until lg. */
+  search?: { label?: string | undefined, placeholder?: string | undefined, submitLabel?: string | undefined, action?: string | undefined } | undefined
+  navLabel?: string | undefined
+  menuLabel?: string | undefined
+  closeLabel?: string | undefined
+  layout?: 'split' | 'centered' | 'brand-left' | undefined
+  tone?: 'default' | 'inverse' | 'transparent' | undefined
+  position?: 'static' | 'sticky' | undefined
+  /** How submenus open on wide screens: a list under the item, or a wide panel of columns. */
+  menu?: 'flyout' | 'mega' | undefined
+}
+
+const { siteName, tagline, brandSize, brandWeight, brandTracking, bordered, offsetTop, padTop, padBottom, linkNav, brandColor, logo, showName = true, homeHref = '/', items, action, strip = [], search, navLabel, menuLabel, closeLabel, layout, tone, position, menu } = Astro.props
+const { root, inner, brand } = header({ layout, tone, position, bordered })
+// The header's search field: `header-search` on a page, a second header's its own (its label points at its own input).
+const searchId = search ? instanceId(Astro.locals, undefined, 'header-search') : undefined
+const rootStyle = offsetTop ? `margin-top: ${offsetTop}` : undefined
+const innerStyle = [padTop && `padding-top: ${padTop}`, padBottom && `padding-bottom: ${padBottom}`].filter(Boolean).join('; ') || undefined
+const brandColour = brandColorValue(brandColor)
+const brandStyle = [brandSize && `font-size: ${brandSize}`, brandWeight && `font-weight: ${brandWeight}`, brandTracking && `letter-spacing: ${brandTracking}`, brandColour && `color: ${brandColour}`].filter(Boolean).join('; ') || undefined
+// The row above the bar folds into the drawer only where there is one: Nav prints nothing without items.
+const stripFolds = items.length > 0
+// A tagline under the name keeps its line on a phone, as themes print it: the navigation wraps below.
+// The search field sits in the bar from lg; at md the bar already holds the navigation, so the field keeps its own row.
+const wrap = search ? 'flex-wrap lg:flex-nowrap' : tagline ? 'flex-wrap md:flex-nowrap' : undefined
+---
+<header class={root()} style={rootStyle}>
+  {strip.length > 0 && (
+    <div class:list={['border-b border-current/10 text-sm', stripFolds && 'hidden md:block']} data-kit-strip>
+      <ul class={`container-page flex flex-wrap items-center justify-end gap-x-6 gap-y-1 py-2 ${muted}`}>
+        {strip.map(line => (
+          <li>{line.href ? <a href={safeHref(line.href)} class="text-current no-underline hover:underline">{line.label}</a> : line.label}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+  <div class={inner({ class: wrap })} style={innerStyle}>
+    {tagline
+      ? (
+        <div class="flex min-w-0 basis-full flex-col gap-1 md:basis-auto">
+          <a href={safeHref(homeHref)} class={brand()} aria-label={showName ? undefined : siteName} style={brandStyle} data-kit-brand>
+            {logo && <KitImage image={logo} priority class="h-8 w-auto min-w-0 max-w-full object-contain" sizes="160px" />}
+            {showName && <span class="min-w-[3ch] shrink-[8] truncate">{siteName}</span>}
+          </a>
+          <p class={muted} data-kit-tagline>{tagline}</p>
+        </div>
+      )
+      : (
+        <a href={safeHref(homeHref)} class={brand()} aria-label={showName ? undefined : siteName} style={brandStyle} data-kit-brand>
+          {logo && <KitImage image={logo} priority class="h-8 w-auto min-w-0 max-w-full object-contain" sizes="160px" />}
+          {showName && <span class="min-w-[3ch] shrink-[8] truncate">{siteName}</span>}
+        </a>
+      )}
+    {search && (
+      <div class="order-last basis-full lg:order-none lg:ms-auto lg:basis-auto">
+        <SearchBox action={search.action} label={search.label} placeholder={search.placeholder} submitLabel={search.submitLabel} size="sm" id={searchId} />
+      </div>
+    )}
+    <div class:list={['flex items-center gap-4', layout === 'centered' ? 'justify-center' : 'ms-auto']}>
+      <Nav items={items} menu={menu} label={navLabel} menuLabel={menuLabel} closeLabel={closeLabel} part="nav-header" extra={stripFolds ? strip : undefined} color={linkNav ? 'link' : 'current'} align={layout === 'centered' ? 'center' : 'end'} />
+      {action && <Button action={action} size="sm" />}
+    </div>
+  </div>
+</header>

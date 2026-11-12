@@ -1,0 +1,141 @@
+{
+  "faq": {
+    "items": [
+      {
+        "title": "GOSH est accessible"
+      },
+      {
+        "points": [
+          "N’importe qui peut créer, obtenir, étudier, modifier, distribuer, utiliser et partager des conceptions de projets de matériel de science ouverte.",
+          "Les outils sont ouverts, libres et sous licences correspondantes.",
+          "Nos documents sont compréhensibles et destinés au plus grand nombre.",
+          "Nous partageons plus qu’agissons territorialement.",
+          "Pour l’accessibilité socio-économique, les matériaux sont à bas coûts et faciles à obtenir dès que cela est possible.",
+          "Le matériel de science ouverte est facile d’entretien et réparable.",
+          "Nous suivons les principes déjà établis par les mouvements du logiciel open source, du logiciel libre, de la science ouverte et du matériel ouvert."
+        ]
+      },
+      {
+        "title": "Gosh rend la meilleure science meilleure"
+      },
+      {
+        "points": [
+          "Les expériences scientifiques utilisant du matériel ouvert sont plus faciles à reproduire, à comparer, et ont plus de potentialité à être répliquées.",
+          "Il est plus facile de comparer les données entre secteurs, standards et pays si l’on utilise du matériel ouvert.",
+          "La reproductibilité est la garantie d’une bonne science, et le matériel de science ouverte permet une meilleure reproductibilité.",
+          "Le matériel de science ouverte permet de faire plus de science.",
+          "1 000 têtes sont meilleures qu’une."
+        ]
+      },
+      {
+        "title": "Gosh est éthique"
+      },
+      {
+        "points": [
+          "Les personnes ont un droit à la connaissance, et donc aux outils permettant d’enrichir cette connaissance.",
+          "En devenant créateurs, les utilisateurs alignent leurs technologies en accord avec leurs valeurs.",
+          "Les bénéfices de la science devraient être partagés avec tous, et ne devraient pas créer de dommages.",
+          "Le matériel de science ouverte est ouvert à tous, sans considération de parcours scolaire, de pays, de race, de sexe, de religion et ne tolère aucune discrimination qui serait basée sur ces terrains.",
+          "Gosh est utilisé pour des objectifs pacifiques."
+        ]
+      },
+      {
+        "title": "Gosh change la culture scientifique"
+      },
+      {
+        "points": [
+          "Nous défendons un principe de science ouverte, ce qui requiert un matériel de science ouverte.",
+          "Nous orientons la science vers des pratiques collaboratives, accessibles et communautaires, et loin des pratiques individuelles, institutionnelles, propriétaires et territoriales.",
+          "Nous créons plus d’options pour que les personnes puissent poursuivre des recherches, à la fois dans les institutions existantes (l’université, les ONG, les associations, les start-ups et l’entreprise) et hors de toutes ces institutions.",
+          "Nous créons des espaces pour la science au-delà des institutions établies (par exemple l’université et les ONG) de manière à ce qu’il y ait plus d’options pour des trajectoires de recherche.",
+          "Nous élargissons les méthodes permettant de s’engager dans la pratique scientifique, de manière à ce que les multiples savoirs d’une grande diversité de personnes puissent prendre part à la création de connaissance, aujourd’hui, et demain."
+        ]
+      },
+      {
+        "title": "Gosh démocratise la science"
+      },
+      {
+        "points": [
+          "Plus de personnes et plus de types de personnes peuvent prendre part à la science et en bénéficier.",
+          "Nous brisons les logiques de séparation à la fois entre disciplines et entre différents types d’institutions, en reliant les différents domaines de la connaissance – vous n’avez pas besoin d’être “biologiste” pour faire de la biologie, d’avoir un diplôme pour faire de la recherche.",
+          "Le matériel de science ouverte réduit la division entre le Sud global et le Nord global, entre les professionnels et les amateurs, et en particulier dans les pays à faibles revenus.",
+          "Le matériel de science ouverte met la connaissance locale en action et contribue à la justice cognitive.",
+          "Le matériel de science ouverte permet à une diversité de valeurs et de voix de poser des questions de recherche et de fabriquer de la technologie."
+        ]
+      },
+      {
+        "title": "Gosh ne suit pas de grands prêtres"
+      },
+      {
+        "points": [
+          "Nous avons des champions de la communauté, pas d’autorité centrale.",
+          "Nous sommes une communauté active engagée dans des réalisations partagées.",
+          "Nous nous construisons sur le travail de chacun plutôt que travaillons dans l’isolement.",
+          "Plus on est de fous, plus on rit."
+        ]
+      },
+      {
+        "title": "Gosh renforce la capacité d’agir des personnes"
+      },
+      {
+        "points": [
+          "Pour qu’elles puissent poursuivre des recherches basées sur leurs intérêts.",
+          "Pour qu’elles puissent poursuivre des recherches basées sur les besoins de leurs communautés.",
+          "Pour qu’elles puissent poursuivre des recherches en recevant de nombreuses formes de soutien (dont des soutiens financiers, personnels, temporels, matériels).",
+          "Pour qu’elles puissent mettre en œuvre leurs idées à bas coûts.",
+          "Pour qu’elles puissent comprendre comment leurs outils fonctionnent en empruntant, construisant et partageant la technologie.",
+          "Pour obtenir une transparence technologique et un droit de regard public.",
+          "Pour construire un mouvement."
+        ]
+      },
+      {
+        "title": "Gosh ne connaît pas de boîtes noires"
+      },
+      {
+        "points": [
+          "(“Boîtes noires” réfère à n’importe quelle pièce d’équipement dont les contenus sont mystérieux pour leur utilisateur. Les technologies sont open source)",
+          "En empruntant, construisant et partageant la technologie nous comprenons comment nos outils fonctionnent.",
+          "Construire Gosh est une manière d’apprendre en faisant.",
+          "Le matériel de science ouverte améliore la transparence technologique et la surveillance publique."
+        ]
+      },
+      {
+        "title": "Gosh créé des outils à impact fort"
+      },
+      {
+        "points": [
+          "Les technologies sont adaptables et peuvent par conséquent répondre directement aux besoins sociaux et techniques locaux.",
+          "Il existe un lien direct entre les besoins d’une communauté d’utilisateurs et le matériel scientifique car la communauté d’utilisateurs peut accéder, changer, adapter et utiliser les outils.",
+          "Le matériel de science ouverte permet aux utilisateurs de publier les résultats et la connaissance rapidement et souvent, permettant ainsi d’adapter les outils de manière agile.",
+          "Le matériel de science ouverte est conçu selon l’échelle."
+        ]
+      },
+      {
+        "title": "Gosh ouvre à de multiples futurs pour la science"
+      },
+      {
+        "points": [
+          "La recherche peut se dérouler dans ou hors de l’université, dans ou hors du lab, dans ou hors des espaces commerciaux.",
+          "Gosh change les normes au sein de la science institutionnelle établie quand les chercheurs partagent ouvertement la connaissance et la technologie.",
+          "Avec Gosh, les personnes non-scientifiques/indigènes peuvent faire de la recherche dans leur langue natale et l’adapter à leur contexte local.",
+          "Gosh permet à la science de se tenir dans des lieux où elle ne se déroulerait pas habituellement.",
+          "Gosh souhaite un changement culturel de manière à ce que ces possibilités soient intergénérationnelles."
+        ]
+      }
+    ]
+  },
+  "hero": {
+    "media": {
+      "src": "/media/2016/05/DSC06870-1.jpg"
+    }
+  },
+  "text": {
+    "markdown": "[Deutsch](https://openhardware.science/gosh-manifesto/deutsch/)\n\n[English](https://openhardware.science/gosh-manifesto/)\n\n[Español](https://openhardware.science/gosh-manifesto/spanish/)\n\n[Français](https://openhardware.science/gosh-manifesto/french/)\n\n[Português](https://openhardware.science/gosh-manifesto/portuguese/)\n\n[中文](https://openhardware.science/gosh-manifesto/chinese/)\n\n[বাংলা](https://openhardware.science/gosh-manifesto/bangla/)\n\n[日本語](https://openhardware.science/gosh-manifesto/japan/)"
+  },
+  "text_note": {
+    "markdown": "Un grand merci à l’équipe [Makery](http://www.makery.info/) pour [traduire le Manifeste GOSH!](http://www.makery.info/2016/06/07/le-manifeste-gosh-pour-liberer-le-materiel-scientifique/)"
+  },
+  "text_note_le": {
+    "markdown": "Le mouvement Global Open Science Hardware (Gosh) cherche à réduire les barrières entre créateurs et utilisateurs d’outils scientifiques pour soutenir la recherche et le développement de la connaissance. Nos principes s’énoncent comme suit :"
+  }
+}

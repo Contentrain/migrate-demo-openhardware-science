@@ -1,0 +1,1813 @@
+{
+  "domain": "pages",
+  "fields": {
+    "defining_strategy": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Defining strategy",
+      "type": "object"
+    },
+    "defining_strategy_gallery": {
+      "description": "Images in a square grid or in masonry columns, with optional captions.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the images.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The images in order.",
+          "items": {
+            "fields": {
+              "caption": {
+                "description": "Caption under the enlarged image.",
+                "label": "Caption",
+                "type": "string"
+              },
+              "full": {
+                "description": "The original file the viewer shows large, where the source links to it; otherwise the image itself.",
+                "label": "Full-size image",
+                "type": "image"
+              },
+              "image": {
+                "description": "The image.",
+                "label": "Image",
+                "required": true,
+                "type": "image"
+              },
+              "image_alt": {
+                "description": "What the image shows, for readers who cannot see it.",
+                "label": "Image description",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Images",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Defining strategy gallery",
+      "type": "object"
+    },
+    "defining_strategy_gallery_more": {
+      "description": "Text of this part of the page that its section has no field for.",
+      "fields": {
+        "markdown": {
+          "description": "The text, in Markdown.",
+          "label": "Text",
+          "type": "markdown"
+        }
+      },
+      "label": "Defining strategy gallery (more text)",
+      "type": "object"
+    },
+    "distributed_movement": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Distributed movement",
+      "type": "object"
+    },
+    "distributed_movement_embed": {
+      "description": "A video, map or player from another site, loaded only on click: until then a poster link to the provider's page, with no iframe, no third-party request and no cookie.",
+      "fields": {
+        "address": {
+          "description": "A place or address shown on a Google map when there is no url.",
+          "label": "Address",
+          "required": false,
+          "type": "string"
+        },
+        "caption": {
+          "description": "A line under the embed.",
+          "label": "Caption",
+          "required": false,
+          "type": "string"
+        },
+        "play_label": {
+          "description": "Poster action for a video or audio player.",
+          "label": "Play label",
+          "required": false,
+          "type": "string"
+        },
+        "poster": {
+          "description": "Local poster image.",
+          "fields": {
+            "alt": {
+              "description": "Alt text of the poster.",
+              "label": "Alt text",
+              "required": true,
+              "type": "string"
+            },
+            "height": {
+              "description": "Height of the poster.",
+              "label": "Height",
+              "type": "integer"
+            },
+            "src": {
+              "description": "Image of the poster.",
+              "label": "Image",
+              "required": true,
+              "type": "image"
+            },
+            "width": {
+              "description": "Width of the poster.",
+              "label": "Width",
+              "type": "integer"
+            }
+          },
+          "label": "Poster",
+          "required": false,
+          "type": "object"
+        },
+        "show_label": {
+          "description": "Poster action for a map or widget.",
+          "label": "Show label",
+          "required": false,
+          "type": "string"
+        },
+        "title": {
+          "description": "What it is: the player's accessible name and the poster's text.",
+          "label": "Title",
+          "required": true,
+          "type": "string"
+        },
+        "uploaded": {
+          "description": "The video's upload date, printed as uploadDate only when the source states it.",
+          "label": "Uploaded",
+          "required": false,
+          "type": "string"
+        },
+        "url": {
+          "description": "A video page or a known provider's embed address.",
+          "label": "Link",
+          "required": false,
+          "type": "url"
+        }
+      },
+      "label": "Distributed movement embed",
+      "required": true,
+      "type": "object"
+    },
+    "distributed_movement_embed_2": {
+      "description": "A video, map or player from another site, loaded only on click: until then a poster link to the provider's page, with no iframe, no third-party request and no cookie.",
+      "fields": {
+        "address": {
+          "description": "A place or address shown on a Google map when there is no url.",
+          "label": "Address",
+          "required": false,
+          "type": "string"
+        },
+        "caption": {
+          "description": "A line under the embed.",
+          "label": "Caption",
+          "required": false,
+          "type": "string"
+        },
+        "play_label": {
+          "description": "Poster action for a video or audio player.",
+          "label": "Play label",
+          "required": false,
+          "type": "string"
+        },
+        "poster": {
+          "description": "Local poster image.",
+          "fields": {
+            "alt": {
+              "description": "Alt text of the poster.",
+              "label": "Alt text",
+              "required": true,
+              "type": "string"
+            },
+            "height": {
+              "description": "Height of the poster.",
+              "label": "Height",
+              "type": "integer"
+            },
+            "src": {
+              "description": "Image of the poster.",
+              "label": "Image",
+              "required": true,
+              "type": "image"
+            },
+            "width": {
+              "description": "Width of the poster.",
+              "label": "Width",
+              "type": "integer"
+            }
+          },
+          "label": "Poster",
+          "required": false,
+          "type": "object"
+        },
+        "show_label": {
+          "description": "Poster action for a map or widget.",
+          "label": "Show label",
+          "required": false,
+          "type": "string"
+        },
+        "title": {
+          "description": "What it is: the player's accessible name and the poster's text.",
+          "label": "Title",
+          "required": false,
+          "type": "string"
+        },
+        "uploaded": {
+          "description": "The video's upload date, printed as uploadDate only when the source states it.",
+          "label": "Uploaded",
+          "required": false,
+          "type": "string"
+        },
+        "url": {
+          "description": "A video page or a known provider's embed address.",
+          "label": "Link",
+          "required": false,
+          "type": "url"
+        }
+      },
+      "label": "Distributed movement embed 2",
+      "type": "object"
+    },
+    "distributed_movement_gallery": {
+      "description": "Images in a square grid or in masonry columns, with optional captions.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the images.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The images in order.",
+          "items": {
+            "fields": {
+              "caption": {
+                "description": "Caption under the enlarged image.",
+                "label": "Caption",
+                "type": "string"
+              },
+              "full": {
+                "description": "The original file the viewer shows large, where the source links to it; otherwise the image itself.",
+                "label": "Full-size image",
+                "type": "image"
+              },
+              "image": {
+                "description": "The image.",
+                "label": "Image",
+                "required": true,
+                "type": "image"
+              },
+              "image_alt": {
+                "description": "What the image shows, for readers who cannot see it.",
+                "label": "Image description",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Images",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Distributed movement gallery",
+      "type": "object"
+    },
+    "distributed_movement_gallery_reseq": {
+      "description": "Images in a square grid or in masonry columns, with optional captions.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the images.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The images in order.",
+          "items": {
+            "fields": {
+              "caption": {
+                "description": "Caption under the enlarged image.",
+                "label": "Caption",
+                "type": "string"
+              },
+              "full": {
+                "description": "The original file the viewer shows large, where the source links to it; otherwise the image itself.",
+                "label": "Full-size image",
+                "type": "image"
+              },
+              "image": {
+                "description": "The image.",
+                "label": "Image",
+                "required": true,
+                "type": "image"
+              },
+              "image_alt": {
+                "description": "What the image shows, for readers who cannot see it.",
+                "label": "Image description",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Images",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Distributed movement gallery reseq",
+      "type": "object"
+    },
+    "distributed_movement_gallery_reseq_more": {
+      "description": "Text of this part of the page that its section has no field for.",
+      "fields": {
+        "markdown": {
+          "description": "The text, in Markdown.",
+          "label": "Text",
+          "type": "markdown"
+        }
+      },
+      "label": "Distributed movement gallery reseq (more text)",
+      "type": "object"
+    },
+    "distributed_movement_note": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Distributed movement note",
+      "type": "object"
+    },
+    "distributed_movement_section": {
+      "description": "The styled fallback section: an optional heading, lead, image, a grid of items and buttons, in the section's measured frame and fill.",
+      "fields": {
+        "actions": {
+          "description": "Buttons, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the button goes: a page on this site or a full address.",
+                "label": "Link",
+                "required": true,
+                "type": "url"
+              },
+              "label": {
+                "description": "The button text.",
+                "label": "Label",
+                "required": true,
+                "type": "string"
+              },
+              "new_tab": {
+                "description": "Open the link in a new tab.",
+                "label": "Open in a new tab",
+                "type": "boolean"
+              },
+              "style": {
+                "description": "primary for the main action, secondary or ghost for the ones beside it.",
+                "label": "Style",
+                "options": [
+                  "primary",
+                  "secondary",
+                  "ghost"
+                ],
+                "type": "select"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Buttons",
+          "required": false,
+          "type": "array"
+        },
+        "eyebrow": {
+          "description": "Short line above the heading.",
+          "label": "Eyebrow",
+          "required": false,
+          "type": "string"
+        },
+        "heading": {
+          "description": "Section heading.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "Items in a grid, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the item goes; without a link text the whole item is the link.",
+                "label": "Link",
+                "type": "url"
+              },
+              "icon": {
+                "description": "A small image above the title.",
+                "label": "Icon",
+                "type": "image"
+              },
+              "link_label": {
+                "description": "The link's own text, shown under the item.",
+                "label": "Link text",
+                "type": "string"
+              },
+              "media": {
+                "description": "Image on top of the item.",
+                "label": "Image",
+                "type": "image"
+              },
+              "media_alt": {
+                "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+                "label": "Image description",
+                "type": "string"
+              },
+              "meta": {
+                "description": "A short line under the title.",
+                "label": "Detail",
+                "type": "string"
+              },
+              "points": {
+                "description": "A short list under the text.",
+                "items": "string",
+                "label": "Points",
+                "type": "array"
+              },
+              "text": {
+                "description": "A sentence or two under the title.",
+                "label": "Text",
+                "type": "text"
+              },
+              "title": {
+                "description": "The item heading.",
+                "label": "Title",
+                "type": "string"
+              },
+              "value": {
+                "description": "A figure drawn large above the title.",
+                "label": "Figure",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Items",
+          "required": false,
+          "type": "array"
+        },
+        "lead": {
+          "description": "Paragraph under the heading.",
+          "label": "Lead",
+          "required": false,
+          "type": "text"
+        },
+        "media": {
+          "description": "The section's image, under or beside the copy.",
+          "fields": {
+            "alt": {
+              "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+              "label": "Image description",
+              "type": "string"
+            },
+            "height": {
+              "description": "Height in pixels, as uploaded.",
+              "label": "Height",
+              "type": "integer"
+            },
+            "src": {
+              "description": "The image file.",
+              "label": "Image",
+              "required": true,
+              "type": "image"
+            },
+            "width": {
+              "description": "Width in pixels, as uploaded.",
+              "label": "Width",
+              "type": "integer"
+            }
+          },
+          "label": "Image",
+          "required": false,
+          "type": "object"
+        }
+      },
+      "label": "Distributed movement section",
+      "type": "object"
+    },
+    "distributed_movement_section_more": {
+      "description": "Text of this part of the page that its section has no field for.",
+      "fields": {
+        "markdown": {
+          "description": "The text, in Markdown.",
+          "label": "Text",
+          "type": "markdown"
+        }
+      },
+      "label": "Distributed movement section (more text)",
+      "type": "object"
+    },
+    "distributed_movement_testimonial": {
+      "description": "Quotes from customers or readers with who said them: one large quote, or several as cards.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the quotes.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The quotes.",
+          "items": {
+            "fields": {
+              "avatar": {
+                "description": "Their photo.",
+                "label": "Photo",
+                "type": "image"
+              },
+              "avatar_alt": {
+                "description": "Who the photo shows; usually their name.",
+                "label": "Photo description",
+                "type": "string"
+              },
+              "logo": {
+                "description": "The company's logo beside the name.",
+                "label": "Company logo",
+                "type": "image"
+              },
+              "logo_alt": {
+                "description": "The company the logo stands for.",
+                "label": "Company name",
+                "type": "string"
+              },
+              "name": {
+                "description": "Who said it.",
+                "label": "Name",
+                "required": true,
+                "type": "string"
+              },
+              "quote": {
+                "description": "What the person said, in their words.",
+                "label": "Quote",
+                "required": true,
+                "type": "text"
+              },
+              "rating": {
+                "description": "Stars out of 5; leave empty for none.",
+                "label": "Rating",
+                "type": "number"
+              },
+              "role": {
+                "description": "Their role or company.",
+                "label": "Role",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Testimonials",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Distributed movement testimonial",
+      "type": "object"
+    },
+    "distributed_movement_testimonial_2": {
+      "description": "The styled fallback section: an optional heading, lead, image, a grid of items and buttons, in the section's measured frame and fill.",
+      "fields": {
+        "actions": {
+          "description": "Buttons, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the button goes: a page on this site or a full address.",
+                "label": "Link",
+                "required": true,
+                "type": "url"
+              },
+              "label": {
+                "description": "The button text.",
+                "label": "Label",
+                "required": true,
+                "type": "string"
+              },
+              "new_tab": {
+                "description": "Open the link in a new tab.",
+                "label": "Open in a new tab",
+                "type": "boolean"
+              },
+              "style": {
+                "description": "primary for the main action, secondary or ghost for the ones beside it.",
+                "label": "Style",
+                "options": [
+                  "primary",
+                  "secondary",
+                  "ghost"
+                ],
+                "type": "select"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Buttons",
+          "required": false,
+          "type": "array"
+        },
+        "eyebrow": {
+          "description": "Short line above the heading.",
+          "label": "Eyebrow",
+          "required": false,
+          "type": "string"
+        },
+        "heading": {
+          "description": "Section heading.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "Items in a grid, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the item goes; without a link text the whole item is the link.",
+                "label": "Link",
+                "type": "url"
+              },
+              "icon": {
+                "description": "A small image above the title.",
+                "label": "Icon",
+                "type": "image"
+              },
+              "link_label": {
+                "description": "The link's own text, shown under the item.",
+                "label": "Link text",
+                "type": "string"
+              },
+              "media": {
+                "description": "Image on top of the item.",
+                "label": "Image",
+                "type": "image"
+              },
+              "media_alt": {
+                "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+                "label": "Image description",
+                "type": "string"
+              },
+              "meta": {
+                "description": "A short line under the title.",
+                "label": "Detail",
+                "type": "string"
+              },
+              "points": {
+                "description": "A short list under the text.",
+                "items": "string",
+                "label": "Points",
+                "type": "array"
+              },
+              "text": {
+                "description": "A sentence or two under the title.",
+                "label": "Text",
+                "type": "text"
+              },
+              "title": {
+                "description": "The item heading.",
+                "label": "Title",
+                "type": "string"
+              },
+              "value": {
+                "description": "A figure drawn large above the title.",
+                "label": "Figure",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Items",
+          "required": false,
+          "type": "array"
+        },
+        "lead": {
+          "description": "Paragraph under the heading.",
+          "label": "Lead",
+          "required": false,
+          "type": "text"
+        },
+        "media": {
+          "description": "The section's image, under or beside the copy.",
+          "fields": {
+            "alt": {
+              "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+              "label": "Image description",
+              "type": "string"
+            },
+            "height": {
+              "description": "Height in pixels, as uploaded.",
+              "label": "Height",
+              "type": "integer"
+            },
+            "src": {
+              "description": "The image file.",
+              "label": "Image",
+              "required": true,
+              "type": "image"
+            },
+            "width": {
+              "description": "Width in pixels, as uploaded.",
+              "label": "Width",
+              "type": "integer"
+            }
+          },
+          "label": "Image",
+          "required": false,
+          "type": "object"
+        }
+      },
+      "label": "Distributed movement testimonial 2",
+      "type": "object"
+    },
+    "embed": {
+      "description": "A video, map or player from another site, loaded only on click: until then a poster link to the provider's page, with no iframe, no third-party request and no cookie.",
+      "fields": {
+        "address": {
+          "description": "A place or address shown on a Google map when there is no url.",
+          "label": "Address",
+          "required": false,
+          "type": "string"
+        },
+        "caption": {
+          "description": "A line under the embed.",
+          "label": "Caption",
+          "required": false,
+          "type": "string"
+        },
+        "play_label": {
+          "description": "Poster action for a video or audio player.",
+          "label": "Play label",
+          "required": false,
+          "type": "string"
+        },
+        "poster": {
+          "description": "Local poster image.",
+          "fields": {
+            "alt": {
+              "description": "Alt text of the poster.",
+              "label": "Alt text",
+              "required": true,
+              "type": "string"
+            },
+            "height": {
+              "description": "Height of the poster.",
+              "label": "Height",
+              "type": "integer"
+            },
+            "src": {
+              "description": "Image of the poster.",
+              "label": "Image",
+              "required": true,
+              "type": "image"
+            },
+            "width": {
+              "description": "Width of the poster.",
+              "label": "Width",
+              "type": "integer"
+            }
+          },
+          "label": "Poster",
+          "required": false,
+          "type": "object"
+        },
+        "show_label": {
+          "description": "Poster action for a map or widget.",
+          "label": "Show label",
+          "required": false,
+          "type": "string"
+        },
+        "title": {
+          "description": "What it is: the player's accessible name and the poster's text.",
+          "label": "Title",
+          "required": false,
+          "type": "string"
+        },
+        "uploaded": {
+          "description": "The video's upload date, printed as uploadDate only when the source states it.",
+          "label": "Uploaded",
+          "required": false,
+          "type": "string"
+        },
+        "url": {
+          "description": "A video page or a known provider's embed address.",
+          "label": "Link",
+          "required": false,
+          "type": "url"
+        }
+      },
+      "label": "Embed",
+      "type": "object"
+    },
+    "embed_gallery": {
+      "description": "Images in a square grid or in masonry columns, with optional captions.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the images.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The images in order.",
+          "items": {
+            "fields": {
+              "caption": {
+                "description": "Caption under the enlarged image.",
+                "label": "Caption",
+                "type": "string"
+              },
+              "full": {
+                "description": "The original file the viewer shows large, where the source links to it; otherwise the image itself.",
+                "label": "Full-size image",
+                "type": "image"
+              },
+              "image": {
+                "description": "The image.",
+                "label": "Image",
+                "required": true,
+                "type": "image"
+              },
+              "image_alt": {
+                "description": "What the image shows, for readers who cannot see it.",
+                "label": "Image description",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Images",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Embed gallery",
+      "type": "object"
+    },
+    "embed_note": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Embed note",
+      "type": "object"
+    },
+    "embed_note_most": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Embed note most",
+      "type": "object"
+    },
+    "embed_testimonial": {
+      "description": "Quotes from customers or readers with who said them: one large quote, or several as cards.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the quotes.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The quotes.",
+          "items": {
+            "fields": {
+              "avatar": {
+                "description": "Their photo.",
+                "label": "Photo",
+                "type": "image"
+              },
+              "avatar_alt": {
+                "description": "Who the photo shows; usually their name.",
+                "label": "Photo description",
+                "type": "string"
+              },
+              "logo": {
+                "description": "The company's logo beside the name.",
+                "label": "Company logo",
+                "type": "image"
+              },
+              "logo_alt": {
+                "description": "The company the logo stands for.",
+                "label": "Company name",
+                "type": "string"
+              },
+              "name": {
+                "description": "Who said it.",
+                "label": "Name",
+                "required": true,
+                "type": "string"
+              },
+              "quote": {
+                "description": "What the person said, in their words.",
+                "label": "Quote",
+                "required": true,
+                "type": "text"
+              },
+              "rating": {
+                "description": "Stars out of 5; leave empty for none.",
+                "label": "Rating",
+                "type": "number"
+              },
+              "role": {
+                "description": "Their role or company.",
+                "label": "Role",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Testimonials",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Embed testimonial",
+      "type": "object"
+    },
+    "gallery": {
+      "description": "Images in a square grid or in masonry columns, with optional captions.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the images.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The images in order.",
+          "items": {
+            "fields": {
+              "caption": {
+                "description": "Caption under the enlarged image.",
+                "label": "Caption",
+                "type": "string"
+              },
+              "full": {
+                "description": "The original file the viewer shows large, where the source links to it; otherwise the image itself.",
+                "label": "Full-size image",
+                "type": "image"
+              },
+              "image": {
+                "description": "The image.",
+                "label": "Image",
+                "required": true,
+                "type": "image"
+              },
+              "image_alt": {
+                "description": "What the image shows, for readers who cannot see it.",
+                "label": "Image description",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Images",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Gallery",
+      "type": "object"
+    },
+    "going_global": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Going global",
+      "type": "object"
+    },
+    "going_global_gallery": {
+      "description": "Images in a square grid or in masonry columns, with optional captions.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the images.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The images in order.",
+          "items": {
+            "fields": {
+              "caption": {
+                "description": "Caption under the enlarged image.",
+                "label": "Caption",
+                "type": "string"
+              },
+              "full": {
+                "description": "The original file the viewer shows large, where the source links to it; otherwise the image itself.",
+                "label": "Full-size image",
+                "type": "image"
+              },
+              "image": {
+                "description": "The image.",
+                "label": "Image",
+                "required": true,
+                "type": "image"
+              },
+              "image_alt": {
+                "description": "What the image shows, for readers who cannot see it.",
+                "label": "Image description",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Images",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Going global gallery",
+      "type": "object"
+    },
+    "going_global_gallery_more": {
+      "description": "Text of this part of the page that its section has no field for.",
+      "fields": {
+        "markdown": {
+          "description": "The text, in Markdown.",
+          "label": "Text",
+          "type": "markdown"
+        }
+      },
+      "label": "Going global gallery (more text)",
+      "type": "object"
+    },
+    "going_global_note": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Going global note",
+      "type": "object"
+    },
+    "going_global_testimonial": {
+      "description": "Quotes from customers or readers with who said them: one large quote, or several as cards.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the quotes.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The quotes.",
+          "items": {
+            "fields": {
+              "avatar": {
+                "description": "Their photo.",
+                "label": "Photo",
+                "type": "image"
+              },
+              "avatar_alt": {
+                "description": "Who the photo shows; usually their name.",
+                "label": "Photo description",
+                "type": "string"
+              },
+              "logo": {
+                "description": "The company's logo beside the name.",
+                "label": "Company logo",
+                "type": "image"
+              },
+              "logo_alt": {
+                "description": "The company the logo stands for.",
+                "label": "Company name",
+                "type": "string"
+              },
+              "name": {
+                "description": "Who said it.",
+                "label": "Name",
+                "required": true,
+                "type": "string"
+              },
+              "quote": {
+                "description": "What the person said, in their words.",
+                "label": "Quote",
+                "required": true,
+                "type": "text"
+              },
+              "rating": {
+                "description": "Stars out of 5; leave empty for none.",
+                "label": "Rating",
+                "type": "number"
+              },
+              "role": {
+                "description": "Their role or company.",
+                "label": "Role",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Testimonials",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Going global testimonial",
+      "type": "object"
+    },
+    "gosh_2018_organizers": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Gosh 2018 organizers",
+      "type": "object"
+    },
+    "scaling_hardware_growing": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Scaling hardware growing",
+      "type": "object"
+    },
+    "scaling_hardware_growing_gallery": {
+      "description": "Images in a square grid or in masonry columns, with optional captions.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the images.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The images in order.",
+          "items": {
+            "fields": {
+              "caption": {
+                "description": "Caption under the enlarged image.",
+                "label": "Caption",
+                "type": "string"
+              },
+              "full": {
+                "description": "The original file the viewer shows large, where the source links to it; otherwise the image itself.",
+                "label": "Full-size image",
+                "type": "image"
+              },
+              "image": {
+                "description": "The image.",
+                "label": "Image",
+                "required": true,
+                "type": "image"
+              },
+              "image_alt": {
+                "description": "What the image shows, for readers who cannot see it.",
+                "label": "Image description",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Images",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Scaling hardware growing gallery",
+      "type": "object"
+    },
+    "scaling_hardware_growing_note": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Scaling hardware growing note",
+      "type": "object"
+    },
+    "scaling_hardware_growing_note_first": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Scaling hardware growing note first",
+      "type": "object"
+    },
+    "scaling_hardware_growing_note_public": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Scaling hardware growing note public",
+      "type": "object"
+    },
+    "scaling_hardware_growing_testimonial": {
+      "description": "Quotes from customers or readers with who said them: one large quote, or several as cards.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the quotes.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The quotes.",
+          "items": {
+            "fields": {
+              "avatar": {
+                "description": "Their photo.",
+                "label": "Photo",
+                "type": "image"
+              },
+              "avatar_alt": {
+                "description": "Who the photo shows; usually their name.",
+                "label": "Photo description",
+                "type": "string"
+              },
+              "logo": {
+                "description": "The company's logo beside the name.",
+                "label": "Company logo",
+                "type": "image"
+              },
+              "logo_alt": {
+                "description": "The company the logo stands for.",
+                "label": "Company name",
+                "type": "string"
+              },
+              "name": {
+                "description": "Who said it.",
+                "label": "Name",
+                "required": true,
+                "type": "string"
+              },
+              "quote": {
+                "description": "What the person said, in their words.",
+                "label": "Quote",
+                "required": true,
+                "type": "text"
+              },
+              "rating": {
+                "description": "Stars out of 5; leave empty for none.",
+                "label": "Rating",
+                "type": "number"
+              },
+              "role": {
+                "description": "Their role or company.",
+                "label": "Role",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Testimonials",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Scaling hardware growing testimonial",
+      "type": "object"
+    },
+    "scaling_hardware_growing_testimonial_ji": {
+      "description": "Quotes from customers or readers with who said them: one large quote, or several as cards.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the quotes.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The quotes.",
+          "items": {
+            "fields": {
+              "avatar": {
+                "description": "Their photo.",
+                "label": "Photo",
+                "type": "image"
+              },
+              "avatar_alt": {
+                "description": "Who the photo shows; usually their name.",
+                "label": "Photo description",
+                "type": "string"
+              },
+              "logo": {
+                "description": "The company's logo beside the name.",
+                "label": "Company logo",
+                "type": "image"
+              },
+              "logo_alt": {
+                "description": "The company the logo stands for.",
+                "label": "Company name",
+                "type": "string"
+              },
+              "name": {
+                "description": "Who said it.",
+                "label": "Name",
+                "required": true,
+                "type": "string"
+              },
+              "quote": {
+                "description": "What the person said, in their words.",
+                "label": "Quote",
+                "required": true,
+                "type": "text"
+              },
+              "rating": {
+                "description": "Stars out of 5; leave empty for none.",
+                "label": "Rating",
+                "type": "number"
+              },
+              "role": {
+                "description": "Their role or company.",
+                "label": "Role",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Testimonials",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Scaling hardware growing testimonial ji",
+      "type": "object"
+    },
+    "section": {
+      "description": "The styled fallback section: an optional heading, lead, image, a grid of items and buttons, in the section's measured frame and fill.",
+      "fields": {
+        "actions": {
+          "description": "Buttons, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the button goes: a page on this site or a full address.",
+                "label": "Link",
+                "required": true,
+                "type": "url"
+              },
+              "label": {
+                "description": "The button text.",
+                "label": "Label",
+                "required": true,
+                "type": "string"
+              },
+              "new_tab": {
+                "description": "Open the link in a new tab.",
+                "label": "Open in a new tab",
+                "type": "boolean"
+              },
+              "style": {
+                "description": "primary for the main action, secondary or ghost for the ones beside it.",
+                "label": "Style",
+                "options": [
+                  "primary",
+                  "secondary",
+                  "ghost"
+                ],
+                "type": "select"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Buttons",
+          "required": false,
+          "type": "array"
+        },
+        "eyebrow": {
+          "description": "Short line above the heading.",
+          "label": "Eyebrow",
+          "required": false,
+          "type": "string"
+        },
+        "heading": {
+          "description": "Section heading.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "Items in a grid, in order.",
+          "items": {
+            "fields": {
+              "href": {
+                "description": "Where the item goes; without a link text the whole item is the link.",
+                "label": "Link",
+                "type": "url"
+              },
+              "icon": {
+                "description": "A small image above the title.",
+                "label": "Icon",
+                "type": "image"
+              },
+              "link_label": {
+                "description": "The link's own text, shown under the item.",
+                "label": "Link text",
+                "type": "string"
+              },
+              "media": {
+                "description": "Image on top of the item.",
+                "label": "Image",
+                "type": "image"
+              },
+              "media_alt": {
+                "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+                "label": "Image description",
+                "type": "string"
+              },
+              "meta": {
+                "description": "A short line under the title.",
+                "label": "Detail",
+                "type": "string"
+              },
+              "points": {
+                "description": "A short list under the text.",
+                "items": "string",
+                "label": "Points",
+                "type": "array"
+              },
+              "text": {
+                "description": "A sentence or two under the title.",
+                "label": "Text",
+                "type": "text"
+              },
+              "title": {
+                "description": "The item heading.",
+                "label": "Title",
+                "type": "string"
+              },
+              "value": {
+                "description": "A figure drawn large above the title.",
+                "label": "Figure",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Items",
+          "required": false,
+          "type": "array"
+        },
+        "lead": {
+          "description": "Paragraph under the heading.",
+          "label": "Lead",
+          "required": false,
+          "type": "text"
+        },
+        "media": {
+          "description": "The section's image, under or beside the copy.",
+          "fields": {
+            "alt": {
+              "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+              "label": "Image description",
+              "type": "string"
+            },
+            "height": {
+              "description": "Height in pixels, as uploaded.",
+              "label": "Height",
+              "type": "integer"
+            },
+            "src": {
+              "description": "The image file.",
+              "label": "Image",
+              "required": true,
+              "type": "image"
+            },
+            "width": {
+              "description": "Width in pixels, as uploaded.",
+              "label": "Width",
+              "type": "integer"
+            }
+          },
+          "label": "Image",
+          "required": false,
+          "type": "object"
+        }
+      },
+      "label": "Section",
+      "type": "object"
+    },
+    "section_more": {
+      "description": "Text of this part of the page that its section has no field for.",
+      "fields": {
+        "markdown": {
+          "description": "The text, in Markdown.",
+          "label": "Text",
+          "type": "markdown"
+        }
+      },
+      "label": "Section (more text)",
+      "type": "object"
+    },
+    "testimonial": {
+      "description": "Quotes from customers or readers with who said them: one large quote, or several as cards.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the quotes.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The quotes.",
+          "items": {
+            "fields": {
+              "avatar": {
+                "description": "Their photo.",
+                "label": "Photo",
+                "type": "image"
+              },
+              "avatar_alt": {
+                "description": "Who the photo shows; usually their name.",
+                "label": "Photo description",
+                "type": "string"
+              },
+              "logo": {
+                "description": "The company's logo beside the name.",
+                "label": "Company logo",
+                "type": "image"
+              },
+              "logo_alt": {
+                "description": "The company the logo stands for.",
+                "label": "Company name",
+                "type": "string"
+              },
+              "name": {
+                "description": "Who said it.",
+                "label": "Name",
+                "required": true,
+                "type": "string"
+              },
+              "quote": {
+                "description": "What the person said, in their words.",
+                "label": "Quote",
+                "required": true,
+                "type": "text"
+              },
+              "rating": {
+                "description": "Stars out of 5; leave empty for none.",
+                "label": "Rating",
+                "type": "number"
+              },
+              "role": {
+                "description": "Their role or company.",
+                "label": "Role",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Testimonials",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Testimonial",
+      "type": "object"
+    },
+    "testimonial_shannon": {
+      "description": "Quotes from customers or readers with who said them: one large quote, or several as cards.",
+      "fields": {
+        "heading": {
+          "description": "Section heading above the quotes.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        },
+        "items": {
+          "description": "The quotes.",
+          "items": {
+            "fields": {
+              "avatar": {
+                "description": "Their photo.",
+                "label": "Photo",
+                "type": "image"
+              },
+              "avatar_alt": {
+                "description": "Who the photo shows; usually their name.",
+                "label": "Photo description",
+                "type": "string"
+              },
+              "logo": {
+                "description": "The company's logo beside the name.",
+                "label": "Company logo",
+                "type": "image"
+              },
+              "logo_alt": {
+                "description": "The company the logo stands for.",
+                "label": "Company name",
+                "type": "string"
+              },
+              "name": {
+                "description": "Who said it.",
+                "label": "Name",
+                "required": true,
+                "type": "string"
+              },
+              "quote": {
+                "description": "What the person said, in their words.",
+                "label": "Quote",
+                "required": true,
+                "type": "text"
+              },
+              "rating": {
+                "description": "Stars out of 5; leave empty for none.",
+                "label": "Rating",
+                "type": "number"
+              },
+              "role": {
+                "description": "Their role or company.",
+                "label": "Role",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Testimonials",
+          "required": false,
+          "type": "array"
+        }
+      },
+      "label": "Testimonial shannon",
+      "type": "object"
+    },
+    "text": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Text",
+      "type": "object"
+    },
+    "welcome": {
+      "description": "A rich-text body rendered as the editor wrote it: WordPress block markup kept, styled by Tailwind Typography on the site's tokens and the starter's Gutenberg block styles.",
+      "fields": {
+        "html": {
+          "description": "Rendered HTML of a richtext field.",
+          "label": "Html",
+          "required": false,
+          "type": "richtext"
+        },
+        "markdown": {
+          "description": "A markdown field, rendered at build time with links through the public-link filter.",
+          "label": "Markdown",
+          "required": false,
+          "type": "markdown"
+        }
+      },
+      "label": "Welcome",
+      "type": "object"
+    }
+  },
+  "i18n": true,
+  "id": "page-gosh-history",
+  "kind": "singleton",
+  "name": "GOSH – A history (⚙️ in the making…) page",
+  "title_field": "distributed_movement_embed.title"
+}

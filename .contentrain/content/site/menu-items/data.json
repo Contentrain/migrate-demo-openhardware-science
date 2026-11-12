@@ -1,0 +1,256 @@
+{
+  "09c0e8f3724b": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 7,
+    "parent": "efdace843f2e",
+    "title": "CSCCE Community Profile",
+    "type": "custom",
+    "url": "https://zenodo.org/record/5164598"
+  },
+  "0e1c63021cdb": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 8,
+    "parent": "efdace843f2e",
+    "title": "Contact Us",
+    "type": "custom",
+    "url": "/about/contact-us/"
+  },
+  "184dbea109c3": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 2,
+    "parent": "c953ae11eabc",
+    "title": "Roadmap",
+    "type": "custom",
+    "url": "/global-open-science-hardware-roadmap/"
+  },
+  "1f5cfca0dc62": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 4,
+    "parent": "efdace843f2e",
+    "title": "Governance",
+    "type": "custom",
+    "url": "/governance/"
+  },
+  "34e0a3cab205": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 1,
+    "parent": "e0d55d07ec14",
+    "title": "Global Gatherings",
+    "type": "custom",
+    "url": "/gatherings/"
+  },
+  "36cdba5a1347": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 4,
+    "parent": "c121629eb8f6",
+    "title": "STEM Workshops",
+    "type": "custom",
+    "url": "/programs/stem-workshops/"
+  },
+  "3e9141f7c6d6": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 6,
+    "parent": "c953ae11eabc",
+    "title": "OScH Projects from the Community",
+    "type": "custom",
+    "url": "https://projects.openhardware.science/"
+  },
+  "41d5a5fe7217": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 6,
+    "title": "Donate",
+    "type": "custom",
+    "url": "https://www.paypal.com/donate/?hosted_button_id=DRG3NRE6EW9E2"
+  },
+  "5993277eca49": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 3,
+    "parent": "c953ae11eabc",
+    "title": "GOSH Community Ambassador Handbook",
+    "type": "custom",
+    "url": "/gosh-community-ambassador-handbook/"
+  },
+  "619f37d22a7a": {
+    "menu": "c832c23fa4de",
+    "open_in_new_tab": false,
+    "order": 1,
+    "title": "Flickr",
+    "type": "custom",
+    "url": "http://www.flickr.com/photos/goshcommunity/"
+  },
+  "630870bdf7f2": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 6,
+    "parent": "efdace843f2e",
+    "title": "Newsletter",
+    "type": "custom",
+    "url": "/newsletter/"
+  },
+  "66fabdde0659": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 1,
+    "parent": "efdace843f2e",
+    "title": "Why GOSH?",
+    "type": "custom",
+    "url": "/about/why-gosh/"
+  },
+  "7200500876ab": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 3,
+    "parent": "c121629eb8f6",
+    "title": "Regional Events Programme",
+    "type": "custom",
+    "url": "/programs/regional-events-programme/"
+  },
+  "8cfcac123290": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 2,
+    "parent": "e0d55d07ec14",
+    "title": "Community Calls",
+    "type": "custom",
+    "url": "/about/community-calls/"
+  },
+  "9590a41b66e6": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 4,
+    "parent": "c953ae11eabc",
+    "title": "Policy Briefs",
+    "type": "custom",
+    "url": "/policy-briefs/"
+  },
+  "b41f3e266dcd": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 1,
+    "parent": "c953ae11eabc",
+    "title": "Manifesto",
+    "type": "custom",
+    "url": "/gosh-manifesto/"
+  },
+  "b6f5bc8bbc85": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 2,
+    "parent": "c121629eb8f6",
+    "title": "Collaborative Development Programme",
+    "type": "custom",
+    "url": "/programs/collaborative-development-programme/"
+  },
+  "b751fbaa7e0b": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 5,
+    "parent": "c121629eb8f6",
+    "title": "Science Events Funding",
+    "type": "custom",
+    "url": "/programs/science-events/"
+  },
+  "c12104af84bf": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 1,
+    "parent": "c121629eb8f6",
+    "title": "Ambassador Program",
+    "type": "custom",
+    "url": "/programs/ambassador-program/"
+  },
+  "c121629eb8f6": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 4,
+    "title": "Programs",
+    "type": "custom",
+    "url": "/programs/"
+  },
+  "c3702165bbe6": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 5,
+    "parent": "efdace843f2e",
+    "title": "Communities",
+    "type": "custom",
+    "url": "/communities/"
+  },
+  "c953ae11eabc": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 3,
+    "title": "Resources",
+    "type": "custom",
+    "url": "#"
+  },
+  "d4747c8fa6dd": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 5,
+    "title": "Join GOSH Forum",
+    "type": "custom",
+    "url": "http://forum.openhardware.science"
+  },
+  "e0d55d07ec14": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 2,
+    "title": "Events",
+    "type": "custom",
+    "url": "#"
+  },
+  "e49c0560f151": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 3,
+    "parent": "e0d55d07ec14",
+    "title": "Welcome Calls",
+    "type": "custom",
+    "url": "/welcome-calls/"
+  },
+  "e97b8505f03c": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 2,
+    "parent": "efdace843f2e",
+    "title": "GOSH – A history (⚙️ in the making…)",
+    "type": "custom",
+    "url": "/about/gosh-history/"
+  },
+  "eef6f8e21764": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 3,
+    "parent": "efdace843f2e",
+    "title": "Code of Conduct",
+    "type": "custom",
+    "url": "/gosh-2017/gosh-code-of-conduct/"
+  },
+  "efdace843f2e": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 1,
+    "title": "About GOSH",
+    "type": "custom",
+    "url": "/about/"
+  },
+  "fa041207248d": {
+    "menu": "5e27e5dd7d41",
+    "open_in_new_tab": false,
+    "order": 5,
+    "parent": "c953ae11eabc",
+    "title": "GOSH Community Events Framework",
+    "type": "custom",
+    "url": "/gosh-community-events-framework/"
+  }
+}

@@ -1,0 +1,223 @@
+---
+// The document shell every page renders in: head (SEO, font, the one
+// stylesheet, consent-gated analytics), skip link, site header, main, site footer
+// and the overlays a migration lists in views/overlays (a popup).
+import { Font } from 'astro:assets'
+import Analytics from '../components/Analytics.astro'
+import Footer from '../components/chrome/SiteFooter.astro'
+import Header from '../components/chrome/SiteHeader.astro'
+import LanguageSwitcher from '../components/LanguageSwitcher.astro'
+import { safeHref } from '../components/kit/_shared/safe-url'
+import SEO from '../components/SEO.astro'
+import { servedPath, withBase } from '../lib/base'
+import { siteContact } from '../lib/contact'
+import { cssColor, cssLength, cssSpacing, cssWeight } from '../lib/css-size'
+import { textDirection } from '../lib/direction'
+import { copyrightOf, getSite, getStrings } from '../lib/content'
+import { onWordPress } from '../lib/features'
+import { menusAt, publicLinks } from '../lib/links'
+import { defaultLocale, feedPath, languageName, localeOf, localeTag, localizedPath, multilingual, siteLocales } from '../lib/locales'
+import { queryMap } from '../lib/redirects'
+import { describePage, documentTitle, localBusinessLd, organizationLd, websiteLd, type BusinessInput } from '../lib/seo'
+import { shareDescription, shareTitle } from '../lib/share'
+import { alternatesOf } from '../lib/site-routes'
+import { siteConfig } from '../site.config'
+import { overlays } from '../views/overlays'
+import '../styles/global.css'
+import '../styles/direction.css'
+import '../styles/chrome.css'
+import '../styles/site.css'
+
+interface Props {
+  /** The page's own title; siteConfig.titleTemplate adds the site name, unless this is the home page. */
+  title?: string | undefined
+  /** A complete document title (an SEO override), used as it is. */
+  fullTitle?: string | undefined
+  description?: string | undefined
+  /** The source's own og:title (`seo.og_title`); absent, previews show the page's title without the site suffix. */
+  ogTitle?: string | undefined
+  /** The source's own og:description (`seo.og_description`); absent, previews show the meta description. */
+  ogDescription?: string | undefined
+  /** Absolute or site-relative image for link previews. */
+  image?: string | undefined
+  /** An explicit canonical (an SEO override); the page's own address otherwise. */
+  canonical?: string | undefined
+  type?: 'website' | 'article'
+  noindex?: boolean | undefined
+  nofollow?: boolean | undefined
+  published?: Date | undefined
+  modified?: Date | undefined
+  jsonLd?: ReadonlyArray<Record<string, unknown>>
+}
+
+const { title, fullTitle: seoTitle, description, ogTitle, ogDescription, image, canonical, type, noindex, nofollow, published, modified, jsonLd = [] } = Astro.props
+// The page's locale: the one whose prefix its address is under (a site in one language has one, at the root).
+const locale = localeOf(Astro.url.pathname)
+const [site, t, [primary], footerMenus, alternates] = await Promise.all([getSite(locale), getStrings(locale), menusAt('header', locale), menusAt('footer', locale), alternatesOf(Astro.url.pathname)])
+const contact = siteContact(site, siteConfig.contact)
+const sameAs = (site.same_as ?? []).map(url => ({ label: new URL(url).hostname.replace(/^www\./, ''), href: url }))
+const social = [...sameAs, ...contact.socials.filter(link => !sameAs.some(known => known.href === link.href))]
+const origin = Astro.site ?? Astro.url
+const homePath = localizedPath(withBase('/'), locale)
+const home = new URL(homePath, origin).href
+// The source header's button and the lines beside its menu, linked like every stored link: a source page as this
+// site's path, a call or a mail as it is; a button whose target is not public is left out, a line keeps its words.
+const linkOf = await publicLinks()
+const sourceAction = siteConfig.chrome?.header?.action
+const actionHref = sourceAction ? linkOf(sourceAction.href) : undefined
+const headerAction = sourceAction && actionHref ? { label: sourceAction.label, href: actionHref } : undefined
+const headerStrip = siteConfig.chrome?.header?.strip?.items.map(line => ({ label: line.label, href: linkOf(line.href) }))
+const identity = { name: site.title, url: home, description: site.tagline, logo: site.logo, sameAs: site.same_as }
+const isHome = Astro.url.pathname === homePath
+// A latest-posts home is no entry: its SEO title and description are the site's (`site.seo`, written from the source).
+const homeSeo = isHome ? site.seo : undefined
+const fullTitle = documentTitle({ seoTitle, title, isHome, home: homeSeo, site: site.title, tagline: site.tagline, template: siteConfig.titleTemplate })
+const metaDescription = describePage({ own: description ?? homeSeo?.description, label: isHome ? undefined : title, site: site.title, tagline: site.tagline })
+const lang = site.language
+const shareImage = image ?? site.social_image
+// Two or more footer menus are columns, as the source theme's footer showed them; one is a row of links.
+const footerColumns = footerMenus.filter(menu => menu.items.length > 0)
+// The "RSS feed" link is the source's only where its footer has one (the feed file is served either way).
+const rss = siteConfig.footer?.feed === false ? undefined : { label: t('footer.rss'), href: feedPath(locale) }
+// Forms the source showed outside the page content with no place here, kept on WordPress (C5): each links to the
+// WordPress page that carries it — reachable, never silently gone. A form of a few pages (`on`: the theme builder's form
+// on /contact/) is linked at the end of those pages' content, as a form kept on WordPress is; a site-wide one (a footer
+// signup) once from the footer.
+const wordpressHost = siteConfig.features?.wordpress ? new URL(siteConfig.features.wordpress).host : ''
+const keptForms = siteConfig.features?.forms?.home === 'wordpress'
+  ? (siteConfig.features.chromeForms ?? []).flatMap((form) => {
+      const href = onWordPress(form.path)
+      return href ? [{ ...form, href }] : []
+    })
+  : []
+const footerForms = keptForms.filter(form => !form.on?.length).map(form => ({ label: t(form.role === 'newsletter' ? 'footer.subscribe_wordpress' : 'footer.form_wordpress').replace('{site}', wordpressHost), href: form.href }))
+const pageForms = keptForms.filter(form => form.on?.some(path => withBase(path) === Astro.url.pathname))
+const footerExtras = [...(rss ? [rss] : []), ...footerForms]
+// WordPress's query addresses land on the home page of a static host; a host rule (_redirects) answers
+// them with a 301 where the host reads one, and this map sends the browser on everywhere else.
+const wpQueries = Astro.url.pathname === withBase('/') ? await queryMap() : {}
+// This page in the site's other languages (hreflang), and the switcher: each language links to this page in it, or to
+// its home page where this page is not translated.
+const tagOf = (code: string) => localeTag(code) ?? lang
+const languageLinks = alternates.map(alternate => ({ hreflang: tagOf(alternate.locale), href: new URL(alternate.href, origin).href }))
+// x-default: the page in the default language, where it has one.
+const original = alternates.find(alternate => alternate.locale === defaultLocale)
+const xDefault = original ? new URL(original.href, origin).href : undefined
+const languages = multilingual
+  ? siteLocales.map(({ code }) => ({
+      tag: tagOf(code),
+      label: languageName(tagOf(code)),
+      href: alternates.find(alternate => alternate.locale === code)?.href ?? localizedPath(withBase('/'), code),
+      current: code === locale,
+    }))
+  : []
+---
+<!doctype html>
+<html lang={lang} dir={textDirection(lang)}>
+  <head>
+    <meta charset="utf-8" />
+    {Object.keys(wpQueries).length > 0 && (
+      <script is:inline define:vars={{ wpQueries }}>
+        const query = new URLSearchParams(location.search)
+        for (const [param, targets] of Object.entries(wpQueries)) {
+          const to = query.has(param) ? targets[query.get(param)] : undefined
+          if (to) { location.replace(to); break }
+        }
+      </script>
+    )}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+    <Font cssVariable="--font-inter" />
+    <Font cssVariable="--font-site-lato" preload={[{ subset: 'latin' }]} />
+    <Font cssVariable="--font-site-open-sans" preload={[{ subset: 'latin' }]} />
+    <Font cssVariable="--font-site-montserrat" preload={[{ subset: 'latin' }]} />
+    <Font cssVariable="--font-site-fontawesome" />
+    <Font cssVariable="--font-site-fontawesomebrands" />
+    <SEO
+      title={fullTitle}
+      description={metaDescription}
+      shareTitle={shareTitle({ own: ogTitle ?? homeSeo?.og_title, seoTitle, title, isHome, documentTitle: fullTitle })}
+      shareDescription={shareDescription({ own: ogDescription ?? homeSeo?.og_description, description: metaDescription })}
+      canonical={canonical ?? new URL(Astro.url.pathname, origin).href}
+      image={shareImage ? new URL(servedPath(shareImage), origin).href : undefined}
+      type={type ?? 'website'}
+      noindex={noindex}
+      nofollow={nofollow}
+      siteName={site.title}
+      locale={lang}
+      feed={feedPath(locale)}
+      alternates={languageLinks}
+      xDefault={xDefault}
+      published={published}
+      modified={modified}
+      jsonLd={[websiteLd(identity), organizationLd(identity), ...(isHome ? [localBusinessLd(identity, (site as { business?: BusinessInput }).business)].filter(thing => thing !== undefined) : []), ...jsonLd]}
+    />
+    <Analytics />
+  </head>
+  <body class="flex min-h-dvh flex-col bg-page font-sans text-ink antialiased">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-surface">
+      {t('nav.skip')}
+    </a>
+    <LanguageSwitcher languages={languages} />
+    <Header
+      siteName={site.title}
+      logo={site.logo ? { src: site.logo, alt: '' } : undefined}
+      showName={!site.logo}
+      tagline={siteConfig.chrome?.tagline ? site.tagline : undefined}
+      brandSize={siteConfig.chrome?.brand}
+      bordered={siteConfig.chrome?.header?.border === false ? false : undefined}
+      position={siteConfig.chrome?.header?.sticky ? 'sticky' : undefined}
+      brandWeight={cssWeight(siteConfig.chrome?.header?.brandWeight)}
+      brandTracking={cssSpacing(siteConfig.chrome?.header?.brandTracking)}
+      offsetTop={cssLength(siteConfig.chrome?.header?.offsetTop)}
+      padTop={cssLength(siteConfig.chrome?.header?.padTop)}
+      padBottom={cssLength(siteConfig.chrome?.header?.padBottom)}
+      linkNav={siteConfig.chrome?.navLinks}
+      brandColor={cssColor(siteConfig.chrome?.brandColor)}
+      menu={siteConfig.chrome?.menu}
+      action={headerAction}
+      strip={headerStrip}
+      search={siteConfig.chrome?.header?.search ? { action: withBase('/search/'), label: t('search.label'), placeholder: t('search.placeholder'), submitLabel: t('search.submit') } : undefined}
+      homeHref={homePath}
+      items={primary?.items ?? []}
+      navLabel={primary?.name ?? t('nav.label')}
+      menuLabel={t('nav.menu')}
+      closeLabel={t('nav.close')}
+    />
+    <main id="main" class="flex-1">
+      <slot />
+      {pageForms.length > 0 && (
+        <div class="container-prose flex flex-col gap-6 py-12">
+          {pageForms.map((form, index) => (
+            <div class="cr-form-mount block" data-cr-part="form" data-state="wordpress">
+              <p class="cr-form-note" id={`cr-kept-form-${index}`}>{t('form.wordpress_note').replace('{site}', wordpressHost)}</p>
+              <p class="cr-actions"><a href={safeHref(form.href)} class="cr-form-link" aria-describedby={`cr-kept-form-${index}`}>{t('form.wordpress')}</a></p>
+            </div>
+          ))}
+        </div>
+      )}
+    </main>
+    <Footer
+      siteName={site.organization ?? site.title}
+      homeHref={homePath}
+      tagline={site.tagline}
+      copyright={copyrightOf(site.copyright)}
+      border={siteConfig.footer?.border}
+      align={siteConfig.chrome?.footerAlign}
+      pack={siteConfig.chrome?.footerColumns ? 'end' : undefined}
+      packGap={siteConfig.chrome?.footerColumns ? `${siteConfig.chrome.footerColumns.gap}px` : undefined}
+      narrow={siteConfig.chrome?.footerColumns?.narrowGap !== undefined ? 'row' : undefined}
+      packGapNarrow={siteConfig.chrome?.footerColumns?.narrowGap !== undefined ? `${siteConfig.chrome.footerColumns.narrowGap}px` : undefined}
+      linkSize={siteConfig.chrome?.footerColumns?.size ? `${siteConfig.chrome.footerColumns.size}px` : undefined}
+      linkSizeNarrow={siteConfig.chrome?.footerColumns?.narrowSize ? `${siteConfig.chrome.footerColumns.narrowSize}px` : undefined}
+      layout={footerColumns.length > 1 ? 'columns' : 'simple'}
+      columns={footerColumns.map((menu, index) => ({ label: menu.title ? undefined : menu.name, title: menu.title, titleHref: menu.titleHref, links: index === footerColumns.length - 1 && footerExtras.length ? [...menu.items, ...footerExtras] : menu.items }))}
+      links={[...(footerColumns[0]?.items ?? []), ...footerExtras]}
+      social={social}
+      contact={contact}
+      navLabel={footerColumns[0]?.title ?? footerColumns[0]?.name ?? t('nav.footer')}
+    />
+    {overlays.map(Overlay => <Overlay />)}
+  </body>
+</html>

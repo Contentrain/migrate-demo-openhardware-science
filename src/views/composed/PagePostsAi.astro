@@ -1,0 +1,160 @@
+---
+// A GOSH news note laid out as a printed report leaflet: a purple accent tile
+// holding the note's category and date beside a wide headline, then the note on
+// one inset reading axis, its meta, the previous and next note, the comment
+// thread and more notes.
+import { formatDay } from '../../lib/dates'
+import { getEntry } from 'astro:content'
+import KitImage from '../../components/kit/_shared/KitImage.astro'
+import PostMeta from '../../components/PostMeta.astro'
+import Prose from '../../components/kit/prose/Prose.astro'
+import StudioComments from '../../components/studio/StudioComments.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { authorHref, byId, getPosts, getSite, getStrings, imageOf, postHref, resolve, termHref, type Post } from '../../lib/content'
+import { cssSize } from '../../lib/css-size'
+import { servedPath, withBase } from '../../lib/base'
+import { publicHtml } from '../../lib/links'
+import { entryRef, localeOf, localizedPath } from '../../lib/locales'
+import { articleLd, breadcrumbLd, pageTrail, summarize } from '../../lib/seo'
+import { siteConfig } from '../../site.config'
+import { safeHref } from '../../components/kit/_shared/safe-url'
+
+interface Props {
+  post?: Post | undefined
+}
+
+const given = Astro.props.post
+if (!given) throw new Error('PagePostsAi: a post is required')
+const post: Post = given
+const pageLocale = localeOf(Astro.url.pathname)
+const { data } = post
+const [site, t, author, categories, tags, cover, categoryMap, tagMap, body, posts] = await Promise.all([
+  getSite(pageLocale),
+  getStrings(pageLocale),
+  data.author ? getEntry(data.author) : undefined,
+  resolve(data.categories),
+  resolve(data.tags),
+  data.cover ? getEntry(data.cover) : undefined,
+  byId('categories'),
+  byId('tags'),
+  publicHtml(data.body, pageLocale),
+  getPosts(pageLocale),
+])
+const layout = siteConfig.post
+const at = posts.findIndex(other => other.id === post.id)
+const previous = layout.adjacent && at >= 0 ? posts[at + 1] : undefined
+const next = layout.adjacent && at > 0 ? posts[at - 1] : undefined
+const more = posts.filter(other => layout.moreIncludesCurrent || other.id !== post.id).slice(0, layout.more)
+const locale = site.language
+const url = new URL(postHref(post, categoryMap), Astro.site ?? Astro.url).href
+const description = data.seo?.description ?? data.excerpt ?? summarize(data.body)
+const image = data.seo?.image ?? cover?.data.url
+const formatDate = (date: Date) => formatDay(date, locale)
+const home = { name: site.title, url: new URL(localizedPath(withBase('/'), pageLocale), Astro.site ?? Astro.url).href }
+const crumbs = [...categories.slice(0, 1).map(category => ({ name: category.data.name, url: new URL(termHref('category', category, categoryMap), Astro.site ?? Astro.url).href })), { name: data.title, url }]
+const updated = data.modified_at && data.published_at && data.modified_at.getTime() - data.published_at.getTime() > 86_400_000
+// The source's post header prints the author, date and categories under the title; the cover where the layout names it.
+const showCover = layout.header.includes('cover') ? cover : undefined
+const showTile = categories.length > 0 || !!data.published_at
+---
+<BaseLayout
+  title={data.title}
+  fullTitle={data.seo?.title}
+  ogTitle={data.seo?.og_title}
+  ogDescription={data.seo?.og_description}
+  description={description}
+  image={image}
+  canonical={data.seo?.canonical}
+  type="article"
+  noindex={data.seo?.noindex}
+  nofollow={data.seo?.nofollow}
+  published={data.published_at}
+  modified={data.modified_at}
+  jsonLd={[articleLd(home, {
+    url,
+    headline: data.title,
+    description,
+    image: image ? new URL(servedPath(image), Astro.site ?? Astro.url).href : undefined,
+    published: data.published_at,
+    modified: data.modified_at,
+    author: author ? { name: author.data.name, url: new URL(authorHref(author, pageLocale), Astro.site ?? Astro.url).href } : undefined,
+    section: categories[0]?.data.name,
+    keywords: tags.map(tag => tag.data.name),
+  }), breadcrumbLd(pageTrail(home, crumbs))]}
+>
+  <article data-cr-post aria-labelledby="post-title">
+    <header class="container-page pt-10 md:pt-16">
+      <div class:list={['grid gap-6 border-t-2 border-ink pt-6 md:gap-10', showTile && 'md:grid-cols-[minmax(0,15rem)_minmax(0,1fr)]']}>
+        {showTile && (
+          <div class="flex flex-col justify-between gap-5 bg-accent p-5 text-accent-ink md:min-h-40">
+            {categories.length > 0 && (
+              <p class="flex flex-col gap-1 text-sm font-semibold" data-kit-meta>
+                {categories.map(category => <a href={safeHref(termHref('category', category, categoryMap))} class="text-accent-ink underline decoration-1 underline-offset-4 hover:no-underline">{category.data.name}</a>)}
+              </p>
+            )}
+            {data.published_at && (
+              <time datetime={data.published_at.toISOString()} class="font-[family-name:var(--font-site-montserrat)] text-2xl leading-tight font-extrabold tracking-tight">{formatDate(data.published_at)}</time>
+            )}
+          </div>
+        )}
+        <div class="flex flex-col justify-end">
+          <h1 id="post-title" class="m-0! font-[family-name:var(--font-site-montserrat)] text-[length:var(--text-heading-2)]! leading-[1.1]! font-extrabold tracking-[-0.03em] text-balance text-ink">{data.title}</h1>
+          {(author || updated) && (
+            <p class="mt-5 flex flex-wrap items-center gap-x-2 text-ink-muted" data-kit-meta>
+              {author && <span>{t('post.by')} <a href={safeHref(authorHref(author, pageLocale))} class="font-semibold text-ink underline-offset-4 hover:underline">{author.data.name}</a></span>}
+              {updated && data.modified_at && (
+                <span class="text-sm">({t('post.updated')} <time datetime={data.modified_at.toISOString()}>{formatDate(data.modified_at)}</time>)</span>
+              )}
+            </p>
+          )}
+        </div>
+      </div>
+    </header>
+    {showCover && (
+      <figure class="container-page mt-10 md:mt-12">
+        <KitImage image={imageOf(showCover)} priority sizes="(min-width: 1280px) 1200px, 100vw" class="aspect-[16/9] max-h-[36rem] w-full rounded-none object-cover" />
+        {showCover.data.caption && <figcaption class="mt-3 border-s-2 border-accent ps-3 text-sm text-ink-muted">{showCover.data.caption}</figcaption>}
+      </figure>
+    )}
+    <div class="container-prose py-12 md:py-16">
+      {body && <div class="max-w-full overflow-x-auto"><Prose html={body} /></div>}
+      {layout.meta ? (
+        <PostMeta
+          meta={layout.meta}
+          date={data.published_at}
+          author={author ? { label: author.data.name, href: authorHref(author, pageLocale) } : undefined}
+          terms={categories.map(category => ({ label: category.data.name, href: termHref('category', category, categoryMap) }))}
+          tags={tags.map(tag => ({ label: tag.data.name, href: termHref('tag', tag, tagMap) }))}
+          locale={locale}
+        />
+      ) : tags.length > 0 && (
+        <footer class="mt-12 flex flex-wrap items-center gap-2 border-t border-line pt-6">
+          <span class="text-sm text-ink-muted">{t('post.tags')}:</span>
+          {tags.map(tag => <a href={safeHref(termHref('tag', tag, tagMap))} class="inline-flex min-h-11 items-center border border-line px-3 text-sm text-ink no-underline hover:border-accent hover:text-accent-text">{tag.data.name}</a>)}
+        </footer>
+      )}
+      {(previous || next) && (
+        <nav aria-label={t('post.adjacent')} data-cr-part="post-navigation" class="mt-12 grid gap-4 border-t-2 border-ink pt-6 sm:grid-cols-2" style={cssSize(layout.adjacentText)}>
+          {previous ? <a href={safeHref(postHref(previous, categoryMap))} rel="prev" class="font-semibold text-ink underline-offset-4 hover:underline"><span aria-hidden="true" class="inline-block rtl:-scale-x-100">←</span> {previous.data.title}</a> : <span />}
+          {next && <a href={safeHref(postHref(next, categoryMap))} rel="next" class="font-semibold text-ink underline-offset-4 hover:underline sm:text-end">{next.data.title} <span aria-hidden="true" class="inline-block rtl:-scale-x-100">→</span></a>}
+        </nav>
+      )}
+      <StudioComments model="posts" {...entryRef(post)} open={data.comments_open} />
+    </div>
+  </article>
+  {more.length > 0 && (
+    <section aria-labelledby="more-posts" data-cr-part="related" class="bg-surface-muted py-12 md:py-16">
+      <div class="container-page">
+        <h2 id="more-posts" class="mb-6 font-[family-name:var(--font-site-montserrat)] text-2xl font-extrabold tracking-[-0.03em] text-ink">{t('post.more')}</h2>
+        <ul class:list={['grid gap-x-8 sm:grid-cols-2 lg:grid-cols-4', siteConfig.lists.tone === 'muted' && 'text-ink-muted']}>
+          {more.map(other => (
+            <li class="flex flex-col gap-2 border-t-2 border-ink py-4">
+              {other.data.published_at && <time datetime={other.data.published_at.toISOString()} class="text-sm text-ink-muted">{formatDate(other.data.published_at)}</time>}
+              <a href={safeHref(postHref(other, categoryMap))} class="text-lg leading-snug font-semibold text-ink no-underline hover:underline" style={cssSize(layout.moreText)}>{other.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+</BaseLayout>

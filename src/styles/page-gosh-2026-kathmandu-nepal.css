@@ -1,0 +1,169 @@
+/* GOSH 2026 Kathmandu: the date line as a solid GOSH-purple tile, the host beside the Durbar Square photographs,
+   the details as a report grid, travel as a report page in the reading column. Tokens only. */
+.gk-band {
+  padding-block: clamp(3rem, 2rem + 4vw, 6rem);
+}
+
+.gk-band--flush {
+  padding-block: 0;
+}
+
+/* The announcement: one readable heading scale, not the display size a short headline would take. */
+.gk-page .gk-hero [data-kit-section="hero"] h1 {
+  font-size: clamp(1.5rem, 1.05rem + 1.5vw, 2.375rem);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  max-width: 30ch;
+}
+
+/* The device: the date and the city as a solid purple tile, the report's cover stamp. */
+.gk-page .gk-hero [data-kit-section="hero"] p {
+  display: inline-block;
+  max-width: 22ch;
+  margin-top: 1.75rem;
+  padding: clamp(1.25rem, 0.9rem + 1.5vw, 2rem);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-family: var(--font-site-montserrat, inherit);
+  font-size: var(--text-heading-2);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.gk-place {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (width >= 48rem) {
+  .gk-place {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: 3rem;
+  }
+}
+
+.gk-host {
+  border-top: 0.125rem solid var(--color-ink);
+  padding-top: 1rem;
+}
+
+.gk-host .prose,
+.gk-host .prose :is(p, a) {
+  font-family: var(--font-site-montserrat, inherit);
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.gk-host .prose a {
+  color: var(--color-accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+}
+
+.gk-photos .prose {
+  display: grid;
+  gap: 1.5rem;
+  max-width: none;
+}
+
+@media (width >= 48rem) {
+  .gk-photos .prose {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+  }
+}
+
+.gk-photos .prose > *,
+.gk-photos .prose img {
+  margin: 0;
+}
+
+.gk-photos .prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+.gk-page [data-kit-section="card-grid"] :is(h2, h3) {
+  font-family: var(--font-site-montserrat, inherit);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.gk-notes {
+  display: grid;
+  gap: 1.5rem;
+  border-top: 1px solid var(--color-line);
+  padding-top: 1.5rem;
+}
+
+@media (width >= 48rem) {
+  .gk-notes {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+}
+
+.gk-notes .prose ul {
+  list-style: none;
+  padding-inline-start: 0;
+  margin: 0;
+}
+
+.gk-notes .prose li {
+  padding-inline-start: 0;
+  margin: 0;
+}
+
+.gk-notes .prose li::marker {
+  content: none;
+}
+
+.gk-notes .prose > :first-child {
+  margin-top: 0;
+}
+
+.gk-notes .prose img {
+  max-width: 16rem;
+  height: auto;
+  margin-block: 0.75rem;
+}
+
+.gk-travel .prose h2 {
+  font-family: var(--font-site-montserrat, inherit);
+  font-size: var(--text-heading-2);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+.gk-travel .prose img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  margin: 0;
+}
+
+.gk-travel .prose > :is(p, figure):has(img) {
+  margin: 0 0 2.5rem;
+}
+
+.gk-closing .prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+}
+
+.gk-closing .prose p {
+  margin: 0;
+}

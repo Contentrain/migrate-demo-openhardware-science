@@ -1,0 +1,20 @@
+{
+  "day_1_wednesday": {
+    "markdown": "### Day 1 (Wednesday): LEARN\n\n08:30 – 09:30 – Breakfast 09:30 – 10:15 – Introduction to GOSH 2018: organizers, Code of Conduct, history 10:15 – 11:15 – Speed Meeting – participants get to know each other 11:15 – 13:00 – Lunch + Tabling 13:00 – 14:00 – Topic session I: LEARN 14:00 – 14:30 – GOSH Roadmap, history and future (past discussions [here](https://forum.openhardware.science/t/gosh-initiated-projects-and-collaborations-to-be-growing/) and [here](https://forum.openhardware.science/t/important-has-gosh-changed-your-life-have-you-published-or-presented-gosh-somewhere-please-tell-us)) 14:30 – 16:00 – Unconference explanation, brainstorm, assigning sessions — 10 minute break — 16:10 – 16:30 – Short facilitation training 16:30 – 17:15 – Unconference session (short 45m) 17:15 – 17:40 – Q\\&A, Open Discussion 19:00 – 23:00 – Organized social dinner, Kickstarter sponsored reception"
+  },
+  "day_2_thursday": {
+    "markdown": "### Day 2 (Thursday): SUPPORT\n\n08:00 – 09:00 – Breakfast 09:00 – 10:00 – Topic Session II: SUPPORT 10:00 – 11:10 – Unconference session — 15 minute break — 11:25 – 12:35 – Unconference session — Lunch — 13:35 – 15:00 – Unconference session — 15 minute break — 15:15 – 16:40 – Unconference session — 10 minute break — 16:50 – 17:30 – Q\\&A, Open Discussion 19:00 – Self-organized dinner"
+  },
+  "day_3_friday": {
+    "markdown": "### Day 3: (Friday): GROW\n\n08:00 – 09:00 – Breakfast 09:00 – 10:00 – Topic Session III: GROW 10:00 – 11:10 – Unconference session — 15 minute break — 11:25 – 12:35 – Unconference session — Lunch — 13:35 – 15:00 – Unconference sessions — 15 minute break — 15:15 – People w/ booths go to X Factory early 15:15 – 16:40 – Unconference sessions 16:40 – 17:30 – Everyone else travel to X factory 17:30 – 18:30 – X Factory reception + tour for GOSH participants 18:30 → 21:30 – Public Facing event at X-Factory. [link for details](https://docs.google.com/document/d/1aNZwCDEiBCg3r1NpU7QWWiOsIgQswh2EmgJAVUT8npc/edit#)"
+  },
+  "day_4_saturday": {
+    "markdown": "### Day 4 (Saturday): ACTIONS\n\n08:00 – 09:00 – Breakfast 09:00 – 10:10 – Unconference session — 15 minute break — 10:25 – 11:35 – Unconference session — 15 minute break — 11:50 – 13:00 – Unconference session — Lunch — 14:00 – 15:00 – Topic Session IV: Actions / Roadmap 15:00 – 17:00 – How we move forward, update / adjust Roadmap 17:00 – 17:30 – Q\\&A, open discussion, wrap-up, group photo and goodbye! 17:30 – 18:30 – Open Floor"
+  },
+  "post_gosh": {
+    "markdown": "### Post-GOSH\n\nIndividually organized events by participants, meetups, making, etc. [https://forum.openhardware.science/c/gosh-2018/related-activities](https://forum.openhardware.science/c/gosh-2018/related-activities)"
+  },
+  "pre_gosh": {
+    "markdown": "### Pre-GOSH\n\n13:00 – Leave from hotel to visit Huaqiangbei Electronics Market 14:00 – 15:00 – Tour of HAX (near Huaqiangbei Market)\n\nIndependently organized events, discussed on the forum [here](https://forum.openhardware.science/t/pre-gosh-activities-in-shenzhen/981/44), [here](https://forum.openhardware.science/t/pre-gosh-open-soil-research/1300), [here](https://forum.openhardware.science/t/pre-gosh-collaborative-fabrication-meetings/1290) and [elsewhere on the forum.](http://forum.openhardware.science)"
+  }
+}

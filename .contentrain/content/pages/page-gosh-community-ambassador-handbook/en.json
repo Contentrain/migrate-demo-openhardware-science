@@ -1,0 +1,24 @@
+{
+  "handbook_available_three": {
+    "actions": [
+      {
+        "href": "https://zenodo.org/records/12684198",
+        "label": "English"
+      },
+      {
+        "href": "https://zenodo.org/records/12706851",
+        "label": "Spanish"
+      },
+      {
+        "href": "https://zenodo.org/records/12727807",
+        "label": "French"
+      }
+    ],
+    "body": "Cover of the GOSH Ambassador Handbook. Source: [GOSH Community on Zenodo](https://zenodo.org/records/12684198).\n\n“We intend for this guide to assist not only those who are part of the GOSH ambassador program, but anyone who wishes to bring open science hardware and its applications into their organisations and communities. Together, we can make open science hardware ubiquitous!”\n\nPage 6, GOSH Community Ambassador Handbook\n\nThe Gathering for Open Science Hardware (GOSH) Community Ambassador Handbook is the result of several writing workshops with members of the GOSH Community and the [GOSH Ambassador Program Working Group (WG).](https://forum.openhardware.science/g/Ambassador-WG?asc=true) It is designed to support not only GOSH Ambassadors, but anyone interested in promoting open science hardware within their organisations and communities.\n\nThe need for the GOSH Ambassador Handbook came from the 2022 Gathering, where participants highlighted the need for a resource that details how to best represent the GOSH community. Whether you are already part of the GOSH Ambassador Program or looking to bring the principles of open science hardware to your community, this handbook is for you.",
+    "heading": "The handbook is available in three languages: English, Spanish, and French.",
+    "image": {
+      "alt": "The handbook is available in three languages: English, Spanish, and French.",
+      "src": "/media/2024/07/Screen-Shot-2024-07-31-at-3.21.46-pm.png"
+    }
+  }
+}

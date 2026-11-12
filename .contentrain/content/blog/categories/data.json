@@ -1,0 +1,104 @@
+{
+  "1c8f4ff5cf8b9914fb7f3336": {
+    "name": "GOSH! News",
+    "slug": "gosh-news",
+    "wp_id": 3
+  },
+  "24966f22e662c4fe2a04cb89": {
+    "name": "GOSH! 2016 Sessions",
+    "slug": "gosh-2016-sessions",
+    "wp_id": 2
+  },
+  "2781de67c9f8b1146e940051": {
+    "name": "Microscopes",
+    "parent": "fc9c6720cda45a5c2d20c8a8",
+    "slug": "microscopes-open-science-hardware",
+    "wp_id": 24
+  },
+  "2dc8011e6ecc3d213700513f": {
+    "name": "Publications",
+    "slug": "publications",
+    "wp_id": 5
+  },
+  "313ee239294f763618009362": {
+    "name": "SDGs",
+    "slug": "sdgs",
+    "wp_id": 42
+  },
+  "3bd75b2f875be4030c5184d0": {
+    "name": "DistDoc",
+    "slug": "distdoc",
+    "wp_id": 86
+  },
+  "4cf7f6f3a2721c7d98104323": {
+    "name": "GOSH Roadmap",
+    "slug": "gosh-roadmap",
+    "wp_id": 28
+  },
+  "57f50dab3c7bfec85b23db0e": {
+    "name": "GOSH Council Member",
+    "slug": "gosh-council-member",
+    "wp_id": 123
+  },
+  "5913896eaca9ae94b97a4ca0": {
+    "name": "Uncategorised",
+    "slug": "uncategorised",
+    "wp_id": 6
+  },
+  "7838b52bc313da1dda8ef12f": {
+    "name": "Opportunities",
+    "slug": "opportunities",
+    "wp_id": 21
+  },
+  "8d3bffe9c2e6d66ee264eeaa": {
+    "name": "GOSH Manifesto",
+    "slug": "gosh-manifesto",
+    "wp_id": 26
+  },
+  "944bf33f713f647c1e1b07c0": {
+    "name": "Uncategorized",
+    "slug": "uncategorized",
+    "wp_id": 1
+  },
+  "97624a8bbc2e077f2c54d435": {
+    "name": "Day 1",
+    "parent": "24966f22e662c4fe2a04cb89",
+    "slug": "day-1",
+    "wp_id": 7
+  },
+  "97ea0ab44f8a1ee5c586f88b": {
+    "name": "Microscopes",
+    "slug": "microscopes",
+    "wp_id": 22
+  },
+  "a0c0b0c60c4fb711a53865f8": {
+    "name": "Events",
+    "slug": "events",
+    "wp_id": 25
+  },
+  "a2913bb9f4a4bb2da0258553": {
+    "name": "Open Science Hardware News",
+    "slug": "open-science-hardware-news",
+    "wp_id": 4
+  },
+  "b018db7d0e4bd9546d1192ea": {
+    "name": "Press Coverage",
+    "slug": "press-coverage",
+    "wp_id": 27
+  },
+  "c95d257676cbe2e1ec3f9501": {
+    "name": "Presentations",
+    "slug": "presentations",
+    "wp_id": 20
+  },
+  "e18ee68c657c338e1a0a6db3": {
+    "name": "GOSH Profiles",
+    "slug": "gosh-profiles",
+    "wp_id": 87
+  },
+  "fc9c6720cda45a5c2d20c8a8": {
+    "name": "Open Science Hardware",
+    "slug": "open-science-hardware",
+    "wp_id": 23
+  }
+}

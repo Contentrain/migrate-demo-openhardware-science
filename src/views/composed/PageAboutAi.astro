@@ -1,0 +1,56 @@
+---
+// The About page as a printed report: the mission on a narrow reading axis, closed by its pledge as a pull
+// statement, then the organising committees of each gathering set as a masthead — solid GOSH-purple tiles
+// over lavender columns of names. All text is the page entry's markdown, rendered by the kit's Prose.
+import { getEntry } from 'astro:content'
+import Prose from '../../components/kit/prose/Prose.astro'
+import { type Page } from '../../lib/content'
+import { fitHeadings, headingLevels } from '../../lib/headings'
+import { publicHtml } from '../../lib/links'
+import ComposedPage from '../ComposedPage.astro'
+
+interface Props {
+  page: Page
+  trail: Array<{ title: string, href: string }>
+  isHome: boolean
+}
+
+const { page, trail } = Astro.props
+const isHome = false
+const pageAbout = await getEntry('pageAbout', 'en')
+if (!pageAbout) throw new Error('page-about is missing: the page\'s sections are its fields')
+const { gosh_2018_organizing: gosh2018Organizing } = pageAbout.data
+const gosh2018OrganizingHtml = await publicHtml(gosh2018Organizing?.html)
+const prose0 = headingLevels(gosh2018Organizing?.markdown, 1)
+
+// The report's layout, on the elements Prose renders (paragraphs, the committee headings, their lists).
+const report = [
+  // reading axis
+  '[&>p]:mx-auto [&>p]:max-w-[42rem] [&>p]:text-[length:1.125rem]! [&>p]:leading-[1.6]!',
+  '[&>p:first-of-type]:text-[length:var(--text-lead)]! [&>p:first-of-type]:leading-[1.45]! [&>p:first-of-type]:text-ink',
+  // the pledge: the last paragraph, a pull statement
+  '[&>p:last-of-type]:mt-12 [&>p:last-of-type]:border-s-4 [&>p:last-of-type]:border-accent [&>p:last-of-type]:ps-6',
+  '[&>p:last-of-type]:[font-family:var(--font-display,var(--font-site-montserrat))] [&>p:last-of-type]:text-[length:clamp(1.375rem,1.1rem+1vw,1.875rem)]! [&>p:last-of-type]:leading-[1.25]! [&>p:last-of-type]:font-extrabold [&>p:last-of-type]:tracking-[-0.02em] [&>p:last-of-type]:text-ink',
+  // committee headings: solid accent tiles
+  '[&>:is(h2,h3,h4,h5,h6)]:mb-0! [&>:is(h2,h3,h4,h5,h6)]:mt-12! [&>:is(h2,h3,h4,h5,h6)]:bg-accent [&>:is(h2,h3,h4,h5,h6)]:px-6 [&>:is(h2,h3,h4,h5,h6)]:py-5 [&>:is(h2,h3,h4,h5,h6)]:text-accent-ink!',
+  '[&>:is(h2,h3,h4,h5,h6)]:[font-family:var(--font-display,var(--font-site-montserrat))] [&>:is(h2,h3,h4,h5,h6)]:text-[length:1rem]! [&>:is(h2,h3,h4,h5,h6)]:leading-[1.35]! [&>:is(h2,h3,h4,h5,h6)]:font-bold! [&>:is(h2,h3,h4,h5,h6)]:uppercase [&>:is(h2,h3,h4,h5,h6)]:tracking-[0.02em]! [&>:is(h2,h3,h4,h5,h6)]:text-balance',
+  // committee lists: lavender columns of names
+  '[&>ul]:m-0! [&>ul]:list-none! [&>ul]:bg-surface-muted [&>ul]:px-6! [&>ul]:py-5! [&>ul]:text-[length:1rem]! [&>ul]:leading-[1.45]! [&>ul]:text-ink',
+  '[&>ul>li]:my-0! [&>ul>li]:ps-0! [&>ul>li]:py-2 [&>ul>li+li]:border-t [&>ul>li+li]:border-[color:rgb(76_13_135_/_0.18)]',
+  'md:[&>ul]:columns-2 md:[&>ul]:gap-8 lg:[&>ul]:columns-1 [&>ul>li]:break-inside-avoid',
+  // the masthead: one committee per column from lg
+  'lg:grid lg:grid-cols-3 lg:grid-flow-row-dense lg:gap-x-6 lg:items-start',
+  'lg:[&>p]:col-span-full',
+  'lg:[&>:is(h2,h3,h4,h5,h6):nth-of-type(3n+1)]:col-start-1 lg:[&>ul:nth-of-type(3n+1)]:col-start-1',
+  'lg:[&>:is(h2,h3,h4,h5,h6):nth-of-type(3n+2)]:col-start-2 lg:[&>ul:nth-of-type(3n+2)]:col-start-2',
+  'lg:[&>:is(h2,h3,h4,h5,h6):nth-of-type(3n)]:col-start-3 lg:[&>ul:nth-of-type(3n)]:col-start-3',
+  'lg:[&>:is(h2,h3,h4,h5,h6)]:self-stretch lg:[&>ul]:self-stretch',
+].join(' ')
+---
+<ComposedPage page={page} trail={trail} isHome={isHome}>
+  {gosh2018Organizing && (
+    <div class="container-page pt-8 pb-24 md:pb-32" data-cr-fit data-cr-shift={prose0.shift}>
+      <Prose html={gosh2018OrganizingHtml} markdown={fitHeadings(prose0.markdown)} class={report} />
+    </div>
+  )}
+</ComposedPage>

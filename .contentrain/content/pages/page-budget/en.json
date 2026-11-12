@@ -1,0 +1,30 @@
+{
+  "sponsors": {
+    "items": [
+      {
+        "image": "/media/2017/02/Sloan-Logo-stacked-black-web.png",
+        "image_alt": "Alfred P Sloan Foundation – $125,000",
+        "title": "Alfred P Sloan Foundation – $125,000"
+      },
+      {
+        "href": "http://mzl.la/devsurvey",
+        "image": "/media/2017/03/bitmap.png",
+        "image_alt": "Mozilla logo",
+        "link_label": "Dev Survey",
+        "text": "At Mozilla, we’re a global community of technologists, thinkers and builders working together so people worldwide can be informed contributors and creators of the Web. Our mission is to ensure the Internet is a global public resource, open and accessible to all, where individuals can shape their own experience and are empowered, safe and independent. Want to say thanks to Mozilla? Take a moment to complete the Dev Survey.",
+        "title": "Mozilla – $1000"
+      },
+      {
+        "href": "http://www.journals.elsevier.com/hardwarex",
+        "image": "/media/2017/03/739118.gif",
+        "image_alt": "HardwareX journal waives open access fee for GOSH 2017 participants",
+        "text": "HardwareX is an open access journal established to promote free and open source designing, building and customizing of scientific infrastructure (hardware). HardwareX aims to recognize researchers for the time and effort in developing scientific infrastructure while providing end-users with sufficient information to replicate and validate the advances presented.\n\nThe open access fee shall be waived for participants of GOSH 2017. Find out more, or submit your own hardware design at www.journals.elsevier.com/hardwarex",
+        "title": "HardwareX – $500"
+      }
+    ],
+    "title": "Sponsors"
+  },
+  "text": {
+    "markdown": "We aim to foster an open and transparent community so the GOSH Budget is posted below – if you have any questions or concerns please email the organizers@openhardware.science\n\nItem\n\nCost (USD)\n\nVenue: Anacleto Angelini UC Innovation Center, Pontificia Universidad Católica de Chile\n\n0\n\nTotal hosting costs (accommodation, catering)\n\n34,000\n\nTravel for pre-conference planning and logistics\n\n2,800\n\nTravel for attendees\n\n110,300\n\nOther organisational costs\n\n8,250\n\nAdministrative Overhead at 5% of overall budget\n\n7,768\n\nTotal Budget\n\n163,118"
+  }
+}

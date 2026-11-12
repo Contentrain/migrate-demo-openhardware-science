@@ -1,0 +1,144 @@
+---
+// /gosh-2017/ set as a printed report: a banner cover with an index of the event's outputs, the report body in
+// the reading column, the ways to take part, Santiago beside the community report, and the Final Report as one
+// solid purple tile. Every word and picture comes from the page entry.
+import { getEntry } from 'astro:content'
+import CardGrid from '../../components/kit/card-grid/CardGrid.astro'
+import Embed from '../../components/kit/embed/Embed.astro'
+import Hero from '../../components/kit/hero/Hero.astro'
+import Prose from '../../components/kit/prose/Prose.astro'
+import ReportCover from '../../components/page-gosh-2017/ReportCover.astro'
+import { getStrings, type Page } from '../../lib/content'
+import { headingFit } from '../../lib/heading-fit'
+import { fitHeadings, headingLevels } from '../../lib/headings'
+import { publicHtml, publicLinks } from '../../lib/links'
+import ComposedPage from '../ComposedPage.astro'
+import '../../styles/page-gosh-2017.css'
+
+interface Props {
+  page: Page
+  trail: Array<{ title: string, href: string }>
+  isHome: boolean
+}
+
+const { page, trail } = Astro.props
+const isHome = false
+const t = await getStrings()
+const publicHref = await publicLinks()
+const pageGosh2017Section = await getEntry('pageGosh2017', 'en')
+if (!pageGosh2017Section) throw new Error('page-gosh-2017 is missing: the page\'s sections are its fields')
+const { hero, text, card_grid: cardGrid, card_grid_more: cardGridMore, embed, embed_note: embedNote, gosh_2017_final: gosh2017Final, gosh_2017_final_more: gosh2017FinalMore } = pageGosh2017Section.data
+const heroActions = (hero?.actions ?? []).flatMap(item => { const href = publicHref(item.href); return href === undefined ? [] : [{ href, label: item.label, newTab: item.new_tab, style: item.style }] })
+const heroItems = (hero?.items ?? []).map(item => ({ href: publicHref(item.href), linkLabel: item.link_label, media: item.media, mediaAlt: item.media_alt, meta: item.meta, points: item.points, text: item.text, title: item.title, value: item.value }))
+const textHtml = await publicHtml(text?.html)
+const h2Above1 = !!(hero && (!!hero?.heading?.trim() || (hero?.items?.length ?? 0) > 0))
+const prose0 = headingLevels(text?.markdown, h2Above1 ? 2 : 1)
+const cardGridItems = (cardGrid?.items ?? []).map(item => ({ eyebrow: item.eyebrow, href: publicHref(item.href), icon: item.icon, image: item.image, imageAlt: item.image_alt, linkLabel: item.link_label, text: item.text, title: item.title }))
+const h2Above3 = h2Above1 || prose0.top !== undefined
+const words2 = headingLevels([cardGrid?.title?.trim() ? `## ${cardGrid.title.trim()}` : undefined, cardGrid?.intro].filter(Boolean).join('\n\n'), h2Above3 ? 2 : 1)
+const h2Above5 = h2Above3 || (cardGrid && (cardGridItems?.length ?? 0) > 0 ? (!!cardGrid?.title?.trim() || (cardGrid?.items?.length ?? 0) > 0) : words2.top !== undefined)
+const prose4 = headingLevels(cardGridMore?.markdown, h2Above5 ? 2 : 1)
+const embedUrl = publicHref(embed?.url)
+const embedNoteHtml = await publicHtml(embedNote?.html)
+const h2Above7 = h2Above5 || prose4.top !== undefined || !!(embed && (!!embed?.title?.trim()))
+const prose6 = headingLevels(embedNote?.markdown, h2Above7 ? 2 : 1)
+const gosh2017FinalActions = (gosh2017Final?.actions ?? []).flatMap(item => { const href = publicHref(item.href); return href === undefined ? [] : [{ href, label: item.label, newTab: item.new_tab, style: item.style }] })
+const h2Above9 = h2Above7 || prose6.top !== undefined
+const words8 = headingLevels([gosh2017Final?.heading?.trim() ? `## ${gosh2017Final.heading.trim()}` : undefined, gosh2017Final?.eyebrow, gosh2017Final?.lead].filter(Boolean).join('\n\n'), h2Above9 ? 2 : 1)
+const prose10 = headingLevels(gosh2017FinalMore?.markdown, h2Above9 ? 2 : 1)
+---
+<ComposedPage page={page} trail={trail} isHome={isHome} showTitle={false}>
+  {hero && (
+    <ReportCover
+      actions={heroActions}
+      eyebrow={hero.eyebrow}
+      heading={hero.heading}
+      items={heroItems}
+      lead={hero.lead}
+      media={hero.media}
+    />
+  )}
+  {text && (
+    <div class="gosh-body container-prose pb-16 md:pb-24" data-cr-fit data-cr-shift={prose0.shift}>
+      <Prose html={textHtml} markdown={fitHeadings(prose0.markdown)} />
+    </div>
+  )}
+  {(cardGrid && (cardGridItems?.length ?? 0) > 0) || cardGridMore ? (
+    <div class="bg-surface-muted">
+      {cardGrid && (cardGridItems?.length ?? 0) > 0 ? (
+        <CardGrid
+          intro={cardGrid.intro}
+          items={cardGridItems}
+          title={cardGrid.title}
+          columns="4"
+          entry="card_grid"
+        />
+      ) : words2.markdown && (
+        <div class="container-prose py-8" data-cr-shift={words2.shift}>
+          <Prose markdown={words2.markdown} />
+        </div>
+      )}
+      {cardGridMore && (
+        <div class="container-prose pb-12" data-cr-fit data-cr-shift={prose4.shift}>
+          <Prose markdown={fitHeadings(prose4.markdown)} />
+        </div>
+      )}
+    </div>
+  ) : words2.markdown && (
+    <div class="container-prose py-8" data-cr-shift={words2.shift}>
+      <Prose markdown={words2.markdown} />
+    </div>
+  )}
+  {(embed || embedNote) && (
+    <div class="gosh-place container-page grid items-center gap-10 py-16 md:grid-cols-2 md:py-24">
+      {embed && (
+        <div>
+          <Embed
+            address={embed.address}
+            caption={embed.caption}
+            playLabel={t('embed.play')}
+            poster={embed.poster}
+            showLabel={t('embed.show')}
+            title={embed.title}
+            uploaded={embed.uploaded}
+            url={embedUrl}
+            aspect="square"
+          />
+        </div>
+      )}
+      {embedNote && (
+        <div data-cr-fit data-cr-shift={prose6.shift}>
+          <Prose html={embedNoteHtml} markdown={fitHeadings(prose6.markdown)} />
+        </div>
+      )}
+    </div>
+  )}
+  {(gosh2017Final || gosh2017FinalMore) && (
+    <div class="gosh-final pb-16 md:pb-24">
+      {gosh2017Final && gosh2017Final.heading !== undefined ? (
+        <div class="contents" data-cr-hero style={headingFit(gosh2017Final.heading)} data-cr-split>
+          <Hero
+            actions={gosh2017FinalActions}
+            eyebrow={gosh2017Final.eyebrow}
+            heading={gosh2017Final.heading}
+            image={gosh2017Final.image}
+            items={gosh2017Final.items}
+            lead={gosh2017Final.lead}
+            level={1}
+            tone="accent"
+            entry="gosh_2017_final"
+          />
+        </div>
+      ) : words8.markdown && (
+        <div class="container-prose py-8" data-cr-shift={words8.shift}>
+          <Prose markdown={words8.markdown} />
+        </div>
+      )}
+      {gosh2017FinalMore && (
+        <div class="gosh-final-more container-page" data-cr-fit data-cr-shift={prose10.shift}>
+          <Prose markdown={fitHeadings(prose10.markdown)} />
+        </div>
+      )}
+    </div>
+  )}
+</ComposedPage>

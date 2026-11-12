@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "heading": "Collaborative Development Programme",
+    "image": {
+      "alt": "Thomas Hervé Mboa Nkoudou at GOSH 2017",
+      "src": "/media/2017/04/32916234003_b3c69448f0_z.jpg"
+    },
+    "lead": "The GOSH Collaborative Development Program was for organisations and groups working on existing or new open science hardware projects, with the aim of building collaboration with industry experts, groups, and organisations to facilitate the production of higher quality open science hardware."
+  },
+  "hero_more": {
+    "markdown": "Image Credit: [Gathering for Open Science Hardware](https://www.flickr.com/photos/goshcommunity/43754536270/in/album-72157674579730208/)"
+  }
+}

@@ -1,0 +1,100 @@
+/* /gosh-2017/: the event page set as a printed report. Role variables only. */
+
+.gosh-heading {
+  font-family: var(--font-display, var(--font-heading, inherit));
+  font-size: var(--text-heading-2);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: var(--leading-heading);
+  text-wrap: balance;
+}
+
+.gosh-figure {
+  font-family: var(--font-display, var(--font-heading, inherit));
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-accent);
+}
+
+.gosh-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.gosh-index-link {
+  font-family: var(--font-display, var(--font-heading, inherit));
+  line-height: 1.3;
+  transition: color 150ms ease;
+}
+
+.gosh-index-mark {
+  flex: none;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: var(--color-accent);
+  transition: transform 150ms ease;
+}
+
+.gosh-index-link:hover {
+  color: var(--color-accent);
+}
+
+.gosh-index-link:hover .gosh-index-mark {
+  transform: scale(1.4);
+}
+
+.gosh-index-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* The report body: copy held to the reading column, figures given air. */
+.gosh-body img {
+  border-radius: 0;
+}
+
+/* Santiago: map beside the printed community report. */
+.gosh-place > * {
+  min-width: 0;
+}
+
+.gosh-place [data-kit-section],
+.gosh-place section {
+  padding-block: 0;
+}
+
+.gosh-place .container-prose,
+.gosh-place .container-page {
+  max-width: none;
+  padding-inline: 0;
+}
+
+/* The final report: one solid purple tile. */
+.gosh-final {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+.gosh-final .gosh-final-more,
+.gosh-final .gosh-final-more :is(p, li, a, strong) {
+  color: var(--color-accent-ink);
+}
+
+.gosh-final .gosh-final-more a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  font-weight: 600;
+}
+
+.gosh-final .gosh-final-more a:focus-visible {
+  outline: 2px solid var(--color-accent-ink);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gosh-index-link,
+  .gosh-index-mark {
+    transition: none;
+  }
+}

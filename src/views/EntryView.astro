@@ -1,0 +1,134 @@
+---
+// One entry of a custom post type: its breadcrumb (on a source that prints one on every page), title, image, rich-text body, the terms it is filed under and its typed
+// fields (siteConfig.types), each labelled as the editor knows it; an optional Studio form under the body (the entry's
+// `form`, as a page's); its comment thread when comments are open, as a post's.
+import { formatDay } from '../lib/dates'
+import Breadcrumb from '../components/kit/breadcrumb/Breadcrumb.astro'
+import FieldList from '../components/FieldList.astro'
+import KitImage from '../components/kit/_shared/KitImage.astro'
+import PostMeta from '../components/PostMeta.astro'
+import Prose from '../components/kit/prose/Prose.astro'
+import StudioComments from '../components/studio/StudioComments.astro'
+import StudioForm from '../components/studio/StudioForm.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { getEntry } from 'astro:content'
+import { authorHref, byId, getPosts, getSite, getStrings, getTextOr, imageOf, postHref, type Category, type Media } from '../lib/content'
+import { bodyOf, dateOf, entriesOf, entryHref, entryTitle, newestFirst, refIds, termHref, termsById, text, type TypeEntry } from '../lib/custom'
+import { labelled, shownFields, type Targets } from '../lib/fields'
+import { publicHtml } from '../lib/links'
+import { entryRef, localeOf } from '../lib/locales'
+import { siteConfig } from '../site.config'
+import { cssSize } from '../lib/css-size'
+import { summarize } from '../lib/seo'
+import type { CustomType } from '../site.config'
+import type { Crumb } from '../lib/site-routes'
+import { safeHref } from '../components/kit/_shared/safe-url'
+
+interface Props {
+  type: CustomType
+  entry: TypeEntry
+  targets: Targets
+  /** The entry's ancestors, root first (`chrome.breadcrumbs: 'always'`): the home page, its type's archive. */
+  trail?: Crumb[] | undefined
+}
+
+const { type, entry, targets, trail = [] } = Astro.props
+const pageLocale = localeOf(Astro.url.pathname)
+const { data } = entry
+const textOr = await getTextOr(pageLocale)
+const [site, t, fields, body, siblings, latestPosts, categories] = await Promise.all([
+  getSite(pageLocale),
+  getStrings(pageLocale),
+  shownFields(labelled(type.fields, `types.${type.collection}.fields`, textOr), data, targets),
+  bodyOf(type, entry) ? publicHtml(bodyOf(type, entry), pageLocale) : undefined,
+  type.adjacent || (type.more && type.moreOf !== 'posts') ? entriesOf(type.collection) : [],
+  type.more && type.moreOf === 'posts' ? getPosts(pageLocale) : [],
+  type.more && type.moreOf === 'posts' ? byId('categories') : new Map<string, Category>(),
+])
+// Newest first: the previous entry is the older one, the next the newer, as in WordPress.
+const ordered = newestFirst(siblings, type.card.date)
+const at = ordered.findIndex(other => other.id === entry.id)
+const previous = at >= 0 ? ordered[at + 1] : undefined
+const next = at > 0 ? ordered[at - 1] : undefined
+// An entry page is built only for a type whose entries have one (a list-only type's have none), so its own and its
+// siblings' addresses are always there.
+const pageOf = (other: TypeEntry): string => entryHref(type, other) ?? Astro.url.pathname
+const more: Array<{ href: string, title: string, date: Date | undefined }> = !type.more
+  ? []
+  : type.moreOf === 'posts'
+    ? latestPosts.slice(0, type.more).map(post => ({ href: postHref(post, categories), title: post.data.title, date: post.data.published_at }))
+    : ordered.filter(other => type.moreIncludesCurrent || other.id !== entry.id).slice(0, type.more)
+        .map(other => ({ href: pageOf(other), title: entryTitle(type, other), date: dateOf(other.data[type.card.date ?? 'published_at']) }))
+const formatDate = (date: Date) => formatDay(date, site.language)
+const [imageId] = type.card.image ? refIds(data[type.card.image]) : []
+const cover = imageId ? await getEntry('media', imageId) : undefined
+const taxonomy = type.taxonomies?.[0]
+const allTerms = taxonomy ? termsById(taxonomy.collection, await entriesOf(taxonomy.collection)) : new Map<string, TypeEntry>()
+const terms = taxonomy ? [...allTerms.values()].filter(term => refIds(data[taxonomy.field]).includes(term.id)) : []
+// The post-meta block names the entry's author, as a post's does (an imported type keeps WordPress's author relation).
+const [authorId] = type.meta ? refIds(data.author) : []
+const author = authorId ? await getEntry('authors', authorId) : undefined
+const title = entryTitle(type, entry)
+const form = text(data.form)
+const seo = data.seo as { title?: string, description?: string, og_title?: string, og_description?: string, noindex?: boolean, nofollow?: boolean, canonical?: string } | undefined
+const description = seo?.description ?? (type.card.excerpt ? text(data[type.card.excerpt]) : undefined) ?? summarize(body)
+---
+<BaseLayout
+  title={title}
+  fullTitle={seo?.title}
+  ogTitle={seo?.og_title}
+  ogDescription={seo?.og_description}
+  description={description}
+  image={cover ? imageOf(cover as Media).src : undefined}
+  canonical={seo?.canonical ?? new URL(pageOf(entry), Astro.site ?? Astro.url).href}
+  noindex={seo?.noindex}
+  nofollow={seo?.nofollow}
+>
+  <article class="container-prose py-12 md:py-16" data-kit-entry>
+    {trail.length > 0 && (
+      <div class="mb-6">
+        <Breadcrumb items={trail.map(crumb => ({ label: crumb.title, href: crumb.href }))} current={title} label={t('nav.breadcrumb')} />
+      </div>
+    )}
+    {taxonomy && terms.length > 0 && (
+      <p class="mb-4 flex flex-wrap gap-3 text-sm font-medium" data-kit-meta>
+        {terms.map(term => <a href={safeHref(termHref(taxonomy, term, allTerms))} class="text-accent-text no-underline hover:underline">{text(term.data.name) ?? term.id}</a>)}
+      </p>
+    )}
+    <h1 class="[margin-bottom:var(--spacing-title,1.5rem)] text-4xl leading-tight [font-weight:var(--font-weight-heading,700)] tracking-tight text-balance md:text-5xl">{title}</h1>
+    {cover && <figure class="mb-10"><KitImage image={imageOf(cover as Media)} priority sizes="(min-width: 768px) 768px, 100vw" class="w-full rounded-[var(--radius-image,0.75rem)]" /></figure>}
+    {type.fieldsFirst && fields.length > 0 && <div class="mb-10"><FieldList fields={fields} locale={site.language} /></div>}
+    {body && <Prose html={body} />}
+    {form && <StudioForm model={form} class="mt-12" />}
+    {!type.fieldsFirst && fields.length > 0 && <div class="mt-10 border-t border-line pt-8"><FieldList fields={fields} locale={site.language} /></div>}
+    {type.meta && (
+      <PostMeta
+        meta={type.meta}
+        date={dateOf(data[type.card.date ?? 'published_at'])}
+        author={author ? { label: author.data.name, href: authorHref(author, pageLocale) } : undefined}
+        terms={taxonomy ? terms.map(term => ({ label: text(term.data.name) ?? term.id, href: termHref(taxonomy, term, allTerms) })) : []}
+        locale={site.language}
+      />
+    )}
+    {(previous || next) && (
+      <nav aria-label={t('post.adjacent')} data-cr-part="post-navigation" class="mt-12 flex flex-wrap justify-between gap-4 border-t border-line pt-6" style={cssSize(type.adjacentText)}>
+        {previous ? <a href={safeHref(pageOf(previous))} rel="prev" class="text-ink"><span aria-hidden="true" class="inline-block rtl:-scale-x-100">←</span> {entryTitle(type, previous)}</a> : <span />}
+        {next && <a href={safeHref(pageOf(next))} rel="next" class="text-ink">{entryTitle(type, next)} <span aria-hidden="true" class="inline-block rtl:-scale-x-100">→</span></a>}
+      </nav>
+    )}
+    {type.model && <StudioComments model={type.model} {...entryRef(entry)} open={data.comments_open === true} />}
+  </article>
+  {more.length > 0 && (
+    <section aria-labelledby="more-entries" data-cr-part="related" class="container-page pb-16">
+      <h2 id="more-entries" class="mb-4 text-sm font-semibold tracking-wide uppercase">{t('post.more')}</h2>
+      <ul class:list={['border-t border-line', siteConfig.lists.tone === 'muted' && 'text-ink-muted']}>
+        {more.map(other => (
+          <li class="flex flex-wrap items-baseline justify-between gap-2 border-b border-line py-3">
+            <a href={safeHref(other.href)} class="text-lg text-ink no-underline hover:underline" style={cssSize(type.moreText)}>{other.title}</a>
+            {other.date && <time datetime={other.date.toISOString()} class="text-sm text-ink-muted">{formatDate(other.date)}</time>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+</BaseLayout>

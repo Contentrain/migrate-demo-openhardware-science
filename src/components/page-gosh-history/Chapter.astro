@@ -1,0 +1,24 @@
+---
+// One stretch of the history on the report's inset axis: the purple thread runs down its start edge.
+import Prose from '../kit/prose/Prose.astro'
+
+interface Props {
+  html?: string | undefined
+  markdown?: string | undefined
+  shift?: number | undefined
+  fit?: boolean | undefined
+  byline?: boolean | undefined
+}
+
+const { html, markdown, shift, fit = true, byline = false } = Astro.props
+---
+<div class="container-prose" data-cr-fit={fit ? '' : undefined} data-cr-shift={shift}>
+  <div class:list={[
+    'border-s-2 border-accent ps-5 md:ps-10',
+    byline
+      ? 'pt-2 pb-8 text-ink-muted [&_p]:text-sm'
+      : 'py-6 md:py-8 [&_h2]:[font-size:var(--text-heading-2)] [&_h2]:[line-height:1.1] [&_h2]:[letter-spacing:-0.03em] [&_h2]:[font-weight:800] [&_h2]:text-balance [&_h3]:text-2xl [&_h3]:[letter-spacing:-0.02em] [&_h3]:[font-weight:800] [&_h3]:text-accent [&_h4]:text-xl [&_h4]:[font-weight:800]',
+  ]}>
+    <Prose html={html} markdown={markdown} />
+  </div>
+</div>

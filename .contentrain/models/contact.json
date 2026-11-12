@@ -1,0 +1,59 @@
+{
+  "domain": "forms",
+  "fields": {
+    "any_additional_information_you_would_lik": {
+      "label": "Any additional information you would like us to know?",
+      "type": "text"
+    },
+    "do_you_have_any_preferred_hashtags_on_so": {
+      "label": "Do you have any preferred hashtags on social media accounts? If so, list them here.",
+      "type": "string"
+    },
+    "facebook_url_s": {
+      "label": "Facebook URL(s)",
+      "type": "string"
+    },
+    "instagram_handle_s": {
+      "label": "Instagram handle(s)",
+      "type": "string"
+    },
+    "linkedin_url_s": {
+      "label": "LinkedIn URL(s)",
+      "type": "string"
+    },
+    "linkedin_you": {
+      "label": "LinkedIn you",
+      "type": "string"
+    },
+    "name": {
+      "label": "Name",
+      "type": "string"
+    },
+    "twitter_handle_s": {
+      "label": "Twitter handle(s)",
+      "type": "string"
+    }
+  },
+  "form": {
+    "captcha": "turnstile",
+    "enabled": true,
+    "exposedFields": [
+      "name",
+      "instagram_handle_s",
+      "linkedin_you",
+      "twitter_handle_s",
+      "linkedin_url_s",
+      "facebook_url_s",
+      "do_you_have_any_preferred_hashtags_on_so",
+      "any_additional_information_you_would_lik"
+    ],
+    "honeypot": true,
+    "notifications": true,
+    "public": true
+  },
+  "i18n": false,
+  "id": "contact",
+  "kind": "collection",
+  "name": "Contact form submissions",
+  "title_field": "name"
+}

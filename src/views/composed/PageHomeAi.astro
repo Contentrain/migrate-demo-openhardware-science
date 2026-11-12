@@ -1,0 +1,196 @@
+---
+// The home page, designed by hand: every photograph of the community is a
+// captioned plate with its Flickr credit, the Gathering's group photo first.
+import { getEntry } from 'astro:content'
+import Cta from '../../components/kit/cta/Cta.astro'
+import CardGrid from '../../components/kit/card-grid/CardGrid.astro'
+import Split from '../../components/kit/split/Split.astro'
+import Credit from '../../components/home/Credit.astro'
+import HomeDefinition from '../../components/home/HomeDefinition.astro'
+import HomeOpening from '../../components/home/HomeOpening.astro'
+import HomeResources from '../../components/home/HomeResources.astro'
+import Plate from '../../components/home/Plate.astro'
+import { getStrings, type Page } from '../../lib/content'
+import { fitHeadings, headingLevels } from '../../lib/headings'
+import { menusAt, publicHtml, publicLinks } from '../../lib/links'
+import type { NavItem } from '../../components/kit/_shared/types'
+import ComposedPage from '../ComposedPage.astro'
+import '../../styles/home.css'
+
+interface Props {
+  page: Page
+  trail: Array<{ title: string, href: string }>
+  isHome: boolean
+}
+
+const { page, trail } = Astro.props
+const isHome = true
+const t = await getStrings()
+const publicHref = await publicLinks()
+const pageHome = await getEntry('pageHome', 'en')
+if (!pageHome) throw new Error('page-home is missing: the page\'s sections are its fields')
+const extras = (await getEntry('homeExtras', 'en'))?.data
+const { hero, section, section_more: sectionMore, new_gosh_get: newGoshGet, new_gosh_get_more: newGoshGetMore, embed, card_grid: cardGrid, what_open_science: whatOpenScience, what_open_science_embed: whatOpenScienceEmbed, gosh_manifesto_values: goshManifestoValues, text, global_open_science: globalOpenScience, global_open_science_note: globalOpenScienceNote, global_open_science_section: globalOpenScienceSection, global_open_science_note_gathering: globalOpenScienceNoteGathering, cta } = pageHome.data
+
+const toActions = (list: Array<{ href: string, label: string, new_tab?: boolean | undefined, style?: 'primary' | 'secondary' | 'ghost' | undefined }> | undefined) =>
+  (list ?? []).flatMap(item => { const href = publicHref(item.href); return href === undefined ? [] : [{ href, label: item.label, newTab: item.new_tab, style: item.style }] })
+
+// The script words, each linked to the header menu entry of the same name (the source's menu labels).
+const [primary] = await menusAt('header')
+const flat = (items: NavItem[]): NavItem[] => items.flatMap(item => [item, ...flat(item.children ?? [])])
+const menuItems = flat(primary?.items ?? [])
+const words = (extras?.script_words ?? []).map((label) => {
+  const match = menuItems.find(item => item.label.trim().toLowerCase() === label.trim().toLowerCase())
+  return { label, href: match?.href }
+})
+
+const heroActions = toActions(hero?.actions)
+const sectionActions = toActions(section?.actions)
+const newGoshGetItems = (newGoshGet?.items ?? []).map(item => ({ href: publicHref(item.href), linkLabel: item.link_label, media: item.media, mediaAlt: item.media_alt, meta: item.meta, points: item.points, text: item.text, title: item.title, value: item.value }))
+const newGoshGetActions = toActions(newGoshGet?.actions)
+const embedUrl = publicHref(embed?.url)
+const cardGridItems = (cardGrid?.items ?? []).map(item => ({ eyebrow: item.eyebrow, href: publicHref(item.href), icon: item.icon, image: item.image, imageAlt: item.image_alt, linkLabel: item.link_label, text: item.text, title: item.title }))
+const whatOpenScienceHtml = await publicHtml(whatOpenScience?.html)
+const prose8 = headingLevels(whatOpenScience?.markdown, 2)
+const whatOpenScienceEmbedUrl = publicHref(whatOpenScienceEmbed?.url)
+const goshManifestoValuesActions = toActions(goshManifestoValues?.actions)
+const goshManifestoValuesVideoUrl = publicHref(goshManifestoValues?.video_url)
+const textHtml = await publicHtml(text?.html)
+const globalOpenScienceActions = toActions(globalOpenScience?.actions)
+const globalOpenScienceVideoUrl = publicHref(globalOpenScience?.video_url)
+const globalOpenScienceNoteHtml = await publicHtml(globalOpenScienceNote?.html)
+const globalOpenScienceSectionActions = toActions(globalOpenScienceSection?.actions)
+const globalOpenScienceNoteGatheringHtml = await publicHtml(globalOpenScienceNoteGathering?.html)
+const ctaActions = toActions(cta?.actions)
+const ctaImage = cta?.image ? { src: cta.image } : undefined
+---
+<ComposedPage page={page} trail={trail} isHome={isHome} showTitle={!hero?.heading?.trim()}>
+  <div class="home">
+    {hero?.heading && (
+      <HomeOpening
+        heading={hero.heading}
+        lead={hero.lead}
+        actions={heroActions}
+        words={words}
+        image={section?.media ?? hero.image}
+        caption={section?.lead}
+        credit={sectionMore?.markdown}
+      />
+    )}
+    {section && (section.heading || section.eyebrow || sectionActions.length > 0 || (!hero?.heading && section.media)) && (
+      <section class="home-band" aria-labelledby={section.heading ? 'home-section-title' : undefined}>
+        <div class="container-page">
+          {section.eyebrow && <p class="home-small mb-2">{section.eyebrow}</p>}
+          {section.heading && <h2 id="home-section-title" class="home-h2">{section.heading}</h2>}
+          {!hero?.heading && <Plate image={section.media} caption={section.lead} credit={sectionMore?.markdown} />}
+          {sectionActions.length > 0 && <p class="mt-6 flex flex-wrap gap-3">{sectionActions.map(action => <a href={action.href} class="home-link">{action.label}</a>)}</p>}
+        </div>
+      </section>
+    )}
+
+    {newGoshGet && (
+      <HomeResources
+        heading={newGoshGet.heading}
+        eyebrow={newGoshGet.eyebrow}
+        lead={newGoshGet.lead}
+        items={newGoshGetItems}
+        more={newGoshGetMore?.markdown}
+        video={embed ? { url: embedUrl, address: embed.address, title: embed.title, caption: embed.caption, poster: embed.poster, uploaded: embed.uploaded } : undefined}
+        playLabel={t('embed.play')}
+        showLabel={t('embed.show')}
+      />
+    )}
+    {newGoshGetActions.length > 0 && <div class="container-page -mt-8 pb-12"><p class="flex flex-wrap gap-3">{newGoshGetActions.map(action => <a href={action.href} class="home-link">{action.label}</a>)}</p></div>}
+
+    {cardGrid && cardGridItems.length > 0 && (
+      <div class="home-values">
+        <CardGrid intro={cardGrid.intro} items={cardGridItems} title={cardGrid.title} columns="4" align="center" entry="card_grid" />
+      </div>
+    )}
+
+    {(whatOpenScience || whatOpenScienceEmbed) && (
+      <HomeDefinition
+        html={whatOpenScienceHtml}
+        markdown={fitHeadings(prose8.markdown)}
+        shift={prose8.shift}
+        video={whatOpenScienceEmbed ? { url: whatOpenScienceEmbedUrl, address: whatOpenScienceEmbed.address, title: whatOpenScienceEmbed.title, caption: whatOpenScienceEmbed.caption, poster: whatOpenScienceEmbed.poster, uploaded: whatOpenScienceEmbed.uploaded } : undefined}
+        playLabel={t('embed.play')}
+        showLabel={t('embed.show')}
+      />
+    )}
+
+    {goshManifestoValues && (
+      <div class="home-with-credit">
+        <Split
+          actions={goshManifestoValuesActions}
+          body={goshManifestoValues.body}
+          eyebrow={goshManifestoValues.eyebrow}
+          features={goshManifestoValues.features}
+          heading={goshManifestoValues.heading}
+          image={goshManifestoValues.image}
+          videoUrl={goshManifestoValuesVideoUrl}
+          playLabel={t('embed.play')}
+          imageSide="end"
+          ratio="5:7"
+          imageShape="none"
+          entry="gosh_manifesto_values"
+        />
+        {text && <Credit html={textHtml} markdown={text.markdown} side="end" />}
+      </div>
+    )}
+
+    {globalOpenScience && (
+      <div class="home-with-credit home-brand">
+        <Split
+          actions={globalOpenScienceActions}
+          body={globalOpenScience.body}
+          eyebrow={globalOpenScience.eyebrow}
+          features={globalOpenScience.features}
+          heading={globalOpenScience.heading}
+          image={globalOpenScience.image}
+          videoUrl={globalOpenScienceVideoUrl}
+          playLabel={t('embed.play')}
+          tone="brand"
+          imageSide="start"
+          ratio="7:5"
+          imageShape="none"
+          entry="global_open_science"
+        />
+        {globalOpenScienceNote && <Credit html={globalOpenScienceNoteHtml} markdown={globalOpenScienceNote.markdown} />}
+      </div>
+    )}
+
+    {(globalOpenScienceSection || globalOpenScienceNoteGathering) && (
+      <section class="home-band" aria-labelledby={globalOpenScienceSection?.heading ? 'home-gathering-title' : undefined}>
+        <div class="container-page">
+          {globalOpenScienceSection?.eyebrow && <p class="home-small mb-2">{globalOpenScienceSection.eyebrow}</p>}
+          {globalOpenScienceSection?.heading && <h2 id="home-gathering-title" class="home-h2 mb-6">{globalOpenScienceSection.heading}</h2>}
+          <Plate
+            image={globalOpenScienceSection?.media}
+            caption={globalOpenScienceSection?.lead}
+            credit={globalOpenScienceNoteGatheringHtml ? undefined : globalOpenScienceNoteGathering?.markdown}
+            sizes="(min-width: 1280px) 76rem, 100vw"
+            crop="landscape"
+          />
+          {globalOpenScienceSectionActions.length > 0 && <p class="mt-6 flex flex-wrap gap-3">{globalOpenScienceSectionActions.map(action => <a href={action.href} class="home-link">{action.label}</a>)}</p>}
+        </div>
+        {globalOpenScienceNoteGatheringHtml && <Credit html={globalOpenScienceNoteGatheringHtml} />}
+      </section>
+    )}
+
+    {cta && cta.heading !== undefined && (
+      <Cta
+        actions={ctaActions}
+        bgImage={cta.bg_image}
+        body={cta.body}
+        eyebrow={cta.eyebrow}
+        heading={cta.heading}
+        image={ctaImage}
+        note={cta.note}
+        layout="centered"
+        tone="muted"
+        entry="cta"
+      />
+    )}
+  </div>
+</ComposedPage>

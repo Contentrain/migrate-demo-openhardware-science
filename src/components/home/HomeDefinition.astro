@@ -1,0 +1,39 @@
+---
+// "What is Open Science Hardware?": the definition and its quotation on the
+// brand's purple, beside the explainer video.
+import type { ImageInput } from '../kit/_shared/types'
+import Embed from '../kit/embed/Embed.astro'
+import Prose from '../kit/prose/Prose.astro'
+
+interface Video {
+  url?: string | undefined
+  address?: string | undefined
+  title?: string | undefined
+  caption?: string | undefined
+  poster?: ImageInput | undefined
+  uploaded?: string | undefined
+}
+
+interface Props {
+  html?: string | undefined
+  markdown?: string | undefined
+  shift?: number | undefined
+  video?: Video | undefined
+  playLabel: string
+  showLabel: string
+}
+
+const { html, markdown, shift, video, playLabel, showLabel } = Astro.props
+---
+<div class="home-band home-purple">
+  <div class="container-page home-definition">
+    <div class="home-definition-text" data-cr-fit data-cr-shift={shift}>
+      <Prose html={html} markdown={markdown} size="base" />
+    </div>
+    {video && (
+      <div class="[&>figure]:my-0 [&>figure]:max-w-none">
+        <Embed url={video.url} address={video.address} title={video.title} caption={video.caption} poster={video.poster} uploaded={video.uploaded} playLabel={playLabel} showLabel={showLabel} aspect="video" width="page" />
+      </div>
+    )}
+  </div>
+</div>

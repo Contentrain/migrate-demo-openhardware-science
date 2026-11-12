@@ -1,0 +1,94 @@
+{
+  "domain": "pages",
+  "fields": {
+    "card_grid": {
+      "description": "A grid of cards with an optional section heading and intro.",
+      "fields": {
+        "intro": {
+          "description": "Paragraph under the heading.",
+          "label": "Introduction",
+          "required": true,
+          "type": "text"
+        },
+        "items": {
+          "description": "The cards.",
+          "items": {
+            "fields": {
+              "eyebrow": {
+                "description": "Short line above the title.",
+                "label": "Eyebrow",
+                "type": "string"
+              },
+              "href": {
+                "description": "Makes the whole card a link.",
+                "label": "Link",
+                "type": "url"
+              },
+              "icon": {
+                "description": "A small image above the title.",
+                "label": "Icon",
+                "type": "image"
+              },
+              "image": {
+                "description": "Image on top of the card.",
+                "label": "Image",
+                "type": "image"
+              },
+              "image_alt": {
+                "description": "What the image shows, for readers who cannot see it; empty when it is decoration.",
+                "label": "Image description",
+                "type": "string"
+              },
+              "link_label": {
+                "description": "The link's own text, shown under the card; without it the whole card is the link.",
+                "label": "Link text",
+                "type": "string"
+              },
+              "text": {
+                "description": "A sentence or two under the heading.",
+                "label": "Text",
+                "type": "text"
+              },
+              "title": {
+                "description": "The card heading.",
+                "label": "Title",
+                "required": true,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "label": "Cards",
+          "required": false,
+          "type": "array"
+        },
+        "title": {
+          "description": "Section heading.",
+          "label": "Heading",
+          "required": false,
+          "type": "string"
+        }
+      },
+      "label": "Card grid",
+      "required": true,
+      "type": "object"
+    },
+    "card_grid_more": {
+      "description": "Text of this part of the page that its section has no field for.",
+      "fields": {
+        "markdown": {
+          "description": "The text, in Markdown.",
+          "label": "Text",
+          "type": "markdown"
+        }
+      },
+      "label": "Card grid (more text)",
+      "type": "object"
+    }
+  },
+  "i18n": true,
+  "id": "page-communities",
+  "kind": "singleton",
+  "name": "Communities page",
+  "title_field": "card_grid.intro"
+}

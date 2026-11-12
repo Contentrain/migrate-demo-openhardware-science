@@ -1,0 +1,78 @@
+{
+  "day_5_6": {
+    "markdown": "### Day 5 + 6 – Get to work (optional)\n\nSunday + Monday, March 26 + 27\n\nThese are days reserved for collaborations. Facilities, tools, and spaces will be available for GOSH participants and collaborators to do the hard work of integrating ideas, tools, software, methods, partnerships, projects, etc. Because of the global nature of the GOSH network, it’s important to create time at this conference explicitly for this purpose."
+  },
+  "friday_march_24th": {
+    "heading": "Friday, March 24th 2017"
+  },
+  "friday_march_24th_note": {
+    "markdown": "Unconference Space A\n\nUnconference Space B\n\nUnconference Space C\n\nUnconference Space D\n\n09:30-11:00\n\n[Documentation and publication workshop](https://forum.openhardware.science/t/documentation-and-sharing/302)\n\nwith Tobey\n\nDesign skills\n\nwith Maria\n\n[Make an OSH business plan](https://forum.openhardware.science/t/business-model-canvas/304)\n\nwith Greg and Tara\n\n[Discussing Anticapitalist OSH](https://forum.openhardware.science/t/anti-capitalist-tactics-discussion-session-march-24th/370)\n\n11:15-12:45\n\n[Contextualizing OSH: lessons from the Global South](https://forum.openhardware.science/t/contextualising-osh-lessons-from-the-global-south/306)\n\nwith Thomas\n\nMixed signal PCB design\n\nwith Joel\n\nOSH for citizen science.\n\nDefining citizen science, resources, ethics, values and networks.\n\n“Workshopology”:\n\nSharing workshop models with Juanma.\n\n12:45-14:15\n\nLunch break\n\nLunch break\n\nLunch break\n\nLunch break\n\n14:15-15:00\n\nGOSH roadmap: introduction and definition of core values of community\n\n15:00-15:45\n\nGOSH roadmap: add more ideas and post-its to the different areas\n\n15:45-16:15\n\nGOSH roadmap: prioritize the objectives and ideas\n\n16:15-17:00\n\nGOSH roadmap: questions, answers, discussion."
+  },
+  "saturday_march_25th": {
+    "heading": "Saturday, March 25th 2017"
+  },
+  "saturday_march_25th_note": {
+    "markdown": "Unconference Space A\n\nUnconference Space B\n\nUnconference Space C\n\nUnconference Space D\n\nUnconference Space E\n\n09:30-12:30\n\n[Build your own waterscope microscope](https://forum.openhardware.science/t/waterscope-microscope-build/313)\n\nwith Richard\n\n[DIY CAD. Draw circuit boards, and soldering](https://forum.openhardware.science/t/diy-cad-creative-circuit-board-design-tool-for-gar-lampli/322)\n\nwith Marc\n\n[Feminist meetup](https://forum.openhardware.science/t/gosh-feminist-meetup-saturday-09-30-12-30/314/2)\n\n12:30-13:30\n\nLunch break\n\n13:30-15:00\n\nHands-on DocuBricks documentation\n\nwith Tobey\n\n[Politics in technology](https://forum.openhardware.science/t/politics-of-tools-saturday-13-30/317)\n\nwith Jeff\n\n[Identify a project to collaborate](https://forum.openhardware.science/t/make-a-collaborative-project-for-goshers/319)\n\nwith Greg\n\nPython for science\n\n15:00-16:30\n\nApplying for funding\n\nwith Bethan\n\nDesign skills\n\nwith Maria\n\nOSH curriculum building\n\nwith Andrew\n\nHow to make human powered aircraft\n\nwith Shingo\n\nFix it together\n\nwith Ellen\n\nExtra afternoon parallel sessions\n\nGOSH documentation team working session\n\n[Latin-American GOSH meetup](http://-2017/331)\n\nWrite a legal two-pagers about GOSH"
+  },
+  "text": {
+    "markdown": "GOSH 2016 was about connecting people and sharing stories, creating coherent ideas about what open science hardware is, and dreaming about what it might be. One of the main outcomes was the GOSH Manifesto, a clear statement of our shared values and intentions.\n\nThe goal of GOSH 2017 is to bring the spirit of our Manifesto to life. This includes concrete outcomes for individual participants, like sharing experiences as users and developers of open science hardware, identifying best practices, collaborating to create opportunities and address failures, and building lasting relationships.\n\nWe will also focus on pursuing our shared goals and vision. In 2017 we believe that goal is to…\n\nBuild a roadmap to bring together the people, skills and tools needed to make open science hardware ubiquitous by 2025."
+  },
+  "thursday_march_23rd": {
+    "heading": "Thursday, March 23rd 2017"
+  },
+  "thursday_march_23rd_note": {
+    "markdown": "Unconference Space A\n\nUnconference Space B\n\nUnconference Space C\n\nUnconference Space D\n\nUnconference Space E\n\n10:30-11:30\n\n[Design](https://forum.openhardware.science/t/design-session-thursday-march-23rd-2017/405)\n\n[Biology, Life Sciences, Microfluidic](https://forum.openhardware.science/t/biology-life-sciences-microfluidics-10-30-11-30/291)s\n\n[Collaborative development](https://forum.openhardware.science/t/collaborative-development-10-30-11-30/281)\n\n[OSH tools enabling education](https://forum.openhardware.science/t/workshopology-osh-tools-enabling-teaching/284/2)\n\n11:30-12:30\n\n[Inclusivity](https://forum.openhardware.science/t/inclusivity-and-open-science-hardware/282)\n\n[Performative and Interactive art](https://forum.openhardware.science/t/perfromative-and-interactive-art/285)\n\n[Open Source in Developing countries](https://forum.openhardware.science/t/open-source-hardware-in-developing-countries/287)\n\n[Embedded politics in tech](https://forum.openhardware.science/t/embedded-politics-and-values-in-technology-11-30-12-30/293)\n\n[Agriculture and environmental data collection](https://forum.openhardware.science/t/environmental-and-agriculture-sensors-and-data/300)\n\n12:30-13:30\n\nLunch break\n\n13:30-15:00\n\n[Education and OSH](https://forum.openhardware.science/t/education-and-osh-1-30-2-45/286)\n\nV[isionary science speculative fiction](https://forum.openhardware.science/t/speculative-fiction-new-futures/408)\n\n[Lowtech (Frugal Science)](https://forum.openhardware.science/t/low-tech-technologies-frugal-science-jugaad-science/288)\n\nUpscaling\n\n[Policies, legal, and more](https://forum.openhardware.science/t/legal-and-policy-issues/297)\n\n15:00-15:15\n\nCoffee break\n\nCoffee break\n\nCoffee break\n\nCoffee break\n\nCoffee break\n\n15:15-16:30\n\n[Civic and Citizen Science](https://forum.openhardware.science/t/civic-science-and-citizen-science-breakout-3-30-4-45/289)\n\n[Documentation](https://forum.openhardware.science/t/documentation-session/290)\n\n[Business Models](https://forum.openhardware.science/t/business-models/299)\n\n[Standards](https://forum.openhardware.science/t/standards-in-open-science-hardware/292/2)\n\n19:00\n\nDinner at The Clinic/Bar Radicales"
+  },
+  "wednesday_march_22nd": {
+    "heading": "Wednesday, March 22nd 2017",
+    "items": [
+      {
+        "meta": "09:45-10:00",
+        "title": "Location introductions"
+      },
+      {
+        "meta": "10:00-10:20",
+        "title": "GOSH history, background, intro to CoC"
+      },
+      {
+        "meta": "10:20-11:40",
+        "title": "Speed meeting"
+      },
+      {
+        "meta": "11:40-13:30",
+        "title": "Lunch and setting up of posters"
+      },
+      {
+        "meta": "13:30-15:00",
+        "title": "Lunch break"
+      },
+      {
+        "meta": "15:00-15:15",
+        "title": "Open poster session and tables"
+      },
+      {
+        "meta": "15:15-15:35",
+        "title": "GOSH movement introduction"
+      },
+      {
+        "meta": "15:35-15:45",
+        "title": "Launch of the community-run Journal of Open Hardware"
+      },
+      {
+        "meta": "15:45-16:45",
+        "title": "Short stories of OSH"
+      },
+      {
+        "meta": "16:45-17:15",
+        "title": "Open discussion and Q&A"
+      },
+      {
+        "meta": "20:30-00:00",
+        "title": "Reception at The Clinic/Bar Radicales"
+      }
+    ]
+  },
+  "wednesday_march_22nd_note": {
+    "markdown": "Anacleto Angelini Innovation Centre and UC welcome\n\n– Max Liboiron – Open Science Hardware for Equity\n\n– Jorge Appiah – Open Science Hardware: A tool for Africa’s innovation and Development\n\n– Andrew Thaler – Open Source for an Open Ocean\n\n– Rafael Pezzi – Collaborative tools for open hardware development community\n\n– Xiamyra Daal – BioHack Academy"
+  }
+}

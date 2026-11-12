@@ -1,0 +1,254 @@
+{
+  "steps": {
+    "heading": "2025 Schedule",
+    "items": [
+      {
+        "number": "November",
+        "text": "Julien Colomb",
+        "title": "Open science hardware documentation"
+      },
+      {
+        "number": "July",
+        "text": "Alex Carillo",
+        "title": "Open science hardware for environmental justice"
+      },
+      {
+        "number": "June",
+        "text": "Saad Chinoy, Lara Jatar, Karl Kaddu, Sakti Subramanian",
+        "title": "GOSH Community governance and the Community Council transition"
+      },
+      {
+        "number": "April",
+        "text": "AdrianMolecule Jo Walsh",
+        "title": "Lessons learned from open source software"
+      },
+      {
+        "number": "November",
+        "text": "Julien Colomb",
+        "title": "Open science hardware documentation"
+      }
+    ]
+  },
+  "steps_environmental": {
+    "heading": "2024 Schedule",
+    "items": [
+      {
+        "number": "April",
+        "text": "See the list of presenters here.",
+        "title": "Environmental Sensors"
+      },
+      {
+        "number": "July",
+        "text": "COSMIIC, the CARSS Center, and the OSII (Open Source MRI) project. Find out more here!",
+        "title": "Medical Devices"
+      }
+    ]
+  },
+  "steps_environmental_more": {
+    "markdown": "- [here](https://forum.openhardware.science/t/gosh-community-call-environmental-sensors/5827/2?u=briannaljohns) — [here](https://forum.openhardware.science/t/gosh-community-call-environmental-sensors/5827/2?u=briannaljohns)\n- [here](https://forum.openhardware.science/t/gosh-community-call-open-source-medical-devices-july-5th-at-1pm-utc/6095) — [here](https://forum.openhardware.science/t/gosh-community-call-open-source-medical-devices-july-5th-at-1pm-utc/6095)"
+  },
+  "steps_finalizing": {
+    "heading": "2021 Schedule",
+    "items": [
+      {
+        "number": "February",
+        "text": "GOSH Governance Working Group",
+        "title": "Finalizing GOSH governance plan and setting up elections process"
+      },
+      {
+        "number": "September",
+        "text": "Jon Matthis",
+        "title": "The FreeMoCap Project- A free open source markerless motion capture system for decentralized science, education, and art."
+      },
+      {
+        "number": "October",
+        "text": "dusjagr",
+        "title": "UROŠ – Ubiquitous Rural Open Science Hardware"
+      },
+      {
+        "number": "November",
+        "text": "Saad Chinoy / Alex Carrillo",
+        "title": "Edible Makerspace / open-source hardware for the dissemination of science and environmental care through social projects"
+      },
+      {
+        "number": "December",
+        "text": "Barbara Schack / Ana Trisovic, Nadica Miljkovic, Limor Peer",
+        "title": "The Internet of Production Alliance – building digital infrastructure for decentralised manufacturing / Presenting the paper: “Towards FAIR Principles for Open Hardware”"
+      }
+    ]
+  },
+  "steps_general": {
+    "heading": "2022 Schedule",
+    "items": [
+      {
+        "number": "January",
+        "text": "GOSH Community Members",
+        "title": "General Updates on the GOSH Community"
+      },
+      {
+        "number": "February",
+        "text": "Thomas Landrain / Robert Read, Public Invention",
+        "title": "Just one Giant Lab (JOGL) / Freespireco"
+      },
+      {
+        "number": "March",
+        "text": "Mathew Lubari / Vic Spindler-Fox, Emily Brady",
+        "title": "Repair Café / Our-Sci"
+      },
+      {
+        "number": "April",
+        "text": "Engineers Without Borders UK",
+        "title": "Open-Source Hardware for a Globally Responsible Future"
+      },
+      {
+        "number": "May",
+        "text": "Creative Innovation Center (C.I.C) / Pen-Yuan Hsing",
+        "title": "Creative Innovation Center (C.I.C) / Adding depth-sensing to camera traps to transform wildlife monitoring for conservation"
+      },
+      {
+        "number": "July",
+        "text": "Ye Seong Shin",
+        "title": "Seeed Studio"
+      },
+      {
+        "number": "August",
+        "text": "Andy Quitmeyer / Douglas Esteves",
+        "title": "2022 Digital Naturalism Conference / Presentation from Douglas Esteves"
+      },
+      {
+        "number": "September",
+        "text": "Andrew Greenberg",
+        "title": "OreSat, a fully open source, modular, and scalable CubeSat “bus” aimed at interdisciplinary student teams"
+      }
+    ]
+  },
+  "steps_gosh": {
+    "heading": "2023 Schedule",
+    "items": [
+      {
+        "number": "January",
+        "text": "GOSH Community Members",
+        "title": "GOSH Open Hardware Literature Review Series"
+      },
+      {
+        "number": "February",
+        "text": "Jo Long & Will Dickson",
+        "title": "IO Rodeo"
+      },
+      {
+        "number": "March",
+        "text": "Oliver Tills / Barbara Schack & Sarah Hutton",
+        "title": "EmbryoPhemomics / Internet of Production (IoP) Alliance"
+      },
+      {
+        "number": "April",
+        "text": "Abdoul Kafid Toko / Michael Lyn",
+        "title": "Open Science Hardware Practices and Potentialities for Africa / The Rotoforge Project"
+      },
+      {
+        "number": "May",
+        "text": "Liz Barry and Pen-Yuan Hsing",
+        "title": "GOSH Governance and Constitution"
+      },
+      {
+        "number": "June",
+        "text": "Hugues Aubin, Dr Daniel Kengni Tiomo, Stéphane Godin",
+        "title": "BrailleRAP project and Climate Change Lab (CClab)"
+      },
+      {
+        "number": "October",
+        "text": "Harold Tay / Andrew Thaler / Zack Johnson / Niamh Burke",
+        "title": "Open Hardware for Marine Science Applications"
+      },
+      {
+        "number": "December",
+        "text": "Open Science Shop / GOSH Ambassador Program / OScH Project Directory WG",
+        "title": "GOSH Roadmap Coworking Session"
+      }
+    ]
+  },
+  "steps_more": {
+    "markdown": "- [here](https://youtu.be/zgbqBfvAmNI?si=sg_6ivC9Diu06Hm4)\n- [here](https://www.youtube.com/watch?v=ruafQXXDOPs)\n- [here](https://www.youtube.com/watch?v=Au4Yp7KNNto)\n- [here](https://us06web.zoom.us/meeting/register/N3DA1W3SR6iPhbfVqGF8Lg)"
+  },
+  "steps_note": {
+    "markdown": "Month\n\nDate\n\nTime (UTC)\n\nTopic\n\nPresenter(s)\n\nRegistration/YouTube Link\n\n20\n\n12:00 – 1:00\n\nWatch the recording\n\n10\n\n12:00 – 1:00\n\nWatch the recording\n\n6\n\n14:00 – 15:00\n\nWatch the recording\n\n29\n\n14:00 – 15:00\n\nRegistration closed\n\n20\n\n12:00 – 1:00\n\nRegister"
+  },
+  "steps_note_2": {
+    "markdown": "Month\n\nDate\n\nTime (UTC)\n\nTopic\n\nPresenter\n\n13\n\n15:00\n\n14\n\n20:00\n\n27\n\n12:00\n\n24\n\n15:00\n\n29\n\n10:00\n\n19\n\n14:30\n\n14\n\n16:00"
+  },
+  "steps_note_3": {
+    "markdown": "Month\n\nDate\n\nTime (UTC)\n\nTopic\n\nPresenter\n\nTuesday 25th\n\n21:00\n\nThursday 24\n\n19:00 UTC\n\nMarch 21\n\n13:00 UTC\n\nApril 25\n\n11:00 UTC\n\nMay 16\n\n13:00 UTC\n\nJuly 18\n\n9:00 UTC\n\nAugust 30\n\n13:00 UTC\n\nSeptember 26\n\n20:00 UTC"
+  },
+  "steps_note_4": {
+    "markdown": "Month\n\nDate\n\nTime (UTC)\n\nTopic\n\nPresenter\n\nThursday 25th\n\n14:00\n\nWednesday 29th\n\n13:00\n\nThursday 28th\n\n21:00\n\nThursday 18th\n\n14:00\n\nTuesday 7th\n\n13:00"
+  },
+  "steps_note_month": {
+    "markdown": "Month\n\nDate\n\nTime (UTC)\n\nTopic\n\nPresenter(s)\n\n9\n\n12:00 – 13:30\n\n5\n\n13:00"
+  },
+  "text": {
+    "markdown": "GOSH community calls are virtual meetings aimed to learn about the activities and projects of GOSHers around the world, discuss interesting Open Science Hardware topics and make things easier for those interested in joining GOSH.\n\nThe calls usually consist of a 20-minute presentation of projects or topics followed by discussion, and some time for introductions/community announcements.\n\nThe time of the meetings changes from call to call in order to give an equal chance of joining to GOSHers all around the world.\n\nHow to Join\n\nEach call is hosted via Zoom. The schedule below has more details on how to join each call.\n\nSubscribe to the [GOSH community calendar](https://calendar.google.com/calendar?cid=cWhsZDgzcjkzNWVubHExcGd1M2loZm82N3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) to be notified of future calls and other GOSH-related events and activities.\n\nRecordings and Notes\n\nRecordings are uploaded after the calls to the [GOSH YouTube channel](https://www.youtube.com/playlist?list=PLmiNrnssuo_SB-G0xKfyDUBHCsOcmKXGk).\n\nThe notes from the 2021-2024 calls are stored [here](https://pad.publiclab.org/p/GOSHcommunitycalls). You can find the notes from the 2019 community calls [here](https://gitlab.com/gosh-community/gosh-roadmap-documents/blob/master/GOSHcommunitycallslog.md)."
+  },
+  "timeline": {
+    "heading": "2020 Schedule",
+    "items": [
+      {
+        "meta": "June",
+        "title": "History of GOSH, SLOAN Foundation Grant, and Next Steps"
+      },
+      {
+        "meta": "July",
+        "title": "A call for all those interested in shaping what the GOSH governance structure looks like going forward"
+      },
+      {
+        "meta": "December",
+        "title": "Overview of first draft of proposed governance structure"
+      }
+    ]
+  },
+  "timeline_note": {
+    "markdown": "Month\n\nDate\n\nTime (UTC)\n\nTopic\n\nTuesday 16th\n\n14:00\n\nTuesday 14th\n\n14:00\n\nWednesday 16th\n\n14:00"
+  },
+  "timeline_note_month": {
+    "markdown": "Month\n\nDate\n\nTime (UTC)\n\nTopic\n\nPresenter\n\nThursday 7th\n\n11:00\n\nThursday 11th\n\n15:00\n\nThursday 4th\n\n13:00\n\nTuesday 27th\n\n10:00\n\nFriday 4th\n\n14:00\n\nTuesday 12th\n\n16:00\n\nTuesday 3rd\n\n19:00"
+  },
+  "timeline_steps": {
+    "heading": "2019 Schedule",
+    "items": [
+      {
+        "number": "March",
+        "text": "Fernando Castro / Julian Stirling",
+        "title": "Soil cromatrography (FC) – The new SI: The world just redefined the way we define our units (JS)"
+      },
+      {
+        "number": "April",
+        "text": "Paz Bernaldo / Kaspar / AfricaOSHers",
+        "title": "Vuela project: Lessons Learned (PB) – HiSeq project (K) – Live report from AfricaOSH"
+      },
+      {
+        "number": "June",
+        "text": "Greg Austic",
+        "title": "GOSH Great Lakes"
+      },
+      {
+        "number": "August",
+        "text": "Victor Kumbol",
+        "title": "DIY Labware: Promoting Open Science Hardware among Ghanaian Academics"
+      },
+      {
+        "number": "October",
+        "text": "José Urra",
+        "title": "Open Hardware Leaders: an OHW mentoring program from Mozilla"
+      },
+      {
+        "number": "November",
+        "text": "Jérémy Bonvoisin",
+        "title": "The Open Know-How Specification"
+      },
+      {
+        "number": "December",
+        "text": "Saulo Jacques",
+        "title": "Hacking Ecology: Building open source water monitoring systems with researchers and communities"
+      }
+    ]
+  }
+}
