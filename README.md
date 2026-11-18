@@ -25,7 +25,7 @@ Live source: https://openhardware.science
 |---|---|
 | Posts / pages | 179 / 75 |
 | Categories / tags | 18 / 14 |
-| Media files | 1,410 in the run (1,326 in this repo after the redactions) |
+| Media files | 1,410 in the run; 1,326 in this repo: the 23 redactions took out 85 files (each original with its WordPress-generated size variants, plus 14 PDFs) and added 1 placeholder image |
 | Old URLs kept or redirected | 613 redirects (572 attachment pages, 41 feed and sitemap addresses) |
 | Run time | 86 minutes, of which the gates took 19 |
 | Run date | 2026-11-07 |
@@ -95,7 +95,7 @@ You need Node 22.12 or later and pnpm. No database or server is required. `dist/
 
 ## Redactions
 
-23 third-party or private items were removed or replaced: images under a non-commercial licence, texts reposted with permission, uncredited third-party photos, session abstracts by named authors, and GOSH's budget and reimbursement paperwork. Each is listed in [REDACTIONS.md](REDACTIONS.md) with its source page; PDFs that were removed are linked on openhardware.science. The numbers above are from the full run.
+23 third-party or private items were removed or replaced: images under a non-commercial licence, texts reposted with permission, uncredited third-party photos, session abstracts by named authors, and GOSH's budget and reimbursement paperwork. Together they took out 85 media files: each removed image goes with the size variants WordPress generated for it (for example `-100x67`, `-300x200`, `-768x512`), plus 14 PDFs; one placeholder image stands in for the removed images, so the repo holds 1,410 − 85 + 1 = 1,326. Each item is listed in [REDACTIONS.md](REDACTIONS.md) with its source page; PDFs that were removed are linked on openhardware.science. The numbers above are from the full run.
 
 ## License
 
